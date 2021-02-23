@@ -21,13 +21,13 @@ Pod::Spec.new do |s|
   SDK that contains common UI elements, utilities, functionality etc, for re-use across all University of Pennsylvania mobile applications. This SDK will make it much easier to implement core components for new applications, and get a better birds-eye-view of what version components a specific application is running, allowing for quick & easy updating.
                        DESC
 
-  s.homepage         = 'https://github.com/rabdulsal/UPennMobileComponentsSDK'
+  s.homepage         = 'https://github.com/upennmobile/UPennMobileComponentsSDK'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'rabdulsal' => 'upennmobile@gmail.com' }
-  s.source           = { :git => 'https://github.com/rabdulsal/UPennMobileComponentsSDK.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/upennmobile/UPennMobileComponentsSDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.swift_version = "5.0"
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'Source/**/*'
