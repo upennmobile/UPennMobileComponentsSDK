@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'UPennMobileComponentsSDK_Example' do
+  pod 'UPennMobileComponentsSDK', :path => '../'
+
+  target 'UPennMobileComponentsSDK_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
