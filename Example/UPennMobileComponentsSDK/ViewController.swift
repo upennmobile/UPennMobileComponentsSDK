@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import UPennMobileComponentsSDK
 
-class ViewController: UIViewController {
+class ViewController: UPennBasicViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navBarSetup()
+        self.popToRoot()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
