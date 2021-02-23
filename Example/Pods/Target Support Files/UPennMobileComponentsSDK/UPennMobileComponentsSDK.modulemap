@@ -1,0 +1,6 @@
+framework module UPennMobileComponentsSDK {
+  umbrella header "UPennMobileComponentsSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

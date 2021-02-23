@@ -1,0 +1,16 @@
+PODS:
+  - UPennMobileComponentsSDK (0.1.0)
+
+DEPENDENCIES:
+  - UPennMobileComponentsSDK (from `../`)
+
+EXTERNAL SOURCES:
+  UPennMobileComponentsSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UPennMobileComponentsSDK: d95bff5aac08c25d4dec1f5845d6aab1bc7141b1
+
+PODFILE CHECKSUM: c2ea8ee8030620a6f3a091e52940be0e82128b80
+
+COCOAPODS: 1.9.0
