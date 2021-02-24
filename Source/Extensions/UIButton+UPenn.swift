@@ -20,14 +20,14 @@ extension UIButton {
     }
 }
 
-class PrimaryCTAButton : UIButton {
+public class PrimaryCTAButton : UIButton {
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.setBaseStyles()
     }
     
-    override var isEnabled: Bool {
+    public override var isEnabled: Bool {
         didSet {
             isEnabled ? setEnabledStyle() : setDisabledStyle()
         }
@@ -50,9 +50,9 @@ class PrimaryCTAButton : UIButton {
     }
 }
 
-class PrimaryCTAButtonText : PrimaryCTAButton {
+public class PrimaryCTAButtonText : PrimaryCTAButton {
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         setBaseStyles()
     }
@@ -62,7 +62,7 @@ class PrimaryCTAButtonText : PrimaryCTAButton {
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
-    override var isSelected: Bool {
+    public override var isSelected: Bool {
         didSet {
             isSelected ? setEnabledStyle() : setDisabledStyle()
         }
@@ -80,51 +80,51 @@ class PrimaryCTAButtonText : PrimaryCTAButton {
     }
 }
 
-class PrimaryCTAButtonTextWhite : PrimaryCTAButtonText {
+public class PrimaryCTAButtonTextWhite : PrimaryCTAButtonText {
     override func setEnabledStyle() {
         super.setEnabledStyle()
         setTitleColor(UIColor.white, for: .normal)
     }
 }
 
-class PrimaryCTAButtonTextRed : PrimaryCTAButtonText {
+public class PrimaryCTAButtonTextRed : PrimaryCTAButtonText {
     override func setEnabledStyle() {
         super.setEnabledStyle()
         setTitleColor(UIColor.upennWarningRed, for: .normal)
     }
 }
 
-class PrimaryCTAButtonGreen : PrimaryCTAButton {
+public class PrimaryCTAButtonGreen : PrimaryCTAButton {
     override func setEnabledStyle() {
         super.setEnabledStyle()
         backgroundColor = UIColor.upennCTAGreen
     }
 }
 
-class PrimaryCTAButtonRed : PrimaryCTAButton {
+public class PrimaryCTAButtonRed : PrimaryCTAButton {
     override func setEnabledStyle() {
         super.setEnabledStyle()
         backgroundColor = UIColor.upennWarningRed
     }
 }
 
-class RoundedPrimaryCTAButtonRed : PrimaryCTAButtonRed {
-    override func awakeFromNib() {
+public class RoundedPrimaryCTAButtonRed : PrimaryCTAButtonRed {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         isRounded()
     }
 }
 
-class ContactIconButton : UIButton {
+public class ContactIconButton : UIButton {
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
     }
 }
 
-class OutlineCTAButton : PrimaryCTAButton {
+public class OutlineCTAButton : PrimaryCTAButton {
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.setBaseStyles()
     }
@@ -149,14 +149,14 @@ class OutlineCTAButton : PrimaryCTAButton {
     }
 }
 
-class RoundedOutlineCTAButton : OutlineCTAButton {
+public class RoundedOutlineCTAButton : OutlineCTAButton {
     override func setBaseStyles() {
         super.setBaseStyles()
         isRounded()
     }
 }
 
-class RedOutlineCTAButton : OutlineCTAButton {
+public class RedOutlineCTAButton : OutlineCTAButton {
     override func setBaseStyles() {
         super.setBaseStyles()
         setTitleColor(UIColor.upennWarningRed, for: .normal)
@@ -164,14 +164,14 @@ class RedOutlineCTAButton : OutlineCTAButton {
     }
 }
 
-class RedRoundedOutlineCTAButton : RedOutlineCTAButton {
+public class RedRoundedOutlineCTAButton : RedOutlineCTAButton {
     override func setBaseStyles() {
         super.setBaseStyles()
         layer.isRounded()
     }
 }
 
-class DarkRoundedOutlineCTAButton : RoundedOutlineCTAButton {
+public class DarkRoundedOutlineCTAButton : RoundedOutlineCTAButton {
     override func setBaseStyles() {
         super.setBaseStyles()
         setTitleColor(UIColor.upennDarkBlue, for: .normal)
@@ -179,8 +179,8 @@ class DarkRoundedOutlineCTAButton : RoundedOutlineCTAButton {
     }
 }
 
-class CircleOutlineCTAButton : OutlineCTAButton {
-    override func awakeFromNib() {
+public class CircleOutlineCTAButton : OutlineCTAButton {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.setBaseStyles()
     }
@@ -193,8 +193,8 @@ class CircleOutlineCTAButton : OutlineCTAButton {
     }
 }
 
-class GreyCircleOutlineCTAButton : CircleOutlineCTAButton {
-    override func awakeFromNib() {
+public class GreyCircleOutlineCTAButton : CircleOutlineCTAButton {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.setBaseStyles()
     }

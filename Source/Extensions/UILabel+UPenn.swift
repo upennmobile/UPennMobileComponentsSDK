@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     
     func setFontHeight(size: CGFloat) {
         self.font = UIFont.helvetica(size: size)
@@ -65,9 +65,9 @@ extension UILabel {
     }
 }
 
-class UPennLabel : UILabel {
+public class UPennLabel : UILabel {
     
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         self.setBaseStyles()
     }
@@ -78,7 +78,7 @@ class UPennLabel : UILabel {
     }
 }
 
-class MultilineLabel : UPennLabel {
+public class MultilineLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         lineBreakMode = .byWordWrapping
@@ -86,7 +86,7 @@ class MultilineLabel : UPennLabel {
     }
 }
 
-class ContactNameLabel : UPennLabel {
+public class ContactNameLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDeepBlue
@@ -94,7 +94,7 @@ class ContactNameLabel : UPennLabel {
     }
 }
 
-class ContactDepartmentLabel : UPennLabel {
+public class ContactDepartmentLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDarkBlue
@@ -102,28 +102,28 @@ class ContactDepartmentLabel : UPennLabel {
     }
 }
 
-class CameraInstructionLabel : ContactNameLabel {
+public class CameraInstructionLabel : ContactNameLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.white
     }
 }
 
-class ActionLabel : UPennLabel {
+public class ActionLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennMediumBlue
     }
 }
 
-class ActionSubContentLabel : ActionLabel {
+public class ActionSubContentLabel : ActionLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 15.0)
     }
 }
 
-class NoDataInstructionsLabel : UPennLabel {
+public class NoDataInstructionsLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDarkBlue
@@ -131,7 +131,7 @@ class NoDataInstructionsLabel : UPennLabel {
     }
 }
 
-class BannerLabel : UPennLabel {
+public class BannerLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDarkBlue
@@ -139,35 +139,35 @@ class BannerLabel : UPennLabel {
     }
 }
 
-class RedBannerLabel : BannerLabel {
+public class RedBannerLabel : BannerLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennWarningRed
     }
 }
 
-class BannerLabelWhite : BannerLabel {
+public class BannerLabelWhite : BannerLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.white
     }
 }
 
-class TitleLabel : UPennLabel {
+public class TitleLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.setBoldFont(size: 15.0)
     }
 }
 
-class ContentLabel : UPennLabel {
+public class ContentLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 16.0)
     }
 }
 
-class SubContentLabel : UPennLabel {
+public class SubContentLabel : UPennLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 13.0)
@@ -175,7 +175,7 @@ class SubContentLabel : UPennLabel {
     }
 }
 
-class MultilineContentLabel : MultilineLabel {
+public class MultilineContentLabel : MultilineLabel {
     override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 16.0)

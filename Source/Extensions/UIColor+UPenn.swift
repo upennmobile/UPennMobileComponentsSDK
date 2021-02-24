@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     
     static var upennDeepBlue: UIColor { // #1A3C79
         return UIColor(displayP3Red: 26.0/255.0, green: 60.0/255.0, blue: 121.0/255.0, alpha: 1.0)

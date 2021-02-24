@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     /**
      Convenience var for removing whitespace at beginning and end of a String
      */

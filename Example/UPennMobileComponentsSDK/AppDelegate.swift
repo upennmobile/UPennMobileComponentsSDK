@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import UPennMobileComponentsSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var mainCoordinator: UPennMainCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        /*
+         TODO: Initialize an Authentication Coordinator to manage checking User login state, and login/logout
+         */
+        let navController = UINavigationController()
+        mainCoordinator = UPennMainCoordinator(navController: navController)
+        mainCoordinator?.start()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
         return true
     }
 
