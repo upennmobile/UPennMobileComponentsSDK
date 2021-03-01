@@ -17,9 +17,10 @@ public extension Bundle {
      */
    static func UPennSDKResourcesBundle() -> Bundle? {
     let bundle = Bundle(for: UPennAuthenticationService.self)
-      guard let resourcesBundleUrl = bundle.resourceURL?.appendingPathComponent("UPennMobileComponentsSDK.bundle") else {
+    guard let resourcesBundleUrl = bundle.path(forResource: "UPennMobileComponentsSDK", ofType: "bundle")
+        /*let resourcesBundleUrl = bundle.resourceURL?.appendingPathComponent("UPennMobileComponentsSDK.bundle")*/ else {
          return nil
       }
-      return Bundle(url: resourcesBundleUrl)
+      return Bundle(url: URL(fileURLWithPath: resourcesBundleUrl))
    }
 }
