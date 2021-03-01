@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'Source/**/*'
-  s.resources = "UPennMobileComponentsSDK/UPennMobileComponentsSDK.bundle"
+  s.resources = "UPennMobileComponentsSDK.bundle"
 #  s.resource_bundles = {
 #    'UPennMobileComponentsSDK' => ['Resources/**/*.{png,storyboard}']
 #  }
