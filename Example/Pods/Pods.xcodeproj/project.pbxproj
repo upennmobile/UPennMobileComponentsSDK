@@ -169,7 +169,7 @@
 		1C04CCE8CF1F837EB26CE27812DD4378 /* UPennMobileComponentsSDK */ = {
 			isa = PBXGroup;
 			children = (
-				3A5C794325EC63E000E84B07 /* Resources */,
+				3A5C794325EC63E000E84B07 /* UPennMobileComponentsSDK.bundle */,
 				3A5C77A325E4BF2100E84B07 /* Source */,
 				E0B9EEB5D3B1B59B8C27D9D7F2F29A8E /* Pod */,
 				520D36DE02A575806B6E78FECDA3C246 /* Support Files */,
@@ -297,19 +297,19 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		3A5C794325EC63E000E84B07 /* Resources */ = {
+		3A5C794325EC63E000E84B07 /* UPennMobileComponentsSDK.bundle */ = {
 			isa = PBXGroup;
 			children = (
+				3A5C795125ECAF3000E84B07 /* checked.png */,
+				3A5C794C25ECAEE700E84B07 /* un_checked.png */,
 				3A5C795625ECB23E00E84B07 /* Images */,
 			);
-			path = Resources;
+			path = UPennMobileComponentsSDK.bundle;
 			sourceTree = "<group>";
 		};
 		3A5C795625ECB23E00E84B07 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3A5C795125ECAF3000E84B07 /* checked.png */,
-				3A5C794C25ECAEE700E84B07 /* un_checked.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
