@@ -300,10 +300,18 @@
 		3A5C794325EC63E000E84B07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3A5C795625ECB23E00E84B07 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3A5C795625ECB23E00E84B07 /* Images */ = {
+			isa = PBXGroup;
+			children = (
 				3A5C795125ECAF3000E84B07 /* checked.png */,
 				3A5C794C25ECAEE700E84B07 /* un_checked.png */,
 			);
-			path = Resources;
+			path = Images;
 			sourceTree = "<group>";
 		};
 		520D36DE02A575806B6E78FECDA3C246 /* Support Files */ = {

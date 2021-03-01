@@ -35,6 +35,7 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
     'UPennMobileComponentsSDK' => ['UPennMobileComponentsSDK/Resources/**/*.{png,storyboard}']
   }
+  s.static_framework = false
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

@@ -16,7 +16,7 @@ public extension Bundle {
      return image
      */
    static func UPennSDKResourcesBundle() -> Bundle? {
-    let bundle = Bundle(for: Self.self)
+    let bundle = Bundle(for: UPennAuthenticationService.self)
       guard let resourcesBundleUrl = bundle.resourceURL?.appendingPathComponent("UPennMobileComponentsSDK.bundle") else {
          return nil
       }
