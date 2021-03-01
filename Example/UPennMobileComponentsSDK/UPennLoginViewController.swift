@@ -110,8 +110,8 @@ class UPennLoginViewController: UPennBasicViewController, Storyboarded {
         
         // Set up Buttons
         self.autoFillButton.adjustsImageWhenHighlighted = false
-        let checkedImg = UIImage(named: "checked.png", in: Bundle.UPennSDKResourcesBundle(), compatibleWith: nil)
-        let unCheckedImg = UIImage(named: "un_checked.png", in: Bundle.UPennSDKResourcesBundle(), compatibleWith: nil)
+        let checkedImg = UIImage(named: "checked", in: Bundle.UPennSDKResourcesBundle(), compatibleWith: nil)
+        let unCheckedImg = UIImage(named: "un_checked", in: Bundle.UPennSDKResourcesBundle(), compatibleWith: nil)
         self.autoFillButton.setImage(checkedImg, for: .selected)
         self.autoFillButton.setImage(unCheckedImg, for: .normal)
         
