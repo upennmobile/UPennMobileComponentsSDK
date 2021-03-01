@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/**/*'
   
   s.resource_bundles = {
-    'UPennMobileComponentsSDK' => ['UPennMobileComponentsSDK/Resources/**/*.{png,storyboard}']
+    'UPennMobileComponentsSDK' => ['Resources/**/*.{png,storyboard}']
   }
   s.static_framework = false
 
