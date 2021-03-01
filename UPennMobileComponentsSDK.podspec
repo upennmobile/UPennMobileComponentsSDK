@@ -30,11 +30,11 @@ Pod::Spec.new do |s|
   s.swift_version = "5.0"
   s.ios.deployment_target = '13.0'
 
-  s.source_files = 'Source/**/*'
-  
-  # s.resource_bundles = {
-  #   'UPennMobileComponentsSDK' => ['UPennMobileComponentsSDK/Assets/*.png']
-  # }
+  s.source_files = 'UPennMobileComponentsSDK/Classes/**/*'
+#  s.resources = "UPennMobileComponentsSDK.bundle"
+  s.resource_bundles = {
+    'UPennMobileComponentsSDK' => ['UPennMobileComponentsSDK/Assets/*.{png,storyboard}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

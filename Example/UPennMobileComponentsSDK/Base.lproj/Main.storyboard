@@ -11,7 +11,7 @@
         <!--Login-->
         <scene sceneID="67o-oM-W1D">
             <objects>
-                <viewController storyboardIdentifier="UPennLoginViewController" id="S1f-Km-agK" customClass="UPennLoginViewController" customModule="PennPal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UPennLoginViewController" id="S1f-Km-agK" customClass="UPennLoginViewController" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UmY-eq-veZ"/>
                         <viewControllerLayoutGuide type="bottom" id="rMY-HE-WRh"/>
@@ -26,14 +26,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-1K-gHo" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penn_medicine_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="rcR-Ye-1KL">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penn_medicine_transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="rcR-Ye-1KL">
                                                 <rect key="frame" x="29" y="30" width="317" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rcR-Ye-1KL" secondAttribute="height" multiplier="222:35" id="IBq-qw-cbu"/>
                                                     <constraint firstAttribute="height" constant="50" id="YgY-FH-5OC"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penn Chart Live" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-Qr-foH" customClass="BannerLabel" customModule="PennPal" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penn Chart Live" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-Qr-foH" customClass="BannerLabel" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
                                                 <rect key="frame" x="127.5" y="100" width="120.5" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Kmq-tf-IKJ"/>
@@ -58,7 +58,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-wc-1Fh" customClass="PrimaryCTAButtonText" customModule="PennPal" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-wc-1Fh" customClass="PrimaryCTAButtonText" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="290" width="21" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tfA-wc-1Fh" secondAttribute="height" multiplier="1:1" id="90y-mO-UXs"/>
@@ -71,7 +71,7 @@
                                                     <action selector="pressedAutoFillButton:" destination="S1f-Km-agK" eventType="touchUpInside" id="dxz-sm-ECD"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-YG-sLe" customClass="PrimaryCTAButton" customModule="PennPal" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-YG-sLe" customClass="PrimaryCTAButton" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="331" width="343" height="50"/>
                                                 <color key="backgroundColor" red="0.29411764709999999" green="0.47450980390000003" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -84,7 +84,7 @@
                                                     <action selector="pressedLogin:" destination="S1f-Km-agK" eventType="touchUpInside" id="g5Z-c3-yRm"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-1T-E5V" customClass="ContactDepartmentLabel" customModule="PennPal" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-1T-E5V" customClass="ContactDepartmentLabel" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
                                                 <rect key="frame" x="45" y="290" width="166" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -159,6 +159,7 @@
                         <outlet property="rememberMeLabel" destination="CzF-1T-E5V" id="MZJ-uo-h3c"/>
                         <outlet property="scrollView" destination="usx-aN-fSK" id="U4c-aW-UHk"/>
                         <outlet property="titleLabel" destination="EhO-Qr-foH" id="Lhk-YW-8oD"/>
+                        <outlet property="upennBannerLogo" destination="rcR-Ye-1KL" id="cR0-4f-NNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2e5-m3-Hkn" sceneMemberID="firstResponder"/>
@@ -185,7 +186,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="penn_medicine_transparent" width="222" height="35.666667938232422"/>
+        <image name="penn_medicine_transparent.png" width="666" height="107"/>
         <image name="un_checked" width="50.666667938232422" height="50.666667938232422"/>
     </resources>
 </document>

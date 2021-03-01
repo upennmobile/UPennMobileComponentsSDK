@@ -10,7 +10,7 @@ import Foundation
 import LocalAuthentication
 import UIKit
 
-protocol UPennBiometricsDelegate {
+public protocol UPennBiometricsDelegate {
     func registerForTouchIDAuthentication()
     func registerForFaceIDAuthentication()
     func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool)
@@ -21,7 +21,7 @@ protocol UPennBiometricsToggleDelegate {
     func toggledBiometrics(_ enabled: Bool)
 }
 
-class UPennBiometricsAuthService {
+public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface {
     enum BiometricType {
         case None
         case TouchID
@@ -34,7 +34,7 @@ class UPennBiometricsAuthService {
     /**
      Bool indicating whether opt-in for biometrics before registering == 'yes'
      */
-    var enabledBiometricsBeforeRegistered : Bool {
+    public var enabledBiometricsBeforeRegistered : Bool {
         guard let optIn = self.biometricsOptInBeforeRegistered else {
             return false
         }
@@ -45,10 +45,10 @@ class UPennBiometricsAuthService {
      UserDefaults key for biometricsOptInBeforeRegistered
      */
     private var biometricsEnabledKey = UPennNameSpacer.MakeKey("biometricsEnabled")
-    let touchIDOptInTitle = "Use Touch ID for login in the future?".localize
-    let touchIDOptInMessage = "Touch ID makes Login more convenient. These Settings can be updated in the Account section.".localize
-    let touchIDConfirmed = "Use Touch ID".localize
-    let touchIDDeclined = "No Thanks".localize
+    public let touchIDOptInTitle = "Use Touch ID for login in the future?".localize
+    public let touchIDOptInMessage = "Touch ID makes Login more convenient. These Settings can be updated in the Account section.".localize
+    public let touchIDConfirmed = "Use Touch ID".localize
+    public let touchIDDeclined = "No Thanks".localize
     var delegate: UPennBiometricsDelegate?
     
     var biometricType: BiometricType {
@@ -87,11 +87,11 @@ class UPennBiometricsAuthService {
     /**
      Messaging text for turning off 'Remember Me' in Touch ID vs. Face ID context
      */
-    var biometricOptOutMessage : String {
+    public var biometricOptOutMessage : String {
         return self.makeBiometricsPrependedMessage("Turning off 'Remember Me' will disable", defaultText: self.biometricsFallbackMessage)
     }
     
-    init(biometricsDelegate: UPennBiometricsDelegate?=nil) {
+    public init(biometricsDelegate: UPennBiometricsDelegate?=nil) {
         self.delegate = biometricsDelegate
     }
     
@@ -105,7 +105,7 @@ class UPennBiometricsAuthService {
     /**
      Bool indicating biometrics are available, and user has opted-in to use them for login
      */
-    var biometricsEnabled : Bool {
+    public var biometricsEnabled : Bool {
         guard let enabled = UserDefaults.standard.value(forKey: self.biometricsEnabledKey) as? Bool else { return false }
         return enabled && self.biometricsAvailable
     }
@@ -123,7 +123,7 @@ class UPennBiometricsAuthService {
     /**
      Conditionally trigger registration for either Face ID or Touch ID
      */
-    func registerForBiometricAuthentication() {
+    public func registerForBiometricAuthentication() {
         
         if self.biometricsAvailable {
             if self.enabledBiometricsBeforeRegistered {
@@ -145,14 +145,14 @@ class UPennBiometricsAuthService {
     /**
      Convenience method to set biometricsOptInBeforeRegistered to 'no'
      */
-    func completeTouchIDRegistration() {
+    public func completeTouchIDRegistration() {
         self.setEnabledBiometricsBeforeRegisteredNo()
     }
     
     /**
      Sets Bool in UserDefaults indicating whether biometric authentication is enabled
      */
-    func toggleBiometrics(_ enabled: Bool) {
+    public func toggleBiometrics(_ enabled: Bool) {
         UserDefaults.standard.set(enabled, forKey: self.biometricsEnabledKey)
         // Check if biometricsOptInBeforeRegistered is set, if not set to 'Yes'
         guard let _ = self.biometricsOptInBeforeRegistered else {
@@ -164,7 +164,7 @@ class UPennBiometricsAuthService {
     /**
      Conditionally attempt authenticating user with biometrics
      */
-    func attemptBiometricsAuthentication() {
+    public func attemptBiometricsAuthentication() {
         // Ensure biometrics registered and enabled
         if self.biometricsEnabled && !self.enabledBiometricsBeforeRegistered {
             self.utilizeBiometricAuthentication()
@@ -175,7 +175,7 @@ class UPennBiometricsAuthService {
      Authenticate user using biometrics
      - parameter turnOnBiometrics: Bool that indicates whether delegate object should turn on biometrics settings
      */
-    func utilizeBiometricAuthentication(turnOnBiometrics: Bool = false) {
+    public func utilizeBiometricAuthentication(turnOnBiometrics: Bool = false) {
         self.context.evaluatePolicy(
             .deviceOwnerAuthenticationWithBiometrics,
             localizedReason: self.biometricsLoginMessage)

@@ -20,7 +20,7 @@ public class UPennLoginService : UPennLoginInterface {
     private let autoLoginError = "Something went wrong attempting Auto-Login - could not retrieve Username & Password. Please try again."
     private let usernamePasswordError = "You have entered an incorrect Username or Password. Please try again."
     
-    init(loginDelegate: UPennLoginServiceDelegate) {
+    public init(loginDelegate: UPennLoginServiceDelegate) {
         self.loginDelegate = loginDelegate
     }
     

@@ -21,6 +21,7 @@ class UPennLoginViewController: UPennBasicViewController, Storyboarded {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var rememberMeLabel: ContactDepartmentLabel!
     @IBOutlet weak var forgotPasswordLabel: UIButton!
+    @IBOutlet weak var upennBannerLogo: UIImageView!
     
     fileprivate var validationService: UPennValidationService!
     fileprivate var keyboardService: UPennKeyboardService!
@@ -108,10 +109,11 @@ class UPennLoginViewController: UPennBasicViewController, Storyboarded {
         self.passwordField.isSecureTextEntry = true
         self.validationService = UPennValidationService(textFields: [ self.emailField, self.passwordField ])
         
-        // Set up Buttons
+        // Set up Buttons & Images
+        self.upennBannerLogo.image = UPennImageAssets.UPennBannerTransparent
         self.autoFillButton.adjustsImageWhenHighlighted = false
-//        self.autoFillButton.setImage(#imageLiteral(resourceName: "checked"), for: .selected)
-//        self.autoFillButton.setImage(#imageLiteral(resourceName: "un_checked"), for: .normal)
+        self.autoFillButton.setImage(UPennImageAssets.CheckedCheckBox, for: .selected)
+        self.autoFillButton.setImage(UPennImageAssets.UnCheckedCheckBox, for: .normal)
         
         // Set up Touch Gesture
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.toggleLoginAutoFill))
