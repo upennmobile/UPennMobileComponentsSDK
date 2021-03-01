@@ -110,8 +110,8 @@ class UPennLoginViewController: UPennBasicViewController, Storyboarded {
         
         // Set up Buttons
         self.autoFillButton.adjustsImageWhenHighlighted = false
-//        self.autoFillButton.setImage(#imageLiteral(resourceName: "checked"), for: .selected)
-//        self.autoFillButton.setImage(#imageLiteral(resourceName: "un_checked"), for: .normal)
+        self.autoFillButton.setImage(UIImage(named: "checked", in: Bundle.UPennSDKResourcesBundle(), compatibleWith: nil), for: .selected)
+        self.autoFillButton.setImage(UIImage(named: "un_checked", in: Bundle.UPennSDKResourcesBundle(), compatibleWith: nil), for: .normal)
         
         // Set up Touch Gesture
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.toggleLoginAutoFill))
