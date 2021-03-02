@@ -24,13 +24,13 @@ public class UPennKeyboardService: NSObject {
     }
     
     public func beginObservingKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(UPennKeyboardService.keyboardDidHide(_:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(UPennKeyboardService.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UPennKeyboardService.keyboardDidHide(_:)), name: UIResponder.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(UPennKeyboardService.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     public func endObservingKeyboard() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     @objc public func keyboardWillShow(_ notif:Notification) {
@@ -39,7 +39,7 @@ public class UPennKeyboardService: NSObject {
 //            scrollView!.contentInset = contentInsets
 //            scrollView!.scrollIndicatorInsets = contentInsets
 //        }
-        if let keyboardSize = (notif.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notif.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.parentView!.frame.origin.y == 0{
                 self.parentView!.frame.origin.y -= keyboardSize.height
             }
@@ -50,7 +50,7 @@ public class UPennKeyboardService: NSObject {
 //        let contentInset = UIEdgeInsets(top: scrollView!.contentInset.top, left: 0, bottom: 0, right: 0)
 //        scrollView!.contentInset = contentInset
 //        scrollView!.scrollIndicatorInsets = contentInset
-        if let keyboardSize = (notif.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if let keyboardSize = (notif.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.parentView!.frame.origin.y != 0{
                 self.parentView!.frame.origin.y += keyboardSize.height
             }

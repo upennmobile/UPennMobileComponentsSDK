@@ -29,8 +29,7 @@ Pod::Spec.new do |s|
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.swift_version = "5.0"
   s.ios.deployment_target = '13.0'
-
-  s.source_files = 'Source/**/*'
+  s.source_files = 'UPennMobileComponentsSDK/Classes/**/*'
 #  s.resources = "UPennMobileComponentsSDK.bundle"
   s.resource_bundles = {
     'UPennMobileComponentsSDK' => ['UPennMobileComponentsSDK/Assets/*.{png,storyboard}']

@@ -78,9 +78,11 @@ public class UPennLoginPresenter {
     
     var loginDelegate : UPennLoginPresenterDelegate?
     
-    public init(loginDelegate: UPennLoginPresenterDelegate) {
+    public init(
+        loginDelegate: UPennLoginPresenterDelegate) {
         self.loginDelegate = loginDelegate
         self.loginService = UPennLoginService(loginDelegate: self)
+        self.biometricsService = UPennBiometricsAuthService(biometricsDelegate: self)
     }
 }
 
@@ -253,7 +255,7 @@ extension UPennLoginPresenter : UPennBiometricsDelegate {
         self.attemptSilentLogin()
     }
     
-    func biometricsDidError(with message: String?, shouldContinue: Bool) {
+    public func biometricsDidError(with message: String?, shouldContinue: Bool) {
         // Check if isFirstLogin - indicates user has canceled opt-in to biometrics, so complete login and push to ChangeRequestVC
         if shouldContinue {
             // TODO: Propogate message up to LoginCoordinator self.sendLoginNotification()

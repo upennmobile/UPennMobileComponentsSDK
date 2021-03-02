@@ -19,7 +19,11 @@
   "platforms": {
     "ios": "13.0"
   },
+<<<<<<< HEAD
   "source_files": "Source/**/*",
+=======
+  "source_files": "UPennMobileComponentsSDK/Classes/**/*",
+>>>>>>> test2
   "resource_bundles": {
     "UPennMobileComponentsSDK": [
       "UPennMobileComponentsSDK/Assets/*.{png,storyboard}"

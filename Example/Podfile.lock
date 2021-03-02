@@ -9,7 +9,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+<<<<<<< HEAD
   UPennMobileComponentsSDK: 01fb2c4a2cf0621b576430e4c2be39310f17ef4c
+=======
+  UPennMobileComponentsSDK: 424bc6affdf696320dab5d0b3c53df9c9a5345da
+>>>>>>> test2
 
 PODFILE CHECKSUM: c2ea8ee8030620a6f3a091e52940be0e82128b80
 
