@@ -171,6 +171,10 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
         }
     }
     
+    public func attemptBiometricsPresentation() {
+        self.attemptBiometricsAuthentication()
+    }
+    
     /**
      Authenticate user using biometrics
      - parameter turnOnBiometrics: Bool that indicates whether delegate object should turn on biometrics settings

@@ -245,7 +245,7 @@ private extension UPennLoginViewController {
         // TODO: Still Needed for UI?
         self.loginPresenter.authenticationAutoFillCheck()
         verifyFields()
-        self.attemptBiometricsPresentation()
+        self.loginPresenter.attemptBiometricsAuthentication()
         self.autoFillButton.isSelected = self.loginPresenter.shouldAutoFill
     }
     
@@ -288,12 +288,6 @@ private extension UPennLoginViewController {
             textfield.resignFirstResponder()
             self.login()
         }
-    }
-    
-    func attemptBiometricsPresentation() {
-//        if self.logincoordinator.shouldAutoFill {
-//            self.biometricsService.attemptBiometricsAuthentication()
-//        }
     }
     
     func turnOnBiometricAuthSettings() {

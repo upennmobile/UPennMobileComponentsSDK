@@ -54,6 +54,7 @@ public protocol UPennLoginBiometricsInterface {
     var biometricsEnabled : Bool { get }
     func completeTouchIDRegistration()
     func toggleBiometrics(_ toggledOn: Bool)
+    func attemptBiometricsAuthentication()
 }
 
 /// Interface providing an object with TouchID/FaceID Authentication
@@ -166,6 +167,12 @@ extension UPennLoginPresenter : UPennLoginPlusBiometricsInterface {
     public func toggleBiometrics(_ toggledOn: Bool) {
         self.biometricsService.toggleBiometrics(toggledOn)
     }
+    
+    public func attemptBiometricsAuthentication() {
+        if self.loginService.shouldAutoFill {
+            self.biometricsService.attemptBiometricsAuthentication()
+        }
+    }
 }
 
 // MARK: - LoginService Delegate
@@ -222,12 +229,6 @@ extension UPennLoginPresenter : UPennBiometricsDelegate {
     public func registerForFaceIDAuthentication() {
         // TODO: Send message to LoginVC to display UPennProgressHUD -- SVProgressHUD.dismiss()
         self.biometricsService.utilizeBiometricAuthentication(turnOnBiometrics: true)
-    }
-    
-    public func attemptBiometricsPresentation() {
-        if self.loginService.shouldAutoFill {
-            self.biometricsService.attemptBiometricsAuthentication()
-        }
     }
     
     public func turnOnBiometricAuthSettings() {
