@@ -18,10 +18,6 @@ typealias RequestCompletion = (_ responseJSON: Any?, _ errorString: String?)->Vo
 
 class UPennLoginNetworkingService : UPennNetworkRequestable {
     
-    var networkError: String!
-    var genericRequestError: String!
-    var statusCodeError: String!
-    
     func makeLoginRequest(username: String, password: String, completion: @escaping (RequestCompletion)) {
         
         let parameters: [String:String] = [

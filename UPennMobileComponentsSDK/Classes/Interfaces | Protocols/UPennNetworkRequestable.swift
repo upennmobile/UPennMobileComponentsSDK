@@ -9,9 +9,9 @@ import Foundation
 
 protocol UPennNetworkRequestable {
     
-    var statusCodeError : String! { get }
-    var genericRequestError : String! { get}
-    var networkError : String! { get }
+    var statusCodeError : String { get }
+    var genericRequestError : String { get}
+    var networkError : String { get }
 }
 
 extension UPennNetworkRequestable {
