@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 //import SVProgressHUD
-import UPennMobileComponentsSDK
+//import UPennMobileComponentsSDK
 
-class UPennLoginViewController: UPennBasicViewController, Storyboarded {
+public class UPennLoginViewController: /*UPennStoryboardedViewController*/ UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -75,18 +75,18 @@ class UPennLoginViewController: UPennBasicViewController, Storyboarded {
         return alertController
     }()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.viewDidAppear()
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    public override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.viewDidDisappear()
     }
@@ -143,12 +143,12 @@ class UPennLoginViewController: UPennBasicViewController, Storyboarded {
 // MARK: - UITextFieldDelegate
 
 extension UPennLoginViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.advanceTextfields(textfield: textField)
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 }
@@ -157,7 +157,7 @@ extension UPennLoginViewController : UITextFieldDelegate {
 
 extension UPennLoginViewController : UPennLoginPresenterDelegate {
     
-    func didSuccessfullyLoginUser() {
+    public func didSuccessfullyLoginUser() {
         // TODO: Replace w/ UPennProgressHUD SVProgressHUD.dismiss()
         
         /*
@@ -185,25 +185,25 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
         self.loginCoordinator?.didSuccessfullyLoginUser()
     }
     
-    func didReturnAutoFillCredentials(username: String, password: String) {
+    public func didReturnAutoFillCredentials(username: String, password: String) {
         self.emailField.text = username
     }
     
-    func didFailToLoginUser(errorStr: String) {
+    public func didFailToLoginUser(errorStr: String) {
         // TODO: Replace w/ UPennProgressHUD
 //        SVProgressHUD.showError(withStatus: errorStr)
     }
 
-    func registerForTouchIDAuthentication() {
+    public func registerForTouchIDAuthentication() {
         // TODO: Replace w/ UPennProgressHUD SVProgressHUD.dismiss()
         self.present(self.touchIDAlertController, animated: true, completion: nil)
     }
     
-    func presentTouchIDRegistration() {
+    public func presentTouchIDRegistration() {
         //
     }
     
-    func biometricsDidError(with message: String?) {
+    public func biometricsDidError(with message: String?) {
         // TODO: Replace w/ UPennProgressHUD SVProgressHUD.showError(withStatus: message)
     }
     
@@ -212,7 +212,7 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
 //        self.biometricsService.utilizeBiometricAuthentication(turnOnBiometrics: true)
 //    }
     
-    func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool) {
+    public func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool) {
         // Check if isFirstLogin - indicates user has opted-in to use biometrics, so must trigger settings updates
         if turnOnBiometrics {
             self.turnOnBiometricAuthSettings()

@@ -4,189 +4,32 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login-->
-        <scene sceneID="67o-oM-W1D">
+        <!--View Controller-->
+        <scene sceneID="pIa-vI-cds">
             <objects>
-                <viewController storyboardIdentifier="UPennLoginViewController" id="S1f-Km-agK" customClass="UPennLoginViewController" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t4h-2Q-4aW" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UmY-eq-veZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="rMY-HE-WRh"/>
+                        <viewControllerLayoutGuide type="top" id="tmm-yD-33w"/>
+                        <viewControllerLayoutGuide type="bottom" id="pDt-uO-vJS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="exr-JA-ld0">
+                    <view key="view" contentMode="scaleToFill" id="N1w-8o-Bia">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usx-aN-fSK">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-1K-gHo" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penn_medicine_transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="rcR-Ye-1KL">
-                                                <rect key="frame" x="29" y="30" width="317" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="rcR-Ye-1KL" secondAttribute="height" multiplier="222:35" id="IBq-qw-cbu"/>
-                                                    <constraint firstAttribute="height" constant="50" id="YgY-FH-5OC"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penn Chart Live" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhO-Qr-foH" customClass="BannerLabel" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
-                                                <rect key="frame" x="127.5" y="100" width="120.5" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Kmq-tf-IKJ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i4k-5n-a3U">
-                                                <rect key="frame" x="16" y="150" width="343" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="EV9-sG-Lco"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjg-IQ-31C">
-                                                <rect key="frame" x="16" y="220" width="343" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="62B-bO-RhG"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-wc-1Fh" customClass="PrimaryCTAButtonText" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="290" width="21" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="tfA-wc-1Fh" secondAttribute="height" multiplier="1:1" id="90y-mO-UXs"/>
-                                                    <constraint firstAttribute="height" constant="21" id="Xsc-Cy-FYq"/>
-                                                </constraints>
-                                                <state key="normal" image="un_checked">
-                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressedAutoFillButton:" destination="S1f-Km-agK" eventType="touchUpInside" id="dxz-sm-ECD"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ1-YG-sLe" customClass="PrimaryCTAButton" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="331" width="343" height="50"/>
-                                                <color key="backgroundColor" red="0.29411764709999999" green="0.47450980390000003" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="y6L-os-Y3K"/>
-                                                </constraints>
-                                                <state key="normal" title="Login">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressedLogin:" destination="S1f-Km-agK" eventType="touchUpInside" id="g5Z-c3-yRm"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-1T-E5V" customClass="ContactDepartmentLabel" customModule="UPennMobileComponentsSDK_Example" customModuleProvider="target">
-                                                <rect key="frame" x="45" y="290" width="166" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQd-c0-EEj">
-                                                <rect key="frame" x="209" y="401" width="150" height="33"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="150" id="YKC-EX-T2g"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Forgot Password?">
-                                                    <color key="titleColor" red="0.0" green="0.29411764709999999" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pressedForgotPassword:" destination="S1f-Km-agK" eventType="touchUpInside" id="yei-rH-O2t"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="rcR-Ye-1KL" firstAttribute="centerX" secondItem="2Uh-1K-gHo" secondAttribute="centerX" id="4iU-cg-igo"/>
-                                            <constraint firstItem="kQd-c0-EEj" firstAttribute="top" secondItem="cZ1-YG-sLe" secondAttribute="bottom" constant="20" id="Apz-Yr-Q6A"/>
-                                            <constraint firstAttribute="trailing" secondItem="i4k-5n-a3U" secondAttribute="trailing" constant="16" id="BgO-yh-B5I"/>
-                                            <constraint firstItem="EhO-Qr-foH" firstAttribute="centerX" secondItem="2Uh-1K-gHo" secondAttribute="centerX" id="CqF-wG-S0T"/>
-                                            <constraint firstItem="i4k-5n-a3U" firstAttribute="leading" secondItem="2Uh-1K-gHo" secondAttribute="leading" constant="16" id="E9L-1F-xBE"/>
-                                            <constraint firstItem="cZ1-YG-sLe" firstAttribute="leading" secondItem="jjg-IQ-31C" secondAttribute="leading" id="Fdb-SM-WBQ"/>
-                                            <constraint firstItem="i4k-5n-a3U" firstAttribute="top" secondItem="EhO-Qr-foH" secondAttribute="bottom" constant="20" id="LWj-9P-OAM"/>
-                                            <constraint firstItem="CzF-1T-E5V" firstAttribute="leading" secondItem="tfA-wc-1Fh" secondAttribute="trailing" constant="8" id="NlL-3D-WZv"/>
-                                            <constraint firstItem="jjg-IQ-31C" firstAttribute="leading" secondItem="i4k-5n-a3U" secondAttribute="leading" id="QGu-wP-QJK"/>
-                                            <constraint firstItem="jjg-IQ-31C" firstAttribute="leading" secondItem="tfA-wc-1Fh" secondAttribute="leading" id="RSo-Hz-ew5"/>
-                                            <constraint firstItem="jjg-IQ-31C" firstAttribute="top" secondItem="i4k-5n-a3U" secondAttribute="bottom" constant="20" id="WJK-8x-7Ds"/>
-                                            <constraint firstItem="kQd-c0-EEj" firstAttribute="trailing" secondItem="cZ1-YG-sLe" secondAttribute="trailing" id="bde-hp-yLT"/>
-                                            <constraint firstItem="tfA-wc-1Fh" firstAttribute="top" secondItem="jjg-IQ-31C" secondAttribute="bottom" constant="20" id="dJe-GV-AwH"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CzF-1T-E5V" secondAttribute="trailing" constant="20" symbolic="YES" id="eh0-P1-DKz"/>
-                                            <constraint firstItem="rcR-Ye-1KL" firstAttribute="top" secondItem="2Uh-1K-gHo" secondAttribute="top" constant="30" id="ieX-tc-g1Q"/>
-                                            <constraint firstItem="jjg-IQ-31C" firstAttribute="trailing" secondItem="i4k-5n-a3U" secondAttribute="trailing" id="pXd-hi-G5L"/>
-                                            <constraint firstItem="cZ1-YG-sLe" firstAttribute="trailing" secondItem="jjg-IQ-31C" secondAttribute="trailing" id="sSR-pd-Eb3"/>
-                                            <constraint firstItem="cZ1-YG-sLe" firstAttribute="top" secondItem="tfA-wc-1Fh" secondAttribute="bottom" constant="20" id="sT4-zG-Jnk"/>
-                                            <constraint firstItem="tfA-wc-1Fh" firstAttribute="centerY" secondItem="CzF-1T-E5V" secondAttribute="centerY" id="tZg-sm-Me4"/>
-                                            <constraint firstItem="EhO-Qr-foH" firstAttribute="top" secondItem="rcR-Ye-1KL" secondAttribute="bottom" constant="20" id="wvj-uN-4cN"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="2Uh-1K-gHo" firstAttribute="leading" secondItem="usx-aN-fSK" secondAttribute="leading" id="N6g-eF-HBB"/>
-                                    <constraint firstAttribute="bottom" secondItem="2Uh-1K-gHo" secondAttribute="bottom" id="bSd-Qp-k7p"/>
-                                    <constraint firstItem="2Uh-1K-gHo" firstAttribute="height" secondItem="usx-aN-fSK" secondAttribute="height" id="fIQ-yq-dSO"/>
-                                    <constraint firstItem="2Uh-1K-gHo" firstAttribute="top" secondItem="usx-aN-fSK" secondAttribute="top" id="iFP-IM-ec4"/>
-                                    <constraint firstAttribute="trailing" secondItem="2Uh-1K-gHo" secondAttribute="trailing" id="kWI-a5-YOk"/>
-                                    <constraint firstItem="2Uh-1K-gHo" firstAttribute="width" secondItem="usx-aN-fSK" secondAttribute="width" id="nwO-rk-SU1"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="jaj-pY-Mtw"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="usx-aN-fSK" firstAttribute="top" secondItem="UmY-eq-veZ" secondAttribute="bottom" id="9bE-JW-tMu"/>
-                            <constraint firstAttribute="trailing" secondItem="usx-aN-fSK" secondAttribute="trailing" id="PyF-dR-Al0"/>
-                            <constraint firstItem="usx-aN-fSK" firstAttribute="leading" secondItem="exr-JA-ld0" secondAttribute="leading" id="fem-fV-54d"/>
-                            <constraint firstItem="rMY-HE-WRh" firstAttribute="top" secondItem="usx-aN-fSK" secondAttribute="bottom" id="hR0-Ew-aHL"/>
-                            <constraint firstItem="usx-aN-fSK" firstAttribute="width" secondItem="exr-JA-ld0" secondAttribute="width" id="oho-g8-dNB"/>
-                        </constraints>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" id="bWh-7L-i0I"/>
-                    <connections>
-                        <outlet property="autoFillButton" destination="tfA-wc-1Fh" id="FFl-BD-fan"/>
-                        <outlet property="emailField" destination="i4k-5n-a3U" id="lTt-YL-cev"/>
-                        <outlet property="forgotPasswordLabel" destination="kQd-c0-EEj" id="VEq-bG-pff"/>
-                        <outlet property="loginButton" destination="cZ1-YG-sLe" id="buG-aV-5Qe"/>
-                        <outlet property="passwordField" destination="jjg-IQ-31C" id="VoZ-QW-5io"/>
-                        <outlet property="rememberMeLabel" destination="CzF-1T-E5V" id="MZJ-uo-h3c"/>
-                        <outlet property="scrollView" destination="usx-aN-fSK" id="U4c-aW-UHk"/>
-                        <outlet property="titleLabel" destination="EhO-Qr-foH" id="Lhk-YW-8oD"/>
-                        <outlet property="upennBannerLogo" destination="rcR-Ye-1KL" id="cR0-4f-NNA"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2e5-m3-Hkn" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAX-hF-78z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="-980"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jr4-no-hoe">
-            <objects>
-                <navigationController storyboardIdentifier="LoginNav" automaticallyAdjustsScrollViewInsets="NO" id="bXx-QH-l8u" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4qj-Sw-AAA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="S1f-Km-agK" kind="relationship" relationship="rootViewController" id="xPr-iG-8b8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nie-DA-VPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-600" y="-980"/>
+            <point key="canvasLocation" x="-358" y="-1140"/>
         </scene>
     </scenes>
     <resources>
-        <image name="penn_medicine_transparent.png" width="666" height="107"/>
-        <image name="un_checked" width="50.666667938232422" height="50.666667938232422"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

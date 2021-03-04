@@ -7,17 +7,17 @@
 
 import Foundation
 import UIKit
-import UPennMobileComponentsSDK
+//import UPennMobileComponentsSDK
 
 /**
  Abstract:
  Purpose of this LoginCoordinator is to act as a Facade between any custom LoginViewController and behavioral protocols for logging-in and optionally using biometrics
  */
-class UPennLoginCoordinator : UPennCoordinator {
+public class UPennLoginCoordinator : UPennCoordinator {
     
     static var IsLoggedInNotification = "UPHSIsLoggedInNotification"
-    var childCoordinators = [UPennCoordinator]()
-    var navigationController: UINavigationController
+    public var childCoordinators = [UPennCoordinator]()
+    public var navigationController: UINavigationController
     var loginCoordinatorDelegate : UPennLoginCoordinatorDelegate?
 
     // MARK: - LoginService
@@ -27,10 +27,10 @@ class UPennLoginCoordinator : UPennCoordinator {
         self.loginCoordinatorDelegate = coordinatorDelegate
     }
     
-    func start() {
+    public func start() {
         // Checks Authentication & conditionally instantiates & presents LoginVC as needed? -- start() will likely be called by a MainCoordinator class in the AppDelegate
         // Sets LoginVC as Coordinator's delegate?
-        let vc = UPennLoginViewController.Instantiate()
+        let vc = UPennLoginViewController.Instantiate(.SDK) 
         // TODO: Dependency-inject LoginVC values like loginPresenter
         vc.loginPresenter = UPennLoginPresenter(loginDelegate: vc)
         vc.loginCoordinator = self
@@ -75,9 +75,9 @@ class UPennLoginCoordinator : UPennCoordinator {
 
 extension UPennLoginCoordinator : UPennLoginCoordinatable {
     
-    var userIsLoggedIn: Bool { return UPennAuthenticationService.IsAuthenticated }
+    public var userIsLoggedIn: Bool { return UPennAuthenticationService.IsAuthenticated }
     
-    func logout() {
+    public func logout() {
         /*
          * 1. Turn off logout timer
          * 2. Logout
@@ -92,7 +92,7 @@ extension UPennLoginCoordinator : UPennLoginCoordinatable {
 
 extension UPennLoginCoordinator : UPennLoginCoordinatorDelegate {
     
-    func didSuccessfullyLoginUser() {
+    public func didSuccessfullyLoginUser() {
         self.sendLoginNotification()
         self.loginCoordinatorDelegate?.didSuccessfullyLoginUser()
     }
