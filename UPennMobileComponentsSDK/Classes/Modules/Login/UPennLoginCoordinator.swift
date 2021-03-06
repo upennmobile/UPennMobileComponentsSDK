@@ -22,7 +22,7 @@ public class UPennLoginCoordinator : UPennCoordinator {
 
     // MARK: - LoginService
     
-    init(navController: UINavigationController, coordinatorDelegate: UPennLoginCoordinatorDelegate) {
+    public init(navController: UINavigationController, coordinatorDelegate: UPennLoginCoordinatorDelegate) {
         self.navigationController = navController
         self.loginCoordinatorDelegate = coordinatorDelegate
     }

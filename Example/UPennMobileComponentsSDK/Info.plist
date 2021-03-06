@@ -35,5 +35,9 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>UPENN_LOGIN_URL</key>
+	<string>$(UPENN_LOGIN_URL)</string>
+	<key>UPENN_ROOT_URL</key>
+	<string>$(UPENN_ROOT_URL)</string>
 </dict>
 </plist>

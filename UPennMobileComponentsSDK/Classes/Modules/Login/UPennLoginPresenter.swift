@@ -82,7 +82,8 @@ public class UPennLoginPresenter {
     public init(
         loginDelegate: UPennLoginPresenterDelegate) {
         self.loginDelegate = loginDelegate
-        self.loginService = UPennLoginService(loginDelegate: self)
+        let requestService = UPennLoginNetworkingService(urlProvider: UPennURLProvider(rootURL: UPennApplicationSettings.RootURL, loginEndpoint: UPennApplicationSettings.LoginURL))
+        self.loginService = UPennLoginService(requestService: requestService, loginDelegate: self)
         self.biometricsService = UPennBiometricsAuthService(biometricsDelegate: self)
     }
 }

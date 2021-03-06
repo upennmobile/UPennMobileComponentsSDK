@@ -7,65 +7,124 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01F1F149D2FE7DCECC62877BAF553125 /* UPennMobileComponentsSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D62C7E0E60D11CAB8C0EB1703246A092 /* UPennMobileComponentsSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08BDC8BC73ADEAA7FFC7341772B65CCA /* UPennBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F268278AE0B44C899AE2D85B364C5D6 /* UPennBasicViewController.swift */; };
-		0FABEFFBB46E0D7902BFC24CE5D7C974 /* UPennLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8FAA7694E890BF67D239818B79977 /* UPennLoginPresenter.swift */; };
-		15E61DCA41A7EB1FF47854A62B730A1E /* UPennCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C11E8A0B1038CFF7136DF1A3E4642B /* UPennCoordinator.swift */; };
-		1666DAF594CA30F402E81F9C7212764D /* un_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBF478CD4D8FC28A862223D222AC040 /* un_checked.png */; };
-		1F2A97730D685EE309641537B6072BE8 /* UPennBiometricsAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63F1883BDF7448D51033ED6DAFCC15 /* UPennBiometricsAuthService.swift */; };
-		215D7931FA7BAAB0C3300238B0B7BFEF /* UIScrollView+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3448A9657907576BC269A2D64890B0D /* UIScrollView+UPenn.swift */; };
-		21B881E81B9FA32DE129E3B774650147 /* UPennLightNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D287A0C10A558B0468BB6BE064E88125 /* UPennLightNavBarViewController.swift */; };
-		23AA9D411DAEC40A8D1DB0155D2E8F90 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6D33D1270F3F278CCBF1B4D24537A /* Storyboarded.swift */; };
-		25B8ADD711B4346F248F2E4A50098D0E /* UPennLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AACA17449832939C089A07B66E832B0 /* UPennLoginService.swift */; };
-		276AC90F73DA5B41C6A5608A55F420BE /* UILabel+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C0FEF3C1149BE02E00294AD9D57648 /* UILabel+UPenn.swift */; };
-		2BCE458227EC7CDD8568D46B833D442D /* UPennAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F129FE3922BF924DFC79A80E78DC2CF /* UPennAuthenticationService.swift */; };
-		3A5C7ADF25F0924B00E84B07 /* UPennLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C7ADD25F0924A00E84B07 /* UPennLoginCoordinator.swift */; };
-		3A5C7AE025F0924B00E84B07 /* UPennLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5C7ADE25F0924B00E84B07 /* UPennLoginViewController.swift */; };
-		3CBB02185AD616AC57A9DE91F264B17C /* UITableView+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50896FCFF3F5523A96C51232AC6F2C /* UITableView+UPenn.swift */; };
-		3EBCDA3EDAFB94D8BC58151E069B4295 /* UPennKeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312FC98DAB8CB8ED7ADC06DFF3DD09C4 /* UPennKeychainConfiguration.swift */; };
-		40E04E9C96549FABE5723A637642C8E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		418BAEEEAC0C5559282B7AF9E448400A /* UIFont+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347DB8850066E6C3151F08A72EA587E /* UIFont+UPenn.swift */; };
-		49ABCC12A83675BADC5EBCFFFB5D6E14 /* UPennLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E210873B7FC3B1F834DEF70F9AA665A2 /* UPennLoginViewController.storyboard */; };
-		4FCCC29D2D2986DD71A731A7D9AC51A6 /* Bundle+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744844EF526BA519CE736AF72A71AB8 /* Bundle+UPenn.swift */; };
-		511D7708D06D14F7C76FD0C2249D70D3 /* UPennCustomCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B565CC14F7C6FF8B854ED1BB11B5E8 /* UPennCustomCameraViewController.swift */; };
-		52734A79FC7CAAC070877E571306DA59 /* UPennMobileComponentsSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68380EBCF5F942CB383345C8072E1A84 /* UPennMobileComponentsSDK-dummy.m */; };
-		6212B7181DBE4A2AB2B79B45F647A8A5 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = C32CC261F7EBDD1B1D6904D99A166065 /* checked.png */; };
-		79B2C4BC342FD4823570DE86D5338E00 /* UPennNameSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83F7F64A1F469883CC3D9C09CEB0725 /* UPennNameSpacer.swift */; };
-		7ACDAB8EE30EE6A7B93A231191299E2F /* UIViewController+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7375D9B5EFF50EC002AB0D0F72525 /* UIViewController+UPenn.swift */; };
+		013BAC24F7AC722E59517CB110A9E685 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DD558B974B57E1152C730D05EFBD87 /* HTTPMethod.swift */; };
+		0806C1B75441AEE944E8E3DF03F1A2EA /* UPennKeychainConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D13F59BD0346187ACDBE36A5ED35F9A /* UPennKeychainConfiguration.swift */; };
+		0A1849775CF90D514963187D3A771CF8 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC16B02943FB41A9047B2CA3EDBEBA5 /* Combine.swift */; };
+		0A1F7DB0057146AFC63FAED7BB94BDDC /* Pods-UPennMobileComponentsSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75223EEC3E3A6392A8EADC30526E2A0B /* Pods-UPennMobileComponentsSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A900DF17E3B64F08AF673E9A0DDD697 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0321DE3B3BDC0EAEB1DCF843A78DBA /* OperationQueue+Alamofire.swift */; };
+		0AED09F50C8CA16E89FCB0962DC16AA0 /* UPennMobileComponentsSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DBA7A9B0852DE7931439FE4E8DC9481 /* UPennMobileComponentsSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CA80ED7E59E6BCE64CEEE649A3C6D2F /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 60422D559721FFD0C4A4237013A7B221 /* SVProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D90CD322FDE961DA8120F7713B8BF1D /* UITableView+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2DB161A30279B7384735480ED359B4 /* UITableView+UPenn.swift */; };
+		0F1518AF57F749870F4EAC42F11BE0F8 /* UPennMobileComponentsSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6165B3D31B9B63246D4C98A3AEDA8F6A /* UPennMobileComponentsSDK-dummy.m */; };
+		1208E81DA8B532D0646D627B50290EB6 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ED459F9C552C9C431E50790433ADF7 /* AFError.swift */; };
+		127EEA1236D8FE42136635A9B3FF784F /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 8573924A2621F08A9D511911A4AB5C1C /* checked.png */; };
+		164CE7DB7F701E9115F75F9C8408B8FA /* UPennCustomCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BD3C305AED1848484933531E1E65A /* UPennCustomCameraViewController.swift */; };
+		1876D9715779DA051B771475782C0F67 /* UIFont+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C47FCD0A144FFFA7AC067E7F9E86B4 /* UIFont+UPenn.swift */; };
+		19D605A3233499828FB6B790869F3E9C /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E380EE4E8B58AFD7C9B48DCD0B360E /* NetworkReachabilityManager.swift */; };
+		212EDC48B68107BEA9247F3464CE696E /* StringEncoding+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A05FB4FA6A04AE00B3008E0054CE01 /* StringEncoding+Alamofire.swift */; };
+		218C14EAE5AA31C30314AE0289B732A0 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D352FA3F08E5532A1BF71F659E9533 /* Protected.swift */; };
+		25D16B99D090C37B938944E7784C25DA /* Date+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC772B50237A096BA28EA391A4369BE8 /* Date+UPenn.swift */; };
+		264D40695CA535DDED1A27579FBFFB17 /* String+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA3E71AF69010E6CDE50E18350FE81 /* String+UPenn.swift */; };
+		264E1A478BDFA31DA6842749C72EA535 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8BB32443B4DBBAC75746A601A3D497F /* SVProgressHUD.bundle */; };
+		27E59A11A2743B0595CDE3A08675EAE1 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C7E1153EA89DE3D7EAADE9A0EF5BB /* DispatchQueue+Alamofire.swift */; };
+		30F47A28FE504E4FAD6987E451F21B03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB79CDFA8CA357E74ED7F8BB5D2CF /* Foundation.framework */; };
+		3392F8407B8C6F47A4E47436894642D8 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC8C05F5F6BEDC4319FD1F93001DBD /* SVProgressHUD.m */; };
+		3574662C5B13AC743ADB27DF68DAE97D /* UPennMobileComponentsSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */; };
+		381FF05F8B4F611EE9C2FDBE4457BB89 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0996FE38E2D7A51D4B1C575E0F59DFE /* SessionDelegate.swift */; };
+		3DA3EC030D2125F76FB1AE8BA4C2D398 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3FD0057BDA40C5ACDAD6186E41EC1E /* Alamofire.framework */; };
+		40E04E9C96549FABE5723A637642C8E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB79CDFA8CA357E74ED7F8BB5D2CF /* Foundation.framework */; };
+		45B8CC1C61E7A0BB28CFA8CE7C12FEBC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066298FFFA06BC019A44D9D642123FC2 /* MultipartFormData.swift */; };
+		46CA3B8845DF62E5B5FB1AA02645AB2F /* UPennBaseNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F1308C2CDADAB8C9F7E42009C5DA5 /* UPennBaseNetworkingService.swift */; };
+		47FDBBBD2704901588C3A7C56BBC502D /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301E231F66E2C22AC73F1FD37303977 /* ServerTrustEvaluation.swift */; };
+		48F01ACF3D81AA8923EC3A0DE561BC3E /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BB1DC0FA1F12DC162B348BBBD1FDAD /* SVProgressHUD.framework */; };
+		4AEC050FA7D5ED52FDA9DF50EA3560DF /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62726CBE42403E645DA918F632F099 /* ParameterEncoder.swift */; };
+		4E4F49E3B50A2CAF98E2F3F468F6CF28 /* UPennLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D4B635DF9613DBB2587E15E32560B /* UPennLoginPresenter.swift */; };
+		4EC4D4CB6F11CF62A670460228F1A3EF /* UPennLoginServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A2844F09F38129061C1A5777AB869A /* UPennLoginServiceDelegate.swift */; };
+		50B4C6FF0A0A150A5929FA16B03F642E /* UPennLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415852B4AF1FFE957C541ACA24C2E82E /* UPennLoginCoordinator.swift */; };
+		557636C47656D34C1F0D9A45552ECB14 /* penn_medicine_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = E20F39201DFEB347CA80BE9710112D91 /* penn_medicine_transparent.png */; };
+		5A2BC402B08DFC63E24BB7C10B4B0B60 /* UPennURLProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488E228039711C3275E62F8AB203F20 /* UPennURLProvidable.swift */; };
+		5E2E6213427399BDEB21F6CA07C4539A /* Dateformatter+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252294816FB61DCB47D9A42066A03036 /* Dateformatter+UPenn.swift */; };
+		6000134441439C8DEECFF5BF5E04AA5E /* UPennLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122BA7E4925674657F8D39B44F1DEFA0 /* UPennLoginService.swift */; };
+		6546D728B69398F93B506845141EBD61 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FC4F0F98D78E2C36E79E5D0ABDC489 /* EventMonitor.swift */; };
+		666EC5C8356E6D4448A2FE7BEE77AD88 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E7D5B08F42F5AB4F4A1B00F66AF596 /* RedirectHandler.swift */; };
+		66B26C6CAE737EC21F4BA1F1851B69C5 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D4AD7ED3E5B598DEE135ECC91FBE75 /* Result+Alamofire.swift */; };
+		6AE407A4FB6C3D6ADD862CC6E3067A17 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB96A10B8D69A7C813771992CFACAFB /* Session.swift */; };
+		6C08F6A77889651626583100F560153D /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6198C4C9DAC37FC51EC7C87B782A20A /* RequestTaskMap.swift */; };
+		6E54F64E8DA73F4B0B46C216F9F93F63 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD222CC1187D2ED466EC160D6B93FE /* RequestInterceptor.swift */; };
+		6F2D25D3D4F21D01B569BC8F53E67C07 /* UPennTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CDBB9386422CB183EE60AE98FE263C /* UPennTypeAliases.swift */; };
+		72A110B087FB5E2F1F57C0304473324C /* CALayer+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD309A262A2CC914986797120C137437 /* CALayer+UPenn.swift */; };
+		72EC2712926E6D28B52360D9AC41668F /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = F546A0DE453AE8BE187A448861839520 /* AlamofireExtended.swift */; };
+		74C15EB9864E7EA06FD591BC719661B8 /* UPennLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E79E05D70F005C3C66F35C5A1C7912 /* UPennLoginViewController.storyboard */; };
+		77EC9463E2F5CE259EA7EF527F85DEB8 /* UPennLightNavBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15CA092247DC7BB850C463F42C5DF9D /* UPennLightNavBarViewController.swift */; };
+		7BCAF5EB402AAFCE8B5A245F23DFD250 /* UPennLoginNetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFE34829AC23363A0DA53F8355C3014 /* UPennLoginNetworkRequests.swift */; };
+		7D3DD4A8BB36733BA15868F7FB8C56CE /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AFF6176655DA1B832DBBAC097D7A504 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D8A9228B901D034F4D30E2B2ABF925D /* UPennActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E5437EF8EFE133E8371827833FBD8C /* UPennActivityPresenter.swift */; };
 		7DE5C4948C943CFAF295B7B95C4ED442 /* Pods-UPennMobileComponentsSDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 68F335E28566120014101DBE0FF9E5AC /* Pods-UPennMobileComponentsSDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		810565E307C28F14E2D15334FDF64D98 /* UPennLoginServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FF3B3FC984653A7A8606A06328845B /* UPennLoginServiceDelegate.swift */; };
-		8900003BC67C20DF6E2EA618F7BD7F29 /* UPennMobileComponentsSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */; };
-		9E2C097C7BDC1046FA654AA21B6D3E45 /* UPennKeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979B99758726A2D0BF519EB438F42363 /* UPennKeyboardService.swift */; };
-		A43E5BC01A4DB905B81A9BD3EF463300 /* Dateformatter+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076EA7A41146516C8ABD61D7937D4A7C /* Dateformatter+UPenn.swift */; };
-		A4C43044059F173D02D0CF2882E2C0FB /* penn_medicine_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5A94B78195A0F75E7C88689131F745 /* penn_medicine_transparent.png */; };
-		AF507F5A90966CC99C6A5AD3F6FD0B8D /* UPennLoginNetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE1C6D00D2C2D97B3B164EDBECCE737 /* UPennLoginNetworkRequests.swift */; };
-		BBBC3356A73FE777A09F3FA9FE25C7C5 /* Pods-UPennMobileComponentsSDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A259FB51FB76A2DA450F577B57BAD156 /* Pods-UPennMobileComponentsSDK_Example-dummy.m */; };
-		BE09563636201AFFAF6E1A2680084455 /* String+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40288285E6F99699494893DF51FEEB7D /* String+UPenn.swift */; };
-		BEBD3C05BDA9B94F66A0F7B34DD2C2ED /* UPennNetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D375652E71918F967F8D232698D332 /* UPennNetworkRequestable.swift */; };
-		C16EF65D8E7936314FB0D2861E265651 /* UIStoryboard+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D724A735AA5EABC0B127BCFF471032 /* UIStoryboard+UPenn.swift */; };
-		C33C05F867FE6FA474048E330C1C6984 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		C56FFCB2A54E55A15372A04EB405E4B8 /* UPennKeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83906896A980243280398C01B1A82C28 /* UPennKeychainPasswordItem.swift */; };
-		C8311166A03B69FCB8A6D84063356600 /* CALayer+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9135324CD79C045C0F9B865DA7DD823 /* CALayer+UPenn.swift */; };
-		CBDA5D83967CB327A3791A8FC0F0ADFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		D45A628FCED53B7A32A58C12C87BFDEE /* UPennValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B707D180828E0C2290501144EA3F94 /* UPennValidationService.swift */; };
-		D4926CBF723371ADF88C9DE5E7CF01B5 /* UPennImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86C6C478C14C41B7CC31EED8538A5B1 /* UPennImageAssets.swift */; };
-		DE3F1D4BDB0C1F2D2DE7D7DD1C1CE57F /* UIView+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E43D8DD2782812F9FE58506FA599B /* UIView+UPenn.swift */; };
-		DEA6E9E81367D0961AA6EE205B091D60 /* UIColor+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84868BC8E0E867251B45D5B423AB7C05 /* UIColor+UPenn.swift */; };
-		ED075FEE18DF2E0B2B334355DC0BC293 /* PPApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77093FAA3B9BB554437B3B2C37BE17D0 /* PPApplicationSettings.swift */; };
-		EDCE1FB7A5C2CA10AF51277A86A45467 /* UIButton+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF0EED2CD92F91E18A62696D6F252A9 /* UIButton+UPenn.swift */; };
-		EEAA838476390FA34F245966E7298EA0 /* UPennCameraImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC7C4451D1E1A373BFA9C727E562742 /* UPennCameraImagePreviewViewController.swift */; };
-		F3D0B432AAFB296503C8631CE4717518 /* Date+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F121B624306A2BB84D5099F20C0823 /* Date+UPenn.swift */; };
-		F636D4F2840EA8C118F5A41C9E4BF20B /* Pods-UPennMobileComponentsSDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 75223EEC3E3A6392A8EADC30526E2A0B /* Pods-UPennMobileComponentsSDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8538B63C82D1CEAC5E3F45BA5F033F62 /* UIStoryboard+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CE1C0542BDF36ABE73B7B016FDB0B8 /* UIStoryboard+UPenn.swift */; };
+		878FEF51AE915985DC09CEC6BC1390C4 /* UPennCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C557C56499FCF75D7759552D61DB5FD6 /* UPennCoordinator.swift */; };
+		894BB52E2F2DD407FC34F8F98A6C94C2 /* UIColor+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0129097A9ACB9E1E48FAEDD5E513A16E /* UIColor+UPenn.swift */; };
+		8AA937910F87915DE700CAB6C868689E /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5850D85F716A432C72F4394555A615 /* Notifications.swift */; };
+		8D4640CB311880D373DD62E13ABA9C1A /* UPennNameSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F3C77CD3F26C74B9685201418EF01 /* UPennNameSpacer.swift */; };
+		911448B2EDA2FF880108F77642797A88 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBFC4F55DDAE6395E2F913D81923DFE /* ResponseSerialization.swift */; };
+		91B837CE0DCD8EDB300FCDFFA1279162 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F661E87864A60FD7E7598E7A565C2D76 /* HTTPHeaders.swift */; };
+		96EADE99073DBA8FCE7904627E2D18EE /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 205A55E2C57C0E79FD9EF0A15F649C1B /* SVIndefiniteAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9741152ABBD17C13043A9AB2BB66414B /* UIScrollView+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9539C3F9005D0732FE05F78E0E74AD /* UIScrollView+UPenn.swift */; };
+		99456829035D2883017E8EBCDB82C231 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83B28765B1D4A859D43847F325ACA98 /* QuartzCore.framework */; };
+		99461F2E52AC7DAD714D64B39B969831 /* UPennKeyboardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415252D278A57E9DA3F7393D4FEE7D88 /* UPennKeyboardService.swift */; };
+		99BBDB39EEA8712138727D30732041AD /* Pods-UPennMobileComponentsSDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A259FB51FB76A2DA450F577B57BAD156 /* Pods-UPennMobileComponentsSDK_Example-dummy.m */; };
+		9B1D8A7798D8A6F518FC9AF9725431D0 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E282921DC843FAC437840EF18F7AC /* URLConvertible+URLRequestConvertible.swift */; };
+		9FB273D95A19350DE172506AC45DFFD0 /* UPennKeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0167D842F8159B5086A58BAEB04E1A3F /* UPennKeychainPasswordItem.swift */; };
+		9FDEEEE37349769B84A30B0105DFF456 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC639AA0FBDA38562B3FE764BD9E6276 /* SVProgressHUD-dummy.m */; };
+		9FED70D1E1FBFB80E974E999EF732258 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0519322351774DC89E4CA0EF0A0FD9 /* RetryPolicy.swift */; };
+		A4ADD31FAF8384236B2CA29641C8343C /* UIButton+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3BADC4D3C3270C0563B9662FA641A5 /* UIButton+UPenn.swift */; };
+		A5DA42D67239C64E943FD7154CF51D63 /* UPennAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF438CD8E85B3E1A5ACF03125634B15 /* UPennAuthenticationService.swift */; };
+		A66FAB1835EE6EC07567289C372BD33B /* UPennCameraImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C204490B129107F970A6FBB201844C7 /* UPennCameraImagePreviewViewController.swift */; };
+		A738C2A39C0150BBA7EA5EC19B95F03E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE17DEDFE8FB1980A9A1A903D5D4CBD /* CFNetwork.framework */; };
+		A7862853F3F00CA56CFF6CA0EB9C6AD9 /* UPennApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7B758A51FAC45CA10DEA8C5F9FB9D /* UPennApplicationSettings.swift */; };
+		A8F8514BFC8BF01F6E0A4B402773D546 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB79CDFA8CA357E74ED7F8BB5D2CF /* Foundation.framework */; };
+		ABA85887A41495358C83CE3F3030EDEA /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3D36B4F34EF3E760349E8D5BC48AE /* CachedResponseHandler.swift */; };
+		B4F36292AED21C2A96050F33F285BA87 /* Bundle+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D02B878C2ACF3222B54805B15353F8 /* Bundle+UPenn.swift */; };
+		B5B9915F785CB47C5C07F0B698911B00 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F6879FA987CABA3751F49A83CBBF35 /* SVIndefiniteAnimatedView.m */; };
+		B7302A8CA4CEB7B893D81DDB2BD2E5D3 /* UILabel+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E4841B1C483D943AA349037FE5FF1 /* UILabel+UPenn.swift */; };
+		BCF782487F264FE826031B5674B355BD /* UPennLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC3745C4A5ACC39F749355CA90BFFA /* UPennLoginViewController.swift */; };
+		BD9B8478EA122007330D91C65AE25FE0 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EC7AEC412036404330B5CE139A62DD /* Storyboarded.swift */; };
+		C1C5B050B55C15103ABC81769551A283 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AF5E5E6BA0DAA55598B7732E50D17 /* Response.swift */; };
+		C1F1DB6A9CBDE584D09BA1613AAD4F9D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63473E0793836C9E1AC34DDEB8BC1F /* Alamofire.swift */; };
+		C6D5A4B4028B2C43380C9FA58BD5C8CA /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD4E8F7ABB22B3C385828D8122FB1DB /* Alamofire-dummy.m */; };
+		C89B584808A7419E01FF5EA299158025 /* un_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 75FE9F527867D62834E90D29FF3B20CF /* un_checked.png */; };
+		CB03F6DCC16F51A0ABBB7F4E0055B5C9 /* UPennBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AFE40DB8531FF4F4F14EB63EB2799 /* UPennBasicViewController.swift */; };
+		D03F1F02DE8606E6057D57866611BEBF /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6100EBACE20C4AF7C9C716B223EC7231 /* MultipartUpload.swift */; };
+		D14066FAE94E304798E43651E5886D13 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D628A592AEEC8FF0C96377AE2BD975DA /* ParameterEncoding.swift */; };
+		D17CB88EDCC8044068C6D4232DF5D465 /* UPennBiometricsAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD3BF4E5FA7844636D1B4FFFDCF57CE /* UPennBiometricsAuthService.swift */; };
+		D2246BE5AF9C116D84444CC5C955BC02 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 118C35E26D4D7F83384295FA376060DB /* SVRadialGradientLayer.m */; };
+		D251D649ABDEA404073A2BEDF904CCE1 /* UIView+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C1A514040259EDC2D1E81B482B05D7 /* UIView+UPenn.swift */; };
+		D31FC7FDD450C4CDD633ECBAD27C6221 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF80407C973A0C92747EFD03A61DFC3 /* URLEncodedFormEncoder.swift */; };
+		D4914107FF5A197B9D0BC6D1C089E33D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB79CDFA8CA357E74ED7F8BB5D2CF /* Foundation.framework */; };
+		D5EAAFB6FAD77A8F0699345149BA3CBB /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC007BFB755900217123C16BEEF693 /* URLRequest+Alamofire.swift */; };
+		D7B5FF2F9E976FBCD84BA01AF3A2B776 /* UPennNetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1F530C2F9280BFC31A583D6C9FC245 /* UPennNetworkRequestable.swift */; };
+		D87B2D5ED73534ACF97CE0A52FA18AE4 /* SVRadialGradientLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = C808C8476CF0D1620E6D817410915A08 /* SVRadialGradientLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA13B37E01D639161E3E75F363348C5B /* UPennValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2585F1182334B262960E0D1708F1CDF8 /* UPennValidationService.swift */; };
+		DC627AFC5B585686898B014184AFCABD /* AuthenticationInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F06A0191E3CB1CB58C767C1BAC72F /* AuthenticationInterceptor.swift */; };
+		DE12057AB8895931A0E9499619C5CFC8 /* SVProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48EEB5AB6879DE0D37C90FDA54A0D5C3 /* SVProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0186A63060F0EB3676F95CD0ACE0E18 /* SVProgressAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C1FB60A0C40EDAFD998E0AF35598887 /* SVProgressAnimatedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E504F2AEC7B138D019A52E3F2597B870 /* UPennImageAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424E4855A3FAE83434C127C74161583E /* UPennImageAssets.swift */; };
+		EDC93BD7B9262119AE145E4C7A9D0212 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703DE49945D87E3086486E590DDBFA85 /* Request.swift */; };
+		EEAA1518C49804736C3F40117D064CBE /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A93FA10B47F18361FC367E86A2020A /* SVProgressAnimatedView.m */; };
+		F0F3224FF592F9BA2A044A2FC2BD4CCD /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367A73000A2CBD0B5E21A9C79010F37 /* Validation.swift */; };
+		F6B16DC8CADA07287C6A372AC8AD787C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375DB79CDFA8CA357E74ED7F8BB5D2CF /* Foundation.framework */; };
+		F70EF854395CDE981A8336E4FF0310FE /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613EDE2EA2B81EA69E2EE6ADE05D52E /* URLSessionConfiguration+Alamofire.swift */; };
+		F7BED3ED4B7C04795F243A79CF7E6053 /* UPennConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECECC040982EA9721F363AB1E8EFF96 /* UPennConstants.swift */; };
 		F94AED7E1210CC1728BA8DB31A6006B8 /* Pods-UPennMobileComponentsSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 81572BD5A79790B3212CD4C4963AB7A4 /* Pods-UPennMobileComponentsSDK_Tests-dummy.m */; };
+		F9C53E5B511BA1C894490529474BBA50 /* UIViewController+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570FEF225087C5BD135BDFA70F19F007 /* UIViewController+UPenn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		254FFC48241B94FB593D997024117C7D /* PBXContainerItemProxy */ = {
+		2DE52810CE3263AECE007EE6BAC036FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AACC6062B1734F218FFBC2DD46FEFE72;
-			remoteInfo = "UPennMobileComponentsSDK-UPennMobileComponentsSDK";
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
 		};
 		8C5E61BD4D58B2DD24A08AD055F54022 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -74,101 +133,190 @@
 			remoteGlobalIDString = 75D38898F06FB642CAAA109DB7E73F13;
 			remoteInfo = "Pods-UPennMobileComponentsSDK_Example";
 		};
-		FCF49FCCBC390593CBA896BBF745303D /* PBXContainerItemProxy */ = {
+		9AD4BC6CAFD4445C7BD7A561AA5B9ECA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
+		9C875310254D146EA99F3E890C7EAB82 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C8D67D8B72D6BA42CCEDB648537A340;
+			remoteInfo = SVProgressHUD;
+		};
+		CAA426A2C3780EC82FD3F2AB9E856AAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C8D67D8B72D6BA42CCEDB648537A340;
+			remoteInfo = SVProgressHUD;
+		};
+		E61C5EB5CF68C19AA4864C553D9E2CD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 602BD7B2C28A15CCF095789E1537CE8E;
 			remoteInfo = UPennMobileComponentsSDK;
 		};
+		F5A121F33ACBC0CF65B4CF512DE0F3DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AACC6062B1734F218FFBC2DD46FEFE72;
+			remoteInfo = "UPennMobileComponentsSDK-UPennMobileComponentsSDK";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02D375652E71918F967F8D232698D332 /* UPennNetworkRequestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennNetworkRequestable.swift; sourceTree = "<group>"; };
-		03B707D180828E0C2290501144EA3F94 /* UPennValidationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennValidationService.swift; sourceTree = "<group>"; };
-		04B565CC14F7C6FF8B854ED1BB11B5E8 /* UPennCustomCameraViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennCustomCameraViewController.swift; sourceTree = "<group>"; };
-		056B3DDC53CB09EC068CE90894F4F4C8 /* UPennMobileComponentsSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UPennMobileComponentsSDK.release.xcconfig; sourceTree = "<group>"; };
-		076EA7A41146516C8ABD61D7937D4A7C /* Dateformatter+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dateformatter+UPenn.swift"; sourceTree = "<group>"; };
-		0BF6D33D1270F3F278CCBF1B4D24537A /* Storyboarded.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		00ECA72EB318B7C16586B2EB8A1AFEAD /* UPennMobileComponentsSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UPennMobileComponentsSDK-Info.plist"; sourceTree = "<group>"; };
+		0129097A9ACB9E1E48FAEDD5E513A16E /* UIColor+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+UPenn.swift"; sourceTree = "<group>"; };
+		0167D842F8159B5086A58BAEB04E1A3F /* UPennKeychainPasswordItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennKeychainPasswordItem.swift; sourceTree = "<group>"; };
+		05E3D36B4F34EF3E760349E8D5BC48AE /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
+		066298FFFA06BC019A44D9D642123FC2 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		0973D4B0B7A1D1DC0842FCA002561CDA /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		1097526A4C252EDA892AAEFD4651D9C3 /* Pods-UPennMobileComponentsSDK_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UPennMobileComponentsSDK_Example-Info.plist"; sourceTree = "<group>"; };
-		1329C77F6662CAE7F9D654417B7402EE /* UPennMobileComponentsSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UPennMobileComponentsSDK.modulemap; sourceTree = "<group>"; };
+		118C35E26D4D7F83384295FA376060DB /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		11CDBB9386422CB183EE60AE98FE263C /* UPennTypeAliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennTypeAliases.swift; sourceTree = "<group>"; };
+		122BA7E4925674657F8D39B44F1DEFA0 /* UPennLoginService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginService.swift; sourceTree = "<group>"; };
+		1488E228039711C3275E62F8AB203F20 /* UPennURLProvidable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennURLProvidable.swift; sourceTree = "<group>"; };
+		15C339D0CC84B73485414AC69CF05077 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		185E282921DC843FAC437840EF18F7AC /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
+		18BE9A52BDD78CCD400456C3207EE320 /* UPennMobileComponentsSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UPennMobileComponentsSDK.release.xcconfig; sourceTree = "<group>"; };
 		19764E3921AFA89749BD49F748114F02 /* Pods-UPennMobileComponentsSDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UPennMobileComponentsSDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1CBF478CD4D8FC28A862223D222AC040 /* un_checked.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = un_checked.png; path = UPennMobileComponentsSDK/Assets/un_checked.png; sourceTree = "<group>"; };
-		29CBA57EE491E8DC56F7365E0AB57697 /* UPennMobileComponentsSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UPennMobileComponentsSDK.debug.xcconfig; sourceTree = "<group>"; };
-		2EE8FAA7694E890BF67D239818B79977 /* UPennLoginPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginPresenter.swift; sourceTree = "<group>"; };
-		312FC98DAB8CB8ED7ADC06DFF3DD09C4 /* UPennKeychainConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennKeychainConfiguration.swift; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3A5C7ADD25F0924A00E84B07 /* UPennLoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPennLoginCoordinator.swift; sourceTree = "<group>"; };
-		3A5C7ADE25F0924B00E84B07 /* UPennLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPennLoginViewController.swift; sourceTree = "<group>"; };
-		3F0305A3E1792B95D4088B047C500645 /* ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist"; sourceTree = "<group>"; };
-		3F268278AE0B44C899AE2D85B364C5D6 /* UPennBasicViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennBasicViewController.swift; sourceTree = "<group>"; };
-		40288285E6F99699494893DF51FEEB7D /* String+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+UPenn.swift"; sourceTree = "<group>"; };
-		46F121B624306A2BB84D5099F20C0823 /* Date+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+UPenn.swift"; sourceTree = "<group>"; };
-		4809C84C67A764B539D5B1968D61DBD8 /* UPennMobileComponentsSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = UPennMobileComponentsSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1AFF6176655DA1B832DBBAC097D7A504 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		1DF438CD8E85B3E1A5ACF03125634B15 /* UPennAuthenticationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennAuthenticationService.swift; sourceTree = "<group>"; };
+		1FD3BF4E5FA7844636D1B4FFFDCF57CE /* UPennBiometricsAuthService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennBiometricsAuthService.swift; sourceTree = "<group>"; };
+		205A55E2C57C0E79FD9EF0A15F649C1B /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		2306D7009FCD5B2FB806659E30F6FC88 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		248E4841B1C483D943AA349037FE5FF1 /* UILabel+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+UPenn.swift"; sourceTree = "<group>"; };
+		252294816FB61DCB47D9A42066A03036 /* Dateformatter+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dateformatter+UPenn.swift"; sourceTree = "<group>"; };
+		2585F1182334B262960E0D1708F1CDF8 /* UPennValidationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennValidationService.swift; sourceTree = "<group>"; };
+		26ED459F9C552C9C431E50790433ADF7 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		29D02B878C2ACF3222B54805B15353F8 /* Bundle+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+UPenn.swift"; sourceTree = "<group>"; };
+		2AE17DEDFE8FB1980A9A1A903D5D4CBD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		2B5850D85F716A432C72F4394555A615 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		2C1FB60A0C40EDAFD998E0AF35598887 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		2E2DB161A30279B7384735480ED359B4 /* UITableView+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+UPenn.swift"; sourceTree = "<group>"; };
+		375DB79CDFA8CA357E74ED7F8BB5D2CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3CBFC4F55DDAE6395E2F913D81923DFE /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		3DBA7A9B0852DE7931439FE4E8DC9481 /* UPennMobileComponentsSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UPennMobileComponentsSDK-umbrella.h"; sourceTree = "<group>"; };
+		415252D278A57E9DA3F7393D4FEE7D88 /* UPennKeyboardService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennKeyboardService.swift; sourceTree = "<group>"; };
+		415852B4AF1FFE957C541ACA24C2E82E /* UPennLoginCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginCoordinator.swift; sourceTree = "<group>"; };
+		424E4855A3FAE83434C127C74161583E /* UPennImageAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennImageAssets.swift; sourceTree = "<group>"; };
+		4301E231F66E2C22AC73F1FD37303977 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
+		482BD3C305AED1848484933531E1E65A /* UPennCustomCameraViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennCustomCameraViewController.swift; sourceTree = "<group>"; };
+		48EEB5AB6879DE0D37C90FDA54A0D5C3 /* SVProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		4B3FD0057BDA40C5ACDAD6186E41EC1E /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2AFE40DB8531FF4F4F14EB63EB2799 /* UPennBasicViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennBasicViewController.swift; sourceTree = "<group>"; };
+		4D3BADC4D3C3270C0563B9662FA641A5 /* UIButton+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+UPenn.swift"; sourceTree = "<group>"; };
 		509EF1219D2B655F15916E01979DB2C0 /* Pods-UPennMobileComponentsSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UPennMobileComponentsSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		50CE1C0542BDF36ABE73B7B016FDB0B8 /* UIStoryboard+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+UPenn.swift"; sourceTree = "<group>"; };
+		5367A73000A2CBD0B5E21A9C79010F37 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		53D644396697ECB05A1CDD352E2CD09C /* Pods-UPennMobileComponentsSDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UPennMobileComponentsSDK_Tests-Info.plist"; sourceTree = "<group>"; };
-		59D724A735AA5EABC0B127BCFF471032 /* UIStoryboard+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+UPenn.swift"; sourceTree = "<group>"; };
+		54DD42C00AB1DCFBFE23915185347327 /* UPennMobileComponentsSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UPennMobileComponentsSDK.debug.xcconfig; sourceTree = "<group>"; };
+		570FEF225087C5BD135BDFA70F19F007 /* UIViewController+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+UPenn.swift"; sourceTree = "<group>"; };
+		581F06A0191E3CB1CB58C767C1BAC72F /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
 		5BC401BF5394B776DEA034A412C9F26A /* Pods-UPennMobileComponentsSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UPennMobileComponentsSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5CC7C4451D1E1A373BFA9C727E562742 /* UPennCameraImagePreviewViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennCameraImagePreviewViewController.swift; sourceTree = "<group>"; };
-		650ED05F42774474AA113CFDA4FDB391 /* UPennMobileComponentsSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UPennMobileComponentsSDK-Info.plist"; sourceTree = "<group>"; };
-		6744844EF526BA519CE736AF72A71AB8 /* Bundle+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+UPenn.swift"; sourceTree = "<group>"; };
-		68380EBCF5F942CB383345C8072E1A84 /* UPennMobileComponentsSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UPennMobileComponentsSDK-dummy.m"; sourceTree = "<group>"; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DFE34829AC23363A0DA53F8355C3014 /* UPennLoginNetworkRequests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginNetworkRequests.swift; sourceTree = "<group>"; };
+		5E9539C3F9005D0732FE05F78E0E74AD /* UIScrollView+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScrollView+UPenn.swift"; sourceTree = "<group>"; };
+		60422D559721FFD0C4A4237013A7B221 /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		60A2844F09F38129061C1A5777AB869A /* UPennLoginServiceDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginServiceDelegate.swift; sourceTree = "<group>"; };
+		6100EBACE20C4AF7C9C716B223EC7231 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
+		613B568C566E9BAD7BC5D4FB7BB342CD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6165B3D31B9B63246D4C98A3AEDA8F6A /* UPennMobileComponentsSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UPennMobileComponentsSDK-dummy.m"; sourceTree = "<group>"; };
+		62BB1DC0FA1F12DC162B348BBBD1FDAD /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65EC007BFB755900217123C16BEEF693 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		68F335E28566120014101DBE0FF9E5AC /* Pods-UPennMobileComponentsSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UPennMobileComponentsSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
+		6AE475B6D3FF4EDB49BEA8B7DB20960B /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		6D1F530C2F9280BFC31A583D6C9FC245 /* UPennNetworkRequestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennNetworkRequestable.swift; sourceTree = "<group>"; };
+		703DE49945D87E3086486E590DDBFA85 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		75223EEC3E3A6392A8EADC30526E2A0B /* Pods-UPennMobileComponentsSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UPennMobileComponentsSDK_Example-umbrella.h"; sourceTree = "<group>"; };
-		77093FAA3B9BB554437B3B2C37BE17D0 /* PPApplicationSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPApplicationSettings.swift; sourceTree = "<group>"; };
-		79FDC047F46F378E782D3053AEA80819 /* UPennMobileComponentsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UPennMobileComponentsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AACA17449832939C089A07B66E832B0 /* UPennLoginService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginService.swift; sourceTree = "<group>"; };
-		7C50896FCFF3F5523A96C51232AC6F2C /* UITableView+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+UPenn.swift"; sourceTree = "<group>"; };
+		75E380EE4E8B58AFD7C9B48DCD0B360E /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		75FE9F527867D62834E90D29FF3B20CF /* un_checked.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = un_checked.png; path = UPennMobileComponentsSDK/Assets/un_checked.png; sourceTree = "<group>"; };
+		77E79E05D70F005C3C66F35C5A1C7912 /* UPennLoginViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = UPennLoginViewController.storyboard; path = UPennMobileComponentsSDK/Assets/UPennLoginViewController.storyboard; sourceTree = "<group>"; };
+		79FDC047F46F378E782D3053AEA80819 /* UPennMobileComponentsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UPennMobileComponentsSDK.framework; path = UPennMobileComponentsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEC8C05F5F6BEDC4319FD1F93001DBD /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
 		81572BD5A79790B3212CD4C4963AB7A4 /* Pods-UPennMobileComponentsSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UPennMobileComponentsSDK_Tests-dummy.m"; sourceTree = "<group>"; };
-		81C11E8A0B1038CFF7136DF1A3E4642B /* UPennCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennCoordinator.swift; sourceTree = "<group>"; };
-		83906896A980243280398C01B1A82C28 /* UPennKeychainPasswordItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennKeychainPasswordItem.swift; sourceTree = "<group>"; };
-		84868BC8E0E867251B45D5B423AB7C05 /* UIColor+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+UPenn.swift"; sourceTree = "<group>"; };
-		8B63F1883BDF7448D51033ED6DAFCC15 /* UPennBiometricsAuthService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennBiometricsAuthService.swift; sourceTree = "<group>"; };
+		83FD222CC1187D2ED466EC160D6B93FE /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
+		8573924A2621F08A9D511911A4AB5C1C /* checked.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = checked.png; path = UPennMobileComponentsSDK/Assets/checked.png; sourceTree = "<group>"; };
+		85D352FA3F08E5532A1BF71F659E9533 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
+		86E7D5B08F42F5AB4F4A1B00F66AF596 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
+		88DD558B974B57E1152C730D05EFBD87 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
+		8BF80407C973A0C92747EFD03A61DFC3 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		8C5E010177AE489C37C7E7201079C97B /* Pods-UPennMobileComponentsSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UPennMobileComponentsSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8F129FE3922BF924DFC79A80E78DC2CF /* UPennAuthenticationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennAuthenticationService.swift; sourceTree = "<group>"; };
-		92FF3B3FC984653A7A8606A06328845B /* UPennLoginServiceDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginServiceDelegate.swift; sourceTree = "<group>"; };
-		979B99758726A2D0BF519EB438F42363 /* UPennKeyboardService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennKeyboardService.swift; sourceTree = "<group>"; };
-		9900F7E5675D11A4915DECA28E852086 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		99C0FEF3C1149BE02E00294AD9D57648 /* UILabel+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+UPenn.swift"; sourceTree = "<group>"; };
-		9CF0EED2CD92F91E18A62696D6F252A9 /* UIButton+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+UPenn.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9E0176EBD95C7EF997FFDD273C9CE2DD /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8D0321DE3B3BDC0EAEB1DCF843A78DBA /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		8DC16B02943FB41A9047B2CA3EDBEBA5 /* Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Combine.swift; path = Source/Combine.swift; sourceTree = "<group>"; };
+		91A05FB4FA6A04AE00B3008E0054CE01 /* StringEncoding+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringEncoding+Alamofire.swift"; path = "Source/StringEncoding+Alamofire.swift"; sourceTree = "<group>"; };
+		93E5437EF8EFE133E8371827833FBD8C /* UPennActivityPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennActivityPresenter.swift; sourceTree = "<group>"; };
+		9635DD3BB4AA5D1802285BFCA507D41E /* UPennMobileComponentsSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UPennMobileComponentsSDK.modulemap; sourceTree = "<group>"; };
+		96C1A514040259EDC2D1E81B482B05D7 /* UIView+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+UPenn.swift"; sourceTree = "<group>"; };
+		99EC7AEC412036404330B5CE139A62DD /* Storyboarded.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		9B6AF5E5E6BA0DAA55598B7732E50D17 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		9C204490B129107F970A6FBB201844C7 /* UPennCameraImagePreviewViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennCameraImagePreviewViewController.swift; sourceTree = "<group>"; };
+		9D13F59BD0346187ACDBE36A5ED35F9A /* UPennKeychainConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennKeychainConfiguration.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A259FB51FB76A2DA450F577B57BAD156 /* Pods-UPennMobileComponentsSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UPennMobileComponentsSDK_Example-dummy.m"; sourceTree = "<group>"; };
-		A347DB8850066E6C3151F08A72EA587E /* UIFont+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIFont+UPenn.swift"; sourceTree = "<group>"; };
-		A86C6C478C14C41B7CC31EED8538A5B1 /* UPennImageAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennImageAssets.swift; sourceTree = "<group>"; };
-		A9135324CD79C045C0F9B865DA7DD823 /* CALayer+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CALayer+UPenn.swift"; sourceTree = "<group>"; };
-		AFF530C28FDADF0658E43F4D0A82886D /* Pods_UPennMobileComponentsSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UPennMobileComponentsSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C06E43D8DD2782812F9FE58506FA599B /* UIView+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+UPenn.swift"; sourceTree = "<group>"; };
+		A316238DF156272D8D94ED3D4861099B /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
+		A3FF8294096CF695530A24A1A21B7E6E /* ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist"; sourceTree = "<group>"; };
+		A4FD7EB560270E200A6AF9B7284A7A3A /* SVProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.release.xcconfig; sourceTree = "<group>"; };
+		A5F4A215F11DC78A00F78E3E2208DCA6 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		A613EDE2EA2B81EA69E2EE6ADE05D52E /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
+		A6198C4C9DAC37FC51EC7C87B782A20A /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
+		A63C7E1153EA89DE3D7EAADE9A0EF5BB /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		ADD4E8F7ABB22B3C385828D8122FB1DB /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		AE5F3C77CD3F26C74B9685201418EF01 /* UPennNameSpacer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennNameSpacer.swift; sourceTree = "<group>"; };
+		AFF530C28FDADF0658E43F4D0A82886D /* Pods_UPennMobileComponentsSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UPennMobileComponentsSDK_Tests.framework; path = "Pods-UPennMobileComponentsSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1FC4F0F98D78E2C36E79E5D0ABDC489 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
+		BC51B5885B214DBFA3873A58CF8960BD /* SVProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
+		BECECC040982EA9721F363AB1E8EFF96 /* UPennConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennConstants.swift; sourceTree = "<group>"; };
+		C05CBC5555825A8CDD99C0B16643B5AC /* UPennMobileComponentsSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UPennMobileComponentsSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C0FC3745C4A5ACC39F749355CA90BFFA /* UPennLoginViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginViewController.swift; sourceTree = "<group>"; };
 		C2925F6A75601B1B713EABBB00D39EAC /* Pods-UPennMobileComponentsSDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UPennMobileComponentsSDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		C32CC261F7EBDD1B1D6904D99A166065 /* checked.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = checked.png; path = UPennMobileComponentsSDK/Assets/checked.png; sourceTree = "<group>"; };
-		C3448A9657907576BC269A2D64890B0D /* UIScrollView+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIScrollView+UPenn.swift"; sourceTree = "<group>"; };
 		C462B8F44BA29D6AFB0C830CE5EE83FC /* Pods-UPennMobileComponentsSDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UPennMobileComponentsSDK_Example-frameworks.sh"; sourceTree = "<group>"; };
-		CDB7375D9B5EFF50EC002AB0D0F72525 /* UIViewController+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+UPenn.swift"; sourceTree = "<group>"; };
-		D287A0C10A558B0468BB6BE064E88125 /* UPennLightNavBarViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLightNavBarViewController.swift; sourceTree = "<group>"; };
-		D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UPennMobileComponentsSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C557C56499FCF75D7759552D61DB5FD6 /* UPennCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennCoordinator.swift; sourceTree = "<group>"; };
+		C808C8476CF0D1620E6D817410915A08 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		C83B28765B1D4A859D43847F325ACA98 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		C8BB32443B4DBBAC75746A601A3D497F /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		C9C47FCD0A144FFFA7AC067E7F9E86B4 /* UIFont+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIFont+UPenn.swift"; sourceTree = "<group>"; };
+		CB6D4B635DF9613DBB2587E15E32560B /* UPennLoginPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginPresenter.swift; sourceTree = "<group>"; };
+		CC772B50237A096BA28EA391A4369BE8 /* Date+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+UPenn.swift"; sourceTree = "<group>"; };
+		CD65C087FF7EFA002DD9D22E2902D89E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		CE63473E0793836C9E1AC34DDEB8BC1F /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = UPennMobileComponentsSDK.bundle; path = "UPennMobileComponentsSDK-UPennMobileComponentsSDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D606D50340D8500748B1017AB1EEFA97 /* Pods-UPennMobileComponentsSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UPennMobileComponentsSDK_Example.modulemap"; sourceTree = "<group>"; };
-		D62C7E0E60D11CAB8C0EB1703246A092 /* UPennMobileComponentsSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UPennMobileComponentsSDK-umbrella.h"; sourceTree = "<group>"; };
+		D628A592AEEC8FF0C96377AE2BD975DA /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		D7E839E75195D4B8F2F91C0BE9B8C484 /* Pods-UPennMobileComponentsSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UPennMobileComponentsSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D83F7F64A1F469883CC3D9C09CEB0725 /* UPennNameSpacer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennNameSpacer.swift; sourceTree = "<group>"; };
-		E210873B7FC3B1F834DEF70F9AA665A2 /* UPennLoginViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = UPennLoginViewController.storyboard; path = UPennMobileComponentsSDK/Assets/UPennLoginViewController.storyboard; sourceTree = "<group>"; };
+		DA0519322351774DC89E4CA0EF0A0FD9 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
+		DBB96A10B8D69A7C813771992CFACAFB /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
+		DC639AA0FBDA38562B3FE764BD9E6276 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		DD309A262A2CC914986797120C137437 /* CALayer+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CALayer+UPenn.swift"; sourceTree = "<group>"; };
+		E0D4AD7ED3E5B598DEE135ECC91FBE75 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
+		E15CA092247DC7BB850C463F42C5DF9D /* UPennLightNavBarViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLightNavBarViewController.swift; sourceTree = "<group>"; };
+		E1D7B758A51FAC45CA10DEA8C5F9FB9D /* UPennApplicationSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennApplicationSettings.swift; sourceTree = "<group>"; };
+		E20F39201DFEB347CA80BE9710112D91 /* penn_medicine_transparent.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = penn_medicine_transparent.png; path = UPennMobileComponentsSDK/Assets/penn_medicine_transparent.png; sourceTree = "<group>"; };
 		E4CB7A351B84C959D5AC4A56AD0C6F1E /* Pods-UPennMobileComponentsSDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UPennMobileComponentsSDK_Example.release.xcconfig"; sourceTree = "<group>"; };
-		EAE1C6D00D2C2D97B3B164EDBECCE737 /* UPennLoginNetworkRequests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginNetworkRequests.swift; sourceTree = "<group>"; };
-		EB2105BF833F6163F3989AF055AC8D52 /* Pods_UPennMobileComponentsSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UPennMobileComponentsSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEC4C9D49F3280ACCB8B68DEA3750368 /* UPennMobileComponentsSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UPennMobileComponentsSDK-prefix.pch"; sourceTree = "<group>"; };
+		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAFA3E71AF69010E6CDE50E18350FE81 /* String+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+UPenn.swift"; sourceTree = "<group>"; };
+		EB2105BF833F6163F3989AF055AC8D52 /* Pods_UPennMobileComponentsSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UPennMobileComponentsSDK_Example.framework; path = "Pods-UPennMobileComponentsSDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED27586BA75AC461C0C76DC85BF49F1B /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		EF4A4FB8495AAE8E69E80FB4835D122F /* Pods-UPennMobileComponentsSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UPennMobileComponentsSDK_Tests.modulemap"; sourceTree = "<group>"; };
-		EF5A94B78195A0F75E7C88689131F745 /* penn_medicine_transparent.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = penn_medicine_transparent.png; path = UPennMobileComponentsSDK/Assets/penn_medicine_transparent.png; sourceTree = "<group>"; };
+		F00F1308C2CDADAB8C9F7E42009C5DA5 /* UPennBaseNetworkingService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennBaseNetworkingService.swift; sourceTree = "<group>"; };
+		F0996FE38E2D7A51D4B1C575E0F59DFE /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		F2A93FA10B47F18361FC367E86A2020A /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		F546A0DE453AE8BE187A448861839520 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
+		F636CE9C3C7F5FACB866E6DE0F642CF6 /* UPennMobileComponentsSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UPennMobileComponentsSDK-prefix.pch"; sourceTree = "<group>"; };
+		F661E87864A60FD7E7598E7A565C2D76 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
+		F7F6879FA987CABA3751F49A83CBBF35 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		FA62726CBE42403E645DA918F632F099 /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
 		FBADFE7B7A4190F13EB7412E9DD99E08 /* Pods-UPennMobileComponentsSDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UPennMobileComponentsSDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FD0AFD2762093D7E8E203D3CFD46BA73 /* SVProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SVProgressHUD-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4D1A567EA2CD3AC2FABCBF0BBA3758F0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C33C05F867FE6FA474048E330C1C6984 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4E3C1BFB01EE465D1FEE98C373EAA1EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,50 +325,58 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1C4771CC2095F1AD647383E8A8C03B6 /* Frameworks */ = {
+		9590D3FE7A79CD7CBEE3F346E8C19D4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A738C2A39C0150BBA7EA5EC19B95F03E /* CFNetwork.framework in Frameworks */,
+				F6B16DC8CADA07287C6A372AC8AD787C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C28F834512DEEA8FB2CE448C20962C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DA3EC030D2125F76FB1AE8BA4C2D398 /* Alamofire.framework in Frameworks */,
+				A8F8514BFC8BF01F6E0A4B402773D546 /* Foundation.framework in Frameworks */,
+				48F01ACF3D81AA8923EC3A0DE561BC3E /* SVProgressHUD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF82BD2F960CA4CC7BD303365CD6CD80 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D37171885EE5F7C41874F9AF78D0E474 /* Frameworks */ = {
+		B3D1D1191F24E31CEEA04BDB3FB4C0F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBDA5D83967CB327A3791A8FC0F0ADFD /* Foundation.framework in Frameworks */,
+				D4914107FF5A197B9D0BC6D1C089E33D /* Foundation.framework in Frameworks */,
+				99456829035D2883017E8EBCDB82C231 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA7518A0A31ED25E812FF505085E86E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F47A28FE504E4FAD6987E451F21B03 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00159AE9FC941D37DED21203E3D0192D /* Services */ = {
+		22A2474A6F6BB247C572A4DF3A79E879 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				8B63F1883BDF7448D51033ED6DAFCC15 /* UPennBiometricsAuthService.swift */,
-				979B99758726A2D0BF519EB438F42363 /* UPennKeyboardService.swift */,
-				03B707D180828E0C2290501144EA3F94 /* UPennValidationService.swift */,
-			);
-			name = Services;
-			path = UPennMobileComponentsSDK/Classes/Services;
-			sourceTree = "<group>";
-		};
-		028B58F589F4D011E9B7F60462CC16BB /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				F9CFDEC740BA4E01C5701E44E4DA087B /* Login */,
-			);
-			name = Modules;
-			path = UPennMobileComponentsSDK/Classes/Modules;
-			sourceTree = "<group>";
-		};
-		1CD134EE3A3DB7470922C4A5C1E32138 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				9E0176EBD95C7EF997FFDD273C9CE2DD /* LICENSE */,
-				9900F7E5675D11A4915DECA28E852086 /* README.md */,
-				4809C84C67A764B539D5B1968D61DBD8 /* UPennMobileComponentsSDK.podspec */,
+				CD65C087FF7EFA002DD9D22E2902D89E /* LICENSE */,
+				613B568C566E9BAD7BC5D4FB7BB342CD /* README.md */,
+				C05CBC5555825A8CDD99C0B16643B5AC /* UPennMobileComponentsSDK.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -228,48 +384,128 @@
 		3291CB204F8FEE31883CE8DC1E093724 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6963D1A78EE8B4DC52A2C5289527BA8E /* UPennMobileComponentsSDK */,
+				6F161CE325A357BD5E5742CCEF33454F /* UPennMobileComponentsSDK */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		52E2E9AF0F386718C8F0FCA65C7D8449 /* Controllers */ = {
+		362B27760A69B94C6B8ECBD19187F3DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3F268278AE0B44C899AE2D85B364C5D6 /* UPennBasicViewController.swift */,
-				D287A0C10A558B0468BB6BE064E88125 /* UPennLightNavBarViewController.swift */,
-				94D7E7683C35B763ACC96E8FB1BE42B0 /* Camera */,
+				8573924A2621F08A9D511911A4AB5C1C /* checked.png */,
+				E20F39201DFEB347CA80BE9710112D91 /* penn_medicine_transparent.png */,
+				75FE9F527867D62834E90D29FF3B20CF /* un_checked.png */,
+				77E79E05D70F005C3C66F35C5A1C7912 /* UPennLoginViewController.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		47B6B6589107439E2E4F8ACA732D5FA5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C2AFE40DB8531FF4F4F14EB63EB2799 /* UPennBasicViewController.swift */,
+				E15CA092247DC7BB850C463F42C5DF9D /* UPennLightNavBarViewController.swift */,
+				C8D339E933BDBA150B8DC01F345BEC9F /* Camera */,
 			);
 			name = Controllers;
 			path = UPennMobileComponentsSDK/Classes/Controllers;
 			sourceTree = "<group>";
 		};
-		6963D1A78EE8B4DC52A2C5289527BA8E /* UPennMobileComponentsSDK */ = {
+		47BD1BF40EEEDEA11ED1A827D7DDAE20 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				52E2E9AF0F386718C8F0FCA65C7D8449 /* Controllers */,
-				D8853EF5C960C5AAD8CE03B8D3BFCD42 /* Extensions */,
-				6BCFF15A0AF8D4947F3CEBF7B8A2D511 /* Interfaces | Protocols */,
-				028B58F589F4D011E9B7F60462CC16BB /* Modules */,
-				1CD134EE3A3DB7470922C4A5C1E32138 /* Pod */,
-				D25939E65EE6A81764CB37BD890DED3C /* Resources */,
-				00159AE9FC941D37DED21203E3D0192D /* Services */,
-				F0BCA397950B4383974DACCAEFE92382 /* Support Files */,
-				79C1835B6524A3D7605D49C82ABCB4A1 /* Utilities */,
+				1DF438CD8E85B3E1A5ACF03125634B15 /* UPennAuthenticationService.swift */,
+				1FD3BF4E5FA7844636D1B4FFFDCF57CE /* UPennBiometricsAuthService.swift */,
+				415852B4AF1FFE957C541ACA24C2E82E /* UPennLoginCoordinator.swift */,
+				5DFE34829AC23363A0DA53F8355C3014 /* UPennLoginNetworkRequests.swift */,
+				CB6D4B635DF9613DBB2587E15E32560B /* UPennLoginPresenter.swift */,
+				122BA7E4925674657F8D39B44F1DEFA0 /* UPennLoginService.swift */,
+				60A2844F09F38129061C1A5777AB869A /* UPennLoginServiceDelegate.swift */,
+				C0FC3745C4A5ACC39F749355CA90BFFA /* UPennLoginViewController.swift */,
+			);
+			name = Login;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		580791E5405D2E5FF49AA59B0091AFC8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				47BD1BF40EEEDEA11ED1A827D7DDAE20 /* Login */,
+			);
+			name = Modules;
+			path = UPennMobileComponentsSDK/Classes/Modules;
+			sourceTree = "<group>";
+		};
+		653F17C175D3CFF3A733DBFA8A3A2094 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				26ED459F9C552C9C431E50790433ADF7 /* AFError.swift */,
+				CE63473E0793836C9E1AC34DDEB8BC1F /* Alamofire.swift */,
+				F546A0DE453AE8BE187A448861839520 /* AlamofireExtended.swift */,
+				581F06A0191E3CB1CB58C767C1BAC72F /* AuthenticationInterceptor.swift */,
+				05E3D36B4F34EF3E760349E8D5BC48AE /* CachedResponseHandler.swift */,
+				8DC16B02943FB41A9047B2CA3EDBEBA5 /* Combine.swift */,
+				A63C7E1153EA89DE3D7EAADE9A0EF5BB /* DispatchQueue+Alamofire.swift */,
+				B1FC4F0F98D78E2C36E79E5D0ABDC489 /* EventMonitor.swift */,
+				F661E87864A60FD7E7598E7A565C2D76 /* HTTPHeaders.swift */,
+				88DD558B974B57E1152C730D05EFBD87 /* HTTPMethod.swift */,
+				066298FFFA06BC019A44D9D642123FC2 /* MultipartFormData.swift */,
+				6100EBACE20C4AF7C9C716B223EC7231 /* MultipartUpload.swift */,
+				75E380EE4E8B58AFD7C9B48DCD0B360E /* NetworkReachabilityManager.swift */,
+				2B5850D85F716A432C72F4394555A615 /* Notifications.swift */,
+				8D0321DE3B3BDC0EAEB1DCF843A78DBA /* OperationQueue+Alamofire.swift */,
+				FA62726CBE42403E645DA918F632F099 /* ParameterEncoder.swift */,
+				D628A592AEEC8FF0C96377AE2BD975DA /* ParameterEncoding.swift */,
+				85D352FA3F08E5532A1BF71F659E9533 /* Protected.swift */,
+				86E7D5B08F42F5AB4F4A1B00F66AF596 /* RedirectHandler.swift */,
+				703DE49945D87E3086486E590DDBFA85 /* Request.swift */,
+				83FD222CC1187D2ED466EC160D6B93FE /* RequestInterceptor.swift */,
+				A6198C4C9DAC37FC51EC7C87B782A20A /* RequestTaskMap.swift */,
+				9B6AF5E5E6BA0DAA55598B7732E50D17 /* Response.swift */,
+				3CBFC4F55DDAE6395E2F913D81923DFE /* ResponseSerialization.swift */,
+				E0D4AD7ED3E5B598DEE135ECC91FBE75 /* Result+Alamofire.swift */,
+				DA0519322351774DC89E4CA0EF0A0FD9 /* RetryPolicy.swift */,
+				4301E231F66E2C22AC73F1FD37303977 /* ServerTrustEvaluation.swift */,
+				DBB96A10B8D69A7C813771992CFACAFB /* Session.swift */,
+				F0996FE38E2D7A51D4B1C575E0F59DFE /* SessionDelegate.swift */,
+				91A05FB4FA6A04AE00B3008E0054CE01 /* StringEncoding+Alamofire.swift */,
+				185E282921DC843FAC437840EF18F7AC /* URLConvertible+URLRequestConvertible.swift */,
+				8BF80407C973A0C92747EFD03A61DFC3 /* URLEncodedFormEncoder.swift */,
+				65EC007BFB755900217123C16BEEF693 /* URLRequest+Alamofire.swift */,
+				A613EDE2EA2B81EA69E2EE6ADE05D52E /* URLSessionConfiguration+Alamofire.swift */,
+				5367A73000A2CBD0B5E21A9C79010F37 /* Validation.swift */,
+				8511D0E207C848D46A21F8492A715A49 /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		6654D02CA5C0D0FA0E7D7B3C6F05D0F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F00F1308C2CDADAB8C9F7E42009C5DA5 /* UPennBaseNetworkingService.swift */,
+				415252D278A57E9DA3F7393D4FEE7D88 /* UPennKeyboardService.swift */,
+				2585F1182334B262960E0D1708F1CDF8 /* UPennValidationService.swift */,
+			);
+			name = Services;
+			path = UPennMobileComponentsSDK/Classes/Services;
+			sourceTree = "<group>";
+		};
+		6F161CE325A357BD5E5742CCEF33454F /* UPennMobileComponentsSDK */ = {
+			isa = PBXGroup;
+			children = (
+				47B6B6589107439E2E4F8ACA732D5FA5 /* Controllers */,
+				EBF5B50C599E1B36EAD52E9FA4D84604 /* Extensions */,
+				7BE269FD49C07453E61BA7418DFB6B49 /* Interfaces | Protocols */,
+				580791E5405D2E5FF49AA59B0091AFC8 /* Modules */,
+				22A2474A6F6BB247C572A4DF3A79E879 /* Pod */,
+				362B27760A69B94C6B8ECBD19187F3DA /* Resources */,
+				6654D02CA5C0D0FA0E7D7B3C6F05D0F8 /* Services */,
+				DF613E21C870E54CEDE989BD4C3DCACF /* Support Files */,
+				EE87A8DE958046FB433F514F559676C3 /* Utilities */,
 			);
 			name = UPennMobileComponentsSDK;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		6BCFF15A0AF8D4947F3CEBF7B8A2D511 /* Interfaces | Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				0BF6D33D1270F3F278CCBF1B4D24537A /* Storyboarded.swift */,
-				81C11E8A0B1038CFF7136DF1A3E4642B /* UPennCoordinator.swift */,
-				02D375652E71918F967F8D232698D332 /* UPennNetworkRequestable.swift */,
-			);
-			name = "Interfaces | Protocols";
-			path = "UPennMobileComponentsSDK/Classes/Interfaces | Protocols";
 			sourceTree = "<group>";
 		};
 		7673916EC92732005C8FDE6629C206C3 /* Targets Support Files */ = {
@@ -281,17 +517,41 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		79C1835B6524A3D7605D49C82ABCB4A1 /* Utilities */ = {
+		795DEA7BBFB906C43F72AD90E3439589 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				77093FAA3B9BB554437B3B2C37BE17D0 /* PPApplicationSettings.swift */,
-				A86C6C478C14C41B7CC31EED8538A5B1 /* UPennImageAssets.swift */,
-				312FC98DAB8CB8ED7ADC06DFF3DD09C4 /* UPennKeychainConfiguration.swift */,
-				83906896A980243280398C01B1A82C28 /* UPennKeychainPasswordItem.swift */,
-				D83F7F64A1F469883CC3D9C09CEB0725 /* UPennNameSpacer.swift */,
+				4B3FD0057BDA40C5ACDAD6186E41EC1E /* Alamofire.framework */,
+				62BB1DC0FA1F12DC162B348BBBD1FDAD /* SVProgressHUD.framework */,
+				E1EB07E5DF80F62DA721BEC9D2AF8975 /* iOS */,
 			);
-			name = Utilities;
-			path = UPennMobileComponentsSDK/Classes/Utilities;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BE269FD49C07453E61BA7418DFB6B49 /* Interfaces | Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				99EC7AEC412036404330B5CE139A62DD /* Storyboarded.swift */,
+				C557C56499FCF75D7759552D61DB5FD6 /* UPennCoordinator.swift */,
+				6D1F530C2F9280BFC31A583D6C9FC245 /* UPennNetworkRequestable.swift */,
+				1488E228039711C3275E62F8AB203F20 /* UPennURLProvidable.swift */,
+			);
+			name = "Interfaces | Protocols";
+			path = "UPennMobileComponentsSDK/Classes/Interfaces | Protocols";
+			sourceTree = "<group>";
+		};
+		8511D0E207C848D46A21F8492A715A49 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2306D7009FCD5B2FB806659E30F6FC88 /* Alamofire.modulemap */,
+				ADD4E8F7ABB22B3C385828D8122FB1DB /* Alamofire-dummy.m */,
+				6AE475B6D3FF4EDB49BEA8B7DB20960B /* Alamofire-Info.plist */,
+				15C339D0CC84B73485414AC69CF05077 /* Alamofire-prefix.pch */,
+				1AFF6176655DA1B832DBBAC097D7A504 /* Alamofire-umbrella.h */,
+				0973D4B0B7A1D1DC0842FCA002561CDA /* Alamofire.debug.xcconfig */,
+				ED27586BA75AC461C0C76DC85BF49F1B /* Alamofire.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
 		8FEA3E796A1E13054223E1D0547DBC85 /* Pods-UPennMobileComponentsSDK_Tests */ = {
@@ -327,32 +587,77 @@
 			path = "Target Support Files/Pods-UPennMobileComponentsSDK_Example";
 			sourceTree = "<group>";
 		};
-		94D7E7683C35B763ACC96E8FB1BE42B0 /* Camera */ = {
+		B054D61FECF219FDCD9A5386BC2F1A08 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5CC7C4451D1E1A373BFA9C727E562742 /* UPennCameraImagePreviewViewController.swift */,
-				04B565CC14F7C6FF8B854ED1BB11B5E8 /* UPennCustomCameraViewController.swift */,
+				C8BB32443B4DBBAC75746A601A3D497F /* SVProgressHUD.bundle */,
 			);
-			path = Camera;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		B5D9D6095CC2BAD39479BCCA5C78AB02 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				A316238DF156272D8D94ED3D4861099B /* SVProgressHUD.modulemap */,
+				DC639AA0FBDA38562B3FE764BD9E6276 /* SVProgressHUD-dummy.m */,
+				FD0AFD2762093D7E8E203D3CFD46BA73 /* SVProgressHUD-Info.plist */,
+				A5F4A215F11DC78A00F78E3E2208DCA6 /* SVProgressHUD-prefix.pch */,
+				48EEB5AB6879DE0D37C90FDA54A0D5C3 /* SVProgressHUD-umbrella.h */,
+				BC51B5885B214DBFA3873A58CF8960BD /* SVProgressHUD.debug.xcconfig */,
+				A4FD7EB560270E200A6AF9B7284A7A3A /* SVProgressHUD.release.xcconfig */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/SVProgressHUD";
 			sourceTree = "<group>";
 		};
-		C99FC48EDC0328FC9078E9A38C0CEF53 /* Products */ = {
+		B6769566324F9BE7C2F3A56DAFB3564E /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
 				EB2105BF833F6163F3989AF055AC8D52 /* Pods_UPennMobileComponentsSDK_Example.framework */,
 				AFF530C28FDADF0658E43F4D0A82886D /* Pods_UPennMobileComponentsSDK_Tests.framework */,
+				E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */,
 				D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */,
 				79FDC047F46F378E782D3053AEA80819 /* UPennMobileComponentsSDK.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BAA290FBE92F5DC434E75AADD0152571 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				205A55E2C57C0E79FD9EF0A15F649C1B /* SVIndefiniteAnimatedView.h */,
+				F7F6879FA987CABA3751F49A83CBBF35 /* SVIndefiniteAnimatedView.m */,
+				2C1FB60A0C40EDAFD998E0AF35598887 /* SVProgressAnimatedView.h */,
+				F2A93FA10B47F18361FC367E86A2020A /* SVProgressAnimatedView.m */,
+				60422D559721FFD0C4A4237013A7B221 /* SVProgressHUD.h */,
+				7FEC8C05F5F6BEDC4319FD1F93001DBD /* SVProgressHUD.m */,
+				C808C8476CF0D1620E6D817410915A08 /* SVRadialGradientLayer.h */,
+				118C35E26D4D7F83384295FA376060DB /* SVRadialGradientLayer.m */,
+				B054D61FECF219FDCD9A5386BC2F1A08 /* Resources */,
+				B5D9D6095CC2BAD39479BCCA5C78AB02 /* Support Files */,
+			);
+			name = SVProgressHUD;
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		C1EE20864BB4B18C49A8F8E7A4D03373 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				653F17C175D3CFF3A733DBFA8A3A2094 /* Alamofire */,
+				BAA290FBE92F5DC434E75AADD0152571 /* SVProgressHUD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C8D339E933BDBA150B8DC01F345BEC9F /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				9C204490B129107F970A6FBB201844C7 /* UPennCameraImagePreviewViewController.swift */,
+				482BD3C305AED1848484933531E1E65A /* UPennCustomCameraViewController.swift */,
+			);
+			name = Camera;
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -360,94 +665,80 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				3291CB204F8FEE31883CE8DC1E093724 /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				C99FC48EDC0328FC9078E9A38C0CEF53 /* Products */,
+				795DEA7BBFB906C43F72AD90E3439589 /* Frameworks */,
+				C1EE20864BB4B18C49A8F8E7A4D03373 /* Pods */,
+				B6769566324F9BE7C2F3A56DAFB3564E /* Products */,
 				7673916EC92732005C8FDE6629C206C3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		DF613E21C870E54CEDE989BD4C3DCACF /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D25939E65EE6A81764CB37BD890DED3C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C32CC261F7EBDD1B1D6904D99A166065 /* checked.png */,
-				EF5A94B78195A0F75E7C88689131F745 /* penn_medicine_transparent.png */,
-				1CBF478CD4D8FC28A862223D222AC040 /* un_checked.png */,
-				E210873B7FC3B1F834DEF70F9AA665A2 /* UPennLoginViewController.storyboard */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		D8853EF5C960C5AAD8CE03B8D3BFCD42 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				6744844EF526BA519CE736AF72A71AB8 /* Bundle+UPenn.swift */,
-				A9135324CD79C045C0F9B865DA7DD823 /* CALayer+UPenn.swift */,
-				46F121B624306A2BB84D5099F20C0823 /* Date+UPenn.swift */,
-				076EA7A41146516C8ABD61D7937D4A7C /* Dateformatter+UPenn.swift */,
-				40288285E6F99699494893DF51FEEB7D /* String+UPenn.swift */,
-				9CF0EED2CD92F91E18A62696D6F252A9 /* UIButton+UPenn.swift */,
-				84868BC8E0E867251B45D5B423AB7C05 /* UIColor+UPenn.swift */,
-				A347DB8850066E6C3151F08A72EA587E /* UIFont+UPenn.swift */,
-				99C0FEF3C1149BE02E00294AD9D57648 /* UILabel+UPenn.swift */,
-				C3448A9657907576BC269A2D64890B0D /* UIScrollView+UPenn.swift */,
-				59D724A735AA5EABC0B127BCFF471032 /* UIStoryboard+UPenn.swift */,
-				7C50896FCFF3F5523A96C51232AC6F2C /* UITableView+UPenn.swift */,
-				C06E43D8DD2782812F9FE58506FA599B /* UIView+UPenn.swift */,
-				CDB7375D9B5EFF50EC002AB0D0F72525 /* UIViewController+UPenn.swift */,
-			);
-			name = Extensions;
-			path = UPennMobileComponentsSDK/Classes/Extensions;
-			sourceTree = "<group>";
-		};
-		F0BCA397950B4383974DACCAEFE92382 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3F0305A3E1792B95D4088B047C500645 /* ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist */,
-				1329C77F6662CAE7F9D654417B7402EE /* UPennMobileComponentsSDK.modulemap */,
-				68380EBCF5F942CB383345C8072E1A84 /* UPennMobileComponentsSDK-dummy.m */,
-				650ED05F42774474AA113CFDA4FDB391 /* UPennMobileComponentsSDK-Info.plist */,
-				EEC4C9D49F3280ACCB8B68DEA3750368 /* UPennMobileComponentsSDK-prefix.pch */,
-				D62C7E0E60D11CAB8C0EB1703246A092 /* UPennMobileComponentsSDK-umbrella.h */,
-				29CBA57EE491E8DC56F7365E0AB57697 /* UPennMobileComponentsSDK.debug.xcconfig */,
-				056B3DDC53CB09EC068CE90894F4F4C8 /* UPennMobileComponentsSDK.release.xcconfig */,
+				A3FF8294096CF695530A24A1A21B7E6E /* ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist */,
+				9635DD3BB4AA5D1802285BFCA507D41E /* UPennMobileComponentsSDK.modulemap */,
+				6165B3D31B9B63246D4C98A3AEDA8F6A /* UPennMobileComponentsSDK-dummy.m */,
+				00ECA72EB318B7C16586B2EB8A1AFEAD /* UPennMobileComponentsSDK-Info.plist */,
+				F636CE9C3C7F5FACB866E6DE0F642CF6 /* UPennMobileComponentsSDK-prefix.pch */,
+				3DBA7A9B0852DE7931439FE4E8DC9481 /* UPennMobileComponentsSDK-umbrella.h */,
+				54DD42C00AB1DCFBFE23915185347327 /* UPennMobileComponentsSDK.debug.xcconfig */,
+				18BE9A52BDD78CCD400456C3207EE320 /* UPennMobileComponentsSDK.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/UPennMobileComponentsSDK";
 			sourceTree = "<group>";
 		};
-		F9CFDEC740BA4E01C5701E44E4DA087B /* Login */ = {
+		E1EB07E5DF80F62DA721BEC9D2AF8975 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8F129FE3922BF924DFC79A80E78DC2CF /* UPennAuthenticationService.swift */,
-				EAE1C6D00D2C2D97B3B164EDBECCE737 /* UPennLoginNetworkRequests.swift */,
-				2EE8FAA7694E890BF67D239818B79977 /* UPennLoginPresenter.swift */,
-				7AACA17449832939C089A07B66E832B0 /* UPennLoginService.swift */,
-				92FF3B3FC984653A7A8606A06328845B /* UPennLoginServiceDelegate.swift */,
-				3A5C7ADD25F0924A00E84B07 /* UPennLoginCoordinator.swift */,
-				3A5C7ADE25F0924B00E84B07 /* UPennLoginViewController.swift */,
+				2AE17DEDFE8FB1980A9A1A903D5D4CBD /* CFNetwork.framework */,
+				375DB79CDFA8CA357E74ED7F8BB5D2CF /* Foundation.framework */,
+				C83B28765B1D4A859D43847F325ACA98 /* QuartzCore.framework */,
 			);
-			path = Login;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EBF5B50C599E1B36EAD52E9FA4D84604 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29D02B878C2ACF3222B54805B15353F8 /* Bundle+UPenn.swift */,
+				DD309A262A2CC914986797120C137437 /* CALayer+UPenn.swift */,
+				CC772B50237A096BA28EA391A4369BE8 /* Date+UPenn.swift */,
+				252294816FB61DCB47D9A42066A03036 /* Dateformatter+UPenn.swift */,
+				EAFA3E71AF69010E6CDE50E18350FE81 /* String+UPenn.swift */,
+				4D3BADC4D3C3270C0563B9662FA641A5 /* UIButton+UPenn.swift */,
+				0129097A9ACB9E1E48FAEDD5E513A16E /* UIColor+UPenn.swift */,
+				C9C47FCD0A144FFFA7AC067E7F9E86B4 /* UIFont+UPenn.swift */,
+				248E4841B1C483D943AA349037FE5FF1 /* UILabel+UPenn.swift */,
+				5E9539C3F9005D0732FE05F78E0E74AD /* UIScrollView+UPenn.swift */,
+				50CE1C0542BDF36ABE73B7B016FDB0B8 /* UIStoryboard+UPenn.swift */,
+				2E2DB161A30279B7384735480ED359B4 /* UITableView+UPenn.swift */,
+				96C1A514040259EDC2D1E81B482B05D7 /* UIView+UPenn.swift */,
+				570FEF225087C5BD135BDFA70F19F007 /* UIViewController+UPenn.swift */,
+			);
+			name = Extensions;
+			path = UPennMobileComponentsSDK/Classes/Extensions;
+			sourceTree = "<group>";
+		};
+		EE87A8DE958046FB433F514F559676C3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				93E5437EF8EFE133E8371827833FBD8C /* UPennActivityPresenter.swift */,
+				E1D7B758A51FAC45CA10DEA8C5F9FB9D /* UPennApplicationSettings.swift */,
+				BECECC040982EA9721F363AB1E8EFF96 /* UPennConstants.swift */,
+				424E4855A3FAE83434C127C74161583E /* UPennImageAssets.swift */,
+				9D13F59BD0346187ACDBE36A5ED35F9A /* UPennKeychainConfiguration.swift */,
+				0167D842F8159B5086A58BAEB04E1A3F /* UPennKeychainPasswordItem.swift */,
+				AE5F3C77CD3F26C74B9685201418EF01 /* UPennNameSpacer.swift */,
+				11CDBB9386422CB183EE60AE98FE263C /* UPennTypeAliases.swift */,
+			);
+			name = Utilities;
+			path = UPennMobileComponentsSDK/Classes/Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0B1B5CCFC48AF68F8DE42CA9320DABF7 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F636D4F2840EA8C118F5A41C9E4BF20B /* Pods-UPennMobileComponentsSDK_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		47C86D2D0DE36E433FEBD9456B39FFDB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,30 +747,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		585F74DB6523B681B4190D44D8F45F49 /* Headers */ = {
+		7C044C67F11489EFA3459B8399E7061C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01F1F149D2FE7DCECC62877BAF553125 /* UPennMobileComponentsSDK-umbrella.h in Headers */,
+				96EADE99073DBA8FCE7904627E2D18EE /* SVIndefiniteAnimatedView.h in Headers */,
+				E0186A63060F0EB3676F95CD0ACE0E18 /* SVProgressAnimatedView.h in Headers */,
+				DE12057AB8895931A0E9499619C5CFC8 /* SVProgressHUD-umbrella.h in Headers */,
+				0CA80ED7E59E6BCE64CEEE649A3C6D2F /* SVProgressHUD.h in Headers */,
+				D87B2D5ED73534ACF97CE0A52FA18AE4 /* SVRadialGradientLayer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D43A3A2D95CA12F44F1B777AE5EA8D5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AED09F50C8CA16E89FCB0962DC16AA0 /* UPennMobileComponentsSDK-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8070B01910C64B9AFD0DB550EDE38D6B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D3DD4A8BB36733BA15868F7FB8C56CE /* Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADED865CC80EB5BAC9228801618964A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1F7DB0057146AFC63FAED7BB94BDDC /* Pods-UPennMobileComponentsSDK_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		602BD7B2C28A15CCF095789E1537CE8E /* UPennMobileComponentsSDK */ = {
+		1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF5F5EA52BEB8D1111F4839EF4794B1C /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK" */;
+			buildConfigurationList = E76C288BA44757915CF3700D8A326EB7 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */;
 			buildPhases = (
-				585F74DB6523B681B4190D44D8F45F49 /* Headers */,
-				76AF5A18519994E0EE9C0F7BD923411C /* Sources */,
-				D37171885EE5F7C41874F9AF78D0E474 /* Frameworks */,
-				3DB3014A0012D12AB7850B3D48130932 /* Resources */,
+				7C044C67F11489EFA3459B8399E7061C /* Headers */,
+				D0233C648200ED130A278D7164E80914 /* Sources */,
+				B3D1D1191F24E31CEEA04BDB3FB4C0F2 /* Frameworks */,
+				7BB2E885B360CCC1AEF0C191542BA06E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				34231452B10469DACAB3347F0E4D178D /* PBXTargetDependency */,
+			);
+			name = SVProgressHUD;
+			productName = SVProgressHUD;
+			productReference = E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		602BD7B2C28A15CCF095789E1537CE8E /* UPennMobileComponentsSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31A3DA0DD4E10CDBD41D31D4D4E0FB22 /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK" */;
+			buildPhases = (
+				7D43A3A2D95CA12F44F1B777AE5EA8D5 /* Headers */,
+				081EC69F99AC68A69AB21170F94DC48F /* Sources */,
+				9C28F834512DEEA8FB2CE448C20962C7 /* Frameworks */,
+				7B32A70AD718A6944E5FC894068439B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0F4FE2149CD09E92B3608763A1072152 /* PBXTargetDependency */,
+				DF4609E41A7CC032A23F42CD84A25EC2 /* PBXTargetDependency */,
+				39E8ED955157FA84C6421422CCEE9D3F /* PBXTargetDependency */,
 			);
 			name = UPennMobileComponentsSDK;
 			productName = UPennMobileComponentsSDK;
@@ -507,17 +846,19 @@
 		};
 		75D38898F06FB642CAAA109DB7E73F13 /* Pods-UPennMobileComponentsSDK_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C8F881669CB3B660EAE050A49DA9357 /* Build configuration list for PBXNativeTarget "Pods-UPennMobileComponentsSDK_Example" */;
+			buildConfigurationList = E525F3FBF87BE8E471355A6F74BAE658 /* Build configuration list for PBXNativeTarget "Pods-UPennMobileComponentsSDK_Example" */;
 			buildPhases = (
-				0B1B5CCFC48AF68F8DE42CA9320DABF7 /* Headers */,
-				4C295113D65EA7601161623ED775A4AB /* Sources */,
-				4D1A567EA2CD3AC2FABCBF0BBA3758F0 /* Frameworks */,
-				74C558DF333400EE14F940F50BB3291A /* Resources */,
+				ADED865CC80EB5BAC9228801618964A8 /* Headers */,
+				A71DA86A924A93816E4B77AEFFB0D740 /* Sources */,
+				BA7518A0A31ED25E812FF505085E86E0 /* Frameworks */,
+				6E66B1A56B228AA0F36ACF679D818C30 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				81EC1D48F2B57BB94E1AB52ACA8425A3 /* PBXTargetDependency */,
+				17F9DE947198E174158BF82DE8976350 /* PBXTargetDependency */,
+				52B931B1E8FA6C8310B1658C0A8E26AB /* PBXTargetDependency */,
+				B05F5DB6847901D24CB90D124098CE3E /* PBXTargetDependency */,
 			);
 			name = "Pods-UPennMobileComponentsSDK_Example";
 			productName = "Pods-UPennMobileComponentsSDK_Example";
@@ -526,11 +867,11 @@
 		};
 		AACC6062B1734F218FFBC2DD46FEFE72 /* UPennMobileComponentsSDK-UPennMobileComponentsSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C346A13D795FAADD65FC646B4F931873 /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK-UPennMobileComponentsSDK" */;
+			buildConfigurationList = 608CE9B2AFCC2C5C7956BEEA8CF3B5A5 /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK-UPennMobileComponentsSDK" */;
 			buildPhases = (
-				8C832A8CB85C7C1BC1C073DD74485EE2 /* Sources */,
-				B1C4771CC2095F1AD647383E8A8C03B6 /* Frameworks */,
-				C9D7BD34DE46369EF83C4AB8F192886F /* Resources */,
+				7EC59E91F6A2A7E4E0E1C99038698F79 /* Sources */,
+				AF82BD2F960CA4CC7BD303365CD6CD80 /* Frameworks */,
+				3DCF34D8A94A772448F142DF70610DDF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -540,6 +881,24 @@
 			productName = "UPennMobileComponentsSDK-UPennMobileComponentsSDK";
 			productReference = D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */;
 			productType = "com.apple.product-type.bundle";
+		};
+		EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78E219AC01CD5AFED663C9AB28280801 /* Build configuration list for PBXNativeTarget "Alamofire" */;
+			buildPhases = (
+				8070B01910C64B9AFD0DB550EDE38D6B /* Headers */,
+				2C8326877F6A9617C2FBE9BD15D95B59 /* Sources */,
+				9590D3FE7A79CD7CBEE3F346E8C19D4D /* Frameworks */,
+				9BCA7D105D531AE5DAF34FB86A2E623A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Alamofire;
+			productName = Alamofire;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -559,12 +918,14 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C99FC48EDC0328FC9078E9A38C0CEF53 /* Products */;
+			productRefGroup = B6769566324F9BE7C2F3A56DAFB3564E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */,
 				75D38898F06FB642CAAA109DB7E73F13 /* Pods-UPennMobileComponentsSDK_Example */,
 				6C58327C83D2966DB1FA5C9CC1C84356 /* Pods-UPennMobileComponentsSDK_Tests */,
+				1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */,
 				602BD7B2C28A15CCF095789E1537CE8E /* UPennMobileComponentsSDK */,
 				AACC6062B1734F218FFBC2DD46FEFE72 /* UPennMobileComponentsSDK-UPennMobileComponentsSDK */,
 			);
@@ -579,88 +940,143 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3DB3014A0012D12AB7850B3D48130932 /* Resources */ = {
+		3DCF34D8A94A772448F142DF70610DDF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8900003BC67C20DF6E2EA618F7BD7F29 /* UPennMobileComponentsSDK.bundle in Resources */,
+				127EEA1236D8FE42136635A9B3FF784F /* checked.png in Resources */,
+				557636C47656D34C1F0D9A45552ECB14 /* penn_medicine_transparent.png in Resources */,
+				C89B584808A7419E01FF5EA299158025 /* un_checked.png in Resources */,
+				74C15EB9864E7EA06FD591BC719661B8 /* UPennLoginViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		74C558DF333400EE14F940F50BB3291A /* Resources */ = {
+		6E66B1A56B228AA0F36ACF679D818C30 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9D7BD34DE46369EF83C4AB8F192886F /* Resources */ = {
+		7B32A70AD718A6944E5FC894068439B0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6212B7181DBE4A2AB2B79B45F647A8A5 /* checked.png in Resources */,
-				A4C43044059F173D02D0CF2882E2C0FB /* penn_medicine_transparent.png in Resources */,
-				1666DAF594CA30F402E81F9C7212764D /* un_checked.png in Resources */,
-				49ABCC12A83675BADC5EBCFFFB5D6E14 /* UPennLoginViewController.storyboard in Resources */,
+				3574662C5B13AC743ADB27DF68DAE97D /* UPennMobileComponentsSDK.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BB2E885B360CCC1AEF0C191542BA06E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264E1A478BDFA31DA6842749C72EA535 /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BCA7D105D531AE5DAF34FB86A2E623A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4C295113D65EA7601161623ED775A4AB /* Sources */ = {
+		081EC69F99AC68A69AB21170F94DC48F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBC3356A73FE777A09F3FA9FE25C7C5 /* Pods-UPennMobileComponentsSDK_Example-dummy.m in Sources */,
+				B4F36292AED21C2A96050F33F285BA87 /* Bundle+UPenn.swift in Sources */,
+				72A110B087FB5E2F1F57C0304473324C /* CALayer+UPenn.swift in Sources */,
+				25D16B99D090C37B938944E7784C25DA /* Date+UPenn.swift in Sources */,
+				5E2E6213427399BDEB21F6CA07C4539A /* Dateformatter+UPenn.swift in Sources */,
+				BD9B8478EA122007330D91C65AE25FE0 /* Storyboarded.swift in Sources */,
+				264D40695CA535DDED1A27579FBFFB17 /* String+UPenn.swift in Sources */,
+				A4ADD31FAF8384236B2CA29641C8343C /* UIButton+UPenn.swift in Sources */,
+				894BB52E2F2DD407FC34F8F98A6C94C2 /* UIColor+UPenn.swift in Sources */,
+				1876D9715779DA051B771475782C0F67 /* UIFont+UPenn.swift in Sources */,
+				B7302A8CA4CEB7B893D81DDB2BD2E5D3 /* UILabel+UPenn.swift in Sources */,
+				9741152ABBD17C13043A9AB2BB66414B /* UIScrollView+UPenn.swift in Sources */,
+				8538B63C82D1CEAC5E3F45BA5F033F62 /* UIStoryboard+UPenn.swift in Sources */,
+				0D90CD322FDE961DA8120F7713B8BF1D /* UITableView+UPenn.swift in Sources */,
+				D251D649ABDEA404073A2BEDF904CCE1 /* UIView+UPenn.swift in Sources */,
+				F9C53E5B511BA1C894490529474BBA50 /* UIViewController+UPenn.swift in Sources */,
+				7D8A9228B901D034F4D30E2B2ABF925D /* UPennActivityPresenter.swift in Sources */,
+				A7862853F3F00CA56CFF6CA0EB9C6AD9 /* UPennApplicationSettings.swift in Sources */,
+				A5DA42D67239C64E943FD7154CF51D63 /* UPennAuthenticationService.swift in Sources */,
+				46CA3B8845DF62E5B5FB1AA02645AB2F /* UPennBaseNetworkingService.swift in Sources */,
+				CB03F6DCC16F51A0ABBB7F4E0055B5C9 /* UPennBasicViewController.swift in Sources */,
+				D17CB88EDCC8044068C6D4232DF5D465 /* UPennBiometricsAuthService.swift in Sources */,
+				A66FAB1835EE6EC07567289C372BD33B /* UPennCameraImagePreviewViewController.swift in Sources */,
+				F7BED3ED4B7C04795F243A79CF7E6053 /* UPennConstants.swift in Sources */,
+				878FEF51AE915985DC09CEC6BC1390C4 /* UPennCoordinator.swift in Sources */,
+				164CE7DB7F701E9115F75F9C8408B8FA /* UPennCustomCameraViewController.swift in Sources */,
+				E504F2AEC7B138D019A52E3F2597B870 /* UPennImageAssets.swift in Sources */,
+				99461F2E52AC7DAD714D64B39B969831 /* UPennKeyboardService.swift in Sources */,
+				0806C1B75441AEE944E8E3DF03F1A2EA /* UPennKeychainConfiguration.swift in Sources */,
+				9FB273D95A19350DE172506AC45DFFD0 /* UPennKeychainPasswordItem.swift in Sources */,
+				77EC9463E2F5CE259EA7EF527F85DEB8 /* UPennLightNavBarViewController.swift in Sources */,
+				50B4C6FF0A0A150A5929FA16B03F642E /* UPennLoginCoordinator.swift in Sources */,
+				7BCAF5EB402AAFCE8B5A245F23DFD250 /* UPennLoginNetworkRequests.swift in Sources */,
+				4E4F49E3B50A2CAF98E2F3F468F6CF28 /* UPennLoginPresenter.swift in Sources */,
+				6000134441439C8DEECFF5BF5E04AA5E /* UPennLoginService.swift in Sources */,
+				4EC4D4CB6F11CF62A670460228F1A3EF /* UPennLoginServiceDelegate.swift in Sources */,
+				BCF782487F264FE826031B5674B355BD /* UPennLoginViewController.swift in Sources */,
+				0F1518AF57F749870F4EAC42F11BE0F8 /* UPennMobileComponentsSDK-dummy.m in Sources */,
+				8D4640CB311880D373DD62E13ABA9C1A /* UPennNameSpacer.swift in Sources */,
+				D7B5FF2F9E976FBCD84BA01AF3A2B776 /* UPennNetworkRequestable.swift in Sources */,
+				6F2D25D3D4F21D01B569BC8F53E67C07 /* UPennTypeAliases.swift in Sources */,
+				5A2BC402B08DFC63E24BB7C10B4B0B60 /* UPennURLProvidable.swift in Sources */,
+				DA13B37E01D639161E3E75F363348C5B /* UPennValidationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76AF5A18519994E0EE9C0F7BD923411C /* Sources */ = {
+		2C8326877F6A9617C2FBE9BD15D95B59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FCCC29D2D2986DD71A731A7D9AC51A6 /* Bundle+UPenn.swift in Sources */,
-				C8311166A03B69FCB8A6D84063356600 /* CALayer+UPenn.swift in Sources */,
-				3A5C7AE025F0924B00E84B07 /* UPennLoginViewController.swift in Sources */,
-				F3D0B432AAFB296503C8631CE4717518 /* Date+UPenn.swift in Sources */,
-				A43E5BC01A4DB905B81A9BD3EF463300 /* Dateformatter+UPenn.swift in Sources */,
-				ED075FEE18DF2E0B2B334355DC0BC293 /* PPApplicationSettings.swift in Sources */,
-				23AA9D411DAEC40A8D1DB0155D2E8F90 /* Storyboarded.swift in Sources */,
-				BE09563636201AFFAF6E1A2680084455 /* String+UPenn.swift in Sources */,
-				EDCE1FB7A5C2CA10AF51277A86A45467 /* UIButton+UPenn.swift in Sources */,
-				DEA6E9E81367D0961AA6EE205B091D60 /* UIColor+UPenn.swift in Sources */,
-				418BAEEEAC0C5559282B7AF9E448400A /* UIFont+UPenn.swift in Sources */,
-				276AC90F73DA5B41C6A5608A55F420BE /* UILabel+UPenn.swift in Sources */,
-				215D7931FA7BAAB0C3300238B0B7BFEF /* UIScrollView+UPenn.swift in Sources */,
-				C16EF65D8E7936314FB0D2861E265651 /* UIStoryboard+UPenn.swift in Sources */,
-				3CBB02185AD616AC57A9DE91F264B17C /* UITableView+UPenn.swift in Sources */,
-				DE3F1D4BDB0C1F2D2DE7D7DD1C1CE57F /* UIView+UPenn.swift in Sources */,
-				7ACDAB8EE30EE6A7B93A231191299E2F /* UIViewController+UPenn.swift in Sources */,
-				2BCE458227EC7CDD8568D46B833D442D /* UPennAuthenticationService.swift in Sources */,
-				08BDC8BC73ADEAA7FFC7341772B65CCA /* UPennBasicViewController.swift in Sources */,
-				1F2A97730D685EE309641537B6072BE8 /* UPennBiometricsAuthService.swift in Sources */,
-				EEAA838476390FA34F245966E7298EA0 /* UPennCameraImagePreviewViewController.swift in Sources */,
-				15E61DCA41A7EB1FF47854A62B730A1E /* UPennCoordinator.swift in Sources */,
-				511D7708D06D14F7C76FD0C2249D70D3 /* UPennCustomCameraViewController.swift in Sources */,
-				D4926CBF723371ADF88C9DE5E7CF01B5 /* UPennImageAssets.swift in Sources */,
-				9E2C097C7BDC1046FA654AA21B6D3E45 /* UPennKeyboardService.swift in Sources */,
-				3EBCDA3EDAFB94D8BC58151E069B4295 /* UPennKeychainConfiguration.swift in Sources */,
-				3A5C7ADF25F0924B00E84B07 /* UPennLoginCoordinator.swift in Sources */,
-				C56FFCB2A54E55A15372A04EB405E4B8 /* UPennKeychainPasswordItem.swift in Sources */,
-				21B881E81B9FA32DE129E3B774650147 /* UPennLightNavBarViewController.swift in Sources */,
-				AF507F5A90966CC99C6A5AD3F6FD0B8D /* UPennLoginNetworkRequests.swift in Sources */,
-				0FABEFFBB46E0D7902BFC24CE5D7C974 /* UPennLoginPresenter.swift in Sources */,
-				25B8ADD711B4346F248F2E4A50098D0E /* UPennLoginService.swift in Sources */,
-				810565E307C28F14E2D15334FDF64D98 /* UPennLoginServiceDelegate.swift in Sources */,
-				52734A79FC7CAAC070877E571306DA59 /* UPennMobileComponentsSDK-dummy.m in Sources */,
-				79B2C4BC342FD4823570DE86D5338E00 /* UPennNameSpacer.swift in Sources */,
-				BEBD3C05BDA9B94F66A0F7B34DD2C2ED /* UPennNetworkRequestable.swift in Sources */,
-				D45A628FCED53B7A32A58C12C87BFDEE /* UPennValidationService.swift in Sources */,
+				1208E81DA8B532D0646D627B50290EB6 /* AFError.swift in Sources */,
+				C6D5A4B4028B2C43380C9FA58BD5C8CA /* Alamofire-dummy.m in Sources */,
+				C1F1DB6A9CBDE584D09BA1613AAD4F9D /* Alamofire.swift in Sources */,
+				72EC2712926E6D28B52360D9AC41668F /* AlamofireExtended.swift in Sources */,
+				DC627AFC5B585686898B014184AFCABD /* AuthenticationInterceptor.swift in Sources */,
+				ABA85887A41495358C83CE3F3030EDEA /* CachedResponseHandler.swift in Sources */,
+				0A1849775CF90D514963187D3A771CF8 /* Combine.swift in Sources */,
+				27E59A11A2743B0595CDE3A08675EAE1 /* DispatchQueue+Alamofire.swift in Sources */,
+				6546D728B69398F93B506845141EBD61 /* EventMonitor.swift in Sources */,
+				91B837CE0DCD8EDB300FCDFFA1279162 /* HTTPHeaders.swift in Sources */,
+				013BAC24F7AC722E59517CB110A9E685 /* HTTPMethod.swift in Sources */,
+				45B8CC1C61E7A0BB28CFA8CE7C12FEBC /* MultipartFormData.swift in Sources */,
+				D03F1F02DE8606E6057D57866611BEBF /* MultipartUpload.swift in Sources */,
+				19D605A3233499828FB6B790869F3E9C /* NetworkReachabilityManager.swift in Sources */,
+				8AA937910F87915DE700CAB6C868689E /* Notifications.swift in Sources */,
+				0A900DF17E3B64F08AF673E9A0DDD697 /* OperationQueue+Alamofire.swift in Sources */,
+				4AEC050FA7D5ED52FDA9DF50EA3560DF /* ParameterEncoder.swift in Sources */,
+				D14066FAE94E304798E43651E5886D13 /* ParameterEncoding.swift in Sources */,
+				218C14EAE5AA31C30314AE0289B732A0 /* Protected.swift in Sources */,
+				666EC5C8356E6D4448A2FE7BEE77AD88 /* RedirectHandler.swift in Sources */,
+				EDC93BD7B9262119AE145E4C7A9D0212 /* Request.swift in Sources */,
+				6E54F64E8DA73F4B0B46C216F9F93F63 /* RequestInterceptor.swift in Sources */,
+				6C08F6A77889651626583100F560153D /* RequestTaskMap.swift in Sources */,
+				C1C5B050B55C15103ABC81769551A283 /* Response.swift in Sources */,
+				911448B2EDA2FF880108F77642797A88 /* ResponseSerialization.swift in Sources */,
+				66B26C6CAE737EC21F4BA1F1851B69C5 /* Result+Alamofire.swift in Sources */,
+				9FED70D1E1FBFB80E974E999EF732258 /* RetryPolicy.swift in Sources */,
+				47FDBBBD2704901588C3A7C56BBC502D /* ServerTrustEvaluation.swift in Sources */,
+				6AE407A4FB6C3D6ADD862CC6E3067A17 /* Session.swift in Sources */,
+				381FF05F8B4F611EE9C2FDBE4457BB89 /* SessionDelegate.swift in Sources */,
+				212EDC48B68107BEA9247F3464CE696E /* StringEncoding+Alamofire.swift in Sources */,
+				9B1D8A7798D8A6F518FC9AF9725431D0 /* URLConvertible+URLRequestConvertible.swift in Sources */,
+				D31FC7FDD450C4CDD633ECBAD27C6221 /* URLEncodedFormEncoder.swift in Sources */,
+				D5EAAFB6FAD77A8F0699345149BA3CBB /* URLRequest+Alamofire.swift in Sources */,
+				F70EF854395CDE981A8336E4FF0310FE /* URLSessionConfiguration+Alamofire.swift in Sources */,
+				F0F3224FF592F9BA2A044A2FC2BD4CCD /* Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C832A8CB85C7C1BC1C073DD74485EE2 /* Sources */ = {
+		7EC59E91F6A2A7E4E0E1C99038698F79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -675,20 +1091,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A71DA86A924A93816E4B77AEFFB0D740 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99BBDB39EEA8712138727D30732041AD /* Pods-UPennMobileComponentsSDK_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0233C648200ED130A278D7164E80914 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5B9915F785CB47C5C07F0B698911B00 /* SVIndefiniteAnimatedView.m in Sources */,
+				EEAA1518C49804736C3F40117D064CBE /* SVProgressAnimatedView.m in Sources */,
+				9FDEEEE37349769B84A30B0105DFF456 /* SVProgressHUD-dummy.m in Sources */,
+				3392F8407B8C6F47A4E47436894642D8 /* SVProgressHUD.m in Sources */,
+				D2246BE5AF9C116D84444CC5C955BC02 /* SVRadialGradientLayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		34231452B10469DACAB3347F0E4D178D /* PBXTargetDependency */ = {
+		0F4FE2149CD09E92B3608763A1072152 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 9AD4BC6CAFD4445C7BD7A561AA5B9ECA /* PBXContainerItemProxy */;
+		};
+		17F9DE947198E174158BF82DE8976350 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = 2DE52810CE3263AECE007EE6BAC036FC /* PBXContainerItemProxy */;
+		};
+		39E8ED955157FA84C6421422CCEE9D3F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "UPennMobileComponentsSDK-UPennMobileComponentsSDK";
 			target = AACC6062B1734F218FFBC2DD46FEFE72 /* UPennMobileComponentsSDK-UPennMobileComponentsSDK */;
-			targetProxy = 254FFC48241B94FB593D997024117C7D /* PBXContainerItemProxy */;
+			targetProxy = F5A121F33ACBC0CF65B4CF512DE0F3DD /* PBXContainerItemProxy */;
 		};
-		81EC1D48F2B57BB94E1AB52ACA8425A3 /* PBXTargetDependency */ = {
+		52B931B1E8FA6C8310B1658C0A8E26AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = UPennMobileComponentsSDK;
-			target = 602BD7B2C28A15CCF095789E1537CE8E /* UPennMobileComponentsSDK */;
-			targetProxy = FCF49FCCBC390593CBA896BBF745303D /* PBXContainerItemProxy */;
+			name = SVProgressHUD;
+			target = 1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */;
+			targetProxy = CAA426A2C3780EC82FD3F2AB9E856AAC /* PBXContainerItemProxy */;
 		};
 		82B496B178A617C43EAB393195FBF662 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -696,79 +1144,24 @@
 			target = 75D38898F06FB642CAAA109DB7E73F13 /* Pods-UPennMobileComponentsSDK_Example */;
 			targetProxy = 8C5E61BD4D58B2DD24A08AD055F54022 /* PBXContainerItemProxy */;
 		};
+		B05F5DB6847901D24CB90D124098CE3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UPennMobileComponentsSDK;
+			target = 602BD7B2C28A15CCF095789E1537CE8E /* UPennMobileComponentsSDK */;
+			targetProxy = E61C5EB5CF68C19AA4864C553D9E2CD0 /* PBXContainerItemProxy */;
+		};
+		DF4609E41A7CC032A23F42CD84A25EC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SVProgressHUD;
+			target = 1C8D67D8B72D6BA42CCEDB648537A340 /* SVProgressHUD */;
+			targetProxy = 9C875310254D146EA99F3E890C7EAB82 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07986DF3E3D3C7442EBFC34E41BFD81F /* Release */ = {
+		0A9F96DDD1B3B06EE8AB4BDF3C577A71 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BC401BF5394B776DEA034A412C9F26A /* Pods-UPennMobileComponentsSDK_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1817AE08EC739EE21EEC279769A3B8C8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19764E3921AFA89749BD49F748114F02 /* Pods-UPennMobileComponentsSDK_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4EC3C7DA0A213E8171C0432DB1766735 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29CBA57EE491E8DC56F7365E0AB57697 /* UPennMobileComponentsSDK.debug.xcconfig */;
+			baseConfigurationReference = 18BE9A52BDD78CCD400456C3207EE320 /* UPennMobileComponentsSDK.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UPennMobileComponentsSDK";
@@ -781,42 +1174,9 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
-		8C00C7E1A8963D66387848E04F4F9F9B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7E839E75195D4B8F2F91C0BE9B8C484 /* Pods-UPennMobileComponentsSDK_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+		1422B121EAEAEA11307496903FA623C6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -864,18 +1224,377 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+		1FC598D73FEBC6846165C7E59BDDB038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4FD7EB560270E200A6AF9B7284A7A3A /* SVProgressHUD.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2C848115B65D0D0C7290674D46E3F7D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC401BF5394B776DEA034A412C9F26A /* Pods-UPennMobileComponentsSDK_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3B74ADAEA9132F99155031414F1C8D14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC51B5885B214DBFA3873A58CF8960BD /* SVProgressHUD.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = SVProgressHUD;
+				PRODUCT_NAME = SVProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5A9D470458CBC2696633103BC3AF755E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0973D4B0B7A1D1DC0842FCA002561CDA /* Alamofire.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7E854576A61EAD87EA8237EFEC5C6B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19764E3921AFA89749BD49F748114F02 /* Pods-UPennMobileComponentsSDK_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		88141E487D507F82E90C3EA8F98D4F7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54DD42C00AB1DCFBFE23915185347327 /* UPennMobileComponentsSDK.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UPennMobileComponentsSDK";
+				IBSC_MODULE = UPennMobileComponentsSDK;
+				INFOPLIST_FILE = "Target Support Files/UPennMobileComponentsSDK/ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = UPennMobileComponentsSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		8A674B9B14B70D2073D03BFB00AEBF62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7E839E75195D4B8F2F91C0BE9B8C484 /* Pods-UPennMobileComponentsSDK_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Tests/Pods-UPennMobileComponentsSDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9559F38EB0AE43670882B840752CD64A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54DD42C00AB1DCFBFE23915185347327 /* UPennMobileComponentsSDK.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK.modulemap";
+				PRODUCT_MODULE_NAME = UPennMobileComponentsSDK;
+				PRODUCT_NAME = UPennMobileComponentsSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A7F2145F3F2AF1749648DF817B80B201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18BE9A52BDD78CCD400456C3207EE320 /* UPennMobileComponentsSDK.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK.modulemap";
+				PRODUCT_MODULE_NAME = UPennMobileComponentsSDK;
+				PRODUCT_NAME = UPennMobileComponentsSDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A8A0D917DF8934654799D072FFE36E35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4CB7A351B84C959D5AC4A56AD0C6F1E /* Pods-UPennMobileComponentsSDK_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D597913500A568477F588048139E9FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED27586BA75AC461C0C76DC85BF49F1B /* Alamofire.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
+				PRODUCT_MODULE_NAME = Alamofire;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED7888FA6713EABBF66D26A8003AD1CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -926,7 +1645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -939,130 +1658,14 @@
 			};
 			name = Debug;
 		};
-		94AB254EED34DE424713DC7B9D445BF4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4CB7A351B84C959D5AC4A56AD0C6F1E /* Pods-UPennMobileComponentsSDK_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B7E925F2F531572B394765C180269CFB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29CBA57EE491E8DC56F7365E0AB57697 /* UPennMobileComponentsSDK.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK.modulemap";
-				PRODUCT_MODULE_NAME = UPennMobileComponentsSDK;
-				PRODUCT_NAME = UPennMobileComponentsSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DE22B48B898B39B6A3065A8D4C545AB4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 056B3DDC53CB09EC068CE90894F4F4C8 /* UPennMobileComponentsSDK.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/UPennMobileComponentsSDK";
-				IBSC_MODULE = UPennMobileComponentsSDK;
-				INFOPLIST_FILE = "Target Support Files/UPennMobileComponentsSDK/ResourceBundle-UPennMobileComponentsSDK-UPennMobileComponentsSDK-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				PRODUCT_NAME = UPennMobileComponentsSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		E6E3FFE28A8EDB6C90E962285FA8ECE1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 056B3DDC53CB09EC068CE90894F4F4C8 /* UPennMobileComponentsSDK.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UPennMobileComponentsSDK/UPennMobileComponentsSDK.modulemap";
-				PRODUCT_MODULE_NAME = UPennMobileComponentsSDK;
-				PRODUCT_NAME = UPennMobileComponentsSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C8F881669CB3B660EAE050A49DA9357 /* Build configuration list for PBXNativeTarget "Pods-UPennMobileComponentsSDK_Example" */ = {
+		31A3DA0DD4E10CDBD41D31D4D4E0FB22 /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1817AE08EC739EE21EEC279769A3B8C8 /* Debug */,
-				94AB254EED34DE424713DC7B9D445BF4 /* Release */,
+				9559F38EB0AE43670882B840752CD64A /* Debug */,
+				A7F2145F3F2AF1749648DF817B80B201 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1070,17 +1673,26 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				916E0404255105F480DC4950B7625F7A /* Debug */,
-				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+				ED7888FA6713EABBF66D26A8003AD1CA /* Debug */,
+				1422B121EAEAEA11307496903FA623C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C346A13D795FAADD65FC646B4F931873 /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK-UPennMobileComponentsSDK" */ = {
+		608CE9B2AFCC2C5C7956BEEA8CF3B5A5 /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK-UPennMobileComponentsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4EC3C7DA0A213E8171C0432DB1766735 /* Debug */,
-				DE22B48B898B39B6A3065A8D4C545AB4 /* Release */,
+				88141E487D507F82E90C3EA8F98D4F7F /* Debug */,
+				0A9F96DDD1B3B06EE8AB4BDF3C577A71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78E219AC01CD5AFED663C9AB28280801 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A9D470458CBC2696633103BC3AF755E /* Debug */,
+				D597913500A568477F588048139E9FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1088,17 +1700,26 @@
 		D3CD1256B40F35C8331467EC1FACDB9E /* Build configuration list for PBXNativeTarget "Pods-UPennMobileComponentsSDK_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C00C7E1A8963D66387848E04F4F9F9B /* Debug */,
-				07986DF3E3D3C7442EBFC34E41BFD81F /* Release */,
+				8A674B9B14B70D2073D03BFB00AEBF62 /* Debug */,
+				2C848115B65D0D0C7290674D46E3F7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF5F5EA52BEB8D1111F4839EF4794B1C /* Build configuration list for PBXNativeTarget "UPennMobileComponentsSDK" */ = {
+		E525F3FBF87BE8E471355A6F74BAE658 /* Build configuration list for PBXNativeTarget "Pods-UPennMobileComponentsSDK_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B7E925F2F531572B394765C180269CFB /* Debug */,
-				E6E3FFE28A8EDB6C90E962285FA8ECE1 /* Release */,
+				7E854576A61EAD87EA8237EFEC5C6B3A /* Debug */,
+				A8A0D917DF8934654799D072FFE36E35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76C288BA44757915CF3700D8A326EB7 /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B74ADAEA9132F99155031414F1C8D14 /* Debug */,
+				1FC598D73FEBC6846165C7E59BDDB038 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

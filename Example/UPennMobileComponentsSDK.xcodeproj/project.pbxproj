@@ -317,10 +317,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-UPennMobileComponentsSDK_Example/Pods-UPennMobileComponentsSDK_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/UPennMobileComponentsSDK/UPennMobileComponentsSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UPennMobileComponentsSDK.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +495,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				UPENN_LOGIN_URL = "$(UPENN_ROOT_URL)/Token/login";
+				UPENN_ROOT_URL = "https://proxymvtest.uphs.upenn.edu/pennpal/api";
 			};
 			name = Debug;
 		};
@@ -507,6 +513,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				UPENN_LOGIN_URL = "$(UPENN_ROOT_URL)/Token/login";
+				UPENN_ROOT_URL = "https://proxymvtest.uphs.upenn.edu/pennpal/api";
 			};
 			name = Release;
 		};

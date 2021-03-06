@@ -11,7 +11,7 @@ import UIKit
 //import SVProgressHUD
 //import UPennMobileComponentsSDK
 
-public class UPennLoginViewController: /*UPennStoryboardedViewController*/ UIViewController {
+public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewController*/ {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -158,8 +158,6 @@ extension UPennLoginViewController : UITextFieldDelegate {
 extension UPennLoginViewController : UPennLoginPresenterDelegate {
     
     public func didSuccessfullyLoginUser() {
-        // TODO: Replace w/ UPennProgressHUD SVProgressHUD.dismiss()
-        
         /*
          * 1. Trigger Logout timer
          * 2. Send username & PN deviceToken to server
@@ -182,6 +180,7 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
 //        }
         // TODO: Move to Coordinator?
 //        self.sendLoginNotification()
+        UPennActivityPresenter.Dismiss()
         self.loginCoordinator?.didSuccessfullyLoginUser()
     }
     
@@ -191,11 +190,11 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
     
     public func didFailToLoginUser(errorStr: String) {
         // TODO: Replace w/ UPennProgressHUD
-//        SVProgressHUD.showError(withStatus: errorStr)
+        UPennActivityPresenter.ShowError(message: errorStr)
     }
 
     public func registerForTouchIDAuthentication() {
-        // TODO: Replace w/ UPennProgressHUD SVProgressHUD.dismiss()
+         UPennActivityPresenter.Dismiss()
         self.present(self.touchIDAlertController, animated: true, completion: nil)
     }
     
@@ -204,7 +203,7 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
     }
     
     public func biometricsDidError(with message: String?) {
-        // TODO: Replace w/ UPennProgressHUD SVProgressHUD.showError(withStatus: message)
+        UPennActivityPresenter.ShowError(message: message ?? "")
     }
     
 //    func registerForFaceIDAuthentication() {
@@ -254,7 +253,7 @@ private extension UPennLoginViewController {
     }
     
     func login() {
-        // TODO: Replace w/ UPennProgressHUD SVProgressHUD.show(withStatus: "Logging in.....")
+        UPennActivityPresenter.Show(message: "Logging in.....")
         self.loginPresenter.makeLoginRequest(username: self.emailField.text!, password: self.passwordField.text!)
     }
     // TODO: Still Needed for UI?

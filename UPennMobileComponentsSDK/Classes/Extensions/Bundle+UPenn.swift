@@ -8,6 +8,11 @@
 import Foundation
 
 public extension Bundle {
+    
+    enum Context : String {
+        case Main = "upenn_main"
+        case SDK = "upenn_sdk"
+    }
     /**
      User following to fetch an image
      
@@ -15,10 +20,10 @@ public extension Bundle {
      let image = UIImage(named: "ic_arrow_back", inBundle: resourceBundle, compatibleWithTraitCollection: nil)
      return image
      */
-   static func UPennSDKResourcesBundle() -> Bundle? {
+   static func UPennSDKResourcesProvider() -> Bundle? {
+    
     let bundle = Bundle(for: UPennAuthenticationService.self)
-    guard let resourcesBundleUrl = bundle.path(forResource: "UPennMobileComponentsSDK", ofType: "bundle")
-        /*let resourcesBundleUrl = bundle.resourceURL?.appendingPathComponent("UPennMobileComponentsSDK.bundle")*/ else {
+    guard let resourcesBundleUrl = bundle.path(forResource: "UPennMobileComponentsSDK", ofType: "bundle") else {
          return nil
       }
       return Bundle(url: URL(fileURLWithPath: resourcesBundleUrl))

@@ -8,14 +8,31 @@
 import Foundation
 import UIKit
 
-public protocol Storyboarded {
-    static func Instantiate() -> Self
+public protocol Storyboarded : class {
+    static var StoryboardName : String { get }
 }
 
-public extension Storyboarded where Self: UIViewController {
-    static func Instantiate() -> Self {
-        let id = String(describing: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        return storyboard.instantiateViewController(withIdentifier: id) as! Self
+public extension Storyboarded where Self: UPennStoryboardedViewController {
+    static var StoryboardName: String {
+        return String(describing: self)
     }
+        
+    static func Instantiate(_ bundleContext: Bundle.Context) -> Self {
+        var sbd : UIStoryboard?
+        switch bundleContext {
+        case .Main:
+            sbd = UIStoryboard(name: StoryboardName, bundle: nil)
+        case .SDK:
+            sbd = UIStoryboard(name: StoryboardName, bundle: Bundle.UPennSDKResourcesProvider())
+        }
+        guard
+            let storyboard = sbd,
+            let vc = storyboard.instantiateInitialViewController() as? Self else {
+            fatalError("Could not instantiate initial storyboard with name: \(StoryboardName)")
+        }
+        return vc
+    }
+    
 }
+/// ViewController that provides built-in inheritance from UPennBasicViewController & Storyboarded conformance
+open class UPennStoryboardedViewController : UPennBasicViewController, Storyboarded { }

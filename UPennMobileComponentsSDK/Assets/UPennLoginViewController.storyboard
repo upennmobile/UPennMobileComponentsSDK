@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbt-gc-QeJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login-->
+        <scene sceneID="L4R-nr-X12">
+            <objects>
+                <viewController storyboardIdentifier="UPennLoginViewController" id="Wbt-gc-QeJ" customClass="UPennLoginViewController" customModule="UPennMobileComponentsSDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3vb-Id-hiy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ezd-SK-eBY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vpy-YG-Eew">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCs-lR-oTG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8u4-6e-wIj" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="penn_medicine_transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="sZ5-bW-WCv">
+                                                <rect key="frame" x="48.5" y="30" width="317" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sZ5-bW-WCv" secondAttribute="height" multiplier="222:35" id="Obp-iL-ZUt"/>
+                                                    <constraint firstAttribute="height" constant="50" id="gyB-ci-5sn"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Penn Chart Live" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMW-Ug-kft" customClass="BannerLabel" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="100" width="382" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="8T0-Hp-kAT"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlY-gn-hVF">
+                                                <rect key="frame" x="16" y="150" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="mDF-YR-GRC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="823-q8-Me2">
+                                                <rect key="frame" x="16" y="220" width="382" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="fAC-5u-Qha"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-Fv-OAd" customClass="PrimaryCTAButtonText" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="290" width="21" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0cd-Fv-OAd" secondAttribute="height" multiplier="1:1" id="6uc-KY-NjG"/>
+                                                    <constraint firstAttribute="height" constant="21" id="s9A-rr-iQ3"/>
+                                                </constraints>
+                                                <state key="normal" image="un_checked">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressedAutoFillButton:" destination="Wbt-gc-QeJ" eventType="touchUpInside" id="nbn-UK-cVy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXS-ab-zMn" customClass="PrimaryCTAButton" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                <rect key="frame" x="16" y="331" width="382" height="50"/>
+                                                <color key="backgroundColor" red="0.29411764709999999" green="0.47450980390000003" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="xKx-sn-HaZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressedLogin:" destination="Wbt-gc-QeJ" eventType="touchUpInside" id="9sG-9X-1Ks"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LF-fq-5A8" customClass="ContactDepartmentLabel" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                <rect key="frame" x="45" y="290" width="166" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqQ-eC-sbF">
+                                                <rect key="frame" x="248" y="401" width="150" height="33"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="o4k-Zp-c3U"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Forgot Password?">
+                                                    <color key="titleColor" red="0.0" green="0.29411764709999999" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressedForgotPassword:" destination="Wbt-gc-QeJ" eventType="touchUpInside" id="Ele-Y0-rT3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sZ5-bW-WCv" firstAttribute="centerX" secondItem="8u4-6e-wIj" secondAttribute="centerX" id="13D-NV-LgA"/>
+                                            <constraint firstItem="zXS-ab-zMn" firstAttribute="top" secondItem="0cd-Fv-OAd" secondAttribute="bottom" constant="20" id="2n5-fX-7ma"/>
+                                            <constraint firstItem="0cd-Fv-OAd" firstAttribute="top" secondItem="823-q8-Me2" secondAttribute="bottom" constant="20" id="8TI-Fr-8Sl"/>
+                                            <constraint firstItem="jlY-gn-hVF" firstAttribute="top" secondItem="zMW-Ug-kft" secondAttribute="bottom" constant="20" id="BnW-ul-0gA"/>
+                                            <constraint firstItem="jlY-gn-hVF" firstAttribute="leading" secondItem="8u4-6e-wIj" secondAttribute="leading" constant="16" id="Byk-OT-8lV"/>
+                                            <constraint firstItem="zXS-ab-zMn" firstAttribute="trailing" secondItem="823-q8-Me2" secondAttribute="trailing" id="FPt-LN-NIj"/>
+                                            <constraint firstItem="zXS-ab-zMn" firstAttribute="leading" secondItem="823-q8-Me2" secondAttribute="leading" id="G7V-EB-8Sj"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7LF-fq-5A8" secondAttribute="trailing" constant="20" symbolic="YES" id="GaL-wo-bDc"/>
+                                            <constraint firstAttribute="trailing" secondItem="zMW-Ug-kft" secondAttribute="trailing" constant="16" id="HCa-Ul-Jps"/>
+                                            <constraint firstItem="zMW-Ug-kft" firstAttribute="leading" secondItem="8u4-6e-wIj" secondAttribute="leading" constant="16" id="Hsn-TS-XzF"/>
+                                            <constraint firstItem="823-q8-Me2" firstAttribute="leading" secondItem="0cd-Fv-OAd" secondAttribute="leading" id="LFA-vI-yij"/>
+                                            <constraint firstItem="zMW-Ug-kft" firstAttribute="top" secondItem="sZ5-bW-WCv" secondAttribute="bottom" constant="20" id="OV5-wn-0Y3"/>
+                                            <constraint firstItem="sZ5-bW-WCv" firstAttribute="top" secondItem="8u4-6e-wIj" secondAttribute="top" constant="30" id="W2O-cT-u1z"/>
+                                            <constraint firstItem="7LF-fq-5A8" firstAttribute="leading" secondItem="0cd-Fv-OAd" secondAttribute="trailing" constant="8" id="XoS-zB-Emo"/>
+                                            <constraint firstItem="823-q8-Me2" firstAttribute="leading" secondItem="jlY-gn-hVF" secondAttribute="leading" id="Xs2-zV-E9a"/>
+                                            <constraint firstAttribute="trailing" secondItem="jlY-gn-hVF" secondAttribute="trailing" constant="16" id="Zru-MC-9JQ"/>
+                                            <constraint firstItem="QqQ-eC-sbF" firstAttribute="top" secondItem="zXS-ab-zMn" secondAttribute="bottom" constant="20" id="bBv-vp-qqU"/>
+                                            <constraint firstItem="0cd-Fv-OAd" firstAttribute="centerY" secondItem="7LF-fq-5A8" secondAttribute="centerY" id="fWz-lK-aTp"/>
+                                            <constraint firstItem="QqQ-eC-sbF" firstAttribute="trailing" secondItem="zXS-ab-zMn" secondAttribute="trailing" id="gUM-NK-gCC"/>
+                                            <constraint firstItem="zMW-Ug-kft" firstAttribute="centerX" secondItem="8u4-6e-wIj" secondAttribute="centerX" id="t8G-nq-3qn"/>
+                                            <constraint firstItem="823-q8-Me2" firstAttribute="trailing" secondItem="jlY-gn-hVF" secondAttribute="trailing" id="wpa-28-eLS"/>
+                                            <constraint firstItem="823-q8-Me2" firstAttribute="top" secondItem="jlY-gn-hVF" secondAttribute="bottom" constant="20" id="wyz-yk-yDM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8u4-6e-wIj" secondAttribute="trailing" id="3Nq-7O-oWn"/>
+                                    <constraint firstItem="8u4-6e-wIj" firstAttribute="top" secondItem="UCs-lR-oTG" secondAttribute="top" id="CfD-2j-vnU"/>
+                                    <constraint firstItem="8u4-6e-wIj" firstAttribute="leading" secondItem="UCs-lR-oTG" secondAttribute="leading" id="c01-ej-7aV"/>
+                                    <constraint firstItem="8u4-6e-wIj" firstAttribute="height" secondItem="UCs-lR-oTG" secondAttribute="height" id="cCr-YL-szs"/>
+                                    <constraint firstItem="8u4-6e-wIj" firstAttribute="width" secondItem="UCs-lR-oTG" secondAttribute="width" id="haS-5Y-zrH"/>
+                                    <constraint firstAttribute="bottom" secondItem="8u4-6e-wIj" secondAttribute="bottom" id="m2W-3e-woV"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MN3-qs-MHE"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UCs-lR-oTG" firstAttribute="top" secondItem="3vb-Id-hiy" secondAttribute="bottom" id="2gL-QX-af9"/>
+                            <constraint firstItem="UCs-lR-oTG" firstAttribute="width" secondItem="vpy-YG-Eew" secondAttribute="width" id="49g-mB-C8e"/>
+                            <constraint firstItem="UCs-lR-oTG" firstAttribute="leading" secondItem="vpy-YG-Eew" secondAttribute="leading" id="Hda-wT-mCH"/>
+                            <constraint firstItem="Ezd-SK-eBY" firstAttribute="top" secondItem="UCs-lR-oTG" secondAttribute="bottom" id="Iac-Sz-W0V"/>
+                            <constraint firstAttribute="trailing" secondItem="UCs-lR-oTG" secondAttribute="trailing" id="M65-ch-P6T"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="niE-df-LiA"/>
+                    <connections>
+                        <outlet property="autoFillButton" destination="0cd-Fv-OAd" id="9Lm-3f-nQN"/>
+                        <outlet property="emailField" destination="jlY-gn-hVF" id="EAj-Ib-eff"/>
+                        <outlet property="forgotPasswordLabel" destination="QqQ-eC-sbF" id="Af5-Ni-fq2"/>
+                        <outlet property="loginButton" destination="zXS-ab-zMn" id="UW7-e8-XvC"/>
+                        <outlet property="passwordField" destination="823-q8-Me2" id="ogg-HI-PkY"/>
+                        <outlet property="rememberMeLabel" destination="7LF-fq-5A8" id="dOU-Zi-SRg"/>
+                        <outlet property="scrollView" destination="UCs-lR-oTG" id="98s-5b-gyP"/>
+                        <outlet property="titleLabel" destination="zMW-Ug-kft" id="QrK-nh-dmC"/>
+                        <outlet property="upennBannerLogo" destination="sZ5-bW-WCv" id="4u6-2Q-ESf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="665-Zf-YbR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="-980.35714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="penn_medicine_transparent.png" width="666" height="107"/>
+        <image name="un_checked" width="50.666667938232422" height="50.666667938232422"/>
+    </resources>
+</document>

@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*
          TODO: Initialize an Authentication Coordinator to manage checking User login state, and login/logout
          */
+        UPennActivityPresenter.Configure()
         let navController = UINavigationController()
         mainCoordinator = UPennMainCoordinator(navController: navController)
         mainCoordinator?.start()
