@@ -115,7 +115,7 @@ public class RoundedPrimaryCTAButtonRed : PrimaryCTAButtonRed {
     }
 }
 
-public class ContactIconButton : UIButton {
+public class UPennIconButton : UIButton {
     
     public override func awakeFromNib() {
         super.awakeFromNib()

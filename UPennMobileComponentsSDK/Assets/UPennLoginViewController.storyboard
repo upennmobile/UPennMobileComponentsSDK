@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -103,6 +104,14 @@
                                                     <action selector="pressedForgotPassword:" destination="Wbt-gc-QeJ" eventType="touchUpInside" id="Ele-Y0-rT3"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-C8-r5q" customClass="UPennIconButtonView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                <rect key="frame" x="182" y="468" width="50" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="LqW-8N-dcn"/>
+                                                    <constraint firstAttribute="width" secondItem="Dyk-C8-r5q" secondAttribute="height" multiplier="1:1" id="ffs-ag-TbU"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -123,8 +132,10 @@
                                             <constraint firstItem="823-q8-Me2" firstAttribute="leading" secondItem="jlY-gn-hVF" secondAttribute="leading" id="Xs2-zV-E9a"/>
                                             <constraint firstAttribute="trailing" secondItem="jlY-gn-hVF" secondAttribute="trailing" constant="16" id="Zru-MC-9JQ"/>
                                             <constraint firstItem="QqQ-eC-sbF" firstAttribute="top" secondItem="zXS-ab-zMn" secondAttribute="bottom" constant="20" id="bBv-vp-qqU"/>
+                                            <constraint firstItem="Dyk-C8-r5q" firstAttribute="centerX" secondItem="8u4-6e-wIj" secondAttribute="centerX" id="dKc-js-any"/>
                                             <constraint firstItem="0cd-Fv-OAd" firstAttribute="centerY" secondItem="7LF-fq-5A8" secondAttribute="centerY" id="fWz-lK-aTp"/>
                                             <constraint firstItem="QqQ-eC-sbF" firstAttribute="trailing" secondItem="zXS-ab-zMn" secondAttribute="trailing" id="gUM-NK-gCC"/>
+                                            <constraint firstItem="Dyk-C8-r5q" firstAttribute="top" secondItem="QqQ-eC-sbF" secondAttribute="bottom" constant="34" id="k3L-od-vSh"/>
                                             <constraint firstItem="zMW-Ug-kft" firstAttribute="centerX" secondItem="8u4-6e-wIj" secondAttribute="centerX" id="t8G-nq-3qn"/>
                                             <constraint firstItem="823-q8-Me2" firstAttribute="trailing" secondItem="jlY-gn-hVF" secondAttribute="trailing" id="wpa-28-eLS"/>
                                             <constraint firstItem="823-q8-Me2" firstAttribute="top" secondItem="jlY-gn-hVF" secondAttribute="bottom" constant="20" id="wyz-yk-yDM"/>
@@ -154,6 +165,7 @@
                     <navigationItem key="navigationItem" title="Login" id="niE-df-LiA"/>
                     <connections>
                         <outlet property="autoFillButton" destination="0cd-Fv-OAd" id="9Lm-3f-nQN"/>
+                        <outlet property="biometricsButtonView" destination="Dyk-C8-r5q" id="8wD-jb-dum"/>
                         <outlet property="emailField" destination="jlY-gn-hVF" id="EAj-Ib-eff"/>
                         <outlet property="forgotPasswordLabel" destination="QqQ-eC-sbF" id="Af5-Ni-fq2"/>
                         <outlet property="loginButton" destination="zXS-ab-zMn" id="UW7-e8-XvC"/>
@@ -172,5 +184,8 @@
     <resources>
         <image name="penn_medicine_transparent.png" width="666" height="107"/>
         <image name="un_checked" width="50.666667938232422" height="50.666667938232422"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

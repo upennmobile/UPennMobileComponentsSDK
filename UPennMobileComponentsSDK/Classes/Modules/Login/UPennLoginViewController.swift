@@ -22,6 +22,7 @@ public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewC
     @IBOutlet weak var rememberMeLabel: ContactDepartmentLabel!
     @IBOutlet weak var forgotPasswordLabel: UIButton!
     @IBOutlet weak var upennBannerLogo: UIImageView!
+    @IBOutlet weak var biometricsButtonView : UPennIconButtonView!
     
     fileprivate var validationService: UPennValidationService!
     fileprivate var keyboardService: UPennKeyboardService!
@@ -125,6 +126,9 @@ public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewC
         
         // Set up Forgot Password
         self.forgotPasswordLabel.tintColor = UIColor.upennDarkBlue
+        
+        // Setup Biometrics Button
+        self.biometricsButtonView.configure("1", image: loginPresenter.biometricsImage, delegate: self, enabled: loginPresenter.biometricsEnabled)
     }
     
     @IBAction func pressedLogin(_ sender: Any) {
@@ -138,6 +142,17 @@ public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewC
     @IBAction func pressedForgotPassword(_ sender: Any) {
         // TODO: Remove? PPURLProvider.GoToForgotPassword()
     }
+}
+
+// MARK: - UPennIconButtonViewDelegate
+
+extension UPennLoginViewController : UPennIconButtonDelegate {
+
+    func pressedIconButton(identifier: String) {
+        // Trigger biometrics
+        self.loginPresenter.attemptBiometricsAuthentication()
+    }
+    
 }
 
 // MARK: - UITextFieldDelegate

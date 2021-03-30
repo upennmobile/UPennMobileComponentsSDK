@@ -113,10 +113,10 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
     /**
      Toggle image for Touch ID or Face ID switch
      */
-    var biometricToggleImage : UIImage {
+    public var biometricsImage : UIImage {
         switch self.biometricType {
-        case .FaceID: return #imageLiteral(resourceName: "face_ID_Penn")
-        default: return #imageLiteral(resourceName: "touchID")
+        case .FaceID: return UPennImageAssets.FaceIDIcon
+        default: return UPennImageAssets.TouchIDIcon
         }
     }
     
@@ -168,7 +168,9 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
         // Ensure biometrics registered and enabled
         if self.biometricsEnabled && !self.enabledBiometricsBeforeRegistered {
             self.utilizeBiometricAuthentication()
+            return
         }
+        self.delegate?.biometricsDidError(with: "Error, Biometric Authentication has not been enabled! Please enable and try again.", shouldContinue: false)
     }
     
     public func attemptBiometricsPresentation() {

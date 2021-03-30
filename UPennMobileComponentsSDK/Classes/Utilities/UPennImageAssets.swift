@@ -10,15 +10,23 @@ import UIKit
 
 public struct UPennImageAssets {
     
-    public static var CheckedCheckBox : UIImage? {
-        return UIImage(named: "checked.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)
+    public static var CheckedCheckBox : UIImage {
+        return UIImage(named: "checked.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)!
     }
     
-    public static var UnCheckedCheckBox : UIImage? {
-        return UIImage(named: "un_checked.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)
+    public static var UnCheckedCheckBox : UIImage {
+        return UIImage(named: "un_checked.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)!
     }
     
-    public static var UPennBannerTransparent : UIImage? {
-        return UIImage(named: "penn_medicine_transparent.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)
+    public static var UPennBannerTransparent : UIImage {
+        return UIImage(named: "penn_medicine_transparent.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)!
+    }
+    
+    public static var FaceIDIcon : UIImage {
+        return UIImage(named: "faceID_icon.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)!
+    }
+    
+    public static var TouchIDIcon : UIImage {
+        return UIImage(named: "touchID_icon.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)!
     }
 }

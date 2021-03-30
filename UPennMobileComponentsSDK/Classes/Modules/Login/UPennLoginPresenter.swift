@@ -51,6 +51,7 @@ public protocol UPennLoginBiometricsInterface {
     var touchIDConfirmed : String { get }
     var touchIDDeclined : String { get }
     var biometricOptOutMessage : String { get }
+    var biometricsImage : UIImage { get }
     var biometricsEnabled : Bool { get }
     func completeTouchIDRegistration()
     func toggleBiometrics(_ toggledOn: Bool)
@@ -161,6 +162,10 @@ extension UPennLoginPresenter : UPennLoginPlusBiometricsInterface {
         return self.biometricsService.biometricsEnabled
     }
     
+    public var biometricsImage: UIImage {
+        return self.biometricsService.biometricsImage
+    }
+    
     public func completeTouchIDRegistration() {
         self.biometricsService.completeTouchIDRegistration()
     }
@@ -172,7 +177,9 @@ extension UPennLoginPresenter : UPennLoginPlusBiometricsInterface {
     public func attemptBiometricsAuthentication() {
         if self.loginService.shouldAutoFill {
             self.biometricsService.attemptBiometricsAuthentication()
+            return
         }
+        self.didFailToLoginUser(errorStr: "Error! Biometric Authentication is not enabled. Please enable and try again.")
     }
 }
 
