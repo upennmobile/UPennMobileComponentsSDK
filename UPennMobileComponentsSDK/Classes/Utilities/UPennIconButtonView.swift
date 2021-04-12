@@ -1,5 +1,5 @@
 //
-//  UPennActionButtonView.swift
+//  UPennIconButtonView.swift
 //  UPennMobileComponentsSDK
 //
 //  Created by Rashad Abdul-Salam on 3/29/21.

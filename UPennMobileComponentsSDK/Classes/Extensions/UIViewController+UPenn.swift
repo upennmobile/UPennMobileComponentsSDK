@@ -39,4 +39,25 @@ extension UIViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }
     }
+    
+    func makeParentViewController(_ viewController: UIViewController) {
+        self.addChild(viewController)
+        viewController.view.frame = self.view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(viewController.view)
+        viewController.didMove(toParent: self)
+    }
+    
+    func swapParentViewController(fromVC: UIViewController?, toVC: UIViewController) {
+        guard let fromVC = fromVC else
+        {
+            // If no 'fromVC' assume it's the 1st app launch so no previous child VC was set, so swap to loginNav
+            self.makeParentViewController(toVC)
+            return
+        }
+        self.makeParentViewController(toVC)
+        fromVC.willMove(toParent: nil)
+        fromVC.view.removeFromSuperview()
+        fromVC.removeFromParent()
+    }
 }

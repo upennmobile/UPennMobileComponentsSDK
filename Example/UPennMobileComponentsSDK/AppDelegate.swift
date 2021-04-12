@@ -13,7 +13,7 @@ import UPennMobileComponentsSDK
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var mainCoordinator: UPennMainCoordinator?
+    var masterCoordinator: UPennMasterCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,14 +22,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          */
         UPennActivityPresenter.Configure()
         let navController = UINavigationController()
-        mainCoordinator = UPennMainCoordinator(navController: navController)
-        mainCoordinator?.start()
+        let mainCoordinator = UPennMainCoordinator(navController: navController)
+        let loginCoordinator = UPennLoginCoordinator(navController: navController)
+        self.masterCoordinator = UPennMasterCoordinator(navController: navController, childCoordinators: [loginCoordinator,mainCoordinator])
+        loginCoordinator.loginCoordinatorDelegate = masterCoordinator
+        self.masterCoordinator?.start()
+        
+        // Configure Auto-Logout Timer
+        UPennTimerUIApplication.ConfigureAutoLogoutTimer(callback: self.applicationDidTimout(notification:))
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         return true
     }
+    
+    // MARK: - Timeout Notification
+    // Callback for when the timeout was fired.
+    @objc func applicationDidTimout(notification: NSNotification) {
+        self.masterCoordinator?.dismissAndPresentLogout()
+    }
+    
+    // MARK: Application Lifecycle
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -12,7 +12,7 @@ public protocol Storyboarded : class {
     static var StoryboardName : String { get }
 }
 
-public extension Storyboarded where Self: UPennStoryboardedViewController {
+public extension Storyboarded where Self: UIViewController {
     static var StoryboardName: String {
         return String(describing: self)
     }
@@ -32,7 +32,7 @@ public extension Storyboarded where Self: UPennStoryboardedViewController {
         }
         return vc
     }
-    
 }
+
 /// ViewController that provides built-in inheritance from UPennBasicViewController & Storyboarded conformance
-open class UPennStoryboardedViewController : UPennBasicViewController, Storyboarded { }
+//open class UPennStoryboardedViewController : UIViewController, Storyboarded { }

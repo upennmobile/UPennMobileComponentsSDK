@@ -40,7 +40,7 @@ public protocol UPennLoginInterface : UPennLoginRequestable, UPennLoginCoordinat
 /// Delegation methods for LoginVC  to respond to Login Presenter
 public protocol UPennLoginPresenterDelegate : UPennLoginServiceDelegate {
     func registerForTouchIDAuthentication()
-    func presentTouchIDRegistration()
+//    func presentTouchIDRegistration()
     func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool)
     func biometricsDidError(with message: String?)
 }
@@ -54,6 +54,7 @@ public protocol UPennLoginBiometricsInterface {
     var biometricsImage : UIImage { get }
     var biometricsEnabled : Bool { get }
     func completeTouchIDRegistration()
+    func turnOnBiometricAuthSettings()
     func toggleBiometrics(_ toggledOn: Bool)
     func attemptBiometricsAuthentication()
 }
@@ -177,9 +178,7 @@ extension UPennLoginPresenter : UPennLoginPlusBiometricsInterface {
     public func attemptBiometricsAuthentication() {
         if self.loginService.shouldAutoFill {
             self.biometricsService.attemptBiometricsAuthentication()
-            return
         }
-        self.didFailToLoginUser(errorStr: "Error! Biometric Authentication is not enabled. Please enable and try again.")
     }
 }
 
@@ -231,7 +230,8 @@ extension UPennLoginPresenter : UPennBiometricsDelegate {
         // TODO: Propagate message up to LoginVC/Coordinator to handle presentation
         // Replace w/ UPennProgressHUD SVProgressHUD.dismiss()
 //        self.present(self.touchIDAlertController, animated: true, completion: nil)
-        self.loginDelegate?.presentTouchIDRegistration()
+//        self.loginDelegate?.presentTouchIDRegistration()
+        self.loginDelegate?.registerForTouchIDAuthentication()
     }
     
     public func registerForFaceIDAuthentication() {

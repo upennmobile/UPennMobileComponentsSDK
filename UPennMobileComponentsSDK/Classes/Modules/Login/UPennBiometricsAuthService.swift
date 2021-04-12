@@ -149,6 +149,8 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
         self.setEnabledBiometricsBeforeRegisteredNo()
     }
     
+    public func turnOnBiometricAuthSettings() { }
+    
     /**
      Sets Bool in UserDefaults indicating whether biometric authentication is enabled
      */
@@ -170,7 +172,7 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
             self.utilizeBiometricAuthentication()
             return
         }
-        self.delegate?.biometricsDidError(with: "Error, Biometric Authentication has not been enabled! Please enable and try again.", shouldContinue: false)
+//        self.delegate?.biometricsDidError(with: "Error, Biometric Authentication has not been enabled! Please enable and try again.", shouldContinue: false)
     }
     
     public func attemptBiometricsPresentation() {

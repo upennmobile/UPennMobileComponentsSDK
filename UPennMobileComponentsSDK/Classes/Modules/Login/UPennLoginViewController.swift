@@ -11,7 +11,7 @@ import UIKit
 //import SVProgressHUD
 //import UPennMobileComponentsSDK
 
-public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewController*/ {
+public class UPennLoginViewController: UPennBasicViewController, Storyboarded /*UPennStoryboardedViewController UIViewController*/ {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -38,41 +38,28 @@ public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewC
     }
     
     fileprivate lazy var touchIDAlertController : UIAlertController = {
-        let alertController = UIAlertController(
-            title: self.loginPresenter.touchIDOptInTitle,
-            message: self.loginPresenter.touchIDOptInMessage,
-            preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: self.loginPresenter.touchIDDeclined, style: .cancel, handler: {
-            alert -> Void in
-            // Force biometrics off, and complete login flow to close-out LoginVC
-            self.loginPresenter.toggleBiometrics(false)
-//            self.sendLoginNotification()
-            self.loginCoordinator?.didSuccessfullyLoginUser()
-        })
-        let useTouchIDAction = UIAlertAction(title: self.loginPresenter.touchIDConfirmed, style: .default, handler: {
-            alert -> Void in
-            // Turn on Biometrics Settings & complete Touch ID registration to ensure no repeat launches of Touch ID alert
-            self.turnOnBiometricAuthSettings()
-            self.loginPresenter.completeTouchIDRegistration()
-        })
-        alertController.addAction(cancelAction)
-        alertController.addAction(useTouchIDAction)
+        let fieldContent = UPennTouchIDFieldContent(title: self.loginPresenter.touchIDOptInTitle, message: self.loginPresenter.touchIDOptInMessage, declined: self.loginPresenter.touchIDDeclined, confirmed: self.loginPresenter.touchIDConfirmed)
+        let alertController = UPennAlertsPresenter.TouchIDAlertController(content: fieldContent) { (selection) in
+            switch selection {
+            case .Cancel:
+                // Force biometrics off, and complete login flow to close-out LoginVC
+                self.loginPresenter.toggleBiometrics(false)
+                self.loginCoordinator?.didSuccessfullyLoginUser()
+            case .Use:
+                // Turn on Biometrics Settings & complete Touch ID registration to ensure no repeat launches of Touch ID alert
+                self.turnOnBiometricAuthSettings()
+                self.loginPresenter.completeTouchIDRegistration()
+            }
+        }
         return alertController
     }()
     
     fileprivate lazy var rememberMeAlertController : UIAlertController = {
-        let alertController = UIAlertController(
-            title: self.loginPresenter.biometricOptOutMessage,
-            message: "",
-            preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel".localize, style: .cancel, handler: nil)
-        let disableRememberMe = UIAlertAction(title: "OK".localize, style: .default, handler: {
-            alert -> Void in
+        let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.loginPresenter.biometricOptOutMessage) {
             self.loginPresenter.toggleBiometrics(false)
             self.toggleRememberMe()
-        })
-        alertController.addAction(cancelAction)
-        alertController.addAction(disableRememberMe)
+            self.updateView()
+        }
         return alertController
     }()
     
@@ -80,6 +67,11 @@ public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewC
         super.viewDidLoad()
         self.setup()
     }
+    
+//    public override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.setup()
+//    }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -96,6 +88,7 @@ public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewC
         // General
         // TODO: Not Needed? -- Will be injected when loginCoordinator is created self.logincoordinator.setLoginDelegate(loginDelegate: self)
 //        self.biometricsService = UPennBiometricsAuthService(biometricsDelegate: self)
+        self.title = "Sign In"
         self.titleLabel.text = UPennApplicationSettings.AppDisplayName.localize
         
         // Set up textFields
@@ -126,9 +119,6 @@ public class UPennLoginViewController: UPennStoryboardedViewController /*UIViewC
         
         // Set up Forgot Password
         self.forgotPasswordLabel.tintColor = UIColor.upennDarkBlue
-        
-        // Setup Biometrics Button
-        self.biometricsButtonView.configure("1", image: loginPresenter.biometricsImage, delegate: self, enabled: loginPresenter.biometricsEnabled)
     }
     
     @IBAction func pressedLogin(_ sender: Any) {
@@ -178,21 +168,6 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
          * 2. Send username & PN deviceToken to server
          * 2. Check for 1st Launch & register Biometrics opt-in
          */
-        // TODO: Fire different method? self.logincoordinator.resetLogoutTimer()
-        
-//        if self.isFirstLogin {
-//            self.biometricsService.registerForBiometricAuthentication()
-//            return
-//        }
-        
-        /*
-         * Check if biometrics where enabled in Accounts before being properly registered
-         */
-        // TODO: Not Needed?
-//        if self.biometricsService.enabledBiometricsBeforeRegistered {
-//            self.biometricsService.registerForBiometricAuthentication()
-//            return
-//        }
         // TODO: Move to Coordinator?
 //        self.sendLoginNotification()
         UPennActivityPresenter.Dismiss()
@@ -204,7 +179,6 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
     }
     
     public func didFailToLoginUser(errorStr: String) {
-        // TODO: Replace w/ UPennProgressHUD
         UPennActivityPresenter.ShowError(message: errorStr)
     }
 
@@ -213,18 +187,13 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
         self.present(self.touchIDAlertController, animated: true, completion: nil)
     }
     
-    public func presentTouchIDRegistration() {
-        //
-    }
+//    public func presentTouchIDRegistration() {
+//        //
+//    }
     
     public func biometricsDidError(with message: String?) {
         UPennActivityPresenter.ShowError(message: message ?? "")
     }
-    
-//    func registerForFaceIDAuthentication() {
-//        // TODO: Replace w/ UPennProgressHUD SVProgressHUD.dismiss()
-//        self.biometricsService.utilizeBiometricAuthentication(turnOnBiometrics: true)
-//    }
     
     public func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool) {
         // Check if isFirstLogin - indicates user has opted-in to use biometrics, so must trigger settings updates
@@ -232,19 +201,7 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
             self.turnOnBiometricAuthSettings()
             return
         }
-        // TODO: Replace w/ UPennProgressHUD SVProgressHUD.show(withStatus: "Logging in.....")
-//        self.logincoordinator.attemptSilentLogin()
     }
-    
-//    func biometricsDidError(with message: String?, shouldContinue: Bool) {
-//        // Check if isFirstLogin - indicates user has canceled opt-in to biometrics, so complete login and push to ChangeRequestVC
-//        if shouldContinue {
-//            self.sendLoginNotification()
-//            return
-//        }
-//        guard let m = message else { return }
-//        // TODO: Replace w/ UPennProgressHUD SVProgressHUD.showError(withStatus: m)
-//    }
 }
 
 // MARK: - Private
@@ -261,10 +218,16 @@ private extension UPennLoginViewController {
         verifyFields()
         self.loginPresenter.attemptBiometricsAuthentication()
         self.autoFillButton.isSelected = self.loginPresenter.shouldAutoFill
+        self.updateView()
     }
     
     func viewDidDisappear() {
         self.validationService.resetTextFields()
+    }
+    
+    func updateView() {
+        // Setup Biometrics Button
+        self.biometricsButtonView.configure("1", image: loginPresenter.biometricsImage, delegate: self, enabled: loginPresenter.biometricsEnabled)
     }
     
     func login() {
@@ -311,11 +274,9 @@ private extension UPennLoginViewController {
          * 3. Cache login credentials
          * 4. Trigger login notification
          */
-        self.loginPresenter.toggleBiometrics(true)
+//        self.loginPresenter.toggleBiometrics(true)
+        self.loginPresenter.turnOnBiometricAuthSettings()
         self.toggleRememberMe(true)
-//        self.logincoordinator.cacheLoginCredentials(username: emailField.text!, password: passwordField.text!)
-//        self.sendLoginNotification()
-        self.loginCoordinator?.didSuccessfullyLoginUser()
     }
     
 }

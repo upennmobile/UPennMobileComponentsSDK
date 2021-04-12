@@ -11,6 +11,18 @@ import UIKit
 public protocol UPennCoordinator {
     var childCoordinators: [UPennCoordinator] {get set}
     var navigationController: UINavigationController {get set}
-    
+    var childViewController : UIViewController? { get }
     func start()
+}
+
+extension UPennCoordinator {
+    
+    var presentedViewController : UIViewController? {
+        return self.navigationController.visibleViewController
+    }
+    
+    func getChildCoordinator<T: UPennCoordinator>(type: T.Type) -> T? {
+        return childCoordinators.compactMap({ $0 as? T }).first
+    }
+    
 }
