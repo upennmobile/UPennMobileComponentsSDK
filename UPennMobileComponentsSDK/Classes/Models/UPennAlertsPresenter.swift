@@ -11,10 +11,10 @@ import Foundation
  Abstract:
     Struct designed to hold all content Strings needed to populate TouchID Opt-in AlertController
  */
-struct UPennTouchIDFieldContent {
-    var optInTitle,optInMessage,declinedMessage,confirmedMessage: String
+public struct UPennTouchIDFieldContent {
+    public var optInTitle,optInMessage,declinedMessage,confirmedMessage: String
     
-    init(title: String, message: String, declined: String, confirmed: String) {
+    public init(title: String, message: String, declined: String, confirmed: String) {
         self.optInTitle = title; optInMessage = message; declinedMessage = declined; confirmedMessage = confirmed
     }
 }
@@ -24,11 +24,11 @@ struct UPennTouchIDFieldContent {
     Struct that manages presenting all AlertControllers.
     Sub-class this
  */
-struct UPennAlertsPresenter {
-    enum TouchIDUseSelection : Int {
+public struct UPennAlertsPresenter {
+    public enum TouchIDUseSelection : Int {
         case Cancel, Use
     }
-    static func TouchIDAlertController(content: UPennTouchIDFieldContent, touchIDCallback: @escaping (_ touchIDSelection: TouchIDUseSelection)->Void) -> UIAlertController {
+    public static func TouchIDAlertController(content: UPennTouchIDFieldContent, touchIDCallback: @escaping (_ touchIDSelection: TouchIDUseSelection)->Void) -> UIAlertController {
         let alertController = UIAlertController(
             title: content.optInTitle,
             message: content.optInMessage,
@@ -48,7 +48,7 @@ struct UPennAlertsPresenter {
         return alertController
     }
     
-    static func RememberMeAlertController(biometricsOptOutMessage: String, callback: @escaping ()->Void) -> UIAlertController {
+    public static func RememberMeAlertController(biometricsOptOutMessage: String, callback: @escaping ()->Void) -> UIAlertController {
         let alertController = UIAlertController(
             title: biometricsOptOutMessage,
             message: "",
@@ -64,7 +64,7 @@ struct UPennAlertsPresenter {
         return alertController
     }
     
-    static func AutoLogoutAlert(logoutCallback: @escaping ()->Void) -> UIAlertController {
+    public static func AutoLogoutAlert(logoutCallback: @escaping ()->Void) -> UIAlertController {
         let alertController = UIAlertController(title: "You've Been Logged-out".localize, message: "For security purposes you've been automatically logged-out due to inactivity. Please log back in.".localize, preferredStyle: .alert)
         let logoutAction = UIAlertAction(title: "Login", style: .cancel, handler: {
             alert -> Void in
