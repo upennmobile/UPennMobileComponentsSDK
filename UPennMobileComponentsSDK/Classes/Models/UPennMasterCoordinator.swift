@@ -40,7 +40,6 @@ public class UPennMasterCoordinator : UPennMasterCoordinatable {
 //        let vc = UIViewController()
 //        vc.view.frame = CGRect(x: 0.0, y: 0.0, width: UPennScreenGlobals.Width, height: UPennScreenGlobals.Height)
 //        self.childViewController = self.navigationController.viewControllers.first
-        guard let loginVC = self.loginViewController else { return }
         self.loginCoordinator?.start()
 //        self.childViewController?.title = "Sign In" /*loginCoordinator.childViewController?.title*/
         self.navigationController.navigationBar.isHidden = true

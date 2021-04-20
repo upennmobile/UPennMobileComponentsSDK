@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.source_files = 'UPennMobileComponentsSDK/Classes/**/*'
 #  s.resources = "UPennMobileComponentsSDK.bundle"
   s.resource_bundles = {
-    'UPennMobileComponentsSDK' => ['UPennMobileComponentsSDK/Assets/*.{png,storyboard}']
+    'UPennMobileComponentsSDK' => ['UPennMobileComponentsSDK/Assets/*.{png,storyboard,xib}']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

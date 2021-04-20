@@ -110,23 +110,20 @@ extension UPennNetworkRequestable {
              - value : You must specify an affected user when creating an incident.
              */
             var errorBuffer = ""
-            if let errDict = json as? [String:Any]
-            {
-                let errorValues = errDict.values
-                var errorCount = errorValues.count
-                for value in errorValues {
-                    if let v = value as? String {
-                        errorCount-=1
-                        if errorCount == 0 {
-                            errorBuffer+=v
-                        } else {
-                            errorBuffer+="\(v)\n"
-                        }
+            let errorValues = json.values
+            var errorCount = errorValues.count
+            for value in errorValues {
+                if let v = value as? String {
+                    errorCount-=1
+                    if errorCount == 0 {
+                        errorBuffer+=v
+                    } else {
+                        errorBuffer+="\(v)\n"
                     }
                 }
-                completion(nil,"Errors: \n\(errorBuffer)")
-                return
             }
+            completion(nil,"Errors: \n\(errorBuffer)")
+            return
         }
         // Generic Request Error
         completion(nil,self.genericRequestError)
