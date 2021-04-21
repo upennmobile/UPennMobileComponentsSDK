@@ -38,30 +38,10 @@ public class UPennLoginViewController: UPennBasicViewController, Storyboarded /*
     }
     
     fileprivate lazy var touchIDAlertController : UIAlertController = {
-//        let fieldContent = UPennTouchIDFieldContent(title: self.loginPresenter.touchIDOptInTitle, message: self.loginPresenter.touchIDOptInMessage, declined: self.loginPresenter.touchIDDeclined, confirmed: self.loginPresenter.touchIDConfirmed)
-//        let alertController = UPennAlertsPresenter.TouchIDAlertController(content: fieldContent) { (selection) in
-//            switch selection {
-//            case .Cancel:
-//                // Force biometrics off, and complete login flow to close-out LoginVC
-//                self.loginPresenter.toggleBiometrics(false)
-//                self.loginCoordinator?.didSuccessfullyLoginUser()
-//            case .Use:
-//                // Turn on Biometrics Settings & complete Touch ID registration to ensure no repeat launches of Touch ID alert
-//                self.turnOnBiometricAuthSettings()
-//                self.loginPresenter.completeTouchIDRegistration()
-//            }
-//        }
-//        return alertController
         return UIAlertController()
     }()
     
     fileprivate lazy var rememberMeAlertController : UIAlertController = {
-//        let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.loginPresenter.biometricOptOutMessage) {
-//            self.loginPresenter.toggleBiometrics(false)
-//            self.toggleRememberMe()
-//            self.updateView()
-//        }
-//        return alertController
         return UIAlertController()
     }()
     
