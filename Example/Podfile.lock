@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.4.1)
   - SVProgressHUD (2.2.5)
-  - UPennMobileComponentsSDK (0.1.0):
+  - UPennMobileComponentsSDK (0.2.0):
     - Alamofire (~> 5.2)
     - SVProgressHUD
 
@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  UPennMobileComponentsSDK: e0d0187664360db2f7b12c91d72c324ff86fcab1
+  UPennMobileComponentsSDK: 52dda8e0a8bc4f94b9f73de280b241c429fa8214
 
-PODFILE CHECKSUM: 2f197e88af1a7d2adddfafb7f215b6a2afed2c45
+PODFILE CHECKSUM: 49088c2c2a09d48cb3f75c35441b159ab07fcf50
 
 COCOAPODS: 1.9.0
