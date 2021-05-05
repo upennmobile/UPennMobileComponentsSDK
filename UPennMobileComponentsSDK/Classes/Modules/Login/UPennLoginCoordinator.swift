@@ -9,74 +9,74 @@ import Foundation
 import UIKit
 //import UPennMobileComponentsSDK
 
+public protocol UPennLoginCoordinated : UPennLoginCoordinatable, UPennCoordinator {
+    var presenter : UPennLoginPresentable { get set }
+    func setLoginObserver()
+    func removeLoginObserver()
+    func sendLoginNotification()
+    /// Handler fired when a User successfully logs in
+    func handleLoginNotification()
+}
 /**
  Abstract:
  Purpose of this LoginCoordinator is to act as a Facade between any custom LoginViewController and behavioral protocols for logging-in and optionally using biometrics
  */
-public class UPennLoginCoordinator : UPennCoordinator {
+open class UPennLoginCoordinator : UPennLoginCoordinated {
     public var childViewController: UIViewController?
     
     
     static var IsLoggedInNotification = "UPHSIsLoggedInNotification"
-    public var childCoordinators = [UPennCoordinator]()
-    public var navigationController: UINavigationController
-    public var loginCoordinatorDelegate : UPennLoginCoordinatorDelegate?
-    public var presenter : UPennLoginPresenter
+    open var childCoordinators = [UPennCoordinator]()
+    open var navigationController: UINavigationController
+    open var loginCoordinatorDelegate : UPennLoginCoordinatorDelegate?
+    open var presenter : UPennLoginPresentable
 
     // MARK: - LoginService
     
     public init(navController: UINavigationController) {
         self.navigationController = navController
+        // TODO: Dependency-inject vc as 'childViewController' with protocol type of 'UPennLoginPresented' that includes presenter and coordinator vars
         let vc = UPennLoginViewController.Instantiate(.SDK)
-        // TODO: Dependency-inject LoginVC values like loginPresenter
         self.childViewController = /*vc*/ UINavigationController(rootViewController: vc)
         self.presenter = UPennLoginPresenter(loginDelegate: vc)
         vc.loginPresenter = self.presenter
         vc.loginCoordinator = self
     }
     
-    public func start() {
-        // Checks Authentication & conditionally instantiates & presents LoginVC as needed? -- start() will likely be called by a MainCoordinator class in the AppDelegate
-        // Sets LoginVC as Coordinator's delegate?
-//        let vc = UPennLoginViewController.Instantiate(.SDK)
-//        // TODO: Dependency-inject LoginVC values like loginPresenter
-//        self.presenter = UPennLoginPresenter(loginDelegate: vc)
-//        vc.loginPresenter = self.presenter
-//        vc.loginCoordinator = self
-//        navigationController.pushViewController(vc, animated: false)
-//        navigationController.title = "Sign In"
+    open func start() {
     }
     
-    public func setLoginObserver() {
+    open func setLoginObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.handleLoginNotification), name: NSNotification.Name.init(Self.IsLoggedInNotification), object: nil)
     }
     
-    public func removeLoginObserver() {
+    open func removeLoginObserver() {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.init(rawValue: Self.IsLoggedInNotification), object: nil)
     }
     
-}
-
-extension UPennLoginCoordinator : UPennLoginCoordinatable {
-    
-    public var userIsLoggedIn: Bool { return UPennAuthenticationService.IsAuthenticated }
-    
-    public func logout() {
-        /*
-         * 1. Turn off logout timer
-         * 2. Logout
-         * 3. Reload to Login flow via UPennRootViewController
-         */
-//        UPennTimerUIApplication.invalidateActiveTimer()
-//        self.invalidateAuthToken()
-//        self.rootViewController?.resetToLogin()
-        UPennAuthenticationService.logout()
+    open func sendLoginNotification() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.IsLoggedInNotification), object: nil)
     }
+    
+    /// Handler fired when a User successfully logs in
+    @objc open func handleLoginNotification() {
+        if presenter.isFirstLogin {
+            presenter.setFirstLogin()
+        }
+    }
+    
+    // MARK: UPennLoginCoordinatable
+       
+   open var userIsLoggedIn: Bool { return UPennAuthenticationService.IsAuthenticated }
+   
+   open func logout() {
+       UPennAuthenticationService.logout()
+   }
 }
 
 extension UPennLoginCoordinator : UPennLoginCoordinatorDelegate {
     
-    public func didSuccessfullyLoginUser() {
+    open func didSuccessfullyLoginUser() {
         self.sendLoginNotification()
         self.loginCoordinatorDelegate?.didSuccessfullyLoginUser()
     }
@@ -84,15 +84,5 @@ extension UPennLoginCoordinator : UPennLoginCoordinatorDelegate {
 
 private extension UPennLoginCoordinator {
     
-    func sendLoginNotification() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.IsLoggedInNotification), object: nil)
-    }
     
-    /// Handler fired when a User successfully logs in
-    @objc func handleLoginNotification() {
-        if presenter.isFirstLogin {
-            presenter.setFirstLogin()
-        }
-//        self.checkOnboarding()
-    }
 }

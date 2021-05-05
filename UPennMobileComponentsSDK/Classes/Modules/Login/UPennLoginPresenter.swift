@@ -15,15 +15,16 @@ import Foundation
 /// Intermediates Login, Biometrics & Authentication functionality for a custom LoginViewController
 open class UPennLoginPresenter : UPennLoginPresentable {
     
-    fileprivate var biometricsService: UPennBiometricsAuthenticationInterface!
-    fileprivate var loginService: UPennLoginInterface!
-    fileprivate var username = "", password = ""
+    open var biometricsService: UPennBiometricsAuthenticationInterface!
+    open var loginService: UPennLoginInterface!
+    open var username = "", password = ""
     
-    var loginDelegate : UPennLoginPresenterDelegate?
+    open var loginDelegate : UPennLoginPresenterDelegate?
     
     public init(
         loginDelegate: UPennLoginPresenterDelegate) {
         self.loginDelegate = loginDelegate
+        // TODO: Dependency-inject all the services via init?
         let requestService = UPennLoginNetworkingService(urlProvider: UPennURLProvider(rootURL: UPennApplicationSettings.RootURL, loginEndpoint: UPennApplicationSettings.LoginURL))
         self.loginService = UPennLoginService(requestService: requestService, loginDelegate: self)
         self.biometricsService = UPennBiometricsAuthService(biometricsDelegate: self)
@@ -169,14 +170,13 @@ open class UPennLoginPresenter : UPennLoginPresentable {
     open func turnOnBiometricAuthSettings() {
         /*
          * 1. Toggle biometrics enabled On
-         * 2. Toggle 'Remember Me' On
+         * 2. Toggle autoFill On
          * 3. Cache login credentials
-         * 4. Trigger login notification
+         * 4. Fire successful login delegate callback
          */
         self.biometricsService.toggleBiometrics(true)
         self.loginService.toggleShouldAutoFill(true)
         self.loginService.cacheLoginCredentials(username: self.username, password: self.password)
-//        self.sendLoginNotification() TODO: Remove?
         self.loginDelegate?.didSuccessfullyLoginUser()
     }
     

@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          */
         UPennActivityPresenter.Configure()
         let navController = UINavigationController()
-        let mainCoordinator = UPennMainCoordinator(navController: navController)
+        let mainCoordinator = UPennMainTabCoordinator(navController: navController, tabController: UPennTabBarController.Instantiate(.SDK))
         let loginCoordinator = UPennLoginCoordinator(navController: navController)
         self.masterCoordinator = UPennMasterCoordinator(navController: navController, childCoordinators: [loginCoordinator,mainCoordinator])
         loginCoordinator.loginCoordinatorDelegate = masterCoordinator

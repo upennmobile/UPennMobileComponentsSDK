@@ -29,7 +29,7 @@ public class UPennLoginViewController: UPennBasicViewController, Storyboarded /*
 //    fileprivate var biometricsService: UPennBiometricsAuthService!
     // TODO: Inject via UPennMainCoordinator - ***
     var loginPresenter : UPennLoginPlusBiometricsInterface!
-    var loginCoordinator : UPennLoginCoordinator!
+    var loginCoordinator : UPennLoginCoordinatorDelegate!
 //    var loginPresenter : UPennLoginBiometricsInterface!
     // ***
     // TODO: Not Needed?
@@ -44,7 +44,7 @@ public class UPennLoginViewController: UPennBasicViewController, Storyboarded /*
             case .Cancel:
                 // Force biometrics off, and complete login flow to close-out LoginVC
                 self.loginPresenter.toggleBiometrics(false)
-                self.loginCoordinator?.didSuccessfullyLoginUser()
+                self.loginCoordinator.didSuccessfullyLoginUser()
             case .Use:
                 // Turn on Biometrics Settings & complete Touch ID registration to ensure no repeat launches of Touch ID alert
                 self.turnOnBiometricAuthSettings()
@@ -171,7 +171,7 @@ extension UPennLoginViewController : UPennLoginPresenterDelegate {
         // TODO: Move to Coordinator?
 //        self.sendLoginNotification()
         UPennActivityPresenter.Dismiss()
-        self.loginCoordinator?.didSuccessfullyLoginUser()
+        self.loginCoordinator.didSuccessfullyLoginUser()
     }
     
     public func didReturnAutoFillCredentials(username: String, password: String) {
@@ -269,10 +269,8 @@ private extension UPennLoginViewController {
     
     func turnOnBiometricAuthSettings() {
         /*
-         * 1. Toggle biometrics enabled On
+         * 1. Toggle biometrics settings
          * 2. Toggle 'Remember Me' On
-         * 3. Cache login credentials
-         * 4. Trigger login notification
          */
 //        self.loginPresenter.toggleBiometrics(true)
         self.loginPresenter.turnOnBiometricAuthSettings()

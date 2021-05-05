@@ -10,11 +10,11 @@ import UIKit
 
 open class UPennMasterCoordinator : UPennMasterCoordinatable {
     
-    public var childViewController: UIViewController?
+    open var childViewController: UIViewController?
     
     
-    public var childCoordinators = [UPennCoordinator]()
-    public var navigationController: UINavigationController
+    open var childCoordinators = [UPennCoordinator]()
+    open var navigationController: UINavigationController
     
     public init(navController: UINavigationController, childCoordinators: [UPennCoordinator]?=nil) {
         self.navigationController = navController
@@ -26,7 +26,7 @@ open class UPennMasterCoordinator : UPennMasterCoordinatable {
     }
     
     open func start() {
-        self.loginCoordinator?.start()
+        self.loginCoordinator.start()
         self.navigationController.navigationBar.isHidden = true
         self.showLogin()
     }
@@ -46,43 +46,18 @@ open class UPennMasterCoordinator : UPennMasterCoordinatable {
             return
         }
     }
-}
-
-extension UPennMasterCoordinator : UPennLoginCoordinatorDelegate {
     
-    public func didSuccessfullyLoginUser() {
-        self.mainCoordinator?.logoutBiometricsDelegate = self
-        self.showMainViewController()
-        UPennTimerUIApplication.ResetIdleTimer()
-    }
-}
-
-extension UPennMasterCoordinator : UPennLogoutBiometricsDelegate {
-    public func logout() {
-        // Tell LoginCoordinator to logout
-        self.loginCoordinator?.logout()
-        self.resetToLogin()
-        UPennTimerUIApplication.InvalidateActiveTimer()
+    open var loginCoordinator: UPennLoginCoordinated {
+//        return self.getChildCoordinator(type: UPennLoginCoordinated.self)
+        return self.childCoordinators.filter({ $0 is UPennLoginCoordinated }).first as! UPennLoginCoordinated
     }
     
-    public func toggleShouldAutoFill(_ enabled: Bool) {
-        // Tell LoginCoordinator to toggle AutoFill
-        self.loginCoordinator?.presenter.toggleShouldAutoFill(enabled)
-    }
-}
-
-private extension UPennMasterCoordinator {
-    
-    var loginCoordinator: UPennLoginCoordinator? {
-        return self.getChildCoordinator(type: UPennLoginCoordinator.self)
-    }
-    
-    var mainCoordinator: UPennMainCoordinator? {
-        return self.getChildCoordinator(type: UPennMainCoordinator.self)
+    var mainCoordinator: UPennMainTabCoordinator? {
+        return self.getChildCoordinator(type: UPennMainTabCoordinator.self)
     }
     
     var loginViewController : UIViewController? {
-        return loginCoordinator?.childViewController
+        return loginCoordinator.childViewController
     }
     
     var mainViewController : UIViewController? {
@@ -101,7 +76,7 @@ private extension UPennMasterCoordinator {
     }
     
     func showLoginVsMainTabViewController() {
-        if let coord = loginCoordinator, coord.userIsLoggedIn {
+        if loginCoordinator.userIsLoggedIn {
             self.showMainViewController()
         } else {
             self.resetToLogin()
@@ -116,11 +91,11 @@ private extension UPennMasterCoordinator {
         // 1.
         self.showMainViewController()
         // 2.
-        self.loginCoordinator?.removeLoginObserver()
+        self.loginCoordinator.removeLoginObserver()
     }
     
     func swapFromLoginToJoinViewController() {
-        self.loginCoordinator?.removeLoginObserver()
+        self.loginCoordinator.removeLoginObserver()
         self.childViewController?.swapParentViewController(
             fromVC: loginViewController,
             toVC: mainViewController!)
@@ -128,7 +103,7 @@ private extension UPennMasterCoordinator {
     
     func showLogin() {
         guard let loginVC = self.loginViewController else { return }
-        loginCoordinator?.setLoginObserver()
+        loginCoordinator.setLoginObserver()
         self.childViewController?.swapParentViewController(fromVC: self.mainViewController, toVC: loginVC)
     }
     
@@ -136,5 +111,33 @@ private extension UPennMasterCoordinator {
         let logoutAlert = UPennAlertsPresenter.AutoLogoutAlert(logoutCallback: logout)
         self.navigationController.present(logoutAlert, animated: true, completion: nil)
     }
+}
+
+extension UPennMasterCoordinator : UPennLoginCoordinatorDelegate {
+    
+    open func didSuccessfullyLoginUser() {
+        self.mainCoordinator?.logoutBiometricsDelegate = self
+        self.showMainViewController()
+        UPennTimerUIApplication.ResetIdleTimer()
+    }
+}
+
+extension UPennMasterCoordinator : UPennLogoutBiometricsDelegate {
+    open func logout() {
+        // Tell LoginCoordinator to logout
+        self.loginCoordinator.logout()
+        self.resetToLogin()
+        UPennTimerUIApplication.InvalidateActiveTimer()
+    }
+    
+    open func toggleShouldAutoFill(_ enabled: Bool) {
+        // Tell LoginCoordinator to toggle AutoFill
+        self.loginCoordinator.presenter.toggleShouldAutoFill(enabled)
+    }
+}
+
+private extension UPennMasterCoordinator {
+    
+    
     
 }

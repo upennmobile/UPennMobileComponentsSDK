@@ -14,28 +14,28 @@ public protocol UPennMainCoordinatable : UPennCoordinator, UPennLogoutBiometrics
     func configureTabBarItems()
 }
 
-open class UPennMainCoordinator : NSObject, UPennMainCoordinatable {
+open class UPennMainTabCoordinator : NSObject, UPennMainCoordinatable {
     public var childCoordinators: [UPennCoordinator] = [UPennCoordinator]()
     
-    public var navigationController: UINavigationController
+    open var navigationController: UINavigationController
     
-    public var childViewController: UIViewController?
+    open var childViewController: UIViewController?
     
-    var tabController : UITabBarController?
-    public var logoutBiometricsDelegate : UPennLogoutBiometricsDelegate?
+    open var tabController : UITabBarController?
+    open var logoutBiometricsDelegate : UPennLogoutBiometricsDelegate?
     
-    public init(navController: UINavigationController) {
+    public init(navController: UINavigationController, tabController: UITabBarController) {
         self.navigationController = navController
 //        self.visibleViewController = self.navigationController.visibleViewController!
 //        self.tabController = self.makeViewController(identifier: "TabBarVC") as? UITabBarController
 //        self.tabController = UPennTabBarController.Instantiate(.SDK)
-        self.tabController = UPennTabBarController.Instantiate(.SDK)
-        self.childViewController = tabController
+        self.tabController = tabController
+        self.childViewController = self.tabController
         super.init()
-        tabController?.delegate = self
+        self.tabController?.delegate = self
     }
     
-    public func start() {
+    open func start() {
         // TODO: Configure TabViewController?
         
         self.makeTabBarControllers()
@@ -92,7 +92,7 @@ open class UPennMainCoordinator : NSObject, UPennMainCoordinatable {
     }
 }
 
-extension UPennMainCoordinator : UITabBarControllerDelegate { }
+extension UPennMainTabCoordinator : UITabBarControllerDelegate { }
 
 //extension UPennMainCoordinator : UPennLogoutBiometricsDelegate {
 //}
