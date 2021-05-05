@@ -10,35 +10,32 @@ import UIKit
 
 public protocol UPennMainCoordinatable : UPennCoordinator, UPennLogoutBiometricsDelegate {
     var logoutBiometricsDelegate: UPennLogoutBiometricsDelegate?  { get set }
-    func makeTabBarControllers()
-    func configureTabBarItems()
+    func configureView()
 }
 
-open class UPennMainCoordinator : NSObject, UPennMainCoordinatable {
+open class UPennMainTabCoordinator : NSObject, UPennMainCoordinatable {
     public var childCoordinators: [UPennCoordinator] = [UPennCoordinator]()
     
-    public var navigationController: UINavigationController
+    open var navigationController: UINavigationController
     
-    public var childViewController: UIViewController?
+    open var childViewController: UIViewController?
     
-    var tabController : UITabBarController?
-    public var logoutBiometricsDelegate : UPennLogoutBiometricsDelegate?
+    open var tabController : UITabBarController?
+    open var logoutBiometricsDelegate : UPennLogoutBiometricsDelegate?
     
-    public init(navController: UINavigationController) {
+    public init(navController: UINavigationController, tabController: UITabBarController) {
+        // TODO: Initializer should take in array of childCoordinators to facilitate dynamic building of tabBarControllers/Items
         self.navigationController = navController
-//        self.visibleViewController = self.navigationController.visibleViewController!
-//        self.tabController = self.makeViewController(identifier: "TabBarVC") as? UITabBarController
-//        self.tabController = UPennTabBarController.Instantiate(.SDK)
-        self.tabController = UPennTabBarController.Instantiate(.SDK)
-        self.childViewController = tabController
+        self.tabController = tabController
+        self.childViewController = self.tabController
         super.init()
-        tabController?.delegate = self
+        self.tabController?.delegate = self
     }
     
-    public func start() {
-        // TODO: Configure TabViewController?
+    open func start() {
+        // Configure View?
         
-        self.makeTabBarControllers()
+        self.configureView()
     }
     
     // MARK: - VC Factory Methods
@@ -49,21 +46,21 @@ open class UPennMainCoordinator : NSObject, UPennMainCoordinatable {
         return UIViewController()
     }
     
-    open func makeTabBarControllers() {
-        // AccountsVC
-        let settingsCoord = UPennSettingsCoordinator(navController: self.navigationController, settingsCoordinatorDelegate: self)
-//            self.accountsViewController = self.makeViewController(identifier: "SettingsNav") as? UPennSettingsViewController
+    // TODO: Update to loop through array of childCoordinators and set tabController.viewControllers to each coord's childVC
+    open func configureView() {
+        // TODO: VC's should be instatiated outside this Coordinator, and only looping through childCoord's start() and set tabController.viewControllers here
+        let settingsVC = UPennSettingsViewController.Instantiate(.SDK)
+        let settingsCoord = UPennSettingsCoordinator(
+            navController: self.navigationController,
+            settingsViewController: settingsVC,
+            settingsCoordinatorDelegate: self)
+        settingsVC.settingsCoordinator = settingsCoord
         settingsCoord.start()
             self.tabController?.viewControllers = [
-/*                UINavigationController(rootViewController: self.nfcViewController!) --- Remove for Pippenn-251 ---
-                vc,*/
-//                UINavigationController(rootViewController: self.careViewController!),
-//                UINavigationController(rootViewController: self.careTeamViewController!),
                 UINavigationController(rootViewController: settingsCoord.childViewController!)
             ]
             self.tabController?.selectedIndex = 0
             self.configureTabBarItems()
-//        }
     }
     
     open func configureTabBarItems() {
@@ -92,7 +89,4 @@ open class UPennMainCoordinator : NSObject, UPennMainCoordinatable {
     }
 }
 
-extension UPennMainCoordinator : UITabBarControllerDelegate { }
-
-//extension UPennMainCoordinator : UPennLogoutBiometricsDelegate {
-//}
+extension UPennMainTabCoordinator : UITabBarControllerDelegate { }

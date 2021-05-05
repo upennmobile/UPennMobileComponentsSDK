@@ -8,34 +8,16 @@
 import Foundation
 import UIKit
 
-public protocol UPennMasterCoordinatable : UPennCoordinator {
+/// Interface for a Master Coordinator which can respond to login/logout events and manage the transitions between Login and Main UI/UX
+public protocol UPennMasterCoordinatable : UPennCoordinator, UPennLoginCoordinatorDelegate, UPennLogoutBiometricsDelegate {
     
-//    var loginCoordinator : UPennLoginCoordinator {get set}
-//    var mainCoordinator : UPennMainCoordinator {get set}
-}
-
-extension UPennMasterCoordinatable {
+    var loginCoordinator : UPennLoginCoordinated? {get set}
+    var mainCoordinator : UPennMainCoordinatable? {get set}
+    func dismissAndPresentLogout()
+    func showMainViewController()
+    func showLoginVsMainViewController()
+    func swapLoginFromMainViewController()
+    func showLogin()
+    func showLogoutAlert()
     
-//    public func makeParentViewController(_ viewController: UIViewController) {
-//        navigationController.addChild(viewController)
-//        viewController.view.frame = navigationController.view.bounds
-//        navigationController.view.addSubview(viewController.view)
-//        viewController.didMove(toParent: navigationController)
-//    }
-//    
-//    public func swapParentViewController(fromVC: UIViewController?, toVC: UIViewController) {
-//        guard let fromVC = fromVC else
-//        {
-//            // If no 'fromVC' assume it's the 1st app launch so no previous child VC was set, so swap to loginNav
-//            self.makeParentViewController(toVC)
-//            return
-//        }
-//        navigationController.addChild(toVC)
-//        toVC.view.frame = navigationController.view.bounds
-//        navigationController.view.addSubview(toVC.view)
-//        toVC.didMove(toParent: navigationController)
-//        fromVC.willMove(toParent: nil)
-//        fromVC.view.removeFromSuperview()
-//        fromVC.removeFromParent()
-//    }
 }

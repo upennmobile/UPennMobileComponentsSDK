@@ -12,39 +12,33 @@ public protocol UPennLogoutBiometricsDelegate {
     func toggleShouldAutoFill(_ enabled: Bool)
 }
 
-public class UPennSettingsCoordinator : UPennCoordinator {
+public protocol UPennSettingsCoordinatorInterface : UPennCoordinator, UPennLogoutBiometricsDelegate { }
+
+open class UPennSettingsCoordinator : UPennSettingsCoordinatorInterface {
     
     public var childCoordinators = [UPennCoordinator]()
     public var navigationController: UINavigationController
     var settingsCoordinatorDelegate : UPennLogoutBiometricsDelegate?
     public var childViewController: UIViewController?
     
-    public init(navController: UINavigationController, settingsCoordinatorDelegate: UPennLogoutBiometricsDelegate) {
+    public init(
+        navController: UINavigationController,
+        settingsViewController: UIViewController,
+        settingsCoordinatorDelegate: UPennLogoutBiometricsDelegate) {
         self.navigationController = navController
-//        self.visibleViewController = self.navigationController.visibleViewController!
+        self.childViewController = settingsViewController
         self.settingsCoordinatorDelegate = settingsCoordinatorDelegate
     }
     
-    public func start() {
-        let settingsVC = UPennSettingsViewController.Instantiate(.SDK)
-        settingsVC.settingsCoordinator = self
-        self.childViewController = settingsVC
-//        navigationController.pushViewController(settingsVC, animated: false)
+    open func start() {
+        
     }
     
-}
-
-extension UPennSettingsCoordinator : UPennLogoutBiometricsDelegate {
-    
-    public func logout() {
-        // Fire logout in MainCoordinator?
-        print("Logout PRessed!")
+    open func logout() {
         self.settingsCoordinatorDelegate?.logout()
     }
     
-    public func toggleShouldAutoFill(_ enabled: Bool) {
-        // TODO: Which delegate method to fire?
-        print("'Should Autofill' Pressed!")
+    open func toggleShouldAutoFill(_ enabled: Bool) {
         self.settingsCoordinatorDelegate?.toggleShouldAutoFill(enabled)
     }
 }

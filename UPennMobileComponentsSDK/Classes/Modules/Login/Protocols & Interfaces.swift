@@ -68,4 +68,4 @@ public protocol UPennBiometricsAuthenticationInterface: UPennLoginBiometricsInte
 public protocol UPennLoginPlusBiometricsInterface : UPennLoginInterface, UPennLoginBiometricsInterface { }
 
 /// Interface that defines comprehensive functionality for a Login Presenter
-protocol UPennLoginPresentable : UPennLoginPlusBiometricsInterface, UPennLoginServiceDelegate, UPennBiometricsDelegate { }
+public protocol UPennLoginPresentable : UPennLoginPlusBiometricsInterface, UPennLoginServiceDelegate, UPennBiometricsDelegate { }

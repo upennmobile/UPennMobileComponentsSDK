@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class UPennLoginService : UPennLoginInterface {    
+open class UPennLoginService : UPennLoginInterface {
     
     public var userIsLoggedIn : Bool { return UPennAuthenticationService.IsAuthenticated }
     var requestService : UPennLoginNetworkingService
@@ -25,7 +25,7 @@ public class UPennLoginService : UPennLoginInterface {
         self.loginDelegate = loginDelegate
     }
     
-    public func makeLoginRequest(username: String, password: String) {
+    open func makeLoginRequest(username: String, password: String) {
         
         self.requestService.makeLoginRequest(username: username, password: password) { (response,errorStr) in
             if let error = errorStr {
@@ -52,11 +52,11 @@ public class UPennLoginService : UPennLoginInterface {
         }
     }
     
-    public func cacheLoginCredentials(username: String, password: String) {
+    open func cacheLoginCredentials(username: String, password: String) {
         UPennAuthenticationService.cacheAuthenticationCredentials(username: username, password: password)
     }
     
-    public func authenticationAutoFillCheck() {
+    open func authenticationAutoFillCheck() {
         if shouldAutoFill {
             UPennAuthenticationService.checkAuthenticationCache { (username, password) in
                 if let u = username, let p = password {
@@ -66,7 +66,7 @@ public class UPennLoginService : UPennLoginInterface {
         }
     }
     
-    public func attemptSilentLogin() {
+    open func attemptSilentLogin() {
         UPennAuthenticationService.checkAuthenticationCache { (username, password) in
             guard let u = username, let p = password else {
                 self.loginDelegate?.didFailToLoginUser(errorStr: self.autoLoginError)
@@ -76,19 +76,19 @@ public class UPennLoginService : UPennLoginInterface {
         }
     }
     
-    func toggleShouldAutoLogin(_ autoLogin: Bool) {
+    open func toggleShouldAutoLogin(_ autoLogin: Bool) {
         UPennAuthenticationService.toggleShouldAutoLogin(autoLogin)
     }
     
-    public func toggleShouldAutoFill(_ autoFill: Bool) {
+    open func toggleShouldAutoFill(_ autoFill: Bool) {
         UPennAuthenticationService.toggleShouldAutoFill(autoFill)
     }
     
-    public func setFirstLogin() {
+    open func setFirstLogin() {
         UPennAuthenticationService.setFirstLogin()
     }
     
-    public func logout() {
+    open func logout() {
         UPennAuthenticationService.logout()
     }
 }

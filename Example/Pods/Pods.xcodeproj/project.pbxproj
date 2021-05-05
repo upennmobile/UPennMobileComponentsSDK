@@ -41,6 +41,7 @@
 		381FF05F8B4F611EE9C2FDBE4457BB89 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0996FE38E2D7A51D4B1C575E0F59DFE /* SessionDelegate.swift */; };
 		3A98F3AF2630BC9500D12D83 /* UPennAlertsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A98F3AE2630BC9500D12D83 /* UPennAlertsPresenter.swift */; };
 		3A98F44126365E0D00D12D83 /* Protocols & Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A98F44026365E0D00D12D83 /* Protocols & Interfaces.swift */; };
+		3AED6B1526463AAE007252D3 /* UPennStartupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED6B0726463A72007252D3 /* UPennStartupCoordinator.swift */; };
 		3AF367BB26307C8800632BA9 /* UPennIconButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9D5A3C9859C9F07B074FBEBE555003 /* UPennIconButtonView.xib */; };
 		3D96CFFA033F11B6D2D9BE951FB8FD76 /* UPennBiometricsEnableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8AD5AAAF838317576743A397116F0 /* UPennBiometricsEnableCell.swift */; };
 		45B8CC1C61E7A0BB28CFA8CE7C12FEBC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066298FFFA06BC019A44D9D642123FC2 /* MultipartFormData.swift */; };
@@ -228,6 +229,7 @@
 		38769E4417B0F41EDC294BC7B476BFCD /* Bundle+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+UPenn.swift"; sourceTree = "<group>"; };
 		3A98F3AE2630BC9500D12D83 /* UPennAlertsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPennAlertsPresenter.swift; sourceTree = "<group>"; };
 		3A98F44026365E0D00D12D83 /* Protocols & Interfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocols & Interfaces.swift"; sourceTree = "<group>"; };
+		3AED6B0726463A72007252D3 /* UPennStartupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennStartupCoordinator.swift; sourceTree = "<group>"; };
 		3CBFC4F55DDAE6395E2F913D81923DFE /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		4301E231F66E2C22AC73F1FD37303977 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		47AB59FB45FDF5E10B206C735CE280FE /* UIColor+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+UPenn.swift"; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 				F5431BB5C18F68B525577AC8CF3C6800 /* UPennMasterCoordinatable.swift */,
 				73C1BC29BD34FF19428247F2505CE075 /* UPennNetworkRequestable.swift */,
 				C039075DABA823D5C722DCDED089554A /* UPennURLProvidable.swift */,
+				3AED6B0726463A72007252D3 /* UPennStartupCoordinator.swift */,
 			);
 			name = "Interfaces | Protocols";
 			path = "UPennMobileComponentsSDK/Classes/Interfaces | Protocols";
@@ -1214,6 +1217,7 @@
 				5DA565090B2730C5453B958D7977688B /* UPennMainCoordinator.swift in Sources */,
 				600B1C5EDD67703557491B57796A2C41 /* UPennMasterCoordinatable.swift in Sources */,
 				35E9D9AA532109B4A01EAA50527F9668 /* UPennMasterCoordinator.swift in Sources */,
+				3AED6B1526463AAE007252D3 /* UPennStartupCoordinator.swift in Sources */,
 				8A719DA1019B8852D8CED69E3DF6B7A4 /* UPennMobileComponentsSDK-dummy.m in Sources */,
 				5A3F657D8EF5D980E77423CE51A325B7 /* UPennNameSpacer.swift in Sources */,
 				EC95F66C160C3B622AEB0564CA2B320D /* UPennNetworkRequestable.swift in Sources */,

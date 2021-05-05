@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class UPennTabBarController : UITabBarController, Storyboarded {
+open class UPennTabBarController : UITabBarController, Storyboarded {
     
 //    static var StoryboardName: String {
 //        return String(describing: self)
