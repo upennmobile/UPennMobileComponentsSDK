@@ -8,6 +8,15 @@
 import Foundation
 import Alamofire
 
+extension UPennBaseNetworkingService {
+    
+    func makeRequest() {
+        self.makePOSTRequest(parameters: UPStringDict(), urlStr: "") { (resp, err) in
+            //
+        }
+    }
+}
+
 struct UPennLoginCreds: Encodable {
     let email: String
     let password: String

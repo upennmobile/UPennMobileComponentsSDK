@@ -11,8 +11,8 @@ import Foundation
  Abstract:
     Struct designed to hold all content Strings needed to populate TouchID Opt-in AlertController
  */
-public struct UPennTouchIDFieldContent {
-    public var optInTitle,optInMessage,declinedMessage,confirmedMessage: String
+open class UPennTouchIDFieldContent {
+    open var optInTitle,optInMessage,declinedMessage,confirmedMessage: String
     
     public init(title: String, message: String, declined: String, confirmed: String) {
         self.optInTitle = title; optInMessage = message; declinedMessage = declined; confirmedMessage = confirmed
@@ -24,7 +24,7 @@ public struct UPennTouchIDFieldContent {
     Struct that manages presenting all AlertControllers.
     Sub-class this
  */
-public struct UPennAlertsPresenter {
+open class UPennAlertsPresenter {
     public enum TouchIDUseSelection : Int {
         case Cancel, Use
     }

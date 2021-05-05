@@ -17,11 +17,11 @@ public protocol UPennCoordinator {
 
 extension UPennCoordinator {
     
-    var presentedViewController : UIViewController? {
+    public var presentedViewController : UIViewController? {
         return self.navigationController.visibleViewController
     }
     
-    func getChildCoordinator<T: UPennCoordinator>(type: T.Type) -> T? {
+    public func getChildCoordinator<T: UPennCoordinator>(type: T.Type) -> T? {
         return childCoordinators.compactMap({ $0 as? T }).first
     }
     

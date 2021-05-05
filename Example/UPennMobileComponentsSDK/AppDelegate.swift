@@ -9,6 +9,23 @@
 import UIKit
 import UPennMobileComponentsSDK
 
+class PCLNetworkingService : UPennApplicationSettings {
+    
+    func thing() {
+        
+    }
+}
+
+class ExMasterCoordinator : UPennMasterCoordinator {
+    func thing() {
+        let foo = self.childCoordinators
+    }
+}
+
+@objc protocol UPennAppTimeoutDelegate {
+    @objc func applicationDidTimeout(notification: NSNotification)
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -29,18 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.masterCoordinator?.start()
         
         // Configure Auto-Logout Timer
-        UPennTimerUIApplication.ConfigureAutoLogoutTimer(callback: self.applicationDidTimout(notification:))
+        UPennTimerUIApplication.ConfigureAutoLogoutTimer(callback: self.applicationDidTimeout(notification:))
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         return true
-    }
-    
-    // MARK: - Timeout Notification
-    // Callback for when the timeout was fired.
-    @objc func applicationDidTimout(notification: NSNotification) {
-        self.masterCoordinator?.dismissAndPresentLogout()
     }
     
     // MARK: Application Lifecycle
@@ -66,7 +77,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+}
 
+// MARK: - Timeout Notification
 
+extension AppDelegate : UPennAppTimeoutDelegate {
+    // Callback for when the timeout was fired.
+    func applicationDidTimeout(notification: NSNotification) {
+        self.masterCoordinator?.dismissAndPresentLogout()
+    }
 }
 

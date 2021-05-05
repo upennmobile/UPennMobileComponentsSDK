@@ -14,7 +14,7 @@ import UIKit
     Class manages unwrapping of all Bundle.main configuration objects
  */
 
-public struct UPennApplicationSettings {
+open class UPennApplicationSettings {
     
 //    enum RuntimeStates : Int {
 //        case DEBUG_PROD

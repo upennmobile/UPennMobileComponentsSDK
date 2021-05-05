@@ -8,11 +8,11 @@
 import Foundation
 import SVProgressHUD
 
-public struct UPennActivityPresenter {
+open class UPennActivityPresenter {
     
     public static func Configure(
         foreGroundColor: UIColor?=nil,
-        dismissTimeInterval: Double?=nil) {
+        dismissTimeInterval: Double?=3.0) {
         SVProgressHUD.setDefaultStyle(.custom)
         SVProgressHUD.setForegroundColor(foreGroundColor ?? UIColor.upennMediumBlue)
         SVProgressHUD.setDefaultMaskType(.black)

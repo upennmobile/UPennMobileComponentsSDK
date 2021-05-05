@@ -65,118 +65,118 @@ public extension UILabel {
     }
 }
 
-public class UPennLabel : UILabel {
+open class UPennLabel : UILabel {
     
-    public override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         self.setBaseStyles()
     }
     
-    func setBaseStyles() {
+    open func setBaseStyles() {
         self.textColor = UIColor.upennBlack
         self.setFontHeight(size: 17.0)
     }
 }
 
-public class MultilineLabel : UPennLabel {
-    override func setBaseStyles() {
+open class MultilineLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         lineBreakMode = .byWordWrapping
         numberOfLines = 0
     }
 }
 
-public class ContactNameLabel : UPennLabel {
-    override func setBaseStyles() {
+open class ContactNameLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDeepBlue
         self.setFontHeight(size: 20.0)
     }
 }
 
-public class ContactDepartmentLabel : UPennLabel {
-    override func setBaseStyles() {
+open class ContactDepartmentLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDarkBlue
         self.setFontHeight(size: 18.0)
     }
 }
 
-public class CameraInstructionLabel : ContactNameLabel {
-    override func setBaseStyles() {
+open class CameraInstructionLabel : ContactNameLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.white
     }
 }
 
-public class ActionLabel : UPennLabel {
-    override func setBaseStyles() {
+open class ActionLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennMediumBlue
     }
 }
 
-public class ActionSubContentLabel : ActionLabel {
-    override func setBaseStyles() {
+open class ActionSubContentLabel : ActionLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 15.0)
     }
 }
 
-public class NoDataInstructionsLabel : UPennLabel {
-    override func setBaseStyles() {
+open class NoDataInstructionsLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDarkBlue
         self.setFontHeight(size: 20.0)
     }
 }
 
-public class BannerLabel : UPennLabel {
-    override func setBaseStyles() {
+open class BannerLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennDarkBlue
         self.setFontHeight(size: 25.0)
     }
 }
 
-public class RedBannerLabel : BannerLabel {
-    override func setBaseStyles() {
+open class RedBannerLabel : BannerLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.upennWarningRed
     }
 }
 
-public class BannerLabelWhite : BannerLabel {
-    override func setBaseStyles() {
+open class BannerLabelWhite : BannerLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.textColor = UIColor.white
     }
 }
 
-public class TitleLabel : UPennLabel {
-    override func setBaseStyles() {
+open class TitleLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.setBoldFont(size: 15.0)
     }
 }
 
-public class ContentLabel : UPennLabel {
-    override func setBaseStyles() {
+open class ContentLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 16.0)
     }
 }
 
-public class SubContentLabel : UPennLabel {
-    override func setBaseStyles() {
+open class SubContentLabel : UPennLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 13.0)
         self.textColor = UIColor.darkGray
     }
 }
 
-public class MultilineContentLabel : MultilineLabel {
-    override func setBaseStyles() {
+open class MultilineContentLabel : MultilineLabel {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         self.setFontHeight(size: 16.0)
     }

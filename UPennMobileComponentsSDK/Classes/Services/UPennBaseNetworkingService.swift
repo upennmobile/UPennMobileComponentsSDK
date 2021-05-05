@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class UPennBaseNetworkingService : UPennNetworkRequestable {
+open class UPennBaseNetworkingService : UPennNetworkRequestable {
     
     public var urlProvider: UPennURLProvidable
     

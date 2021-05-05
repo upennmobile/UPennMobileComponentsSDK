@@ -55,40 +55,6 @@ public class UPennLoginCoordinator : UPennCoordinator {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.init(rawValue: Self.IsLoggedInNotification), object: nil)
     }
     
-//    func makeLoginRequest(username: String, password: String) {
-//        self.loginService?.makeLoginRequest(username: username, password: password)
-//    }
-//
-//    func attemptSilentLogin() {
-//        self.loginService?.attemptSilentLogin()
-//    }
-//
-//    func authenticationAutoFillCheck() {
-//        self.loginService?.authenticationAutoFillCheck()
-//    }
-//
-//    func toggleShouldAutoFill(_ autoFill: Bool) {
-//        self.loginService?.toggleShouldAutoFill(autoFill)
-//    }
-//
-//    var isFirstLogin: Bool { return self.loginService?.isFirstLogin ?? false }
-//
-//    func setFirstLogin() {
-//        self.loginService?.setFirstLogin()
-//    }
-//
-//    func cacheLoginCredentials(username: String, password: String) {
-//        self.loginService?.cacheLoginCredentials(username: username, password: password)
-//    }
-    
-    // MARK: - Logout
-    
-    
-    
-//    func invalidateAuthToken() {
-//        self.loginService?.logout()
-//    }
-    
 }
 
 extension UPennLoginCoordinator : UPennLoginCoordinatable {
@@ -130,19 +96,3 @@ private extension UPennLoginCoordinator {
 //        self.checkOnboarding()
     }
 }
-
-//extension UPennLoginCoordinator : UPennLoginServiceDelegate {
-//    func didSuccessfullyLoginUser(_ username: String) {
-//        // Inform Parent Coordinator?
-//    }
-//
-//    func didReturnAutoFillCredentials(username: String, password: String) {
-//        // Pass to some Login ViewController
-//    }
-//
-//    func didFailToLoginUser(errorStr: String) {
-//        // Inform Parent Coordinator?
-//    }
-//
-//
-//}

@@ -10,7 +10,7 @@ import Foundation
 //import JWTDecode
 import UIKit
 
-public class UPennAuthenticationService {
+open class UPennAuthenticationService {
     
     private(set) static var AuthToken: String?
     private (set) static var AthenaUserId: String?

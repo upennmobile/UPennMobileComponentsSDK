@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
-public class UPennMainCoordinator : NSObject, UPennCoordinator {
+public protocol UPennMainCoordinatable : UPennCoordinator, UPennLogoutBiometricsDelegate {
+    var logoutBiometricsDelegate: UPennLogoutBiometricsDelegate?  { get set }
+    func makeTabBarControllers()
+    func configureTabBarItems()
+}
+
+open class UPennMainCoordinator : NSObject, UPennMainCoordinatable {
     public var childCoordinators: [UPennCoordinator] = [UPennCoordinator]()
     
     public var navigationController: UINavigationController
@@ -33,7 +39,6 @@ public class UPennMainCoordinator : NSObject, UPennCoordinator {
         // TODO: Configure TabViewController?
         
         self.makeTabBarControllers()
-//        self.loginNavController = self.makeViewController(identifier: "LoginNav")
     }
     
     // MARK: - VC Factory Methods
@@ -44,18 +49,8 @@ public class UPennMainCoordinator : NSObject, UPennCoordinator {
         return UIViewController()
     }
     
-    func makeTabBarControllers() {
-//        if
-//            let manager = self.storeManager,
-//            let careStore = self.careStore
-//        {
-            // NFCVC
-//            self.nfcViewController = PPNFCScanViewController(storeManager: manager, careStore: careStore)
-//            // CarePlanVC
-//            self.careViewController = PPCarePlanViewController(storeManager: manager, careStore: careStore)
-//            // ContactsVC
-//            self.careTeamViewController = PPCareTeamViewController(storeManager: manager, careStore: careStore)
-            // AccountsVC
+    open func makeTabBarControllers() {
+        // AccountsVC
         let settingsCoord = UPennSettingsCoordinator(navController: self.navigationController, settingsCoordinatorDelegate: self)
 //            self.accountsViewController = self.makeViewController(identifier: "SettingsNav") as? UPennSettingsViewController
         settingsCoord.start()
@@ -71,7 +66,7 @@ public class UPennMainCoordinator : NSObject, UPennCoordinator {
 //        }
     }
     
-    func configureTabBarItems() {
+    open func configureTabBarItems() {
    
         // Set selected image & text tintColor
         self.tabController?.tabBar.tintColor = UIColor.black
@@ -79,45 +74,25 @@ public class UPennMainCoordinator : NSObject, UPennCoordinator {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.upennDeepBlue], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.upennRlyLightGray], for: .normal)
         
-        // Scan
-        /*let myTabBarItem1 = (self.tabController.tabBar.items?[0])! as UITabBarItem
-        myTabBarItem1.image = UIImage.NFCScanImage.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
-        myTabBarItem1.selectedImage = UIImage.NFCScanImage.withTintColor(.upennDeepBlue, renderingMode: .alwaysOriginal)
-        myTabBarItem1.title = "Scan" --- Remove for PipPenn-251 --- */
-        
-        // Care Plan
-//        let myTabBarItem2 = (self.tabController.tabBar.items?[0])! as UITabBarItem
-//        myTabBarItem2.image = UIImage.CarePlanUnSelected.withRenderingMode(.alwaysOriginal)
-//        myTabBarItem2.selectedImage = UIImage.CarePlanSelected.withRenderingMode(.alwaysOriginal)
-//        myTabBarItem2.title = "Care Plan"
-//
-//        // Contacts
-//        let myTabBarItem3 = (self.tabController.tabBar.items?[1])! as UITabBarItem
-//        myTabBarItem3.image = UIImage.ContactsUnSelected.withRenderingMode(.alwaysOriginal)
-//        myTabBarItem3.selectedImage = UIImage.ContactsSelected.withRenderingMode(.alwaysOriginal)
-//        myTabBarItem3.title = "Contacts"
-        
         // Accounts
         let myTabBarItem4 = (self.tabController?.tabBar.items?[0])! as UITabBarItem
         myTabBarItem4.image = UPennImageAssets.AccountUnSelected.withRenderingMode(.alwaysOriginal)
         myTabBarItem4.selectedImage = UPennImageAssets.AccountSelected.withRenderingMode(.alwaysOriginal)
         myTabBarItem4.title = "Accounts"
     }
-}
-
-extension UPennMainCoordinator : UITabBarControllerDelegate { }
-
-extension UPennMainCoordinator : UPennLogoutBiometricsDelegate {
-    public func logout() {
+    
+    open func logout() {
         // TODO: Fire delegates into MasterCoordinator to handle?
         self.logoutBiometricsDelegate?.logout()
     }
     
-    public func toggleShouldAutoFill(_ enabled: Bool) {
+    open func toggleShouldAutoFill(_ enabled: Bool) {
         // TODO: Fire delegates into MasterCoordinator to handle?
         self.logoutBiometricsDelegate?.toggleShouldAutoFill(enabled)
     }
-    
-    
-    
 }
+
+extension UPennMainCoordinator : UITabBarControllerDelegate { }
+
+//extension UPennMainCoordinator : UPennLogoutBiometricsDelegate {
+//}
