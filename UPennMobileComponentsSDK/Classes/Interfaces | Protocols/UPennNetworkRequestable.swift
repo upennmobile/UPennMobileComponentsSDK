@@ -8,15 +8,6 @@
 import Foundation
 import Alamofire
 
-extension UPennBaseNetworkingService {
-    
-    func makeRequest() {
-        self.makePOSTRequest(parameters: UPStringDict(), urlStr: "") { (resp, err) in
-            //
-        }
-    }
-}
-
 struct UPennLoginCreds: Encodable {
     let email: String
     let password: String
@@ -27,7 +18,7 @@ public protocol UPennNetworkRequestable {
     var urlProvider : UPennURLProvidable { get set }
 }
 
-extension UPennNetworkRequestable {
+public extension UPennNetworkRequestable {
     
     // TODO: Extension var for defaultRequest to be available in all conforming classes?
     /**
@@ -45,14 +36,12 @@ extension UPennNetworkRequestable {
 //        )
 //    }()
 
-    private func makeGETRequest(urlStr: String, completion: @escaping (UPRequestCompletion)) -> Void {
+    func makeGETRequest(urlStr: String, completion: @escaping (UPRequestCompletion)) -> Void {
 
         AF.request(urlStr).responseJSON { response in
             debugPrint(response)
             self.unwrapResponseForStatusCode(response, completion: completion)
         }
-        
-//        AF.request(urlStr).response(completionHandler: completion)
     }
     
     func makePOSTRequest(parameters: Parameters, urlStr: String, completion: @escaping (UPRequestCompletion)) -> Void {

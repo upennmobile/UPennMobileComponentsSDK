@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+@objc public protocol UPennAppTimeoutDelegate {
+    @objc func applicationDidTimeout(notification: NSNotification)
+}
+
 public class UPennTimerUIApplication : UIApplication {
     
     private enum IntervalSeconds : Double {

@@ -17,6 +17,12 @@ public protocol UPennLoginCoordinated : UPennLoginCoordinatable, UPennCoordinato
     /// Handler fired when a User successfully logs in
     func handleLoginNotification()
 }
+
+public protocol UPennLoginViewControllable : UPennLoginPresenterDelegate {
+    var presenter: UPennLoginPlusBiometricsInterface! { get set }
+    var coordinator: UPennLoginCoordinatorDelegate! { get set }
+    func forgotPassword()
+}
 /**
  Abstract:
  Purpose of this LoginCoordinator is to act as a Facade between any custom LoginViewController and behavioral protocols for logging-in and optionally using biometrics
@@ -33,14 +39,14 @@ open class UPennLoginCoordinator : UPennLoginCoordinated {
 
     // MARK: - LoginService
     
-    public init(navController: UINavigationController) {
+    public init(
+        navController: UINavigationController,
+        childViewController: UIViewController,
+        presenter: UPennLoginPresentable)
+    {
         self.navigationController = navController
-        // TODO: Dependency-inject vc as 'childViewController' with protocol type of 'UPennLoginPresented' that includes presenter and coordinator vars
-        let vc = UPennLoginViewController.Instantiate(.SDK)
-        self.childViewController = /*vc*/ UINavigationController(rootViewController: vc)
-        self.presenter = UPennLoginPresenter(loginDelegate: vc)
-        vc.loginPresenter = self.presenter
-        vc.loginCoordinator = self
+        self.childViewController = UINavigationController(rootViewController: childViewController)
+        self.presenter = presenter
     }
     
     open func start() {

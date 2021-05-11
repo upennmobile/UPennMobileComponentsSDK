@@ -14,6 +14,6 @@ import Foundation
      - errorString: optional error String returned from request
      - delete: Bool indicating the request is a deletion type
  */
-typealias UPRequestCompletion = (_ responseJSON: Any?, _ errorString: String?)->Void
-typealias UPResponseObjArray = Array<Dictionary<String,Any>>
-typealias UPStringDict = Dictionary<String,Any>
+public typealias UPRequestCompletion = (_ responseJSON: Any?, _ errorString: String?)->Void
+public typealias UPResponseObjArray = Array<Dictionary<String,Any>>
+public typealias UPStringDict = Dictionary<String,Any>

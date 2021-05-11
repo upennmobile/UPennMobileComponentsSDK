@@ -9,45 +9,19 @@
 import UIKit
 import UPennMobileComponentsSDK
 
-class PCLNetworkingService : UPennApplicationSettings {
-    
-    func thing() {
-        
-    }
-}
-
-class ExMasterCoordinator : UPennMasterCoordinator {
-    func thing() {
-        let foo = self.childCoordinators
-    }
-}
-
-@objc protocol UPennAppTimeoutDelegate {
-    @objc func applicationDidTimeout(notification: NSNotification)
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var masterCoordinator: UPennMasterCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         /*
          TODO: Initialize an Authentication Coordinator to manage checking User login state, and login/logout
          */
-        UPennActivityPresenter.Configure()
         let navController = UINavigationController()
-        let mainCoordinator = UPennMainTabCoordinator(navController: navController, tabController: UPennTabBarController.Instantiate(.SDK))
-        let loginCoordinator = UPennLoginCoordinator(navController: navController)
-        self.masterCoordinator = UPennMasterCoordinator(navController: navController, childCoordinators: [loginCoordinator,mainCoordinator])
-        loginCoordinator.loginCoordinatorDelegate = masterCoordinator
-        self.masterCoordinator?.start()
-        
-        // Configure Auto-Logout Timer
-        UPennTimerUIApplication.ConfigureAutoLogoutTimer(callback: self.applicationDidTimeout(notification:))
-        
+        let startup = ExampleStartupCoordinator(navController: navController, delegate: self)
+        startup.start()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
@@ -79,12 +53,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-// MARK: - Timeout Notification
+// MARK: - Startup Delegate
 
-extension AppDelegate : UPennAppTimeoutDelegate {
-    // Callback for when the timeout was fired.
-    func applicationDidTimeout(notification: NSNotification) {
-        self.masterCoordinator?.dismissAndPresentLogout()
+extension AppDelegate : UPennStartupCoordinatorDelegate {
+    func configureStartup() {
+        print("Broadcast Timeout from AppDelegate")
     }
 }
+// MARK: - Timeout Notification
+
+//extension AppDelegate : UPennAppTimeoutDelegate {
+//    // Callback for when the timeout was fired.
+//    func applicationDidTimeout(notification: NSNotification) {
+//        self.masterCoordinator?.dismissAndPresentLogout()
+//    }
+//}
 
