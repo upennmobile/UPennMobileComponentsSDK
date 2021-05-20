@@ -8,21 +8,38 @@
 import Foundation
 import UIKit
 
-class UPennNibView : UIView {
+/// Custom UIView
+open class UPennNibView : UIView {
     
-    var contentView: UIView!
+    open var contentView: UIView!
+    open var resourceBundle: Bundle? {
+        /*
+         1. Get bundle for UPennNibView object
+         2. Attempt to get resource URL from SDK
+         3. Return the sdkBundle object if from SDK; if not just return original bundle object
+         */
+        let bundle = Bundle(for: type(of: self))
+        guard
+            let sdkBundleURL = bundle.url(forResource: "UPennMobileComponentsSDK", withExtension: "bundle"),
+            let sdkBundle = Bundle(url: sdkBundleURL)
+                else
+        {
+            return bundle
+        }
+        return sdkBundle
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
     }
     
-    func xibSetup() {
+    open func xibSetup() {
         contentView = loadViewFromNib()
         contentView.backgroundColor = UIColor.clear
         contentView.frame = bounds
@@ -30,13 +47,8 @@ class UPennNibView : UIView {
         addSubview(contentView!)
     }
     
-    func loadViewFromNib() -> UIView! {
-        let bundle = Bundle(for: type(of: self))
-        /* NOTE:
-        While it might limit the Bundle to retrieve from, may need to update to:
-        let bundle = Bundle.UPennSDKResourcesProvider()
-        */
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+    open func loadViewFromNib() -> UIView {
+        let nib = UINib(nibName: String(describing: type(of: self)), bundle: self.resourceBundle)
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
