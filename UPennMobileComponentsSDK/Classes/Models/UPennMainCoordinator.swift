@@ -14,77 +14,73 @@ public protocol UPennMainCoordinatable : UPennCoordinator, UPennLogoutBiometrics
 }
 
 open class UPennMainTabCoordinator : NSObject, UPennMainCoordinatable {
-    public var childCoordinators: [UPennCoordinator] = [UPennCoordinator]()
+    public static var TabBarSelectedColor: UIColor = UIColor.upennDeepBlue
+    public static var TabBarUnSelectedColor: UIColor = UIColor.upennRlyLightGray
+    public static var TabBarTintColor: UIColor = UIColor.black
+    public static var StartIndex = 0
+    
+    open var childCoordinators: [UPennCoordinator] = [UPennCoordinator]()
     
     open var navigationController: UINavigationController
     
     open var childViewController: UIViewController?
-    
-    open var tabController : UITabBarController?
+    open var tabControllerPayload: UPennTabControllerPayload
+    open var tabController = UITabBarController()
     open var logoutBiometricsDelegate : UPennLogoutBiometricsDelegate?
     
-    public init(navController: UINavigationController, tabController: UITabBarController) {
-        // TODO: Initializer should take in array of childCoordinators to facilitate dynamic building of tabBarControllers/Items
+    public init(navController: UINavigationController, tabControllerPayload: UPennTabControllerPayload) {
         self.navigationController = navController
-        self.tabController = tabController
         self.childViewController = self.tabController
+        self.tabControllerPayload = tabControllerPayload
         super.init()
-        self.tabController?.delegate = self
+        self.tabController.delegate = self
     }
-    
+    /// Set tabControllers base appearance
     open func start() {
-        // Configure View?
+        // Set selected image & text tintColor
+        self.tabController.tabBar.tintColor = UPennMainTabCoordinator.TabBarTintColor
         
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UPennMainTabCoordinator.TabBarSelectedColor], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UPennMainTabCoordinator.TabBarUnSelectedColor], for: .normal)
+        self.startCoordinators()
         self.configureView()
     }
     
     // MARK: - VC Factory Methods
     
-    func makeViewController(identifier: String) -> UIViewController? {
-//        let navVC = self.appDelegate?.storyboard.instantiateViewController(withIdentifier: identifier)
-//        return navVC
-        return UIViewController()
+    /// Loops through all child coordinators and runs their 'start' function
+    open func startCoordinators() {
+        for coord in self.childCoordinators {
+            coord.start()
+        }
     }
     
-    // TODO: Update to loop through array of childCoordinators and set tabController.viewControllers to each coord's childVC
+    /// Sets tabController child viewControllers to tabControllerPayload navigationControllers; sets selectedIndex and configures tabBar Items
     open func configureView() {
-        // TODO: VC's should be instatiated outside this Coordinator, and only looping through childCoord's start() and set tabController.viewControllers here
-        let settingsVC = UPennSettingsViewController.Instantiate(.SDK)
-        let settingsCoord = UPennSettingsCoordinator(
-            navController: self.navigationController,
-            settingsViewController: settingsVC,
-            settingsCoordinatorDelegate: self)
-        settingsVC.settingsCoordinator = settingsCoord
-        settingsCoord.start()
-            self.tabController?.viewControllers = [
-                UINavigationController(rootViewController: settingsCoord.childViewController!)
-            ]
-            self.tabController?.selectedIndex = 0
-            self.configureTabBarItems()
+        // Set TabControllers
+        self.tabController.viewControllers = self.tabControllerPayload.navControllers
+        // Set Starting Index
+        self.tabController.selectedIndex = UPennMainTabCoordinator.StartIndex
+        // Configure TabBarItems
+        self.configureTabBarItems()
     }
     
+    /// Loops through tabControllerPayload tabBarItes, and sets all tabController tabItem attributes
     open func configureTabBarItems() {
-   
-        // Set selected image & text tintColor
-        self.tabController?.tabBar.tintColor = UIColor.black
-        
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.upennDeepBlue], for: .selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.upennRlyLightGray], for: .normal)
-        
-        // Accounts
-        let myTabBarItem4 = (self.tabController?.tabBar.items?[0])! as UITabBarItem
-        myTabBarItem4.image = UPennImageAssets.AccountUnSelected.withRenderingMode(.alwaysOriginal)
-        myTabBarItem4.selectedImage = UPennImageAssets.AccountSelected.withRenderingMode(.alwaysOriginal)
-        myTabBarItem4.title = "Accounts"
+    
+        for (idx,item) in self.tabControllerPayload.tabBarItems.enumerated() {
+            let tabItem = (self.tabController.tabBar.items?[idx])! as UITabBarItem
+            tabItem.image = item.unSelectedImage
+            tabItem.selectedImage = item.selectedImage
+            tabItem.title = item.title
+        }
     }
     
     open func logout() {
-        // TODO: Fire delegates into MasterCoordinator to handle?
         self.logoutBiometricsDelegate?.logout()
     }
     
     open func toggleShouldAutoFill(_ enabled: Bool) {
-        // TODO: Fire delegates into MasterCoordinator to handle?
         self.logoutBiometricsDelegate?.toggleShouldAutoFill(enabled)
     }
 }

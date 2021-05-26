@@ -41,6 +41,8 @@
 		381FF05F8B4F611EE9C2FDBE4457BB89 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0996FE38E2D7A51D4B1C575E0F59DFE /* SessionDelegate.swift */; };
 		3A98F3AF2630BC9500D12D83 /* UPennAlertsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A98F3AE2630BC9500D12D83 /* UPennAlertsPresenter.swift */; };
 		3A98F44126365E0D00D12D83 /* Protocols & Interfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A98F44026365E0D00D12D83 /* Protocols & Interfaces.swift */; };
+		3A9B1ACA265CB41C00E45AE5 /* UPennTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1AC9265CB41C00E45AE5 /* UPennTabBarItem.swift */; };
+		3A9B1AD4265D888900E45AE5 /* UPennTabControllerPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9B1AD3265D888900E45AE5 /* UPennTabControllerPayload.swift */; };
 		3AED6B1526463AAE007252D3 /* UPennStartupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AED6B0726463A72007252D3 /* UPennStartupCoordinator.swift */; };
 		3AF367BB26307C8800632BA9 /* UPennIconButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE9D5A3C9859C9F07B074FBEBE555003 /* UPennIconButtonView.xib */; };
 		3D96CFFA033F11B6D2D9BE951FB8FD76 /* UPennBiometricsEnableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8AD5AAAF838317576743A397116F0 /* UPennBiometricsEnableCell.swift */; };
@@ -229,6 +231,8 @@
 		38769E4417B0F41EDC294BC7B476BFCD /* Bundle+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+UPenn.swift"; sourceTree = "<group>"; };
 		3A98F3AE2630BC9500D12D83 /* UPennAlertsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPennAlertsPresenter.swift; sourceTree = "<group>"; };
 		3A98F44026365E0D00D12D83 /* Protocols & Interfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocols & Interfaces.swift"; sourceTree = "<group>"; };
+		3A9B1AC9265CB41C00E45AE5 /* UPennTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennTabBarItem.swift; sourceTree = "<group>"; };
+		3A9B1AD3265D888900E45AE5 /* UPennTabControllerPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennTabControllerPayload.swift; sourceTree = "<group>"; };
 		3AED6B0726463A72007252D3 /* UPennStartupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennStartupCoordinator.swift; sourceTree = "<group>"; };
 		3CBFC4F55DDAE6395E2F913D81923DFE /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		4301E231F66E2C22AC73F1FD37303977 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
@@ -541,6 +545,8 @@
 				3A98F3AE2630BC9500D12D83 /* UPennAlertsPresenter.swift */,
 				B32F3CCC513F885DBCC1B53F1A7CE8F8 /* UPennMainCoordinator.swift */,
 				12D118FEC862DC6CFB71469949D5BB06 /* UPennMasterCoordinator.swift */,
+				3A9B1AC9265CB41C00E45AE5 /* UPennTabBarItem.swift */,
+				3A9B1AD3265D888900E45AE5 /* UPennTabControllerPayload.swift */,
 			);
 			name = Models;
 			path = UPennMobileComponentsSDK/Classes/Models;
@@ -1186,6 +1192,7 @@
 				55474E059AFE30C733FDFB647029453C /* UIView+UPenn.swift in Sources */,
 				501AB5E02DF45D7590CF2D991656C0FE /* UIViewController+UPenn.swift in Sources */,
 				7B7B5D33BDAF2B882244FBD0BE543E09 /* UPennActivityPresenter.swift in Sources */,
+				3A9B1ACA265CB41C00E45AE5 /* UPennTabBarItem.swift in Sources */,
 				DC116FFE437130C70EA652B4D8E068DA /* UPennApplicationSettings.swift in Sources */,
 				37173A75AA0DCAA3E794882C82E9862C /* UPennAuthenticationService.swift in Sources */,
 				C3D44BE9C58C7BC621AB2B016225DFC5 /* UPennAutoLogoutCell.swift in Sources */,
@@ -1206,6 +1213,7 @@
 				46F828AB6F37C3D9475BD199744DEE4B /* UPennKeyboardService.swift in Sources */,
 				9BDFC1D2354897E41BF6C3498CD8ECBA /* UPennKeychainConfiguration.swift in Sources */,
 				D30C02FBFBBFDF6230428899700CEB2F /* UPennKeychainPasswordItem.swift in Sources */,
+				3A9B1AD4265D888900E45AE5 /* UPennTabControllerPayload.swift in Sources */,
 				C8D41AF14141D7D8658A23ED58EA6D2D /* UPennLightNavBarViewController.swift in Sources */,
 				4DBA37D52EB69417B624D39A685DB15E /* UPennLoginCoordinator.swift in Sources */,
 				D3DD910D704C89A1D8060B24EC2FC8F6 /* UPennLoginNetworkRequests.swift in Sources */,

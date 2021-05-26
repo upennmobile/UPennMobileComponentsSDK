@@ -14,20 +14,21 @@ public protocol UPennLogoutBiometricsDelegate {
 
 public protocol UPennSettingsCoordinatorInterface : UPennCoordinator, UPennLogoutBiometricsDelegate { }
 
-open class UPennSettingsCoordinator : UPennSettingsCoordinatorInterface {
+open class UPennSettingsCoordinator : UPennSettingsCoordinatorInterface, UPennTabBarItemed {
+    
+    public static var TabBarItem: UPennTabBarItem = UPennTabBarItem(title: "Account", selectedImage: UIImage(systemName: "person.circle.fill"), unselectedImage: UIImage(systemName: "person.circle"))
+    
     
     public var childCoordinators = [UPennCoordinator]()
     public var navigationController: UINavigationController
-    var settingsCoordinatorDelegate : UPennLogoutBiometricsDelegate?
+    public var logoutBiometricsDelegate : UPennLogoutBiometricsDelegate?
     public var childViewController: UIViewController?
     
     public init(
         navController: UINavigationController,
-        settingsViewController: UIViewController,
-        settingsCoordinatorDelegate: UPennLogoutBiometricsDelegate) {
+        settingsViewController: UIViewController) {
         self.navigationController = navController
         self.childViewController = settingsViewController
-        self.settingsCoordinatorDelegate = settingsCoordinatorDelegate
     }
     
     open func start() {
@@ -35,10 +36,10 @@ open class UPennSettingsCoordinator : UPennSettingsCoordinatorInterface {
     }
     
     open func logout() {
-        self.settingsCoordinatorDelegate?.logout()
+        self.logoutBiometricsDelegate?.logout()
     }
     
     open func toggleShouldAutoFill(_ enabled: Bool) {
-        self.settingsCoordinatorDelegate?.toggleShouldAutoFill(enabled)
+        self.logoutBiometricsDelegate?.toggleShouldAutoFill(enabled)
     }
 }

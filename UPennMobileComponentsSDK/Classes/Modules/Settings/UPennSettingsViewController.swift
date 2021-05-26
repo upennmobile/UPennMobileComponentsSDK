@@ -57,7 +57,7 @@ public class UPennSettingsViewController : UPennBasicViewController, Storyboarde
     
     func setup() {
         super.navBarSetup()
-        self.title = "Account"
+        self.navigationItem.title = "Account"
 //        self.navigationController?.navigationBar.isHidden = true
         self.settingsTableView.delegate = self
         self.settingsTableView.dataSource = self

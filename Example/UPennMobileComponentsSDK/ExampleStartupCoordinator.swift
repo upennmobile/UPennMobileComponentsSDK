@@ -16,8 +16,35 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         UPennActivityPresenter.Configure()
         // Configure Auto-Logout Timer
         UPennTimerUIApplication.ConfigureAutoLogoutTimer(callback: self.applicationDidTimeout(notification:))
-        let mainCoordinator = UPennMainTabCoordinator(navController: self.navigationController, tabController: UPennTabBarController.Instantiate(.SDK))
-        // Make Login ChildVC
+        
+        // Make TabBarPayloads & MainTabCoordinator
+        let vc1 = UPennSettingsViewController.Instantiate(.SDK)
+//        let vc2 = UPennSettingsViewController.Instantiate(.SDK)
+        // MainTab Child Coord's
+        let settingsVC = UPennSettingsViewController.Instantiate(.SDK)
+        let settingsCoord = UPennSettingsCoordinator(
+            navController: self.navigationController,
+            settingsViewController: settingsVC)
+        settingsVC.settingsCoordinator = settingsCoord
+        
+        let navControllers = [UINavigationController(rootViewController: vc1), UINavigationController(rootViewController: settingsVC)]
+        let tabItem = UPennTabBarItem(title: "Scan", selectedImage: UIImage(systemName: "camera.fill"), unselectedImage: UIImage(systemName: "camera"))
+        let tabItems = [
+            tabItem,
+            UPennSettingsCoordinator.TabBarItem
+            ]
+        let payload = UPennTabControllerPayload(navControllers: navControllers, tabBarItems: tabItems)
+        
+//        settingsCoord.start()
+        
+        // MainTab Coord
+        let mainCoordinator = UPennMainTabCoordinator(navController: self.navigationController, tabControllerPayload: payload)
+        settingsCoord.logoutBiometricsDelegate = mainCoordinator
+        
+        UPennMainTabCoordinator.TabBarTintColor = UIColor.upennDeepBlue
+        
+        
+        // Make Login VC & Coordinator
         let childVC = UPennLoginViewController.Instantiate(.SDK)
         // Make Login presenter
         let presenter = UPennLoginPresenter(loginDelegate: childVC)
@@ -31,6 +58,7 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         self.masterCoordinator = UPennMasterCoordinator(navController: self.navigationController, childCoordinators: [loginCoordinator,mainCoordinator])
         // Set LoginCoord delegate
         loginCoordinator.loginCoordinatorDelegate = self.masterCoordinator
+        mainCoordinator.logoutBiometricsDelegate = masterCoordinator
         // Start MasterCoord
         self.masterCoordinator?.start()
         // Startup Callback
