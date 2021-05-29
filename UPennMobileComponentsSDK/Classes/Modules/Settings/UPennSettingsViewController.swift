@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class UPennSettingsViewController : UPennBasicViewController, Storyboarded {
+public class UPennSettingsViewController : UPennStoryboardViewController {
     
     private enum Sections : Int {
         case Settings

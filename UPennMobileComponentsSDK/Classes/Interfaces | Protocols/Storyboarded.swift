@@ -35,4 +35,4 @@ public extension Storyboarded where Self: UIViewController {
 }
 
 /// ViewController that provides built-in inheritance from UPennBasicViewController & Storyboarded conformance
-//open class UPennStoryboardedViewController : UIViewController, Storyboarded { }
+open class UPennStoryboardViewController : UIViewController, Storyboarded { }

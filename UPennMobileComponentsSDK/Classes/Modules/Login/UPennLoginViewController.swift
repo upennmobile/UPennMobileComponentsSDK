@@ -11,7 +11,7 @@ import UIKit
 //import SVProgressHUD
 //import UPennMobileComponentsSDK
 
-open class UPennLoginViewController: UPennBasicViewController, UPennLoginViewControllable, Storyboarded /*UPennStoryboardedViewController UIViewController*/ {
+open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginViewControllable {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
