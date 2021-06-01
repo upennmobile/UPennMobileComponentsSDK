@@ -16,7 +16,7 @@ public protocol UPennSettingsCoordinatorInterface : UPennCoordinator, UPennLogou
 
 open class UPennSettingsCoordinator : UPennSettingsCoordinatorInterface, UPennTabBarItemed {
     
-    public static var TabBarItem: UPennTabBarItem = UPennTabBarItem(title: "Account", selectedImage: UIImage(systemName: "person.circle.fill"), unselectedImage: UIImage(systemName: "person.circle"))
+    public static var TabBarItem: UPennTabBarItem = UPennTabBarItem(title: "Account".localize, selectedImage: UIImage(systemName: "person.circle.fill"), unselectedImage: UIImage(systemName: "person.circle"))
     
     
     public var childCoordinators = [UPennCoordinator]()

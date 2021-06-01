@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIButton {
+public extension UIButton {
     
     func isRounded() {
         layer.isRounded()
@@ -33,18 +33,18 @@ open class PrimaryCTAButton : UIButton {
         }
     }
     
-    func setBaseStyles() {
+    open func setBaseStyles() {
         setEnabledStyle()
         titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         titleLabel?.font = UIFont.helveticaBold(size: 15.0)
     }
     
-    func setEnabledStyle() {
+    open func setEnabledStyle() {
         setTitleColor(UIColor.white, for: .normal)
         backgroundColor = UIColor.upennMediumBlue
     }
     
-    func setDisabledStyle() {
+    open func setDisabledStyle() {
         setTitleColor(UIColor.darkGray, for: .disabled)
         backgroundColor = UIColor.lightGray
     }
@@ -57,7 +57,7 @@ open class PrimaryCTAButtonText : PrimaryCTAButton {
         setBaseStyles()
     }
     
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
@@ -68,41 +68,41 @@ open class PrimaryCTAButtonText : PrimaryCTAButton {
         }
     }
     
-    override func setEnabledStyle() {
+    open override func setEnabledStyle() {
         super.setEnabledStyle()
         backgroundColor = UIColor.clear
         setTitleColor(UIColor.upennMediumBlue, for: .normal)
     }
     
-    override func setDisabledStyle() {
+    open override func setDisabledStyle() {
         super.setDisabledStyle()
         backgroundColor = UIColor.clear
     }
 }
 
 open class PrimaryCTAButtonTextWhite : PrimaryCTAButtonText {
-    override func setEnabledStyle() {
+    open override func setEnabledStyle() {
         super.setEnabledStyle()
         setTitleColor(UIColor.white, for: .normal)
     }
 }
 
 open class PrimaryCTAButtonTextRed : PrimaryCTAButtonText {
-    override func setEnabledStyle() {
+    open override func setEnabledStyle() {
         super.setEnabledStyle()
         setTitleColor(UIColor.upennWarningRed, for: .normal)
     }
 }
 
 open class PrimaryCTAButtonGreen : PrimaryCTAButton {
-    override func setEnabledStyle() {
+    open override func setEnabledStyle() {
         super.setEnabledStyle()
         backgroundColor = UIColor.upennCTAGreen
     }
 }
 
 open class PrimaryCTAButtonRed : PrimaryCTAButton {
-    override func setEnabledStyle() {
+    open override func setEnabledStyle() {
         super.setEnabledStyle()
         backgroundColor = UIColor.upennWarningRed
     }
@@ -129,35 +129,35 @@ open class OutlineCTAButton : PrimaryCTAButton {
         self.setBaseStyles()
     }
     
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         layer.regularBorder()
         layer.blueBorder()
         contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
-    override func setEnabledStyle() {
+    open override func setEnabledStyle() {
         super.setEnabledStyle()
         setTitleColor(UIColor.upennMediumBlue, for: .normal)
         backgroundColor = UIColor.white
         layer.blueBorder()
     }
     
-    override func setDisabledStyle() {
+    open override func setDisabledStyle() {
         super.setDisabledStyle()
         layer.greyBorder()
     }
 }
 
 open class RoundedOutlineCTAButton : OutlineCTAButton {
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         isRounded()
     }
 }
 
 open class RedOutlineCTAButton : OutlineCTAButton {
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         setTitleColor(UIColor.upennWarningRed, for: .normal)
         layer.redBorder()
@@ -165,14 +165,14 @@ open class RedOutlineCTAButton : OutlineCTAButton {
 }
 
 open class RedRoundedOutlineCTAButton : RedOutlineCTAButton {
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         layer.isRounded()
     }
 }
 
 open class DarkRoundedOutlineCTAButton : RoundedOutlineCTAButton {
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         setTitleColor(UIColor.upennDarkBlue, for: .normal)
         layer.darkBlueBorder()
@@ -185,7 +185,7 @@ open class CircleOutlineCTAButton : OutlineCTAButton {
         self.setBaseStyles()
     }
     
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         setTitleColor(UIColor.upennMediumBlue, for: .normal)
@@ -199,7 +199,7 @@ open class GreyCircleOutlineCTAButton : CircleOutlineCTAButton {
         self.setBaseStyles()
     }
     
-    override func setBaseStyles() {
+    open override func setBaseStyles() {
         super.setBaseStyles()
         setTitleColor(UIColor.lightGray, for: .normal)
         layer.greyBorder()

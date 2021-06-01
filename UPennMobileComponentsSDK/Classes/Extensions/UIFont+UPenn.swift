@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension UIFont {
+public extension UIFont {
     
     class func helvetica(size: CGFloat) -> UIFont {
         return UIFont.init(name: "Helvetica Neue", size: size)!

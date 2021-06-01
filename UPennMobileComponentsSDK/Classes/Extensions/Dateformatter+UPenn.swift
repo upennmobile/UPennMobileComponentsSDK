@@ -9,7 +9,7 @@
 import Foundation
 
 private var cachedFormatters = [String : DateFormatter]()
-extension DateFormatter {
+public extension DateFormatter {
     enum DateFormat : String {
         case ISO8601 = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
         case RFC3339 = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"

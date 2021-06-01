@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct UPennNameSpacer {
+public struct UPennNameSpacer {
     /**
      Creates name-spaced, concatenated string in the form of "App-Bundle-ID.keyString"
      - parameter keyString: String to be added to the name-space string
     */
-    static func MakeKey(_ keyString: String) -> String {
+    static public func MakeKey(_ keyString: String) -> String {
         return "\(UPennApplicationSettings.BundleID).\(keyString)"
     }
 }

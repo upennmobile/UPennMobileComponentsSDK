@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     /**
      Base animation function with set values for animation interaction
      - parameter callback: Optional block of code to run during 'animations' block
      */
-    static public func BasicAnimation(callback: (()->Void)?) {
+    static func BasicAnimation(callback: (()->Void)?) {
         UIView.animate(
             withDuration: 0.5,
             delay: 0.0,

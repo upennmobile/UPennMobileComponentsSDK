@@ -11,7 +11,7 @@ import Foundation
 /**
  Extension to manage Date display of information
  */
-extension Date {
+public extension Date {
     /**
      Placeholder text for Date display
     */

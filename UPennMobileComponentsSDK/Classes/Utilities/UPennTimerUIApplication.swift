@@ -21,16 +21,16 @@ public class UPennTimerUIApplication : UIApplication {
         case TenMin  = 600.0
     }
     
-    static let ApplicationDidTimeoutNotification = UPennNameSpacer.MakeKey("AppTimeout")
+    public static let ApplicationDidTimeoutNotification = UPennNameSpacer.MakeKey("AppTimeout")
     
-    static var AuthCoordinator : UPennLoginCoordinatable!
+    public static var AuthCoordinator : UPennLoginCoordinatable!
     
-    static var TimeoutIndex : Int {
+    public static var TimeoutIndex : Int {
         return TimeoutIndices[TimeoutInSeconds]!
     }
     static private var IdleTimer: Timer?
     
-    static var TimeoutCallback : ((_ notification: NSNotification)->Void)? = nil
+    public static var TimeoutCallback : ((_ notification: NSNotification)->Void)? = nil
     
     /**
      Configure the Auto-logout Timer by setting up a notification listener w/ callback
@@ -61,7 +61,7 @@ public class UPennTimerUIApplication : UIApplication {
     /**
      Reset the timer because there was user interaction.
      */
-    static func ResetIdleTimer() {
+    public static func ResetIdleTimer() {
         
         // Only trigger timer logout-timer if User is logged-in
         
@@ -75,7 +75,7 @@ public class UPennTimerUIApplication : UIApplication {
     /**
      Invalidates any active UPennTimerUIApplication timer
      */
-    static func InvalidateActiveTimer() {
+    public static func InvalidateActiveTimer() {
         if let idleTimer = IdleTimer {
             idleTimer.invalidate()
         }
@@ -84,11 +84,11 @@ public class UPennTimerUIApplication : UIApplication {
     /**
      If the timer reaches the limit as defined in timeoutInSeconds, post this notification.
      */
-    @objc static func idleTimerExceeded() {
+    @objc public static func idleTimerExceeded() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: self.ApplicationDidTimeoutNotification), object: nil)
     }
     
-    static func updateTimeoutInterval(index: Int) {
+    public static func updateTimeoutInterval(index: Int) {
         let seconds = TimeoutIdxDict[index]
         UserDefaults.standard.set(seconds, forKey: self.TimeoutKey)
         ResetIdleTimer()

@@ -28,7 +28,7 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         settingsVC.settingsCoordinator = settingsCoord
         
         let navControllers = [UINavigationController(rootViewController: vc1), UINavigationController(rootViewController: settingsVC)]
-        let tabItem = UPennTabBarItem(title: "Scan", selectedImage: UIImage(systemName: "camera.fill"), unselectedImage: UIImage(systemName: "camera"))
+        let tabItem = UPennTabBarItem(title: "Scan".localize, selectedImage: UIImage(systemName: "camera.fill"), unselectedImage: UIImage(systemName: "camera"))
         let tabItems = [
             tabItem,
             UPennSettingsCoordinator.TabBarItem

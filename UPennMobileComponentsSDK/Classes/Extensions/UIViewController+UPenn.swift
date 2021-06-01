@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     
-    @objc open func navBarSetup() {
+    @objc func navBarSetup() {
         // Set UPenn Deep Blue NavigationBar & white navbar text
         self.navigationController?.navigationBar.barTintColor = UIColor.upennDeepBlue
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -19,22 +19,22 @@ extension UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
     
-    @objc open func navBarLightSetup() {
+    @objc func navBarLightSetup() {
         // Set UPenn Deep Blue NavigationBar & white navbar text
         self.navigationController?.navigationBar.barTintColor = UIColor.upennRlyLightGray
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.upennBlack]
         self.navigationController?.navigationBar.tintColor = UIColor.upennDeepBlue
     }
     
-    @objc open func reloadView() {
+    @objc func reloadView() {
         self.popToRoot()
     }
     
-    @objc open func dismissModal() {
+    @objc func dismissModal() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc open func popToRoot(_ delay: Double=0.0) {
+    @objc func popToRoot(_ delay: Double=0.0) {
         DispatchQueue.main.asyncAfter(deadline: .now()+delay) {
             self.navigationController?.popToRootViewController(animated: true)
         }

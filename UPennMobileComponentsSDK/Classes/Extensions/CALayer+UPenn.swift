@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-class UPennInnerShadowLayer : CALayer {
+open class UPennInnerShadowLayer : CALayer {
     
-    override init(layer: Any) {
+    override public init(layer: Any) {
         super.init(layer: layer)
         guard let frame = layer as? CGRect else { return }
         self.makeShadow(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -37,7 +37,7 @@ class UPennInnerShadowLayer : CALayer {
     }
 }
 
-extension CALayer {
+public extension CALayer {
     
     func isRounded() {
         self.cornerRadius = 5

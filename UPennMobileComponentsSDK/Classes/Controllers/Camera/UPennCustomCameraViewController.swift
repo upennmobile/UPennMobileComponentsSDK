@@ -10,60 +10,58 @@ import Foundation
 import UIKit
 import AVFoundation
 
-protocol ScanItemDelegate {
-    func didScanItem(_ image: UIImage)
-    func didCancelItemScan()
+public protocol UPennPhotoCaptureDelegate {
+    func didTakePhoto(_ image: UIImage)
+    func didCancelPhotoCapture()
 }
 
-class UPennCustomCameraViewController: UPennBasicViewController {
+open class UPennCustomCameraViewController: UPennStoryboardViewController {
     
-    @IBOutlet weak var cameraViewport: UIView!
+    @IBOutlet public weak var cameraViewport: UIView!
     
-    private var session = AVCaptureSession()
-    private var backCamera: AVCaptureDevice?
-    private var frontCamera: AVCaptureDevice?
-    private var currentCamera: AVCaptureDevice?
-    private var photoOutput: AVCapturePhotoOutput?
-    private var image: UIImage?
-    private var stillImageOutput: AVCaptureOutput?
-    private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
-    var scanItemDelegate: ScanItemDelegate?
+    public var session = AVCaptureSession()
+    public var backCamera: AVCaptureDevice?
+    public var frontCamera: AVCaptureDevice?
+    public var currentCamera: AVCaptureDevice?
+    public var photoOutput: AVCapturePhotoOutput?
+    public var image: UIImage?
+    public var stillImageOutput: AVCaptureOutput?
+    public var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    public var photoCaptureDelegate: UPennPhotoCaptureDelegate?
     
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     
-    @IBAction func didTapOnTakePhotoButton(_ sender: UIButton) {
+    @IBAction open func didTapOnTakePhotoButton(_ sender: UIButton) {
         photoOutput?.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
     }
     
-    @IBAction func didPressCloseAppButton(_ sender: UIButton) {
+    @IBAction open func didPressCloseAppButton(_ sender: UIButton) {
         self.dismissModal()
-        self.scanItemDelegate?.didCancelItemScan()
+        self.photoCaptureDelegate?.didCancelPhotoCapture()
     }
     
 }
 
 extension UPennCustomCameraViewController : AVCapturePhotoCaptureDelegate {
-    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    open func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if
             let imageData = photo.fileDataRepresentation(),
             let image = UIImage(data: imageData)
         {
-            self.scanItemDelegate?.didScanItem(image)
+            self.photoCaptureDelegate?.didTakePhoto(image)
             self.dismissModal()
         }
     }
-}
-
-private extension UPennCustomCameraViewController {
-    func setup() {
+    
+    open func setup() {
         setupCaptureSession()
         setupDevice()
         setupInputOutput()
@@ -71,11 +69,11 @@ private extension UPennCustomCameraViewController {
         startRunningCaptureSession()
     }
     
-    func setupCaptureSession() {
+    open func setupCaptureSession() {
         session.sessionPreset = AVCaptureSession.Preset.photo
     }
     
-    func setupDevice() {
+    open func setupDevice() {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
         let devices = deviceDiscoverySession.devices
         for device in devices {
@@ -88,7 +86,7 @@ private extension UPennCustomCameraViewController {
         currentCamera = backCamera
     }
     
-    func setupInputOutput() {
+    open func setupInputOutput() {
         do {
             let captureDeviceInput = try AVCaptureDeviceInput(device: currentCamera!)
             session.addInput(captureDeviceInput)
@@ -100,7 +98,7 @@ private extension UPennCustomCameraViewController {
         }
     }
     
-    func setupPreviewLayer() {
+    open func setupPreviewLayer() {
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: session)
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
@@ -108,7 +106,7 @@ private extension UPennCustomCameraViewController {
         cameraViewport.layer.insertSublayer(cameraPreviewLayer!, at: 0)
     }
     
-    func startRunningCaptureSession() {
+    open func startRunningCaptureSession() {
         session.startRunning()
     }
 }
