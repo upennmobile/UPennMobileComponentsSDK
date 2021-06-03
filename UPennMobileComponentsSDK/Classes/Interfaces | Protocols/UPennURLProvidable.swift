@@ -13,13 +13,6 @@ public protocol UPennURLProvidable {
     var userLoginEndpoint : String { get set }
 }
 
-public extension UPennURLProvidable {
-    
-    func openURL(_ url: URL) {
-        UIApplication.shared.open(url)
-    }
-}
-
 open class UPennURLProvider : UPennURLProvidable {
     open var rootURL: String
     

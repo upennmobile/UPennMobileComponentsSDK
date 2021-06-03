@@ -7,9 +7,14 @@
 
 import Foundation
 
-public class UPennLoginNetworkingService : UPennBaseNetworkingService {
+public protocol UPennLoginNetworkingRequestable : UPennNetworkRequestable {
     
-    func makeLoginRequest(username: String, password: String, completion: @escaping (UPRequestCompletion)) {
+    
+}
+
+extension UPennLoginNetworkingRequestable {
+    
+    func makeLoginRequest(username: String, password: String, completion: @escaping (UPennRequestCompletion)) {
         
         let parameters: [String:String] = [
             "username" : username,
@@ -17,7 +22,7 @@ public class UPennLoginNetworkingService : UPennBaseNetworkingService {
         ]
         
         // Make Request for JWT FIXME:
-        self.makePOSTRequest(parameters: parameters, urlStr: urlProvider.userLoginEndpoint, completion: completion)
+        self.makePOSTRequest(urlStr: urlProvider.userLoginEndpoint, parameters: parameters, encoding: .JSON, completion: completion)
         
 //        let jwtRequest = defaultManager.request(self.configuration.loginEndpoint, method: .post, parameters: parameters, encoding: URLEncoding.httpBody)
 //        jwtRequest.responseJSON { (response) in
@@ -26,4 +31,11 @@ public class UPennLoginNetworkingService : UPennBaseNetworkingService {
     }
 }
 
-extension UPennLoginNetworkingService { }
+open class UPennLoginNetworkService : UPennLoginNetworkingRequestable {
+    
+    public var urlProvider: UPennURLProvidable
+    
+    public init(urlProvider: UPennURLProvidable) {
+        self.urlProvider = urlProvider
+    }
+}

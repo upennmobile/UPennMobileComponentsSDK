@@ -7,18 +7,18 @@
 //
 
 import Foundation
-//import JWTDecode
+import JWTDecode
 import UIKit
 
 open class UPennAuthenticationService {
     
-    private(set) static var AuthToken: String?
-    private (set) static var AthenaUserId: String?
-    private (set) static var DisplayName: String?
-    private static let AutoLoginKey  = UPennNameSpacer.MakeKey("shouldAutoLogin")
-    private static let AutoFillKey   = UPennNameSpacer.MakeKey("shouldAutoFill")
-    private static let UsernameKey   = UPennNameSpacer.MakeKey("username")
-    private static let LoginCountKey = UPennNameSpacer.MakeKey("loginCountKey")
+    public static var AuthToken: String?
+    public static var AthenaUserId: String?
+    public static var DisplayName: String?
+    public static let AutoLoginKey  = UPennNameSpacer.MakeKey("shouldAutoLogin")
+    public static let AutoFillKey   = UPennNameSpacer.MakeKey("shouldAutoFill")
+    public static let UsernameKey   = UPennNameSpacer.MakeKey("username")
+    public static let LoginCountKey = UPennNameSpacer.MakeKey("loginCountKey")
     public static var IsAuthenticated = false
     public static var ShouldAutoLogin : Bool {
         return UserDefaults.standard.value(forKey: AutoLoginKey) as? Bool ?? false
@@ -111,7 +111,7 @@ open class UPennAuthenticationService {
 }
 
 private extension UPennAuthenticationService {
-    // TODO: Not Needed?
+    
     static func parseJWTForInfo(jsonWebToken: String) {
         /* Sample JWT Values
          {
@@ -121,16 +121,15 @@ private extension UPennAuthenticationService {
          "iat": 123456789
          }
          */
-        // TODO: Create custom class to encapsulate
-//        do {
-//            let jwt = try decode(jwt: jsonWebToken)
-//            let uniqueName = jwt.claim(name: "unique_name")
-//            if let name = uniqueName.string {
-//                PennUserName = name
-//            }
-//        } catch {
-//            // Handle Error
-//            fatalError("Error parsing JWT - \(error)")
-//        }
+        do {
+            let jwt = try decode(jwt: jsonWebToken)
+            let uniqueName = jwt.claim(name: "unique_name")
+            if let name = uniqueName.string {
+                PennUserName = name
+            }
+        } catch {
+            // Handle Error
+            fatalError("Error parsing JWT - \(error)")
+        }
     }
 }

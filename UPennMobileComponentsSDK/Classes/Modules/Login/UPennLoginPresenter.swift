@@ -25,7 +25,7 @@ open class UPennLoginPresenter : UPennLoginPresentable {
         loginDelegate: UPennLoginPresenterDelegate) {
         self.loginDelegate = loginDelegate
         // TODO: Dependency-inject all the services via init?
-        let requestService = UPennLoginNetworkingService(urlProvider: UPennURLProvider(rootURL: UPennApplicationSettings.RootURL, loginEndpoint: UPennApplicationSettings.LoginURL))
+        let requestService = UPennLoginNetworkService(urlProvider: UPennURLProvider(rootURL: UPennApplicationSettings.RootURL, loginEndpoint: UPennApplicationSettings.LoginURL))
         self.loginService = UPennLoginService(requestService: requestService, loginDelegate: self)
         self.biometricsService = UPennBiometricsAuthService(biometricsDelegate: self)
     }

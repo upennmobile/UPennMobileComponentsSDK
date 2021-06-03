@@ -11,7 +11,7 @@ import Foundation
 open class UPennLoginService : UPennLoginInterface {
     
     public var userIsLoggedIn : Bool { return UPennAuthenticationService.IsAuthenticated }
-    var requestService : UPennLoginNetworkingService
+    var requestService : UPennLoginNetworkingRequestable
     var loginDelegate: UPennLoginServiceDelegate?
     var shouldAutoLogin : Bool { return UPennAuthenticationService.ShouldAutoLogin }
     public var shouldAutoFill : Bool { return UPennAuthenticationService.ShouldAutoFill }
@@ -20,7 +20,7 @@ open class UPennLoginService : UPennLoginInterface {
     private let autoLoginError = "Something went wrong attempting Auto-Login - could not retrieve Username & Password. Please try again."
     private let usernamePasswordError = "You have entered an incorrect Username or Password. Please try again."
     
-    public init(requestService: UPennLoginNetworkingService, loginDelegate: UPennLoginServiceDelegate) {
+    public init(requestService: UPennLoginNetworkingRequestable, loginDelegate: UPennLoginServiceDelegate?=nil) {
         self.requestService = requestService
         self.loginDelegate = loginDelegate
     }

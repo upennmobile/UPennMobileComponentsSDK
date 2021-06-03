@@ -27,17 +27,15 @@ public extension UIViewController {
     }
     
     @objc func reloadView() {
-        self.popToRoot()
+        self.popToNavRoot()
     }
     
     @objc func dismissModal() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func popToRoot(_ delay: Double=0.0) {
-        DispatchQueue.main.asyncAfter(deadline: .now()+delay) {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+    @objc func popToNavRoot(_ delay: Double=0.0) {
+        self.navigationController?.popToRoot(delay)
     }
     
     func makeParentViewController(_ viewController: UIViewController) {
