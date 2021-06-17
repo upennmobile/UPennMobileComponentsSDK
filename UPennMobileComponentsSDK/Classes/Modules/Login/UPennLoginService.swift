@@ -8,11 +8,11 @@
 
 import Foundation
 
-open class UPennLoginService : UPennLoginInterface {
+open class UPennLoginService : UPennLoginInterfaceDelegated {
     
     public var userIsLoggedIn : Bool { return UPennAuthenticationService.IsAuthenticated }
-    var requestService : UPennLoginNetworkingRequestable
-    var loginDelegate: UPennLoginServiceDelegate?
+    public var requestService : UPennLoginNetworkingRequestable
+    public var loginDelegate: UPennLoginServiceDelegate?
     var shouldAutoLogin : Bool { return UPennAuthenticationService.ShouldAutoLogin }
     public var shouldAutoFill : Bool { return UPennAuthenticationService.ShouldAutoFill }
     public var isFirstLogin : Bool { return UPennAuthenticationService.IsFirstLogin }

@@ -22,6 +22,11 @@ public protocol UPennLoginRequestable {
     func makeLoginRequest(username: String, password: String)
 }
 
+/// Protocol to ensure conforming object includes a 'UPennLoginServiceDelegate' var
+public protocol UPennLoginDelegated {
+    var loginDelegate: UPennLoginServiceDelegate? { get set }
+}
+
 /// Interface for an object/component to make/respond to login attempts, and handle various authentication events
 public protocol UPennLoginInterface : UPennLoginRequestable, UPennLoginCoordinatable {
     var shouldAutoFill : Bool { get }
@@ -32,6 +37,9 @@ public protocol UPennLoginInterface : UPennLoginRequestable, UPennLoginCoordinat
     func cacheLoginCredentials(username: String, password: String)
     func attemptSilentLogin()
 }
+
+/// Protocol to ensure conforming 'UPennLoginInterface' object includes a 'UPennLoginServiceDelegate' var
+public protocol UPennLoginInterfaceDelegated : UPennLoginDelegated, UPennLoginInterface { }
 
 /// Delegation methods for LoginVC  to respond to Login Presenter
 public protocol UPennLoginPresenterDelegate : UPennLoginServiceDelegate {
@@ -58,6 +66,7 @@ public protocol UPennLoginBiometricsInterface {
 
 /// Interface providing an object with TouchID/FaceID Authentication
 public protocol UPennBiometricsAuthenticationInterface: UPennLoginBiometricsInterface {
+    var biometricsDelegate : UPennBiometricsDelegate? { get set }
     func registerForBiometricAuthentication()
     var enabledBiometricsBeforeRegistered : Bool { get }
     func utilizeBiometricAuthentication(turnOnBiometrics: Bool)

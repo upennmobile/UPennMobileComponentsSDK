@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public protocol UPennTabBarItemed {
-    static var TabBarItem : UPennTabBarItem { get set }
+    static var TabBarItem : UPennTabBarItem { get }
 }
 
 open class UPennTabBarItem {

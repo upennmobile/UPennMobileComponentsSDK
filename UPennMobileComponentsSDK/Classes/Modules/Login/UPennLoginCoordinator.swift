@@ -7,9 +7,9 @@
 
 import Foundation
 import UIKit
-//import UPennMobileComponentsSDK
 
 public protocol UPennLoginCoordinated : UPennLoginCoordinatable, UPennCoordinator {
+    var coordinatorDelegate : UPennLoginCoordinatorDelegate? { get set }
     var presenter : UPennLoginPresentable { get set }
     func setLoginObserver()
     func removeLoginObserver()
@@ -28,13 +28,12 @@ public protocol UPennLoginViewControllable : UPennLoginPresenterDelegate {
  Purpose of this LoginCoordinator is to act as a Facade between any custom LoginViewController and behavioral protocols for logging-in and optionally using biometrics
  */
 open class UPennLoginCoordinator : UPennLoginCoordinated {
+    
     public var childViewController: UIViewController?
-    
-    
     static var IsLoggedInNotification = "UPHSIsLoggedInNotification"
     open var childCoordinators = [UPennCoordinator]()
     open var navigationController: UINavigationController
-    open var loginCoordinatorDelegate : UPennLoginCoordinatorDelegate?
+    open var coordinatorDelegate : UPennLoginCoordinatorDelegate?
     open var presenter : UPennLoginPresentable
 
     // MARK: - LoginService
@@ -84,7 +83,7 @@ extension UPennLoginCoordinator : UPennLoginCoordinatorDelegate {
     
     open func didSuccessfullyLoginUser() {
         self.sendLoginNotification()
-        self.loginCoordinatorDelegate?.didSuccessfullyLoginUser()
+        self.coordinatorDelegate?.didSuccessfullyLoginUser()
     }
 }
 

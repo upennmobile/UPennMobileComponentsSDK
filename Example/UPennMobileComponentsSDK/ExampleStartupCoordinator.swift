@@ -47,7 +47,7 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         // Make Login VC & Coordinator
         let childVC = UPennLoginViewController.Instantiate(.SDK)
         // Make Login presenter
-        let presenter = UPennLoginPresenter(loginDelegate: childVC)
+        let presenter = UPennLoginPresenter(presenterDelegate: childVC)
         // Make LoginCoordinator
         let loginCoordinator = UPennLoginCoordinator(navController: self.navigationController, childViewController: childVC, presenter: presenter)
         // Set LoginVC presenter
@@ -56,8 +56,6 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         childVC.coordinator = loginCoordinator
         // Set MasterCoordinator
         self.masterCoordinator = UPennMasterCoordinator(navController: self.navigationController, childCoordinators: [loginCoordinator,mainCoordinator])
-        // Set LoginCoord delegate
-        loginCoordinator.loginCoordinatorDelegate = self.masterCoordinator
         mainCoordinator.logoutBiometricsDelegate = masterCoordinator
         // Start MasterCoord
         self.masterCoordinator?.start()

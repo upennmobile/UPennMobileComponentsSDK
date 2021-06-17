@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public protocol Storyboarded : class {
+public protocol Storyboarded : AnyObject {
     static var StoryboardName : String { get }
 }
 
@@ -35,4 +35,4 @@ public extension Storyboarded where Self: UIViewController {
 }
 
 /// ViewController that provides built-in inheritance from UPennBasicViewController & Storyboarded conformance
-open class UPennStoryboardViewController : UIViewController, Storyboarded { }
+open class UPennStoryboardViewController : UPennBasicViewController, Storyboarded { }

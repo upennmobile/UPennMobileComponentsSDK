@@ -30,6 +30,7 @@ open class UPennMasterCoordinator : UPennMasterCoordinatable {
             self.childCoordinators = coordinators
             self.loginCoordinator = self.getChildCoordinator(type: UPennLoginCoordinator.self)
             self.mainCoordinator = self.getChildCoordinator(type: UPennMainTabCoordinator.self)
+            self.loginCoordinator?.coordinatorDelegate = self
         }
         self.childViewController = UIViewController()
         self.navigationController.makeParentViewController(self.childViewController!)

@@ -9,12 +9,18 @@ import Foundation
 
 public protocol UPennLoginNetworkingRequestable : UPennNetworkRequestable {
     
-    
+    func makeLoginRequest(username: String, password: String, completion: @escaping (UPennRequestCompletion))
 }
 
-extension UPennLoginNetworkingRequestable {
+open class UPennLoginNetworkService : UPennLoginNetworkingRequestable {
     
-    func makeLoginRequest(username: String, password: String, completion: @escaping (UPennRequestCompletion)) {
+    public var urlProvider: UPennURLProvidable
+    
+    public init(urlProvider: UPennURLProvidable) {
+        self.urlProvider = urlProvider
+    }
+    
+    public func makeLoginRequest(username: String, password: String, completion: @escaping (UPennRequestCompletion)) {
         
         let parameters: [String:String] = [
             "username" : username,
@@ -28,14 +34,5 @@ extension UPennLoginNetworkingRequestable {
 //        jwtRequest.responseJSON { (response) in
 //            self.unwrapResponseForStatusCode(response, completion: completion)
 //        }
-    }
-}
-
-open class UPennLoginNetworkService : UPennLoginNetworkingRequestable {
-    
-    public var urlProvider: UPennURLProvidable
-    
-    public init(urlProvider: UPennURLProvidable) {
-        self.urlProvider = urlProvider
     }
 }

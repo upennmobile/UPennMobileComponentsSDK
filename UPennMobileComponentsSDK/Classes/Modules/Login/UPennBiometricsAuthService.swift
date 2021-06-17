@@ -22,7 +22,7 @@ protocol UPennBiometricsToggleDelegate {
 }
 
 public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface {
-    enum BiometricType {
+    public enum BiometricType {
         case None
         case TouchID
         case FaceID
@@ -49,9 +49,9 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
     public let touchIDOptInMessage = "Touch ID makes Login more convenient. These Settings can be updated in the Account section.".localize
     public let touchIDConfirmed = "Use Touch ID".localize
     public let touchIDDeclined = "No Thanks".localize
-    var delegate: UPennBiometricsDelegate?
+    public var biometricsDelegate: UPennBiometricsDelegate?
     
-    var biometricType: BiometricType {
+    public var biometricType: BiometricType {
         get {
             var error: NSError?
             
@@ -80,7 +80,7 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
     /**
      Text for enabling Touch ID vs. Face ID depending on context
      */
-    var toggleTitleText : String {
+    public var toggleTitleText : String {
         return self.makeBiometricsPrependedMessage("Enable", defaultText: "Biometrics Unavailable")
     }
     
@@ -92,13 +92,13 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
     }
     
     public init(biometricsDelegate: UPennBiometricsDelegate?=nil) {
-        self.delegate = biometricsDelegate
+        self.biometricsDelegate = biometricsDelegate
     }
     
     /**
      Bool indicating the current device has biometrics capabilities
      */
-    var biometricsAvailable: Bool {
+    public var biometricsAvailable: Bool {
         return self.context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
     
@@ -131,14 +131,14 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
             }
             switch self.biometricType {
             case .FaceID:
-                self.delegate?.registerForFaceIDAuthentication()
+                self.biometricsDelegate?.registerForFaceIDAuthentication()
             case .TouchID:
-                self.delegate?.registerForTouchIDAuthentication()
+                self.biometricsDelegate?.registerForTouchIDAuthentication()
             case .None:
-                self.delegate?.biometricsDidError(with: nil, shouldContinue: true)
+                self.biometricsDelegate?.biometricsDidError(with: nil, shouldContinue: true)
             }
         } else {
-            self.delegate?.biometricsDidError(with: nil, shouldContinue: true)
+            self.biometricsDelegate?.biometricsDidError(with: nil, shouldContinue: true)
         }
     }
     
@@ -193,7 +193,7 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
             self.setEnabledBiometricsBeforeRegisteredNo()
             if success {
                 DispatchQueue.main.async {
-                    self.delegate?.biometricsSuccessfullyAuthenticated(turnOnBiometrics: turnOnBiometrics)
+                    self.biometricsDelegate?.biometricsSuccessfullyAuthenticated(turnOnBiometrics: turnOnBiometrics)
                 }
             } else {
                 var message: String?=nil
@@ -206,7 +206,7 @@ public class UPennBiometricsAuthService : UPennBiometricsAuthenticationInterface
                     message = self.biometricsFallbackMessage
                 }
                 DispatchQueue.main.async {
-                    self.delegate?.biometricsDidError(with: message, shouldContinue: turnOnBiometrics)
+                    self.biometricsDelegate?.biometricsDidError(with: message, shouldContinue: turnOnBiometrics)
                 }
             }
         }

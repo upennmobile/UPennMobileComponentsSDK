@@ -16,18 +16,31 @@ import Foundation
 open class UPennLoginPresenter : UPennLoginPresentable {
     
     open var biometricsService: UPennBiometricsAuthenticationInterface!
-    open var loginService: UPennLoginInterface!
+    open var loginService: UPennLoginInterfaceDelegated!
     open var username = "", password = ""
     
-    open var loginDelegate : UPennLoginPresenterDelegate?
+    open var presenterDelegate : UPennLoginPresenterDelegate?
     
     public init(
-        loginDelegate: UPennLoginPresenterDelegate) {
-        self.loginDelegate = loginDelegate
+        presenterDelegate: UPennLoginPresenterDelegate,
+        loginService: UPennLoginInterfaceDelegated?=nil,
+        biometricsService: UPennBiometricsAuthenticationInterface?=nil) {
+        self.presenterDelegate = presenterDelegate
         // TODO: Dependency-inject all the services via init?
-        let requestService = UPennLoginNetworkService(urlProvider: UPennURLProvider(rootURL: UPennApplicationSettings.RootURL, loginEndpoint: UPennApplicationSettings.LoginURL))
-        self.loginService = UPennLoginService(requestService: requestService, loginDelegate: self)
-        self.biometricsService = UPennBiometricsAuthService(biometricsDelegate: self)
+        
+        if let _login = loginService {
+            self.loginService = _login
+            self.loginService.loginDelegate = self
+        } else {
+            let requestService = UPennLoginNetworkService(urlProvider: UPennURLProvider(rootURL: UPennApplicationSettings.RootURL, loginEndpoint: UPennApplicationSettings.LoginURL))
+            self.loginService = UPennLoginService(requestService: requestService, loginDelegate: self)
+        }
+        if let _biometrics = biometricsService {
+            self.biometricsService = _biometrics
+            self.biometricsService.biometricsDelegate = self
+        } else {
+            self.biometricsService = UPennBiometricsAuthService(biometricsDelegate: self)
+        }
     }
 
     // MARK: - UPennLoginInterface
@@ -144,22 +157,22 @@ open class UPennLoginPresenter : UPennLoginPresentable {
             self.biometricsService.registerForBiometricAuthentication()
             return
         }
-        self.loginDelegate?.didSuccessfullyLoginUser()
+        self.presenterDelegate?.didSuccessfullyLoginUser()
     }
     
     open func didReturnAutoFillCredentials(username: String, password: String) {
-        self.loginDelegate?.didReturnAutoFillCredentials(username: username, password: password)
+        self.presenterDelegate?.didReturnAutoFillCredentials(username: username, password: password)
     }
     
     open func didFailToLoginUser(errorStr: String) {
-        self.loginDelegate?.didFailToLoginUser(errorStr: errorStr)
+        self.presenterDelegate?.didFailToLoginUser(errorStr: errorStr)
     }
 
     // MARK: - BiometricsDelegate
 
     /// UPennLoginPresenter will respond to Biometrics Service via these interface methods
     open func registerForTouchIDAuthentication() {
-        self.loginDelegate?.registerForTouchIDAuthentication()
+        self.presenterDelegate?.registerForTouchIDAuthentication()
     }
     
     open func registerForFaceIDAuthentication() {
@@ -177,7 +190,7 @@ open class UPennLoginPresenter : UPennLoginPresentable {
         self.biometricsService.toggleBiometrics(true)
         self.loginService.toggleShouldAutoFill(true)
         self.loginService.cacheLoginCredentials(username: self.username, password: self.password)
-        self.loginDelegate?.didSuccessfullyLoginUser()
+        self.presenterDelegate?.didSuccessfullyLoginUser()
     }
     
     open func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool) {
@@ -192,10 +205,10 @@ open class UPennLoginPresenter : UPennLoginPresentable {
     open func biometricsDidError(with message: String?, shouldContinue: Bool) {
         // Check if isFirstLogin - indicates user has canceled opt-in to biometrics, so complete login and push to ChangeRequestVC
         if shouldContinue {
-            self.loginDelegate?.didSuccessfullyLoginUser()
+            self.presenterDelegate?.didSuccessfullyLoginUser()
             return
         }
         guard let m = message else { return }
-        self.loginDelegate?.biometricsDidError(with: m)
+        self.presenterDelegate?.biometricsDidError(with: m)
     }
 }
