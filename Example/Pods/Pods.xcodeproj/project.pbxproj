@@ -42,6 +42,7 @@
 		381FF05F8B4F611EE9C2FDBE4457BB89 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CB8C495E2098BBE506C47B0EA0110C /* SessionDelegate.swift */; };
 		3828118FC5C9C4E72377029F447EFC74 /* UPennCameraImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B214463529A245928324BF77FFC37532 /* UPennCameraImagePreviewViewController.swift */; };
 		38A3C64BA7F4B752FD71E87408D10EE8 /* String+UPenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BEAEB4F102A5E406CC121E1829F95C /* String+UPenn.swift */; };
+		3A2BDC2A267BD4E4004E5EB7 /* UPennJSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BDC29267BD4E4004E5EB7 /* UPennJSONSerializer.swift */; };
 		3DD2AAFE6E6C2C0A550A115D6795DB73 /* JWTDecode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9E7FCA2F41EC97A5FB271BE3D5A4BE /* JWTDecode.framework */; };
 		3E739EAF946FC7FA39CF260201E3390D /* UPennLogoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEBD8AE78E3A255EFA43C0AF9BBA715 /* UPennLogoutCell.swift */; };
 		402DEBD7C64EB54244259840A903D515 /* UPennCustomCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668E93CE00CD58F72DF2605D5A661E4B /* UPennCustomCameraViewController.swift */; };
@@ -276,6 +277,7 @@
 		36300679362028CDEDF3D13FE89A3B33 /* UIButton+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIButton+UPenn.swift"; sourceTree = "<group>"; };
 		3888409A9E236F195E57C92879EF4CB7 /* JWTDecode-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-umbrella.h"; sourceTree = "<group>"; };
 		399BD01828F6908378928A22842A687C /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		3A2BDC29267BD4E4004E5EB7 /* UPennJSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennJSONSerializer.swift; sourceTree = "<group>"; };
 		3AA87C3757CD964EEC93B49369B21E50 /* UILabel+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UILabel+UPenn.swift"; sourceTree = "<group>"; };
 		3B0E47E076DCE1A789368E4D8185B8A2 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		3D05311D23F77DBB7BFE9C375B663972 /* JWTDecode-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-prefix.pch"; sourceTree = "<group>"; };
@@ -296,7 +298,7 @@
 		50EC03ECD00CF493C55DD8DF8BD93371 /* UPennMobileComponentsSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UPennMobileComponentsSDK-dummy.m"; sourceTree = "<group>"; };
 		510837EE6FECA988284BCA8EEC2486E4 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		515394A1AC6410C00A86DC9ABB6925F5 /* UPennWithdrawCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennWithdrawCell.swift; sourceTree = "<group>"; };
-		51859EF7E380736837A82156F264CDE6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		51859EF7E380736837A82156F264CDE6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		51AEFE410C44E2220765F2F048E8AB13 /* UPennNameSpacer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennNameSpacer.swift; sourceTree = "<group>"; };
 		53D644396697ECB05A1CDD352E2CD09C /* Pods-UPennMobileComponentsSDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UPennMobileComponentsSDK_Tests-Info.plist"; sourceTree = "<group>"; };
 		53FACF3BA94EF6ED4B20DF69EBA017B9 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
@@ -310,7 +312,7 @@
 		5B083C539E7298950ABE2661DA27DA3F /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		5BC401BF5394B776DEA034A412C9F26A /* Pods-UPennMobileComponentsSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UPennMobileComponentsSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5CA7ADB018AB34A127B31AE1F3C86805 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E412E4E5FD88D1F57B673D3F18588A2 /* UPennLoginService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginService.swift; sourceTree = "<group>"; };
 		65289F4A9152AD0E1D95C262244803AE /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		65A2E80010FEC8561296574429BC1633 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
@@ -322,7 +324,7 @@
 		694CF59AB091DE085FC73DADCB2E697B /* Storyboarded.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		6A7D68DFFA5781B5E7E956E763561376 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
 		6C08EF1FB2FA9E16C429736E647DB0C3 /* UPennImageAssets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennImageAssets.swift; sourceTree = "<group>"; };
-		6C2B6B1BF77C171CBEA5A8167189E723 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6C2B6B1BF77C171CBEA5A8167189E723 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6CA1B6D8F5B6B231D4F7BC85580194D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6D02072EF9060445720D3DD8769E2CF0 /* UPennActivityPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennActivityPresenter.swift; sourceTree = "<group>"; };
 		6D79BEA0F33AC7D9DAD36DC49F907757 /* UPennSettingsViewController.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = UPennSettingsViewController.storyboard; path = UPennMobileComponentsSDK/Assets/UPennSettingsViewController.storyboard; sourceTree = "<group>"; };
@@ -331,8 +333,8 @@
 		75223EEC3E3A6392A8EADC30526E2A0B /* Pods-UPennMobileComponentsSDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UPennMobileComponentsSDK_Example-umbrella.h"; sourceTree = "<group>"; };
 		75B229F04E04EF2AC66D1575D475141D /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		7787C7C7D684A9067CD899E19174ED6D /* UPennTimerUIApplication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennTimerUIApplication.swift; sourceTree = "<group>"; };
-		79FDC047F46F378E782D3053AEA80819 /* UPennMobileComponentsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UPennMobileComponentsSDK.framework; path = UPennMobileComponentsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A8D4AC02B51FD03224739D06AEE207B /* JWTDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWTDecode.framework; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79FDC047F46F378E782D3053AEA80819 /* UPennMobileComponentsSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UPennMobileComponentsSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8D4AC02B51FD03224739D06AEE207B /* JWTDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81572BD5A79790B3212CD4C4963AB7A4 /* Pods-UPennMobileComponentsSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UPennMobileComponentsSDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		824BE609A0D77E30E32150A5195DCC9E /* UPennLoginCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennLoginCoordinator.swift; sourceTree = "<group>"; };
 		86EBDE9349508370F4FFACDCF3645D9B /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
@@ -344,12 +346,12 @@
 		92F68847E825CCEFFED04148E43C6519 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		946C0D56297309BBB41876E68956CB55 /* UPennBasicSegmentControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennBasicSegmentControl.swift; sourceTree = "<group>"; };
 		961491F536179B3D91B25AB1D88BC1B1 /* UPennTabControllerPayload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennTabControllerPayload.swift; sourceTree = "<group>"; };
-		98ECA0571279301567743B2CFE48B3DB /* UPennMobileComponentsSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UPennMobileComponentsSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98ECA0571279301567743B2CFE48B3DB /* UPennMobileComponentsSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = UPennMobileComponentsSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9B0DC7429B0845ED456E7731BC1884BB /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9E7FCA2F41EC97A5FB271BE3D5A4BE /* JWTDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7DF5EE68FA87C2480F752567E830D9 /* UPennApplicationControls.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennApplicationControls.swift; sourceTree = "<group>"; };
 		9D8CE50799F093779A30ADE2C0E82BF4 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F572CC52199C6FD49BD63770FA13E01 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		A259FB51FB76A2DA450F577B57BAD156 /* Pods-UPennMobileComponentsSDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UPennMobileComponentsSDK_Example-dummy.m"; sourceTree = "<group>"; };
 		A28B5D7BAFB9F56094C88FB57BFF8CFE /* UIView+UPenn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+UPenn.swift"; sourceTree = "<group>"; };
@@ -364,7 +366,7 @@
 		ADCECCD7FBAA9D7FAEA7834C0C450FCD /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		AE8C060BF60F4A626F0258ABB5F63593 /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		AFE60DD8F70370500B5705FD8A3EB8D8 /* UPennScreenGlobals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennScreenGlobals.swift; sourceTree = "<group>"; };
-		AFF530C28FDADF0658E43F4D0A82886D /* Pods_UPennMobileComponentsSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UPennMobileComponentsSDK_Tests.framework; path = "Pods-UPennMobileComponentsSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFF530C28FDADF0658E43F4D0A82886D /* Pods_UPennMobileComponentsSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UPennMobileComponentsSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B214463529A245928324BF77FFC37532 /* UPennCameraImagePreviewViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennCameraImagePreviewViewController.swift; sourceTree = "<group>"; };
 		B2BB3C1D22C10DB958555667948A7A89 /* UPennTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennTabBarController.swift; sourceTree = "<group>"; };
 		B308B5A6835179968F3B98338BFCCE47 /* faceID_icon.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = faceID_icon.png; path = UPennMobileComponentsSDK/Assets/faceID_icon.png; sourceTree = "<group>"; };
@@ -392,7 +394,7 @@
 		CF7BC3E06FE1DB48F6C520008FE0F82A /* SVProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.release.xcconfig; sourceTree = "<group>"; };
 		D094A0A4A9088CC42C20F820B7925980 /* ValidatorJWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ValidatorJWT.swift; path = JWTDecode/ValidatorJWT.swift; sourceTree = "<group>"; };
 		D32CCDD8D7FB199A8A285AB837DE0281 /* AuthenticationInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationInterceptor.swift; path = Source/AuthenticationInterceptor.swift; sourceTree = "<group>"; };
-		D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = UPennMobileComponentsSDK.bundle; path = "UPennMobileComponentsSDK-UPennMobileComponentsSDK.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3DA5F16592C06801D5527AAB9B43477 /* UPennMobileComponentsSDK.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UPennMobileComponentsSDK.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45AEE27BFB364928D89AF750C526803 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		D606D50340D8500748B1017AB1EEFA97 /* Pods-UPennMobileComponentsSDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UPennMobileComponentsSDK_Example.modulemap"; sourceTree = "<group>"; };
 		D70C4D90BAC340B8B6054379A6B549DB /* UPennApplicationSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennApplicationSettings.swift; sourceTree = "<group>"; };
@@ -407,10 +409,10 @@
 		E616AA35D74292A638931197F0760955 /* UPennValidationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennValidationService.swift; sourceTree = "<group>"; };
 		E71830253278B1AE504F4811588D6A67 /* UPennNetworkRequestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennNetworkRequestable.swift; sourceTree = "<group>"; };
 		E8212F45A423926BFCA9AE071517361B /* UPennTypeAliases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennTypeAliases.swift; sourceTree = "<group>"; };
-		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA0E222345B7A432D6C345BC99BDA9BE /* UPennBasicCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennBasicCell.swift; sourceTree = "<group>"; };
 		EA14ABAAA316FF53AB9323D91E43277E /* UPennConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UPennConstants.swift; sourceTree = "<group>"; };
-		EB2105BF833F6163F3989AF055AC8D52 /* Pods_UPennMobileComponentsSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UPennMobileComponentsSDK_Example.framework; path = "Pods-UPennMobileComponentsSDK_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB2105BF833F6163F3989AF055AC8D52 /* Pods_UPennMobileComponentsSDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UPennMobileComponentsSDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3D9E0475E1D2B1B3C6F289CDEE38FD /* JWTDecode.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JWTDecode.modulemap; sourceTree = "<group>"; };
 		EC91CCF920619FD44D793A738FC7EFEB /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
 		ED8915F371FF0633909DDD8A3EB3891D /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
@@ -587,7 +589,6 @@
 				99814F232C22EA41D1F9A175DD7837A4 /* Resources */,
 				4EC2E7433200BCE5852A96F9592E2080 /* Support Files */,
 			);
-			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -646,7 +647,6 @@
 				B214463529A245928324BF77FFC37532 /* UPennCameraImagePreviewViewController.swift */,
 				668E93CE00CD58F72DF2605D5A661E4B /* UPennCustomCameraViewController.swift */,
 			);
-			name = Camera;
 			path = Camera;
 			sourceTree = "<group>";
 		};
@@ -660,7 +660,6 @@
 				CCFAE0F41624BAB9430DFF00C2FC869E /* UPennSettingsViewController.swift */,
 				515394A1AC6410C00A86DC9ABB6925F5 /* UPennWithdrawCell.swift */,
 			);
-			name = Settings;
 			path = Settings;
 			sourceTree = "<group>";
 		};
@@ -723,7 +722,6 @@
 				3FF81D2F572BD7907F72BC25C9FD2D33 /* UPennLoginServiceDelegate.swift */,
 				163B71B5EADF715F6E0DFBCA02845F3A /* UPennLoginViewController.swift */,
 			);
-			name = Login;
 			path = Login;
 			sourceTree = "<group>";
 		};
@@ -799,7 +797,6 @@
 				434A70A9879FF35FDA69118BAB74329A /* Validation.swift */,
 				3D812ED61D42EB8F91BD20714C0E585B /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -815,7 +812,6 @@
 				D094A0A4A9088CC42C20F820B7925980 /* ValidatorJWT.swift */,
 				48DCFEBEA49585F50FF361AF1627A0E7 /* Support Files */,
 			);
-			name = JWTDecode;
 			path = JWTDecode;
 			sourceTree = "<group>";
 		};
@@ -851,6 +847,7 @@
 				AFE60DD8F70370500B5705FD8A3EB8D8 /* UPennScreenGlobals.swift */,
 				7787C7C7D684A9067CD899E19174ED6D /* UPennTimerUIApplication.swift */,
 				E8212F45A423926BFCA9AE071517361B /* UPennTypeAliases.swift */,
+				3A2BDC29267BD4E4004E5EB7 /* UPennJSONSerializer.swift */,
 			);
 			name = Utilities;
 			path = UPennMobileComponentsSDK/Classes/Utilities;
@@ -1334,6 +1331,7 @@
 				719294A00E5E0573A47C91BC4BBDA3A2 /* UPennAuthenticationService.swift in Sources */,
 				7AAB92B38396E90C7E770316AC2F281C /* UPennAutoLogoutCell.swift in Sources */,
 				3463F51201892B417C963AD2F4A58E44 /* UPennBaseNetworkingService.swift in Sources */,
+				3A2BDC2A267BD4E4004E5EB7 /* UPennJSONSerializer.swift in Sources */,
 				C090D2662D4C512344B2082B2574D615 /* UPennBasicCell.swift in Sources */,
 				55108C596917D109B5B8383000B176E5 /* UPennBasicSegmentControl.swift in Sources */,
 				4317EC225CD297BBB4D024CC69A46ACD /* UPennBasicTableViewCell.swift in Sources */,
@@ -1875,8 +1873,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
