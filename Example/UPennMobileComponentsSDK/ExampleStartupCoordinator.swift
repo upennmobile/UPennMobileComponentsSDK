@@ -45,7 +45,7 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         
         
         // Make Login VC & Coordinator
-        let childVC = UPennLoginViewController.Instantiate(.SDK)
+        let childVC = UPennLoginTableViewController.Instantiate(.SDK)
         // Make Login presenter
         let presenter = UPennLoginPresenter(presenterDelegate: childVC)
         // Make LoginCoordinator

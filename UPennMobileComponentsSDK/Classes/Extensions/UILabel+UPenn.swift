@@ -181,3 +181,11 @@ open class MultilineContentLabel : MultilineLabel {
         self.setFontHeight(size: 16.0)
     }
 }
+
+open class SectionHeaderTitleLabel : UPennLabel {
+    open override func setBaseStyles() {
+        super.setBaseStyles()
+        textColor = UIColor.white
+        setBoldFont(size: 13)
+    }
+}
