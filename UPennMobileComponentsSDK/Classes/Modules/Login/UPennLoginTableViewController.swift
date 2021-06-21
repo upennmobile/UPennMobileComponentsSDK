@@ -63,7 +63,8 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     }
     
     open func viewDidDisappear() {
-        self.textFieldManager.resetTextFields()
+
+        
     }
     
     open func forgotPassword() {
@@ -82,16 +83,6 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         case .Login: return
         }
         self.loginTableView.reloadRows(at: [IndexPath(row: Section.Login.rawValue, section: 0)], with: .none)
-    }
-    
-    open func advanceTextfields(textfield: UITextField) {
-        let nextTag: NSInteger = textfield.tag + 1
-        if let nextResponder: UIResponder = textfield.superview!.viewWithTag(nextTag) {
-            nextResponder.becomeFirstResponder()
-        } else {
-            textfield.resignFirstResponder()
-            self.login()
-        }
     }
     
     open func turnOnBiometricAuthSettings() {
@@ -141,7 +132,9 @@ extension UPennLoginTableViewController : UITableViewDataSource {
 
 extension UPennLoginTableViewController : UITextFieldDelegate {
     open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        self.advanceTextfields(textfield: textField)
+        self.textFieldManager.advanceTextfields(textField, parentView: self.view) {
+            self.login()
+        }
         return true
     }
     
@@ -178,6 +171,7 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
     public func didSuccessfullyLoginUser() {
         UPennActivityPresenter.Dismiss()
         self.coordinator.didSuccessfullyLoginUser()
+        self.resetView()
     }
     
     public func didReturnAutoFillCredentials(username: String, password: String) {
@@ -187,11 +181,20 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
     public func didFailToLoginUser(errorStr: String) {
         UPennActivityPresenter.ShowError(message: errorStr)
     }
+    
+    public func loginIsDismissed() {
+        self.resetView()
+    }
 }
 
 private extension UPennLoginTableViewController {
     
     func login() {
         self.presenter.makeLoginRequest(username: self.username, password: self.password)
+    }
+    
+    func resetView() {
+        self.textFieldManager.resetTextFields()
+        self.loginTableView.reloadData()
     }
 }

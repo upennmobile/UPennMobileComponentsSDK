@@ -48,4 +48,14 @@ public class UPennValidationService {
             field.text = ""
         }
     }
+    
+    public func advanceTextfields(_ textfield: UITextField, parentView: UIView, completion: @escaping ()->Void) {
+        let nextTag: NSInteger = textfield.tag + 1
+        if let nextResponder: UIResponder = parentView.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textfield.resignFirstResponder()
+            completion()
+        }
+    }
 }

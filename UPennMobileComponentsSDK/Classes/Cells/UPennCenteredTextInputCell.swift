@@ -17,6 +17,7 @@ public protocol UPennTextInputConfigureInterface {
 /// TableView cell for displaying a center-justified UITextField
 open class UPennCenteredTextInputCell : UPennBasicCell, UPennTextInputConfigureInterface {
     
+    
     @IBOutlet weak var textInputView: UPennCenteredTextInputView!
     
     
@@ -31,6 +32,7 @@ open class UPennCenteredUsernameTextFieldCell : UPennCenteredTextInputCell {
     override open func awakeFromNib() {
         super.awakeFromNib()
         self.textInputView.textInput.placeholder = "email"
+        self.textInputView.textInput.returnKeyType = .next
     }
 }
 

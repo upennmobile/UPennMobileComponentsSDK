@@ -44,9 +44,9 @@ public protocol UPennLoginInterfaceDelegated : UPennLoginDelegated, UPennLoginIn
 /// Delegation methods for LoginVC  to respond to Login Presenter
 public protocol UPennLoginPresenterDelegate : UPennLoginServiceDelegate {
     func registerForTouchIDAuthentication()
-//    func presentTouchIDRegistration()
     func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool)
     func biometricsDidError(with message: String?)
+//    func loginIsDismissed()
 }
 
 /// Interface for for View object to send messages to Login Presenter
