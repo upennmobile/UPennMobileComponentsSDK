@@ -8,12 +8,16 @@
 import Foundation
 import UIKit
 
-open class UPennCenteredButtonCell : UITableViewCell, UPennCellIdentifiable {
+protocol UPennCenteredButtonConfigureInterface {
+    func configure(title: String, delegate: UPennCenteredButtonDelegate, enabled: Bool)
+}
+
+open class UPennCenteredButtonCell : UITableViewCell, UPennCellIdentifiable, UPennCenteredButtonConfigureInterface {
     
     @IBOutlet public weak var buttonView : UPennCenteredButtonView!
     
-    public func configure(title: String, delegate: UPennCenteredButtonDelegate) {
-        self.buttonView.configure(title: title, delegate: delegate)
+    public func configure(title: String, delegate: UPennCenteredButtonDelegate, enabled: Bool) {
+        self.buttonView.configure(title: title, delegate: delegate, enabled: enabled)
     }
     
     

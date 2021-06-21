@@ -11,9 +11,9 @@ import UIKit
 
 public class UPennValidationService {
     
-    public var textFields: Array<UITextField>
+    public var textFields = Array<UITextField>()
     
-    public var loginFieldsAreValid: Bool {
+    public var allFieldsAreValid: Bool {
         for field in self.textFields {
             guard let text = field.text else { return false }
             if text.isEmpty {
@@ -23,17 +23,24 @@ public class UPennValidationService {
         return true
     }
     
-    public init(textFields: Array<UITextField>) {
-        self.textFields = textFields
-        setTextFieldTags()
+    public init(textFields: Array<UITextField> = [UITextField]()) {
+        if textFields.count > 0 {
+            self.textFields = textFields
+            setTextFieldTags()
+        }
     }
     
     public func setTextFieldTags() {
-        var tagCount = 1
+        var tagCount = 0
         for field in self.textFields {
             field.tag = tagCount
             tagCount += 1
         }
+    }
+    
+    public func addTextFieldAndTag(_ textField: inout UITextField, _ tag: Int) {
+        textField.tag = tag
+        self.textFields.append(textField)
     }
     
     public func resetTextFields() {

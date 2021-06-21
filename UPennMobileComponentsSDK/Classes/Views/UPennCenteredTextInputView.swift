@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// UIView for displaying a center-justified UITextField
-open class UPennCenteredTextInputView : UPennNibView {
+open class UPennCenteredTextInputView : UPennNibView, UPennTextInputConfigureInterface {
     
     @IBOutlet public weak var textInput: UITextField!
     
@@ -18,7 +18,8 @@ open class UPennCenteredTextInputView : UPennNibView {
         self.textInput.autocorrectionType = .no
     }
     
-    public func configure(delegate: UITextFieldDelegate) {
+    public func configure(delegate: UITextFieldDelegate, textFieldTag: Int) {
         self.textInput.delegate = delegate
+        self.textInput.tag = textFieldTag
     }
 }

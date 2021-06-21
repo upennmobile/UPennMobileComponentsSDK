@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
+open class UPennLoginViewModel : NSObject {
     
     enum Section : Int {
         case Username
@@ -30,25 +30,25 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         return Section.Count
     }
     
-    public func cellForRowAt(_ indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell {
-        
-        guard let section = Section.init(rawValue: indexPath.row) else { return UITableViewCell() }
-        
-        switch section {
-        case .Username:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
-            cell.configure(delegate: self)
-            return cell
-        case .Password:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredPasswordTextFieldCell.Identifier) as! UPennCenteredPasswordTextFieldCell
-            cell.configure(delegate: self)
-            return cell
-        case .Login:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
-            cell.configure(title: "Login".localize, delegate: self)
-            return cell
-        }
-    }
+//    public func cellForRowAt(_ indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell {
+//        
+//        guard let section = Section.init(rawValue: indexPath.row) else { return UITableViewCell() }
+//        
+//        switch section {
+//        case .Username:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
+//            cell.configure(delegate: self)
+//            return cell
+//        case .Password:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredPasswordTextFieldCell.Identifier) as! UPennCenteredPasswordTextFieldCell
+//            cell.configure(delegate: self)
+//            return cell
+//        case .Login:
+//            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
+//            cell.configure(title: "Login".localize, delegate: self)
+//            return cell
+//        }
+//    }
 }
 
 extension UPennLoginViewModel : UITextFieldDelegate {

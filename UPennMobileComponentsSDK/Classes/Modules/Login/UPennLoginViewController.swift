@@ -125,7 +125,7 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     }
     
     open func verifyFields() {
-        self.loginButton.isEnabled = validationService.loginFieldsAreValid
+        self.loginButton.isEnabled = validationService.allFieldsAreValid
     }
     
     open func viewDidAppear() {

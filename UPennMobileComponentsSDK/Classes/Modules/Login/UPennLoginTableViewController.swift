@@ -8,13 +8,6 @@
 import Foundation
 import UIKit
 
-/// Interface for an object to properly handle login view-model functionality
-
-public protocol UPennLoginViewModelled {
-    func numberSectionRows(_ section: Int) -> Int
-    func cellForRowAt(_ indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell
-}
-
 open class UPennLoginTableViewController : UPennStoryboardViewController, UPennLoginViewControllable {
     
     enum Section : Int {
@@ -29,9 +22,37 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     
     @IBOutlet public weak var loginTableView: UITableView!
     
-    public var viewModel : UPennLoginViewModelled!
     open var presenter : UPennLoginPlusBiometricsInterface!
     open var coordinator : UPennLoginCoordinatorDelegate!
+    open var username: String = ""
+    open var password: String = ""
+    open var textFieldManager = UPennValidationService()
+    
+    fileprivate lazy var touchIDAlertController : UIAlertController = {
+        let fieldContent = UPennTouchIDFieldContent(title: self.presenter.touchIDOptInTitle, message: self.presenter.touchIDOptInMessage, declined: self.presenter.touchIDDeclined, confirmed: self.presenter.touchIDConfirmed)
+        let alertController = UPennAlertsPresenter.TouchIDAlertController(content: fieldContent) { (selection) in
+            switch selection {
+            case .Cancel:
+                // Force biometrics off, and complete login flow to close-out LoginVC
+                self.presenter.toggleBiometrics(false)
+                self.coordinator.didSuccessfullyLoginUser()
+            case .Use:
+                // Turn on Biometrics Settings & complete Touch ID registration to ensure no repeat launches of Touch ID alert
+                self.turnOnBiometricAuthSettings()
+                self.presenter.completeTouchIDRegistration()
+            }
+        }
+        return alertController
+    }()
+    
+    fileprivate lazy var rememberMeAlertController : UIAlertController = {
+        let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.presenter.biometricOptOutMessage) {
+            self.presenter.toggleBiometrics(false)
+//            self.toggleRememberMe()
+//            self.updateView()
+        }
+        return alertController
+    }()
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +62,45 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         self.loginTableView.separatorStyle = .none
     }
     
+    open func viewDidDisappear() {
+        self.textFieldManager.resetTextFields()
+    }
+    
     open func forgotPassword() {
         print("Pressed Forgot Password")
+    }
+    
+    @objc open func textFieldDidChange(_ sender: Any) {
+        guard
+            let textField = sender as? UITextField,
+            let text = textField.text,
+            let section = Section(rawValue: textField.tag) else { return }
+        
+        switch section {
+        case .Username: self.username = text
+        case .Password: password = text
+        case .Login: return
+        }
+        self.loginTableView.reloadRows(at: [IndexPath(row: Section.Login.rawValue, section: 0)], with: .none)
+    }
+    
+    open func advanceTextfields(textfield: UITextField) {
+        let nextTag: NSInteger = textfield.tag + 1
+        if let nextResponder: UIResponder = textfield.superview!.viewWithTag(nextTag) {
+            nextResponder.becomeFirstResponder()
+        } else {
+            textfield.resignFirstResponder()
+            self.login()
+        }
+    }
+    
+    open func turnOnBiometricAuthSettings() {
+        /*
+         * 1. Toggle biometrics settings
+         * 2. Toggle 'Remember Me' On
+         */
+        self.presenter.turnOnBiometricAuthSettings()
+//        self.toggleRememberMe(true)
     }
     
 }
@@ -65,51 +123,61 @@ extension UPennLoginTableViewController : UITableViewDataSource {
         switch section {
         case .Username:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
-            cell.configure(delegate: self)
+            cell.configure(delegate: self, textFieldTag: section.rawValue)
+            self.textFieldManager.addTextFieldAndTag(&cell.textInputView.textInput, section.rawValue)
             return cell
         case .Password:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredPasswordTextFieldCell.Identifier) as! UPennCenteredPasswordTextFieldCell
-            cell.configure(delegate: self)
+            cell.configure(delegate: self, textFieldTag: section.rawValue)
+            self.textFieldManager.addTextFieldAndTag(&cell.textInputView.textInput, section.rawValue)
             return cell
         case .Login:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
-            cell.configure(title: "Login".localize, delegate: self)
+            cell.configure(title: "Login".localize, delegate: self, enabled: self.textFieldManager.allFieldsAreValid)
             return cell
         }
     }
-    
-    
-    
 }
 
 extension UPennLoginTableViewController : UITextFieldDelegate {
+    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        self.advanceTextfields(textfield: textField)
+        return true
+    }
     
+    open func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
 }
 
 extension UPennLoginTableViewController : UPennCenteredButtonDelegate {
     public func pressedButton(_ button: UIButton) {
         UPennActivityPresenter.Show(message: "Logging in.....")
-        print("Login Button Pressed!")
         // Login User either directly or via delegate
-        self.presenter.makeLoginRequest(username: "", password: "")
+        self.login()
     }
 }
 
 extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
     public func registerForTouchIDAuthentication() {
-        //
+        UPennActivityPresenter.Dismiss()
+       self.present(self.touchIDAlertController, animated: true, completion: nil)
     }
     
     public func biometricsSuccessfullyAuthenticated(turnOnBiometrics: Bool) {
-        //
+        if turnOnBiometrics {
+            self.turnOnBiometricAuthSettings()
+            return
+        }
     }
     
     public func biometricsDidError(with message: String?) {
-        //
+        UPennActivityPresenter.ShowError(message: message ?? "")
     }
     
     public func didSuccessfullyLoginUser() {
-        //
+        UPennActivityPresenter.Dismiss()
+        self.coordinator.didSuccessfullyLoginUser()
     }
     
     public func didReturnAutoFillCredentials(username: String, password: String) {
@@ -117,10 +185,13 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
     }
     
     public func didFailToLoginUser(errorStr: String) {
-        //
+        UPennActivityPresenter.ShowError(message: errorStr)
     }
+}
+
+private extension UPennLoginTableViewController {
     
-    
-    
-    
+    func login() {
+        self.presenter.makeLoginRequest(username: self.username, password: self.password)
+    }
 }
