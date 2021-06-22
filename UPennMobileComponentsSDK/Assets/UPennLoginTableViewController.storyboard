@@ -91,27 +91,27 @@
                                             <outlet property="buttonView" destination="MYp-Ov-Xkk" id="zka-Kc-OpC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennBasicCell" id="ci6-Hf-h4g" customClass="UPennBasicCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="284.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennImageViewCell" rowHeight="84" id="ci6-Hf-h4g" customClass="UPennImageViewCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="284.5" width="414" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ci6-Hf-h4g" id="bI8-hF-Swu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icc-dw-dcc">
-                                                    <rect key="frame" x="186" y="11.5" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ds-Uh-xXe" customClass="UPennImageView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="icc-dw-dcc" firstAttribute="centerY" secondItem="bI8-hF-Swu" secondAttribute="centerY" id="Vd3-vj-jRj"/>
-                                                <constraint firstItem="icc-dw-dcc" firstAttribute="centerX" secondItem="bI8-hF-Swu" secondAttribute="centerX" id="vHG-0x-Gt2"/>
+                                                <constraint firstItem="0Ds-Uh-xXe" firstAttribute="top" secondItem="bI8-hF-Swu" secondAttribute="top" id="9Hu-xa-hpr"/>
+                                                <constraint firstItem="0Ds-Uh-xXe" firstAttribute="leading" secondItem="bI8-hF-Swu" secondAttribute="leading" id="VDE-oq-pye"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Ds-Uh-xXe" secondAttribute="bottom" id="WZL-eS-MFa"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Ds-Uh-xXe" secondAttribute="trailing" id="gA5-3P-lWY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="label" destination="icc-dw-dcc" id="nOE-gN-RGt"/>
+                                            <outlet property="imageArea" destination="0Ds-Uh-xXe" id="dK5-O2-hcn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -18,8 +18,9 @@ open class UPennCenteredTextInputView : UPennNibView, UPennTextInputConfigureInt
         self.textInput.autocorrectionType = .no
     }
     
-    public func configure(delegate: UITextFieldDelegate, textFieldTag: Int) {
+    public func configure(delegate: UITextFieldDelegate, textFieldContent: String?, textFieldTag: Int) {
         self.textInput.delegate = delegate
+        self.textInput.text = textFieldContent
         self.textInput.tag = textFieldTag
     }
 }

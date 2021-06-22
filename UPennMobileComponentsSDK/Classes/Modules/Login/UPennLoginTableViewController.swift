@@ -11,6 +11,7 @@ import UIKit
 open class UPennLoginTableViewController : UPennStoryboardViewController, UPennLoginViewControllable {
     
     enum Section : Int {
+        case BannerImage
         case Username
         case Password
         case Login
@@ -80,7 +81,7 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         switch section {
         case .Username: self.username = text
         case .Password: password = text
-        case .Login: return
+        case .Login,.BannerImage: return
         }
         self.loginTableView.reloadRows(at: [IndexPath(row: Section.Login.rawValue, section: 0)], with: .none)
     }
@@ -112,14 +113,19 @@ extension UPennLoginTableViewController : UITableViewDataSource {
         guard let section = Section.init(rawValue: indexPath.row) else { return UITableViewCell() }
         
         switch section {
+        
+        case .BannerImage:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPennImageViewCell.Identifier) as! UPennImageViewCell
+            cell.configure(image: UPennImageAssets.UPennBannerTransparent)
+            return cell
         case .Username:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
-            cell.configure(delegate: self, textFieldTag: section.rawValue)
+            cell.configure(delegate: self, textFieldContent: self.username, textFieldTag: section.rawValue)
             self.textFieldManager.addTextFieldAndTag(&cell.textInputView.textInput, section.rawValue)
             return cell
         case .Password:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredPasswordTextFieldCell.Identifier) as! UPennCenteredPasswordTextFieldCell
-            cell.configure(delegate: self, textFieldTag: section.rawValue)
+            cell.configure(delegate: self, textFieldContent: nil, textFieldTag: section.rawValue)
             self.textFieldManager.addTextFieldAndTag(&cell.textInputView.textInput, section.rawValue)
             return cell
         case .Login:
@@ -175,7 +181,8 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
     }
     
     public func didReturnAutoFillCredentials(username: String, password: String) {
-        //
+        self.username = username
+        self.loginTableView.reloadRows(at: [IndexPath(row: Section.Username.rawValue, section: 0)], with: .left)
     }
     
     public func didFailToLoginUser(errorStr: String) {

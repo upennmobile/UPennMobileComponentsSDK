@@ -11,18 +11,17 @@ import UIKit
 /// Interface for an object to properly handle login view-model functionality
 
 public protocol UPennTextInputConfigureInterface {
-    func configure(delegate: UITextFieldDelegate, textFieldTag: Int)
+    func configure(delegate: UITextFieldDelegate, textFieldContent: String?, textFieldTag: Int)
 }
 
 /// TableView cell for displaying a center-justified UITextField
 open class UPennCenteredTextInputCell : UPennBasicCell, UPennTextInputConfigureInterface {
     
-    
     @IBOutlet weak var textInputView: UPennCenteredTextInputView!
     
     
-    open func configure(delegate: UITextFieldDelegate, textFieldTag: Int) {
-        self.textInputView.configure(delegate: delegate, textFieldTag: textFieldTag)
+    open func configure(delegate: UITextFieldDelegate, textFieldContent: String?, textFieldTag: Int) {
+        self.textInputView.configure(delegate: delegate, textFieldContent: textFieldContent, textFieldTag: textFieldTag)
     }
 }
 

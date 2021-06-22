@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UPennImageView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="r43-Ek-TVB" id="fE8-Hz-b2j"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="D1f-Cf-dlg">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r43-Ek-TVB">
+                    <rect key="frame" x="20" y="36" width="285" height="60"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="5Tx-4d-zUS"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="5Tx-4d-zUS" firstAttribute="trailing" secondItem="r43-Ek-TVB" secondAttribute="trailing" constant="20" id="M3I-8r-faC"/>
+                <constraint firstItem="5Tx-4d-zUS" firstAttribute="bottom" secondItem="r43-Ek-TVB" secondAttribute="bottom" constant="8" id="wde-Xc-M2g"/>
+                <constraint firstItem="5Tx-4d-zUS" firstAttribute="top" secondItem="r43-Ek-TVB" secondAttribute="top" constant="8" id="xsx-4Q-uaL"/>
+                <constraint firstItem="r43-Ek-TVB" firstAttribute="leading" secondItem="5Tx-4d-zUS" secondAttribute="leading" constant="20" id="zdg-bF-CUT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-106.5217391304348" y="50.892857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
