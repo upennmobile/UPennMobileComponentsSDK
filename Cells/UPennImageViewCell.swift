@@ -12,13 +12,13 @@ public protocol UPennImageViewInterface {
     func configure(image: UIImage)
 }
 
-class UPennImageViewCell : UPennBasicCell, UPennImageViewInterface {
+open class UPennImageViewCell : UPennBasicCell, UPennImageViewInterface {
     
    
-    @IBOutlet weak var imageArea: UPennImageView!
+    @IBOutlet open weak var imageArea: UPennImageView!
     
     
-    func configure(image: UIImage) {
+    open func configure(image: UIImage) {
         self.imageArea.configure(image: image)
     }
 }

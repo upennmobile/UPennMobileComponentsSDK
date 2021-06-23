@@ -10,7 +10,7 @@ import Foundation
 open class UPennImageView : UPennNibView, UPennImageViewInterface {
     
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet open weak var imageView: UIImageView!
     
     open func configure(image: UIImage) {
         self.imageView.image = image

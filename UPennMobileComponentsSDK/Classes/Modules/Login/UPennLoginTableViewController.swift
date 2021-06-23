@@ -10,19 +10,9 @@ import UIKit
 
 open class UPennLoginTableViewController : UPennStoryboardViewController, UPennLoginViewControllable {
     
-    enum Section : Int {
-        case BannerImage
-        case Username
-        case Password
-        case Login
-        
-        static var Count : Int {
-            return Section.Login.rawValue+1
-        }
-    }
     
     @IBOutlet public weak var loginTableView: UITableView!
-    
+    open var viewModel: UPennLoginViewModelled!
     open var presenter : UPennLoginPlusBiometricsInterface!
     open var coordinator : UPennLoginCoordinatorDelegate!
     open var username: String = ""
@@ -73,17 +63,18 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     }
     
     @objc open func textFieldDidChange(_ sender: Any) {
-        guard
-            let textField = sender as? UITextField,
-            let text = textField.text,
-            let section = Section(rawValue: textField.tag) else { return }
         
-        switch section {
-        case .Username: self.username = text
-        case .Password: password = text
-        case .Login,.BannerImage: return
+        guard let textField = sender as? UITextField else { return }
+        
+        self.viewModel.textChangedUpdateView(textField: textField) { username, password, indexPaths in
+            if let u = username {
+                self.username = u
+            }
+            if let p = password {
+                self.password = p
+            }
+            self.loginTableView.reloadRows(at: indexPaths, with: .none)
         }
-        self.loginTableView.reloadRows(at: [IndexPath(row: Section.Login.rawValue, section: 0)], with: .none)
     }
     
     open func turnOnBiometricAuthSettings() {
@@ -103,36 +94,11 @@ extension UPennLoginTableViewController : UITableViewDelegate {
 
 extension UPennLoginTableViewController : UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        self.viewModel.numberSectionRows(section)
-        return Section.Count
+        return self.viewModel.rowsInSection(section)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        self.viewModel.cellForRowAt(indexPath, for: tableView)
-        
-        guard let section = Section.init(rawValue: indexPath.row) else { return UITableViewCell() }
-        
-        switch section {
-        
-        case .BannerImage:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPennImageViewCell.Identifier) as! UPennImageViewCell
-            cell.configure(image: UPennImageAssets.UPennBannerTransparent)
-            return cell
-        case .Username:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
-            cell.configure(delegate: self, textFieldContent: self.username, textFieldTag: section.rawValue)
-            self.textFieldManager.addTextFieldAndTag(&cell.textInputView.textInput, section.rawValue)
-            return cell
-        case .Password:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredPasswordTextFieldCell.Identifier) as! UPennCenteredPasswordTextFieldCell
-            cell.configure(delegate: self, textFieldContent: nil, textFieldTag: section.rawValue)
-            self.textFieldManager.addTextFieldAndTag(&cell.textInputView.textInput, section.rawValue)
-            return cell
-        case .Login:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
-            cell.configure(title: "Login".localize, delegate: self, enabled: self.textFieldManager.allFieldsAreValid)
-            return cell
-        }
+        self.viewModel.getCellAtIndexPath(indexPath, for: tableView)
     }
 }
 
@@ -182,7 +148,7 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
     
     public func didReturnAutoFillCredentials(username: String, password: String) {
         self.username = username
-        self.loginTableView.reloadRows(at: [IndexPath(row: Section.Username.rawValue, section: 0)], with: .left)
+        self.loginTableView.reloadRows(at: self.viewModel.autofillUpdateSections(), with: .left)
     }
     
     public func didFailToLoginUser(errorStr: String) {
@@ -195,10 +161,6 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
 }
 
 private extension UPennLoginTableViewController {
-    
-    func login() {
-        self.presenter.makeLoginRequest(username: self.username, password: self.password)
-    }
     
     func resetView() {
         self.textFieldManager.resetTextFields()

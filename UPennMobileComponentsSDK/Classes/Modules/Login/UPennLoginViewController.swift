@@ -24,10 +24,12 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     @IBOutlet weak var upennBannerLogo: UIImageView!
     @IBOutlet weak var biometricsButtonView : UPennIconButtonView!
     
-    fileprivate var validationService: UPennValidationService!
+    public var textFieldManager = UPennValidationService()
     fileprivate var keyboardService: UPennKeyboardService!
     open var presenter : UPennLoginPlusBiometricsInterface!
     open var coordinator : UPennLoginCoordinatorDelegate!
+    public var username = ""
+    public var password = ""
     fileprivate var isFirstLogin : Bool {
         return UPennAuthenticationService.IsFirstLogin
     }
@@ -92,7 +94,7 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
         self.passwordField.delegate = self
         self.passwordField.returnKeyType = .done
         self.passwordField.isSecureTextEntry = true
-        self.validationService = UPennValidationService(textFields: [ self.emailField, self.passwordField ])
+        self.textFieldManager = UPennValidationService(textFields: [ self.emailField, self.passwordField ])
         
         // Set up Buttons & Images
         self.upennBannerLogo.image = UPennImageAssets.UPennBannerTransparent
@@ -125,7 +127,7 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     }
     
     open func verifyFields() {
-        self.loginButton.isEnabled = validationService.allFieldsAreValid
+        self.loginButton.isEnabled = textFieldManager.allFieldsAreValid
     }
     
     open func viewDidAppear() {
@@ -138,7 +140,7 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     }
     
     open func viewDidDisappear() {
-        self.validationService.resetTextFields()
+        self.textFieldManager.resetTextFields()
     }
     
     open func updateView() {
@@ -214,6 +216,13 @@ extension UPennLoginViewController : UITextFieldDelegate {
     
     open func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+}
+
+extension UPennLoginTableViewController : UPennLoginViewModelDelegate {
+    
+    public func login() {
+        self.presenter.makeLoginRequest(username: self.username, password: self.password)
     }
 }
 

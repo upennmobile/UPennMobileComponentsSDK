@@ -19,8 +19,11 @@ public protocol UPennLoginCoordinated : UPennLoginCoordinatable, UPennCoordinato
 }
 
 public protocol UPennLoginViewControllable : UPennLoginPresenterDelegate {
+    var username: String { get set }
+    var password: String { get set }
     var presenter: UPennLoginPlusBiometricsInterface! { get set }
     var coordinator: UPennLoginCoordinatorDelegate! { get set }
+    var textFieldManager : UPennValidationService { get set }
     func forgotPassword()
 }
 /**

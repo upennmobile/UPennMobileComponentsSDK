@@ -17,7 +17,7 @@ public protocol UPennTextInputConfigureInterface {
 /// TableView cell for displaying a center-justified UITextField
 open class UPennCenteredTextInputCell : UPennBasicCell, UPennTextInputConfigureInterface {
     
-    @IBOutlet weak var textInputView: UPennCenteredTextInputView!
+    @IBOutlet open weak var textInputView: UPennCenteredTextInputView!
     
     
     open func configure(delegate: UITextFieldDelegate, textFieldContent: String?, textFieldTag: Int) {
