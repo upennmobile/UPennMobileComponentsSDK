@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-open class UPennLabelStyles {
+public struct UPennLabelStyles {
     
-    open var height: CGFloat; var color: UIColor; var alignment: NSTextAlignment
+    public var height: CGFloat; var color: UIColor; var alignment: NSTextAlignment
     
     public init(height: CGFloat = 17, color: UIColor = .upennBlack, alignment: NSTextAlignment = .left) {
         self.height = height

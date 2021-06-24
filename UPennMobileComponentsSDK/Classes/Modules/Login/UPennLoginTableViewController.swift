@@ -116,7 +116,7 @@ extension UPennLoginTableViewController : UITextFieldDelegate {
 }
 
 extension UPennLoginTableViewController : UPennCenteredButtonDelegate {
-    public func pressedButton(_ button: UIButton) {
+    public func pressedCenterButton(_ button: UIButton) {
         UPennActivityPresenter.Show(message: "Logging in.....")
         // Login User either directly or via delegate
         self.login()

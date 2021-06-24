@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-public protocol UPennCenteredButtonDelegate {
-    func pressedButton(_ button: UIButton)
+public protocol UPennCenteredButtonDelegate : AnyObject {
+    func pressedCenterButton(_ button: UIButton)
 }
 
 open class UPennCenteredButtonView : UPennNibView, UPennCenteredButtonConfigureInterface {
@@ -20,7 +20,7 @@ open class UPennCenteredButtonView : UPennNibView, UPennCenteredButtonConfigureI
     
     @IBAction func pressedButton(_ sender: UIButton) {
         
-        self.delegate?.pressedButton(sender)
+        self.delegate?.pressedCenterButton(sender)
     }
     
     public func configure(title: String, delegate: UPennCenteredButtonDelegate, enabled: Bool) {

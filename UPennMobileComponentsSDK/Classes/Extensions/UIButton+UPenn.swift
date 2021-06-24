@@ -37,6 +37,7 @@ open class PrimaryCTAButton : UIButton {
         setEnabledStyle()
         titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         titleLabel?.font = UIFont.helveticaBold(size: 15.0)
+//        imageView?.contentMode = .scaleAspectFit
     }
     
     open func setEnabledStyle() {

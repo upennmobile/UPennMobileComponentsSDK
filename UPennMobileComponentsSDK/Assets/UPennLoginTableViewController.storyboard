@@ -132,6 +132,32 @@
                                             <outlet property="imageArea" destination="0Ds-Uh-xXe" id="dK5-O2-hcn"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennLeftImageButtonCell" rowHeight="59" id="UBk-lM-CiL" customClass="UPennLeftImageButtonCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="412" width="414" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UBk-lM-CiL" id="aGs-X0-IDl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruB-Xe-tGZ" customClass="UPennLeftImageButtonView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="vZD-4f-Q7R"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ruB-Xe-tGZ" secondAttribute="trailing" id="0bg-el-fWc"/>
+                                                <constraint firstItem="ruB-Xe-tGZ" firstAttribute="top" secondItem="aGs-X0-IDl" secondAttribute="top" id="OTD-fI-PXv"/>
+                                                <constraint firstItem="ruB-Xe-tGZ" firstAttribute="leading" secondItem="aGs-X0-IDl" secondAttribute="leading" id="YJY-aD-Q2T"/>
+                                                <constraint firstAttribute="bottom" secondItem="ruB-Xe-tGZ" secondAttribute="bottom" id="r52-ig-O12"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttonView" destination="ruB-Xe-tGZ" id="UAG-s0-j5W"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

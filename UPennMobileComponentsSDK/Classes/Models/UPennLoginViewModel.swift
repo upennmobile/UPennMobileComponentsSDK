@@ -21,6 +21,7 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         case AppTitle
         case Username
         case Password
+        case RememberMe
         case Login
         
         static var Count : Int {
@@ -62,6 +63,12 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             cell.configure(delegate: self.controller, textFieldContent: nil, textFieldTag: section.rawValue)
             self.controller.textFieldManager.addTextFieldAndTag(&cell.textInputView.textInput, section.rawValue)
             return cell
+        case .RememberMe:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPennLeftImageButtonCell.Identifier) as! UPennLeftImageButtonCell
+            let styles = UPennButtonStyles(title: "Remember Me", selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox,
+                isSelected: true)
+            cell.configure(styles: styles, delegate: self)
+            return cell
         case .Login:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
             cell.configure(title: "Login".localize, delegate: self, enabled: self.controller.textFieldManager.allFieldsAreValid)
@@ -84,7 +91,7 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         completion(text,nil,idxPaths); break
        case .Password:
         completion(nil,text,idxPaths); break
-       case .Login,.BannerImage,.AppTitle: return
+       case .Login,.BannerImage,.AppTitle,.RememberMe: return
        }
     }
     
@@ -98,8 +105,14 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
 }
 
 extension UPennLoginViewModel : UPennCenteredButtonDelegate {
-    public func pressedButton(_ button: UIButton) {
+    public func pressedCenterButton(_ button: UIButton) {
         // Login User either directly or via delegate
         self.controller.login()
+    }
+}
+
+extension UPennLoginViewModel : UPennLeftImageButtonDelegate {
+    public func pressedLeftImageButton(_ button: UIButton) {
+        print("Button Pressed. Is-selected: \(button.isSelected)")
     }
 }
