@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public struct UPennImageAssets {
+public enum UPennImageAssets {
     
     public static var CheckedCheckBox : UIImage {
         return UIImage(named: "checked.png", in: Bundle.UPennSDKResourcesProvider(), compatibleWith: nil)!

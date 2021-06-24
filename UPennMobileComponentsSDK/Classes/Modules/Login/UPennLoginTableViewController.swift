@@ -164,6 +164,8 @@ private extension UPennLoginTableViewController {
     
     func resetView() {
         self.textFieldManager.resetTextFields()
+        self.username = ""
+        self.password = ""
         self.loginTableView.reloadData()
     }
 }

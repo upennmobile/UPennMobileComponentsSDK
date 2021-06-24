@@ -65,7 +65,22 @@ public extension UILabel {
     }
 }
 
-open class UPennLabel : UILabel {
+public protocol UPennStylesCallable { }
+
+extension UPennStylesCallable where Self : UILabel {
+    
+    var styles: UPennLabelStyles {
+        return UPennLabelStyles(height: self.frame.size.height, color: self.textColor, alignment: self.textAlignment)
+    }
+    
+    func setStyles(_ styles: UPennLabelStyles) {
+        self.setFontHeight(size: styles.height)
+        self.textColor = styles.color
+        self.textAlignment = styles.alignment
+    }
+}
+
+open class UPennLabel : UILabel, UPennStylesCallable {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,8 +88,7 @@ open class UPennLabel : UILabel {
     }
     
     open func setBaseStyles() {
-        self.textColor = UIColor.upennBlack
-        self.setFontHeight(size: 17.0)
+        self.setStyles(BaseLabelStyles.Style)
     }
 }
 
@@ -132,10 +146,9 @@ open class NoDataInstructionsLabel : UPennLabel {
 }
 
 open class BannerLabel : UPennLabel {
+    
     open override func setBaseStyles() {
-        super.setBaseStyles()
-        self.textColor = UIColor.upennDarkBlue
-        self.setFontHeight(size: 25.0)
+        self.setStyles(UPennLabelStyles(height: 25.0, color: .upennDarkBlue, alignment: .center))
     }
 }
 

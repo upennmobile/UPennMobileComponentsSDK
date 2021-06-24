@@ -231,13 +231,7 @@ extension UPennLoginTableViewController : UPennLoginViewModelDelegate {
 extension UPennLoginViewController : UPennLoginPresenterDelegate {
     
     open func didSuccessfullyLoginUser() {
-        /*
-         * 1. Trigger Logout timer
-         * 2. Send username & PN deviceToken to server
-         * 2. Check for 1st Launch & register Biometrics opt-in
-         */
-        // TODO: Move to Coordinator?
-//        self.sendLoginNotification()
+        // Update Login Coordinator
         UPennActivityPresenter.Dismiss()
         self.coordinator.didSuccessfullyLoginUser()
     }

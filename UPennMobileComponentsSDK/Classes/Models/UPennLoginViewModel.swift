@@ -8,22 +8,17 @@
 import Foundation
 import UIKit
 
-public protocol UPennLoginViewModelled {
-    func getCellAtIndexPath(_ indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell
-    func textChangedUpdateView(textField: UITextField, completion: @escaping (_ username: String?, _ password: String?, _ indexPaths: Array<IndexPath>)->Void)
-    func rowsInSection(_ section: Int) -> Int
-    
-    func autofillUpdateSections() -> Array<IndexPath>
-}
-
-public protocol UPennLoginViewModelDelegate {
-    func login()
-}
-
+/**
+ Concrete class emplementing 'UPennLoginViewModelled' for custom configuration of UPennLoginTableVC
+ 
+ - Subclass this with custom implementation of LoginSection, getCellAtIndexPath & textChangedUpdateView for alternate LoginVC layouts
+ */
 open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
-        
-    enum LoginSection : Int {
+      
+    /// Enum representing separate pieces of Login UI content. Must custom override if subclassing UPennLoginViewModel.
+    public enum LoginSection : Int {
         case BannerImage
+        case AppTitle
         case Username
         case Password
         case Login
@@ -44,7 +39,7 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
     }
     
     open func getCellAtIndexPath(_ indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell {
-//
+
         guard let section = LoginSection.init(rawValue: indexPath.row) else { return UITableViewCell() }
         
         switch section {
@@ -52,6 +47,10 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         case .BannerImage:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennImageViewCell.Identifier) as! UPennImageViewCell
             cell.configure(image: UPennImageAssets.UPennBannerTransparent)
+            return cell
+        case .AppTitle:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredLabelCell.Identifier) as! UPennCenteredLabelCell
+            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: BannerLabelStyles.Style)
             return cell
         case .Username:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
@@ -78,12 +77,14 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
            let text = textField.text,
            let section = LoginSection(rawValue: textField.tag) else { return }
         
-        completion(text,text,[IndexPath(row:LoginSection.Login.rawValue, section: 0)])
+        let idxPaths = [IndexPath(row:LoginSection.Login.rawValue, section: 0)]
 
        switch section {
-       case .Username: self.controller.username = text
-       case .Password: self.controller.password = text
-       case .Login,.BannerImage: return
+       case .Username:
+        completion(text,nil,idxPaths); break
+       case .Password:
+        completion(nil,text,idxPaths); break
+       case .Login,.BannerImage,.AppTitle: return
        }
     }
     

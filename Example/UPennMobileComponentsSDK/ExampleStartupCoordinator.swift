@@ -12,7 +12,7 @@ import UPennMobileComponentsSDK
 class TestUPennLoginViewModel : UPennLoginViewModel {
     
     enum LoginSection : Int {
-        case BannerImage, Username, Login
+        case BannerImage, AppTitle, Username, Login
     }
     
     override func textChangedUpdateView(textField: UITextField, completion: @escaping (
@@ -23,11 +23,12 @@ class TestUPennLoginViewModel : UPennLoginViewModel {
            let text = textField.text,
            let section = LoginSection(rawValue: textField.tag) else { return }
         
-        completion(text,text,[IndexPath(row:LoginSection.Login.rawValue, section: 0)])
+        let idxPaths = [IndexPath(row:LoginSection.Login.rawValue, section: 0)]
 
        switch section {
-       case .Username: self.controller.username = text
-       case .Login,.BannerImage: return
+       case .Username:
+        completion(text,nil,idxPaths)
+       case .Login,.BannerImage,.AppTitle: return
        }
     }
     
@@ -40,6 +41,10 @@ class TestUPennLoginViewModel : UPennLoginViewModel {
         case .BannerImage:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennImageViewCell.Identifier) as! UPennImageViewCell
             cell.configure(image: UPennImageAssets.UPennBannerTransparent)
+            return cell
+        case .AppTitle:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredLabelCell.Identifier) as! UPennCenteredLabelCell
+            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: BannerLabelStyles.Style)
             return cell
         case .Username:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
@@ -92,7 +97,7 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         
         // Make Login VC & Coordinator
         let childVC = UPennLoginTableViewController.Instantiate(.SDK)
-        childVC.viewModel = TestUPennLoginViewModel(controller: childVC)
+        childVC.viewModel = UPennLoginViewModel(controller: childVC)
         // Make Login presenter
         let presenter = UPennLoginPresenter(presenterDelegate: childVC)
         // Make LoginCoordinator
