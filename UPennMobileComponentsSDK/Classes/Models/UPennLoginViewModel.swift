@@ -23,9 +23,10 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         case Password
         case RememberMe
         case Login
+        case ForgotPassword
         
         static var Count : Int {
-            return LoginSection.Login.rawValue+1
+            return LoginSection.ForgotPassword.rawValue+1
         }
     }
     
@@ -65,12 +66,11 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .RememberMe:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennLeftImageButtonCell.Identifier) as! UPennLeftImageButtonCell
-//            let edgeInsets = UIEdgeInsets(top: 0, left: -110, bottom: 0, right: -50)
             let edgeInsets = UIEdgeInsets(top: 7.5, left: -65, bottom: 17.5, right: 0)
             let imageTitlePadding: CGFloat = -55.0
             let styles = UPennButtonStyles(
-                selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox, isSelected: true,
-                titleFont: UIFont.helvetica(size: 15.0),
+                selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox, isSelected: controller.shouldAutoFill,
+                titleFont: UIFont.helvetica(size: 17.0),
                 titleColor: .upennDarkBlue,
                 width: 120,
                 height: 50,
@@ -82,6 +82,21 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         case .Login:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
             cell.configure(title: "Login".localize, delegate: self, enabled: self.controller.textFieldManager.allFieldsAreValid)
+            return cell
+        case .ForgotPassword:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPennRightButtonCell.Identifier) as! UPennRightButtonCell
+            let edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            let styles = UPennButtonStyles(
+                titleFont: UIFont.helvetica(size: 17.0),
+                titleColor: .upennDarkBlue,
+                width: 120,
+                height: 50,
+                backgroundColor: .clear,
+                contentPadding: edgeInsets)
+            cell.configure(
+                title: "Forgot Password",
+                styles: styles,
+                delegate: self)
             return cell
         }
     }
@@ -101,7 +116,7 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         completion(text,nil,idxPaths); break
        case .Password:
         completion(nil,text,idxPaths); break
-       case .Login,.BannerImage,.AppTitle,.RememberMe: return
+       default: return
        }
     }
     
@@ -111,6 +126,10 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
     
     open func autofillUpdateSections() -> Array<IndexPath> {
         return [IndexPath(row:LoginSection.Username.rawValue, section: 0)]
+    }
+    
+    open func toggleRememberMe(_ button: UIButton, _ enabled: Bool = false) {
+        self.controller.toggleShouldAutoFill(button.isSelected)
     }
 }
 
@@ -123,6 +142,17 @@ extension UPennLoginViewModel : UPennCenteredButtonDelegate {
 
 extension UPennLoginViewModel : UPennLeftImageButtonDelegate {
     public func pressedLeftImageButton(_ button: UIButton) {
-        print("Button Pressed. Is-selected: \(button.isSelected)")
+        if button.isSelected && controller.biometricsEnabled {
+            self.controller.presentRememberMeAlert()
+            return
+        }
+        self.toggleRememberMe(button)
+    }
+}
+
+extension UPennLoginViewModel : UPennRightButtonDelegate {
+    
+    public func pressedRightButton(_ button: UIButton) {
+        self.controller.forgotPassword()
     }
 }

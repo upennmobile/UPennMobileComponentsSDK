@@ -158,6 +158,29 @@
                                             <outlet property="buttonView" destination="ruB-Xe-tGZ" id="UAG-s0-j5W"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennRightButtonCell" rowHeight="69" id="tGm-XY-fwQ" customClass="UPennRightButtonCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="471" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tGm-XY-fwQ" id="pYc-7V-DTg">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5z8-yX-SKm" customClass="UPennRightButtonView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5z8-yX-SKm" secondAttribute="trailing" id="1Ov-1L-FWS"/>
+                                                <constraint firstItem="5z8-yX-SKm" firstAttribute="top" secondItem="pYc-7V-DTg" secondAttribute="top" id="Cex-u6-dnD"/>
+                                                <constraint firstAttribute="bottom" secondItem="5z8-yX-SKm" secondAttribute="bottom" id="Rqa-xG-1PV"/>
+                                                <constraint firstItem="5z8-yX-SKm" firstAttribute="leading" secondItem="pYc-7V-DTg" secondAttribute="leading" id="Tvs-rg-QgH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttonView" destination="5z8-yX-SKm" id="Qpa-yP-qQJ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

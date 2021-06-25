@@ -10,7 +10,6 @@ import UIKit
 
 open class UPennLoginTableViewController : UPennStoryboardViewController, UPennLoginViewControllable {
     
-    
     @IBOutlet public weak var loginTableView: UITableView!
     open var viewModel: UPennLoginViewModelled!
     open var presenter : UPennLoginPlusBiometricsInterface!
@@ -18,6 +17,18 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     open var username: String = ""
     open var password: String = ""
     open var textFieldManager = UPennValidationService()
+    
+    open var shouldAutoFill: Bool {
+        return self.presenter.shouldAutoFill
+    }
+    
+    open var biometricsEnabled: Bool {
+        return self.presenter.biometricsEnabled
+    }
+    
+    open func toggleShouldAutoFill(_ autoFill: Bool) {
+        self.presenter.toggleShouldAutoFill(autoFill)
+    }
     
     fileprivate lazy var touchIDAlertController : UIAlertController = {
         let fieldContent = UPennTouchIDFieldContent(title: self.presenter.touchIDOptInTitle, message: self.presenter.touchIDOptInMessage, declined: self.presenter.touchIDDeclined, confirmed: self.presenter.touchIDConfirmed)
@@ -53,11 +64,6 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         self.loginTableView.separatorStyle = .none
     }
     
-    open func viewDidDisappear() {
-
-        
-    }
-    
     open func forgotPassword() {
         print("Pressed Forgot Password")
     }
@@ -84,6 +90,10 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
          */
         self.presenter.turnOnBiometricAuthSettings()
 //        self.toggleRememberMe(true)
+    }
+    
+    open func presentRememberMeAlert() {
+        self.present(self.rememberMeAlertController, animated: false, completion: nil)
     }
     
 }

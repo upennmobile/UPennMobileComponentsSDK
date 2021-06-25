@@ -13,6 +13,11 @@ import UIKit
 
 open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginViewControllable {
     
+    public var shouldAutoFill: Bool {
+        return presenter.shouldAutoFill
+    }
+    
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var loginButton: PrimaryCTAButton!
@@ -32,6 +37,10 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     public var password = ""
     fileprivate var isFirstLogin : Bool {
         return UPennAuthenticationService.IsFirstLogin
+    }
+    
+    open var biometricsEnabled: Bool {
+        return self.presenter.biometricsEnabled
     }
     
     fileprivate lazy var touchIDAlertController : UIAlertController = {
@@ -128,6 +137,14 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     
     open func verifyFields() {
         self.loginButton.isEnabled = textFieldManager.allFieldsAreValid
+    }
+    
+    open func toggleShouldAutoFill(_ autoFill: Bool) {
+        self.presenter.toggleShouldAutoFill(autoFill)
+    }
+    
+    open func presentRememberMeAlert() {
+        self.present(rememberMeAlertController, animated: false, completion: nil)
     }
     
     open func viewDidAppear() {
