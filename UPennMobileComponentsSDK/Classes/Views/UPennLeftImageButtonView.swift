@@ -11,7 +11,7 @@ import UIKit
 
 public protocol UPennLeftImageButtonConfigureInterface {
     
-    func configure(styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate)
+    func configure(title: String, styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate)
     
 }
 
@@ -23,15 +23,15 @@ public protocol UPennLeftImageButtonDelegate : AnyObject {
 open class UPennLeftImageButtonView : UPennNibView, UPennLeftImageButtonConfigureInterface {
     
     
-    @IBOutlet open weak var button: PrimaryCTAButtonText!
+    @IBOutlet open weak var button: PrimaryCTAButtonTextDarkBlue!
     
     open weak var delegate: UPennLeftImageButtonDelegate?
     
-    public func configure(styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate) {
+    public func configure(title: String, styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate) {
         self.delegate = delegate
-        self.button.setStyles(styles)
         button.imageView?.contentMode = .scaleAspectFit
-        button.setInsets(forContentPadding: UIEdgeInsets(top: 0, left: -110, bottom: 0, right: -50), imageTitlePadding: -50)
+        self.button.setTitle(title, for: .normal)
+        self.button.setStyles(styles)
     }
     
     @IBAction func pressedButton(_ sender: UIButton) {

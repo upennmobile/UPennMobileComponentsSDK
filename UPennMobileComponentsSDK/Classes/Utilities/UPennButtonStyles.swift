@@ -10,41 +10,47 @@ import UIKit
 
 public struct UPennButtonStyles : UPennControlStyle {
     
-    public var title: String
     public var selectedImage: UIImage?
     public var deselectedImage: UIImage?
     public var isSelected: Bool
+    public var titleFont: UIFont
     public var titleColor: UIColor
-    public var width: CGFloat
-    public var height: CGFloat
+    public var disabledTitleColor: UIColor
+    public var width: CGFloat?
+    public var height: CGFloat?
     public var backgroundColor: UIColor
+    public var disabledBackgroundColor: UIColor
     public var cornerRadius: CGFloat
     public var borderWidth: CGFloat
     public var contentPadding: UIEdgeInsets
     public var imageTitlePadding: CGFloat
     
     public init(
-        title: String,
         selectedImage: UIImage? = nil,
         deselectedImage: UIImage? = nil,
         isSelected: Bool=false,
+        titleFont: UIFont = UIFont.helveticaBold(size: 15.0),
         titleColor: UIColor = .white,
-        width: CGFloat,
-        height: CGFloat,
+        disabledTitleColor: UIColor = .darkGray,
+        width: CGFloat? = nil,
+        height: CGFloat? = nil,
         backgroundColor: UIColor = .upennMediumBlue,
+        disabledBackgroundColor: UIColor = .lightGray,
         cornerRadius: CGFloat = 0.0,
         borderWidth: CGFloat = 0.0,
-        contentPadding: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-        imageTitlePadding: CGFloat = 0.0
+        contentPadding: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10),
+        imageTitlePadding: CGFloat = 10.0
     ) {
-        self.title = title
         self.selectedImage = selectedImage
         self.deselectedImage = deselectedImage
         self.isSelected = isSelected
+        self.titleFont = titleFont
         self.titleColor = titleColor
+        self.disabledTitleColor = disabledTitleColor
         self.width = width
         self.height = height
         self.backgroundColor = backgroundColor
+        self.disabledBackgroundColor = disabledBackgroundColor
         self.cornerRadius = cornerRadius
         self.borderWidth = borderWidth
         self.contentPadding = contentPadding

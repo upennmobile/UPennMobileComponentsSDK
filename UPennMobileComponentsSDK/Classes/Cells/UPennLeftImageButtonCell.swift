@@ -14,8 +14,8 @@ open class UPennLeftImageButtonCell : UPennBasicCell, UPennLeftImageButtonConfig
     @IBOutlet weak var buttonView: UPennLeftImageButtonView!
     
     
-    open func configure(styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate) {
-        self.buttonView.configure(styles: styles, delegate: delegate)
+    open func configure(title: String, styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate) {
+        self.buttonView.configure(title: title, styles: styles, delegate: delegate)
     }
     
     

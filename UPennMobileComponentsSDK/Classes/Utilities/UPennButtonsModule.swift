@@ -22,19 +22,21 @@ open class PrimaryCTAButton : UIButton {
     }
     
     open func setBaseStyles() {
-        setEnabledStyle()
-        titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        titleLabel?.font = UIFont.helveticaBold(size: 15.0)
-//        imageView?.contentMode = .scaleAspectFit
+//        setEnabledStyle()
+//        titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        titleLabel?.font = UIFont.helveticaBold(size: 15.0)
+        imageView?.contentMode = .scaleAspectFit
+        
+        self.setStyles(UPennButtonStyles())
     }
     
     open func setEnabledStyle() {
-        setTitleColor(UIColor.white, for: .normal)
+//        setTitleColor(UIColor.white, for: .normal)
         backgroundColor = UIColor.upennMediumBlue
     }
     
     open func setDisabledStyle() {
-        setTitleColor(UIColor.darkGray, for: .disabled)
+//        setTitleColor(UIColor.darkGray, for: .disabled)
         backgroundColor = UIColor.lightGray
     }
     
@@ -50,12 +52,16 @@ open class PrimaryCTAButtonText : PrimaryCTAButton {
     
     open override func setBaseStyles() {
         super.setBaseStyles()
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.setStyles(UPennButtonStyles(
+            titleColor: .upennMediumBlue,
+            backgroundColor: .clear,
+            contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
     }
     
     open override var isSelected: Bool {
         didSet {
-            isSelected ? setEnabledStyle() : setDisabledStyle()
+//            isSelected ? setEnabledStyle() : setDisabledStyle()
         }
     }
     
@@ -68,6 +74,15 @@ open class PrimaryCTAButtonText : PrimaryCTAButton {
     open override func setDisabledStyle() {
         super.setDisabledStyle()
         backgroundColor = UIColor.clear
+    }
+}
+
+open class PrimaryCTAButtonTextDarkBlue : PrimaryCTAButtonText {
+    open override func setBaseStyles() {
+        super.setBaseStyles()
+        setStyles(UPennButtonStyles(
+            titleFont: UIFont.helvetica(size: 15.0),
+            titleColor: .upennDarkBlue))
     }
 }
 

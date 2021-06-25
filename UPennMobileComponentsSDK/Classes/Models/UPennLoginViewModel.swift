@@ -65,11 +65,19 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .RememberMe:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennLeftImageButtonCell.Identifier) as! UPennLeftImageButtonCell
-            let styles = UPennButtonStyles(title: "Remember Me", selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox,
-                isSelected: true,
+//            let edgeInsets = UIEdgeInsets(top: 0, left: -110, bottom: 0, right: -50)
+            let edgeInsets = UIEdgeInsets(top: 7.5, left: -65, bottom: 17.5, right: 0)
+            let imageTitlePadding: CGFloat = -55.0
+            let styles = UPennButtonStyles(
+                selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox, isSelected: true,
+                titleFont: UIFont.helvetica(size: 15.0),
                 titleColor: .upennDarkBlue,
-                backgroundColor: .clear)
-            cell.configure(styles: styles, delegate: self)
+                width: 120,
+                height: 50,
+                backgroundColor: .clear,
+                contentPadding: edgeInsets,
+                imageTitlePadding: imageTitlePadding)
+            cell.configure(title: "Remember Me", styles: styles, delegate: self)
             return cell
         case .Login:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
