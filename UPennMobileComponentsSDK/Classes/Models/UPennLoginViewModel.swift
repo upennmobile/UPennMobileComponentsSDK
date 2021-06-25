@@ -51,7 +51,7 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .AppTitle:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredLabelCell.Identifier) as! UPennCenteredLabelCell
-            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: BannerLabelStyles.Style)
+            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: BannerLabelStyles.Style as! UPennLabelStyles)
             return cell
         case .Username:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
@@ -66,7 +66,9 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         case .RememberMe:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennLeftImageButtonCell.Identifier) as! UPennLeftImageButtonCell
             let styles = UPennButtonStyles(title: "Remember Me", selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox,
-                isSelected: true)
+                isSelected: true,
+                titleColor: .upennDarkBlue,
+                backgroundColor: .clear)
             cell.configure(styles: styles, delegate: self)
             return cell
         case .Login:

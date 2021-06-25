@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public struct UPennLabelStyles {
+public struct UPennLabelStyles : UPennControlStyle {
     
     public var height: CGFloat; var color: UIColor; var alignment: NSTextAlignment
     
@@ -21,18 +21,18 @@ public struct UPennLabelStyles {
 }
 
 public protocol UPennStylable {
-    static var Style : UPennLabelStyles { get }
+    static var Style : UPennControlStyle { get }
 }
 
 public enum BaseLabelStyles : UPennStylable {
-    public static var Style : UPennLabelStyles {
+    public static var Style : UPennControlStyle {
         return UPennLabelStyles()
     }
 }
 
 public enum BannerLabelStyles : UPennStylable {
     
-    public static var Style : UPennLabelStyles {
+    public static var Style : UPennControlStyle {
         return UPennLabelStyles(height: 25.0, color: .upennDarkBlue, alignment: .center)
     }
 }

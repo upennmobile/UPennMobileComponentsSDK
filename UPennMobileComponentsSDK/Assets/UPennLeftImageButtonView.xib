@@ -20,7 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-Da-BgS" customClass="PrimaryCTAButtonText" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                    <rect key="frame" x="20" y="52" width="90.5" height="81"/>
+                    <rect key="frame" x="20" y="52" width="150" height="81"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="MGl-ID-WwQ"/>
+                    </constraints>
                     <state key="normal" title="Button" image="checked.png">
                         <color key="titleColor" red="0.34509803919999998" green="0.57647058819999997" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
