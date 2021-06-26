@@ -131,6 +131,10 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
     open func toggleRememberMe(_ button: UIButton, _ enabled: Bool = false) {
         self.controller.toggleShouldAutoFill(button.isSelected)
     }
+    
+    open func rememberMeUpdateSections() -> Array<IndexPath> {
+        return [IndexPath(row: LoginSection.RememberMe.rawValue, section: 0)]
+    }
 }
 
 extension UPennLoginViewModel : UPennCenteredButtonDelegate {
@@ -142,7 +146,7 @@ extension UPennLoginViewModel : UPennCenteredButtonDelegate {
 
 extension UPennLoginViewModel : UPennLeftImageButtonDelegate {
     public func pressedLeftImageButton(_ button: UIButton) {
-        if button.isSelected && controller.biometricsEnabled {
+        if !button.isSelected && controller.biometricsEnabled {
             self.controller.presentRememberMeAlert()
             return
         }

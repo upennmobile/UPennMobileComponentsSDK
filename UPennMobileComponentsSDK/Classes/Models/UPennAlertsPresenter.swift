@@ -48,16 +48,19 @@ open class UPennAlertsPresenter {
         return alertController
     }
     
-    public static func RememberMeAlertController(biometricsOptOutMessage: String, callback: @escaping ()->Void) -> UIAlertController {
+    public static func RememberMeAlertController(
+        biometricsOptOutMessage: String,
+        disableCallback: @escaping ()->Void,
+        cancelCallback: @escaping ()->Void) -> UIAlertController {
         let alertController = UIAlertController(
             title: biometricsOptOutMessage,
             message: "",
             preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel".localize, style: .cancel, handler: nil)
-        let disableRememberMe = UIAlertAction(title: "OK".localize, style: .default, handler: {
-            alert -> Void in
-//            Fire callback
-            callback()
+        let cancelAction = UIAlertAction(title: "Cancel".localize, style: .cancel, handler: { alert -> Void in
+            cancelCallback()
+        })
+        let disableRememberMe = UIAlertAction(title: "OK".localize, style: .default, handler: { alert -> Void in
+            disableCallback()
         })
         alertController.addAction(cancelAction)
         alertController.addAction(disableRememberMe)

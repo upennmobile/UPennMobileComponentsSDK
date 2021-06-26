@@ -19,6 +19,7 @@ public protocol UPennLoginViewModelled : UPennTableViewDelegate {
     
     func textChangedUpdateView(textField: UITextField, completion: @escaping (_ username: String?, _ password: String?, _ indexPaths: Array<IndexPath>)->Void)
     func autofillUpdateSections() -> Array<IndexPath>
+    func rememberMeUpdateSections() -> Array<IndexPath>
 }
 
 /// Delegate method primarily for a LoginViewModel to inform a LoginVC to initiate login

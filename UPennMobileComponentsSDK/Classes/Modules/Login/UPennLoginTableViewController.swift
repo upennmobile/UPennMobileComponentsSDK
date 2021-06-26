@@ -47,14 +47,17 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         return alertController
     }()
     
-    fileprivate lazy var rememberMeAlertController : UIAlertController = {
-        let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.presenter.biometricOptOutMessage) {
+    fileprivate var rememberMeAlertController : UIAlertController {
+        let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.presenter.biometricOptOutMessage)
+        {
+            // Continue diabling
             self.presenter.toggleBiometrics(false)
-//            self.toggleRememberMe()
-//            self.updateView()
+        } cancelCallback: {
+            // Must reload 'Remember Me' to toggle back 'on', because they're already toggled 'off' in the button cell/view
+            self.loginTableView.reloadRows(at: self.viewModel.rememberMeUpdateSections(), with: .none)
         }
         return alertController
-    }()
+    }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +65,12 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         self.loginTableView.delegate = self
         self.loginTableView.dataSource = self
         self.loginTableView.separatorStyle = .none
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter.authenticationAutoFillCheck()
+        self.presenter.attemptBiometricsAuthentication()
     }
     
     open func forgotPassword() {
@@ -89,7 +98,6 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
          * 2. Toggle 'Remember Me' On
          */
         self.presenter.turnOnBiometricAuthSettings()
-//        self.toggleRememberMe(true)
     }
     
     open func presentRememberMeAlert() {
@@ -98,9 +106,13 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     
 }
 
+// MARK: - UITableViewDelegate
+
 extension UPennLoginTableViewController : UITableViewDelegate {
     
 }
+
+// MARK: - UITableViewDataSource
 
 extension UPennLoginTableViewController : UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,6 +137,8 @@ extension UPennLoginTableViewController : UITextFieldDelegate {
     }
 }
 
+// MARK: - UPennCenteredButtonDelegate
+
 extension UPennLoginTableViewController : UPennCenteredButtonDelegate {
     public func pressedCenterButton(_ button: UIButton) {
         UPennActivityPresenter.Show(message: "Logging in.....")
@@ -133,7 +147,10 @@ extension UPennLoginTableViewController : UPennCenteredButtonDelegate {
     }
 }
 
+// MARK: - UPennLoginPresenterDelegate
+
 extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
+    
     public func registerForTouchIDAuthentication() {
         UPennActivityPresenter.Dismiss()
        self.present(self.touchIDAlertController, animated: true, completion: nil)
@@ -158,7 +175,7 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
     
     public func didReturnAutoFillCredentials(username: String, password: String) {
         self.username = username
-        self.loginTableView.reloadRows(at: self.viewModel.autofillUpdateSections(), with: .left)
+        self.loginTableView.reloadRows(at: self.viewModel.autofillUpdateSections(), with: .none)
     }
     
     public func didFailToLoginUser(errorStr: String) {
@@ -169,6 +186,8 @@ extension UPennLoginTableViewController : UPennLoginPresenterDelegate {
         self.resetView()
     }
 }
+
+// MARK: - Private
 
 private extension UPennLoginTableViewController {
     

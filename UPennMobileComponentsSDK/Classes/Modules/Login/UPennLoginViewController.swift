@@ -61,10 +61,13 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     }()
     
     fileprivate lazy var rememberMeAlertController : UIAlertController = {
-        let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.presenter.biometricOptOutMessage) {
+        let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.presenter.biometricOptOutMessage)
+        {
             self.presenter.toggleBiometrics(false)
             self.toggleRememberMe()
             self.updateView()
+        } cancelCallback: {
+            // Do nothing
         }
         return alertController
     }()
