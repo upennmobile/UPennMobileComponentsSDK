@@ -24,9 +24,10 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
         case RememberMe
         case Login
         case ForgotPassword
+        case Biometrics
         
         static var Count : Int {
-            return LoginSection.ForgotPassword.rawValue+1
+            return LoginSection.Biometrics.rawValue+1
         }
     }
     
@@ -98,6 +99,16 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
                 styles: styles,
                 delegate: self)
             return cell
+        case .Biometrics:
+            let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredIconButtonCell.Identifier) as! UPennCenteredIconButtonCell
+            cell.configure(image: controller.biometricsImage, delegate: self, styles: UPennButtonStyles(
+                    deselectedImage: controller.biometricsImage,
+                    isHidden: !controller.biometricsEnabled,
+                    height: 50,
+                    backgroundColor: .clear,
+                    contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                        imageTitlePadding: 0.0))
+            return cell
         }
     }
     
@@ -158,5 +169,12 @@ extension UPennLoginViewModel : UPennRightButtonDelegate {
     
     public func pressedRightButton(_ button: UIButton) {
         self.controller.forgotPassword()
+    }
+}
+
+extension UPennLoginViewModel : UPennCenteredIconButtonDelegate {
+    
+    public func pressedIconButton(_ button: UIButton) {
+        controller.attemptBiometricsAuthentication()
     }
 }

@@ -26,8 +26,16 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         return self.presenter.biometricsEnabled
     }
     
+    open var biometricsImage: UIImage {
+        return self.presenter.biometricsImage
+    }
+    
     open func toggleShouldAutoFill(_ autoFill: Bool) {
         self.presenter.toggleShouldAutoFill(autoFill)
+    }
+    
+    open func attemptBiometricsAuthentication() {
+        self.presenter.attemptBiometricsAuthentication()
     }
     
     fileprivate lazy var touchIDAlertController : UIAlertController = {
@@ -50,10 +58,10 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     fileprivate var rememberMeAlertController : UIAlertController {
         let alertController = UPennAlertsPresenter.RememberMeAlertController(biometricsOptOutMessage: self.presenter.biometricOptOutMessage)
         {
-            // Continue diabling
+            // Toggle off biometrics in cache
             self.presenter.toggleBiometrics(false)
         } cancelCallback: {
-            // Must reload 'Remember Me' to toggle back 'on', because they're already toggled 'off' in the button cell/view
+            // Must reload 'Remember Me' section to toggle button back 'on', because it's already toggled 'off' in the button View; cache needs no updating
             self.loginTableView.reloadRows(at: self.viewModel.rememberMeUpdateSections(), with: .none)
         }
         return alertController
@@ -70,7 +78,7 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.presenter.authenticationAutoFillCheck()
-        self.presenter.attemptBiometricsAuthentication()
+        self.attemptBiometricsAuthentication()
     }
     
     open func forgotPassword() {
@@ -93,10 +101,6 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
     }
     
     open func turnOnBiometricAuthSettings() {
-        /*
-         * 1. Toggle biometrics settings
-         * 2. Toggle 'Remember Me' On
-         */
         self.presenter.turnOnBiometricAuthSettings()
     }
     
@@ -142,7 +146,7 @@ extension UPennLoginTableViewController : UITextFieldDelegate {
 extension UPennLoginTableViewController : UPennCenteredButtonDelegate {
     public func pressedCenterButton(_ button: UIButton) {
         UPennActivityPresenter.Show(message: "Logging in.....")
-        // Login User either directly or via delegate
+        // Login User
         self.login()
     }
 }

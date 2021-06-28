@@ -125,6 +125,7 @@ open class UPennIconButton : UIButton {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
+        imageView?.contentMode = .scaleAspectFit
     }
 }
 

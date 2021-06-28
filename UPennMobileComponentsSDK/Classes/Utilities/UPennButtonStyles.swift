@@ -13,6 +13,7 @@ public struct UPennButtonStyles : UPennControlStyle {
     public var selectedImage: UIImage?
     public var deselectedImage: UIImage?
     public var isSelected: Bool
+    public var isHidden: Bool
     public var titleFont: UIFont
     public var titleColor: UIColor
     public var disabledTitleColor: UIColor
@@ -29,6 +30,7 @@ public struct UPennButtonStyles : UPennControlStyle {
         selectedImage: UIImage? = nil,
         deselectedImage: UIImage? = nil,
         isSelected: Bool=false,
+        isHidden: Bool=false,
         titleFont: UIFont = UIFont.helveticaBold(size: 15.0),
         titleColor: UIColor = .white,
         disabledTitleColor: UIColor = .darkGray,
@@ -44,6 +46,7 @@ public struct UPennButtonStyles : UPennControlStyle {
         self.selectedImage = selectedImage
         self.deselectedImage = deselectedImage
         self.isSelected = isSelected
+        self.isHidden = isHidden
         self.titleFont = titleFont
         self.titleColor = titleColor
         self.disabledTitleColor = disabledTitleColor

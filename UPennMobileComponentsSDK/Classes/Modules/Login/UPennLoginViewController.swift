@@ -17,6 +17,13 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
         return presenter.shouldAutoFill
     }
     
+    public var biometricsImage: UIImage {
+        return presenter.biometricsImage
+    }
+    
+    public func attemptBiometricsAuthentication() {
+        self.presenter.attemptBiometricsAuthentication()
+    }
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -27,7 +34,7 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     @IBOutlet weak var rememberMeLabel: ContactDepartmentLabel!
     @IBOutlet weak var forgotPasswordLabel: UIButton!
     @IBOutlet weak var upennBannerLogo: UIImageView!
-    @IBOutlet weak var biometricsButtonView : UPennIconButtonView!
+    @IBOutlet weak var biometricsButtonView : UPennCenteredIconButtonView!
     
     public var textFieldManager = UPennValidationService()
     fileprivate var keyboardService: UPennKeyboardService!
@@ -154,7 +161,7 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
         // TODO: Still Needed for UI?
         self.presenter.authenticationAutoFillCheck()
         verifyFields()
-        self.presenter.attemptBiometricsAuthentication()
+        self.attemptBiometricsAuthentication()
         self.autoFillButton.isSelected = self.presenter.shouldAutoFill
         self.updateView()
     }
@@ -165,7 +172,9 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     
     open func updateView() {
         // Setup Biometrics Button
-        self.biometricsButtonView.configure("1", image: presenter.biometricsImage, delegate: self, enabled: presenter.biometricsEnabled)
+        self.biometricsButtonView.configure(image: presenter.biometricsImage, delegate: self, styles: UPennButtonStyles(
+            isHidden: !presenter.biometricsEnabled,
+            height: 50))
     }
     
     open func login() {
@@ -217,11 +226,11 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
 
 // MARK: - UPennIconButtonViewDelegate
 
-extension UPennLoginViewController : UPennIconButtonDelegate {
+extension UPennLoginViewController : UPennCenteredIconButtonDelegate {
 
-    func pressedIconButton(identifier: String) {
+    open func pressedIconButton(_ button: UIButton) {
         // Trigger biometrics
-        self.presenter.attemptBiometricsAuthentication()
+        self.attemptBiometricsAuthentication()
     }
     
 }

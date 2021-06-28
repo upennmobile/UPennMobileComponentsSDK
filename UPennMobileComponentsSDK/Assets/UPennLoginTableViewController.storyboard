@@ -181,6 +181,32 @@
                                             <outlet property="buttonView" destination="5z8-yX-SKm" id="Qpa-yP-qQJ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennCenteredIconButtonCell" rowHeight="66" id="18k-FI-Rgf" customClass="UPennCenteredIconButtonCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="540" width="414" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="18k-FI-Rgf" id="67H-yu-atL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ik-UR-B43" customClass="UPennCenteredIconButtonView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                    <rect key="frame" x="174" y="0.0" width="66" height="66"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2Ik-UR-B43" secondAttribute="height" multiplier="1:1" id="Haj-9n-6XR"/>
+                                                        <constraint firstAttribute="height" constant="66" id="hUI-EL-HZd"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2Ik-UR-B43" firstAttribute="centerX" secondItem="67H-yu-atL" secondAttribute="centerX" id="fNQ-Q6-w4M"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Ik-UR-B43" secondAttribute="bottom" id="hPZ-Th-hBj"/>
+                                                <constraint firstItem="2Ik-UR-B43" firstAttribute="top" secondItem="67H-yu-atL" secondAttribute="top" id="kZi-V2-tfG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconButtonView" destination="2Ik-UR-B43" id="H2K-N4-gF9"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

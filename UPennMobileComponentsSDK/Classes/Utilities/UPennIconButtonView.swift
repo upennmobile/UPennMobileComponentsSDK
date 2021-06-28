@@ -8,35 +8,30 @@
 import Foundation
 import UIKit
 
-protocol UPennIconButtonDelegate {
-    func pressedIconButton(identifier: String)
+public protocol UPennCenteredIconButtonDelegate {
+    func pressedIconButton(_ button: UIButton)
 }
 
-class UPennIconButtonView : UPennNibView, UIGestureRecognizerDelegate {
+open class UPennCenteredIconButtonView : UPennNibView, UIGestureRecognizerDelegate, UPennCenteredIconButonConfigureInterface {
     
     @IBOutlet weak var iconButton: UPennIconButton!
     var identifier: String!
-    var delegate: UPennIconButtonDelegate?
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        self.setupGestureRecognizer()
-//    }
+    var delegate: UPennCenteredIconButtonDelegate?
     
     @IBAction func pressedContactButton(_ sender: UIButton) {
-        self.delegate?.pressedIconButton(identifier: self.identifier)
+        self.delegate?.pressedIconButton(sender)
     }
     
-    func configure(_ id: String, image: UIImage, delegate: UPennIconButtonDelegate, enabled: Bool=true) {
-        self.identifier = id
+    open func configure(image: UIImage, delegate: UPennCenteredIconButtonDelegate, styles: UPennButtonStyles) {
+        
         self.iconButton.setImage(image, for: .normal)
         self.delegate = delegate
-        self.enable(isEnabled: enabled)
+        self.iconButton.setStyles(styles)
     }
     
 }
 
-private extension UPennIconButtonView {
+private extension UPennCenteredIconButtonView {
     
     func enable(isEnabled: Bool) {
         self.iconButton.isHidden = isEnabled ? false : true

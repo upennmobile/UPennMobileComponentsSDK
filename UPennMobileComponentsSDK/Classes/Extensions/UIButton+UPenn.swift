@@ -42,6 +42,7 @@ extension UIButton : UPennStylesSettable {
         self.setImage(styles.deselectedImage, for: .normal)
         self.setImage(styles.selectedImage, for: .selected)
         self.isSelected = styles.isSelected
+        self.isHidden = styles.isHidden
         if let width = styles.width {
             self.frame.size.width = width
         }

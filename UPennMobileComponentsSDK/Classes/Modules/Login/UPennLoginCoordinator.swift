@@ -26,9 +26,11 @@ public protocol UPennLoginViewControllable : UPennLoginPresenterDelegate {
     var textFieldManager : UPennValidationService { get set }
     func forgotPassword()
     var biometricsEnabled : Bool { get }
+    var biometricsImage : UIImage { get }
     var shouldAutoFill : Bool { get }
     func toggleShouldAutoFill(_ autoFill: Bool)
     func presentRememberMeAlert()
+    func attemptBiometricsAuthentication()
 }
 /**
  Abstract:
