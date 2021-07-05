@@ -10,7 +10,7 @@ import UIKit
 
 public protocol UPennCenteredIconButonConfigureInterface {
     
-    func configure(image: UIImage, delegate: UPennCenteredIconButtonDelegate, styles: UPennButtonStyles)
+    func configure(image: UIImage, delegate: UPennCenteredIconButtonDelegate, styles: UPennButtonStyler)
     
 }
 
@@ -20,7 +20,7 @@ open class UPennCenteredIconButtonCell : UPennBasicCell, UPennCenteredIconButonC
     @IBOutlet weak var iconButtonView: UPennCenteredIconButtonView!
     
     
-    open func configure(image: UIImage, delegate: UPennCenteredIconButtonDelegate, styles: UPennButtonStyles) {
+    open func configure(image: UIImage, delegate: UPennCenteredIconButtonDelegate, styles: UPennButtonStyler) {
         self.iconButtonView.configure(image: image, delegate: delegate, styles: styles)
     }
     

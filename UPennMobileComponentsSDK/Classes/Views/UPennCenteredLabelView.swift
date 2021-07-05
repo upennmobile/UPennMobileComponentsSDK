@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public protocol UPennLabelViewConfigureInterface {
-    func configure(text: String, styles: UPennLabelStyles)
+    func configure(text: String, styles: UPennLabelStyler?)
 }
 
 open class UPennCenteredLabelView : UPennNibView, UPennLabelViewConfigureInterface {
@@ -18,9 +18,11 @@ open class UPennCenteredLabelView : UPennNibView, UPennLabelViewConfigureInterfa
     @IBOutlet open weak var textLabel: UPennLabel!
     
     
-    open func configure(text: String, styles: UPennLabelStyles) {
+    open func configure(text: String, styles: UPennLabelStyler?=nil) {
         self.textLabel.text = text
-        self.textLabel.setStyles(styles)
+        if let styles = styles {
+            self.textLabel.setStyles(styles)
+        }
     }
     
     

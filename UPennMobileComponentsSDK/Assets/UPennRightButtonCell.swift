@@ -17,7 +17,7 @@ open class UPennRightButtonCell : UPennBasicCell, UPennRightButtonViewConfigureI
     @IBOutlet weak var buttonView: UPennRightButtonView!
     
     
-    open func configure(title: String, styles: UPennButtonStyles?=nil, delegate: UPennRightButtonDelegate) {
+    open func configure(title: String, styles: UPennButtonStyler?=nil, delegate: UPennRightButtonDelegate) {
         self.buttonView.configure(title: title, styles: styles, delegate: delegate)
     }
 }

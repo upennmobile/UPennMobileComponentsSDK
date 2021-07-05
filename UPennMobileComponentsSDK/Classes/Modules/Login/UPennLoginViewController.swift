@@ -172,7 +172,7 @@ open class UPennLoginViewController: UPennStoryboardViewController, UPennLoginVi
     
     open func updateView() {
         // Setup Biometrics Button
-        self.biometricsButtonView.configure(image: presenter.biometricsImage, delegate: self, styles: UPennButtonStyles(
+        self.biometricsButtonView.configure(image: presenter.biometricsImage, delegate: self, styles: UPennButtonStyler(
             isHidden: !presenter.biometricsEnabled,
             height: 50))
     }

@@ -53,7 +53,9 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .AppTitle:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredLabelCell.Identifier) as! UPennCenteredLabelCell
-            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: BannerLabelStyles.Style as! UPennLabelStyles)
+            var styles = BannerLabel.GetStyle
+            styles = styles.modify(with: UPennLabelStyler(height: 20))
+            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: styles as? UPennLabelStyler)
             return cell
         case .Username:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell
@@ -67,15 +69,12 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .RememberMe:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennLeftImageButtonCell.Identifier) as! UPennLeftImageButtonCell
-            let edgeInsets = UIEdgeInsets(top: 7.5, left: -65, bottom: 17.5, right: 0)
+            let edgeInsets = UIEdgeInsets(top: 7.5, left: -62, bottom: 17.5, right: 0)
             let imageTitlePadding: CGFloat = -55.0
-            let styles = UPennButtonStyles(
+            let styles = UPennButtonStyler(
                 selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox, isSelected: controller.shouldAutoFill,
-                titleFont: UIFont.helvetica(size: 17.0),
-                titleColor: .upennDarkBlue,
                 width: 120,
                 height: 50,
-                backgroundColor: .clear,
                 contentPadding: edgeInsets,
                 imageTitlePadding: imageTitlePadding)
             cell.configure(title: "Remember Me", styles: styles, delegate: self)
@@ -86,14 +85,9 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .ForgotPassword:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennRightButtonCell.Identifier) as! UPennRightButtonCell
-            let edgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            let styles = UPennButtonStyles(
-                titleFont: UIFont.helvetica(size: 17.0),
-                titleColor: .upennDarkBlue,
+            let styles = UPennButtonStyler(
                 width: 120,
-                height: 50,
-                backgroundColor: .clear,
-                contentPadding: edgeInsets)
+                height: 50)
             cell.configure(
                 title: "Forgot Password",
                 styles: styles,
@@ -101,13 +95,9 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .Biometrics:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredIconButtonCell.Identifier) as! UPennCenteredIconButtonCell
-            cell.configure(image: controller.biometricsImage, delegate: self, styles: UPennButtonStyles(
+            cell.configure(image: controller.biometricsImage, delegate: self, styles: UPennButtonStyler(
                     deselectedImage: controller.biometricsImage,
-                    isHidden: !controller.biometricsEnabled,
-                    height: 50,
-                    backgroundColor: .clear,
-                    contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                        imageTitlePadding: 0.0))
+                    isHidden: !controller.biometricsEnabled))
             return cell
         }
     }

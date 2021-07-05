@@ -11,7 +11,7 @@ import UIKit
 
 public protocol UPennLeftImageButtonConfigureInterface {
     
-    func configure(title: String, styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate)
+    func configure(title: String, styles: UPennButtonStyler, delegate: UPennLeftImageButtonDelegate)
     
 }
 
@@ -27,9 +27,9 @@ open class UPennLeftImageButtonView : UPennNibView, UPennLeftImageButtonConfigur
     
     open weak var delegate: UPennLeftImageButtonDelegate?
     
-    public func configure(title: String, styles: UPennButtonStyles, delegate: UPennLeftImageButtonDelegate) {
+    public func configure(title: String, styles: UPennButtonStyler, delegate: UPennLeftImageButtonDelegate) {
         self.delegate = delegate
-        button.imageView?.contentMode = .scaleAspectFit
+//        button.imageView?.contentMode = .scaleAspectFit
         self.button.setTitle(title, for: .normal)
         self.button.setStyles(styles)
     }

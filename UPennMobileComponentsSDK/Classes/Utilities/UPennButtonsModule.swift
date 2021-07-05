@@ -8,11 +8,22 @@
 import Foundation
 import UIKit
 
-open class PrimaryCTAButton : UIButton {
+open class PrimaryCTAButton : UIButton, UPennControlStylable {
+    
+    public static var GetStyle: UPennControlStyle {
+        return Self().getStyle as! UPennButtonStyler
+    }
+    
+    open var getStyle: UPennControlStyle {
+        return UPennBasicButtonStyle()
+    }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-        self.setBaseStyles()
+//        self.setBaseStyles()
+        imageView?.contentMode = .scaleAspectFit
+        
+        self.setStyles(UPennBasicButtonStyle())
     }
     
     open override var isEnabled: Bool {
@@ -27,90 +38,134 @@ open class PrimaryCTAButton : UIButton {
 //        titleLabel?.font = UIFont.helveticaBold(size: 15.0)
         imageView?.contentMode = .scaleAspectFit
         
-        self.setStyles(UPennButtonStyles())
+        self.setStyles(UPennBasicButtonStyle())
     }
     
     open func setEnabledStyle() {
 //        setTitleColor(UIColor.white, for: .normal)
-        backgroundColor = UIColor.upennMediumBlue
+//        backgroundColor = UIColor.upennMediumBlue
+        backgroundColor = (self.getStyle as! UPennButtonStyler).backgroundColor
     }
     
     open func setDisabledStyle() {
 //        setTitleColor(UIColor.darkGray, for: .disabled)
-        backgroundColor = UIColor.lightGray
+        backgroundColor = (self.getStyle as! UPennButtonStyler).disabledBackgroundColor
     }
     
-    
+    open func setStyles(_ styles: UPennControlStyle) {
+        let styles = styles as! UPennButtonStyler
+        if let titleFont = styles.titleFont {
+            self.titleLabel?.font = titleFont
+        }
+        self.setImage(styles.deselectedImage, for: .normal)
+        self.setImage(styles.selectedImage, for: .selected)
+        self.isSelected = styles.isSelected ?? false
+        self.isHidden = styles.isHidden ?? false
+        if let width = styles.width {
+            self.frame.size.width = width
+        }
+        if let height = styles.height {
+            self.frame.size.height = height
+        }
+        if let backgroundColor = styles.backgroundColor {
+            self.backgroundColor = backgroundColor
+        }
+        if let titleColor = styles.titleColor {
+            self.setTitleColor(titleColor, for: .normal)
+        }
+        if let disabledTitleColor = styles.disabledTitleColor {
+            self.setTitleColor(disabledTitleColor, for: .disabled)
+        }
+        if let disabledBackgroundColor = styles.disabledBackgroundColor {
+            
+        }
+        if let contentPadding = styles.contentPadding {
+            self.setInsets(forContentPadding: contentPadding, imageTitlePadding: styles.imageTitlePadding ?? 0)
+        }
+    }
 }
 
 open class PrimaryCTAButtonText : PrimaryCTAButton {
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        setBaseStyles()
-    }
-    
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-//        titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        self.setStyles(UPennButtonStyles(
+    public override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(
             titleColor: .upennMediumBlue,
             backgroundColor: .clear,
-            contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)))
+            contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        )
     }
     
-    open override var isSelected: Bool {
-        didSet {
-//            isSelected ? setEnabledStyle() : setDisabledStyle()
-        }
-    }
-    
-    open override func setEnabledStyle() {
-        super.setEnabledStyle()
-        backgroundColor = UIColor.clear
-        setTitleColor(UIColor.upennMediumBlue, for: .normal)
-    }
-    
-    open override func setDisabledStyle() {
-        super.setDisabledStyle()
-        backgroundColor = UIColor.clear
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+//        setBaseStyles()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class PrimaryCTAButtonTextDarkBlue : PrimaryCTAButtonText {
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        setStyles(UPennButtonStyles(
-            titleFont: UIFont.helvetica(size: 15.0),
-            titleColor: .upennDarkBlue))
+    
+    public override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButtonText.self, styles: UPennButtonStyler(
+            titleFont: UIFont.helvetica(size: 17.0),
+            titleColor: .upennDarkBlue)
+        )
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+//        setBaseStyles()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class PrimaryCTAButtonTextWhite : PrimaryCTAButtonText {
-    open override func setEnabledStyle() {
-        super.setEnabledStyle()
-        setTitleColor(UIColor.white, for: .normal)
+    
+    public override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButtonText.self, styles: UPennButtonStyler(titleColor: .white))
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class PrimaryCTAButtonTextRed : PrimaryCTAButtonText {
-    open override func setEnabledStyle() {
-        super.setEnabledStyle()
-        setTitleColor(UIColor.upennWarningRed, for: .normal)
+    
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButtonText.self, styles: UPennButtonStyler(titleColor: .upennWarningRed))
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+//        self.setBaseStyles()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class PrimaryCTAButtonGreen : PrimaryCTAButton {
-    open override func setEnabledStyle() {
-        super.setEnabledStyle()
-        backgroundColor = UIColor.upennCTAGreen
+    
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(backgroundColor: .upennCTAGreen))
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+//        self.setBaseStyles()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class PrimaryCTAButtonRed : PrimaryCTAButton {
-    open override func setEnabledStyle() {
-        super.setEnabledStyle()
-        backgroundColor = UIColor.upennWarningRed
+    
+    open override var getStyle: UPennControlStyle {
+        return UPennButtonStyler(backgroundColor: .upennWarningRed)
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+//        isRounded()
+        self.setStyles(Self.GetStyle)
     }
 }
 
@@ -121,11 +176,19 @@ open class RoundedPrimaryCTAButtonRed : PrimaryCTAButtonRed {
     }
 }
 
-open class UPennIconButton : UIButton {
+open class UPennIconButton : PrimaryCTAButton {
+    
+    public override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(
+            backgroundColor: .clear,
+            contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
+                imageTitlePadding: 0.0))
+    }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-        imageView?.contentMode = .scaleAspectFit
+//        setBaseStyles()
+        self.setStyles(Self.GetStyle)
     }
 }
 

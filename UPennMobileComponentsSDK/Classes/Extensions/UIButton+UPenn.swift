@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-extension UIButton : UPennStylesSettable {
-    
+extension UIButton {
+
     public func isRounded() {
         layer.isRounded()
     }
@@ -34,24 +34,5 @@ extension UIButton : UPennStylesSettable {
             bottom: 0,
             right: -imageTitlePadding
         )
-    }
-    
-    public func setStyles(_ styles: UPennControlStyle) {
-        let styles = styles as! UPennButtonStyles
-        self.titleLabel?.font = styles.titleFont
-        self.setImage(styles.deselectedImage, for: .normal)
-        self.setImage(styles.selectedImage, for: .selected)
-        self.isSelected = styles.isSelected
-        self.isHidden = styles.isHidden
-        if let width = styles.width {
-            self.frame.size.width = width
-        }
-        if let height = styles.height {
-            self.frame.size.height = height
-        }
-        self.backgroundColor = styles.backgroundColor
-        self.setTitleColor(styles.titleColor, for: .normal)
-        self.setTitleColor(styles.disabledTitleColor, for: .disabled)
-        self.setInsets(forContentPadding: styles.contentPadding, imageTitlePadding: styles.imageTitlePadding)
     }
 }

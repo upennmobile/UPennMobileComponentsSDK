@@ -66,7 +66,19 @@ public extension UILabel {
 }
 
 
-open class UPennLabel : UILabel, UPennStylesSettable {
+open class UPennLabel : UILabel, UPennControlStylable {
+    
+    
+    public static var GetStyle : UPennControlStyle {
+        return Self().getStyle as! UPennLabelStyler
+    }
+    
+    open var getStyle: UPennControlStyle {
+        return UPennLabelStyler(
+            height: 17.0,
+            color: .upennBlack,
+            alignment: .left)
+    }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,30 +86,45 @@ open class UPennLabel : UILabel, UPennStylesSettable {
     }
     
     open func setBaseStyles() {
-        self.setStyles(BaseLabelStyles.Style)
+
+        self.setStyles(UPennLabelStyler(
+            height: 17.0,
+            color: .upennBlack,
+            alignment: .left))
     }
     
     open func setStyles(_ styles: UPennControlStyle) {
-        let style = styles as! UPennLabelStyles
-        self.setFontHeight(size: style.height)
-        self.textColor = style.color
-        self.textAlignment = style.alignment
+        let styles = styles as! UPennLabelStyler
+        if let height = styles.height {
+            self.setFontHeight(size: height)
+        }
+        if let color = styles.color {
+            self.textColor = color
+        }
+        if let alignment = styles.alignment {
+            self.textAlignment = alignment
+        }
+        if let lineBreakMode = styles.lineBreakMode {
+            self.lineBreakMode = lineBreakMode
+        }
+        
+        if let numberOfLines = styles.numberOfLines {
+            self.numberOfLines = numberOfLines
+        }
     }
 }
 
 open class MultilineLabel : UPennLabel {
     open override func setBaseStyles() {
         super.setBaseStyles()
-        lineBreakMode = .byWordWrapping
-        numberOfLines = 0
+        self.setStyles(UPennLabelStyler(lineBreakMode: .byWordWrapping, numberOfLines: 0))
     }
 }
 
 open class ContactNameLabel : UPennLabel {
     open override func setBaseStyles() {
         super.setBaseStyles()
-        self.textColor = UIColor.upennDeepBlue
-        self.setFontHeight(size: 20.0)
+        self.setStyles(UPennLabelStyler(height: 20.0, color: .upennDeepBlue))
     }
 }
 
@@ -140,15 +167,31 @@ open class NoDataInstructionsLabel : UPennLabel {
 
 open class BannerLabel : UPennLabel {
     
+    public override var getStyle: UPennControlStyle {
+        
+        return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(height: 25.0, color: .upennDarkBlue, alignment: .center))
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setBaseStyles()
+    }
+    
     open override func setBaseStyles() {
-        self.setStyles(UPennLabelStyles(height: 25.0, color: .upennDarkBlue, alignment: .center))
+        super.setBaseStyles()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class RedBannerLabel : BannerLabel {
+    
+    public override var getStyle : UPennControlStyle {
+        return self.getStyles(type: BannerLabel.self, styles: UPennLabelStyler(color: .upennWarningRed))
+    }
+    
     open override func setBaseStyles() {
         super.setBaseStyles()
-        self.textColor = UIColor.upennWarningRed
+        self.setStyles(Self.GetStyle)
     }
 }
 

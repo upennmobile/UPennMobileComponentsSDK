@@ -11,7 +11,7 @@ import UIKit
 
 public protocol UPennRightButtonViewConfigureInterface {
     
-    func configure(title: String, styles: UPennButtonStyles?, delegate: UPennRightButtonDelegate)
+    func configure(title: String, styles: UPennButtonStyler?, delegate: UPennRightButtonDelegate)
 }
 
 open class UPennRightButtonView : UPennNibView, UPennRightButtonViewConfigureInterface {
@@ -20,7 +20,7 @@ open class UPennRightButtonView : UPennNibView, UPennRightButtonViewConfigureInt
     
     open weak var delegate: UPennRightButtonDelegate?
     
-    open func configure(title: String, styles: UPennButtonStyles?=nil, delegate: UPennRightButtonDelegate) {
+    open func configure(title: String, styles: UPennButtonStyler?=nil, delegate: UPennRightButtonDelegate) {
         self.delegate = delegate
         self.button.setTitle(title, for: .normal)
         if let styles = styles {

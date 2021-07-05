@@ -44,7 +44,7 @@ class TestUPennLoginViewModel : UPennLoginViewModel {
             return cell
         case .AppTitle:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredLabelCell.Identifier) as! UPennCenteredLabelCell
-            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: BannerLabelStyles.Style as! UPennLabelStyles)
+            cell.configure(text: UPennApplicationSettings.AppDisplayName.localize, styles: BannerLabel.GetStyle as? UPennLabelStyler)
             return cell
         case .Username:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredUsernameTextFieldCell.Identifier) as! UPennCenteredUsernameTextFieldCell

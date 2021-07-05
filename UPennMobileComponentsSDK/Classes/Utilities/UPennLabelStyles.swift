@@ -8,14 +8,46 @@
 import Foundation
 import UIKit
 
-public struct UPennLabelStyles : UPennControlStyle {
+public class UPennLabelStyler : UPennControlStyle {
     
-    public var height: CGFloat; var color: UIColor; var alignment: NSTextAlignment
+    public var height: CGFloat?
+    public var color: UIColor?
+    public var alignment: NSTextAlignment?
+    public var lineBreakMode: NSLineBreakMode?
+    public var numberOfLines: Int?
     
-    public init(height: CGFloat = 17, color: UIColor = .upennBlack, alignment: NSTextAlignment = .left) {
+    public init(
+        height: CGFloat? = nil,
+        color: UIColor? = nil,
+        alignment: NSTextAlignment? = nil,
+        lineBreakMode: NSLineBreakMode?=nil,
+        numberOfLines: Int?=nil) {
         self.height = height
         self.color = color
         self.alignment = alignment
+        self.lineBreakMode = lineBreakMode
+        self.numberOfLines = numberOfLines
+    }
+    
+    public func modify(with styles: UPennControlStyle) -> UPennControlStyle {
+        let styles = styles as! UPennLabelStyler
+        if let height = styles.height {
+            self.height = height
+        }
+        if let color = styles.color {
+            self.color = color
+        }
+        if let alignment = styles.alignment {
+            self.alignment = alignment
+        }
+        if let lineBreakMode = styles.lineBreakMode {
+            self.lineBreakMode = lineBreakMode
+        }
+        
+        if let numberOfLines = styles.numberOfLines {
+            self.numberOfLines = numberOfLines
+        }
+        return self
     }
     
 }
@@ -26,13 +58,13 @@ public protocol UPennStylable {
 
 public enum BaseLabelStyles : UPennStylable {
     public static var Style : UPennControlStyle {
-        return UPennLabelStyles()
+        return UPennLabelStyler()
     }
 }
 
 public enum BannerLabelStyles : UPennStylable {
     
     public static var Style : UPennControlStyle {
-        return UPennLabelStyles(height: 25.0, color: .upennDarkBlue, alignment: .center)
+        return UPennLabelStyler(height: 25.0, color: .upennDarkBlue, alignment: .center)
     }
 }

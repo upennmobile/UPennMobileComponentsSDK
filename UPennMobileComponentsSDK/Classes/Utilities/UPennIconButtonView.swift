@@ -22,26 +22,11 @@ open class UPennCenteredIconButtonView : UPennNibView, UIGestureRecognizerDelega
         self.delegate?.pressedIconButton(sender)
     }
     
-    open func configure(image: UIImage, delegate: UPennCenteredIconButtonDelegate, styles: UPennButtonStyles) {
+    open func configure(image: UIImage, delegate: UPennCenteredIconButtonDelegate, styles: UPennButtonStyler) {
         
         self.iconButton.setImage(image, for: .normal)
         self.delegate = delegate
         self.iconButton.setStyles(styles)
     }
     
-}
-
-private extension UPennCenteredIconButtonView {
-    
-    func enable(isEnabled: Bool) {
-        self.iconButton.isHidden = isEnabled ? false : true
-    }
-    
-//    func setupGestureRecognizer() {
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(self.pressedContactButton(_:)))
-//        tap.delegate = self
-//        tap.numberOfTapsRequired = 1
-//        iconLabel.isUserInteractionEnabled = true
-//        iconLabel.addGestureRecognizer(tap)
-//    }
 }

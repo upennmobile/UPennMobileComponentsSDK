@@ -13,7 +13,7 @@ open class UPennCenteredLabelCell : UPennBasicCell, UPennLabelViewConfigureInter
     
     @IBOutlet open weak var labelView: UPennCenteredLabelView!
     
-    public func configure(text: String, styles: UPennLabelStyles) {
+    public func configure(text: String, styles: UPennLabelStyler?=nil) {
         self.labelView.configure(text: text, styles: styles)
     }
 }
