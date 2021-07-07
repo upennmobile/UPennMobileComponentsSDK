@@ -27,7 +27,7 @@ class UPennBiometricsEnableCell : UPennBasicCell {
     }
     
     func configure(with delegate:
-        UPennBiometricsToggleDelegate, biometricsService: UPennBiometricsAuthService ) {
+        UPennBiometricsToggleDelegate, biometricsService: UPennBiometricsAuthenticationInterface ) {
         self.biometricsToggleLabel.text  = biometricsService.toggleTitleText
         self.biometricsDelegate          = delegate
         self.biometricsSwitch.isEnabled  = biometricsService.biometricsAvailable

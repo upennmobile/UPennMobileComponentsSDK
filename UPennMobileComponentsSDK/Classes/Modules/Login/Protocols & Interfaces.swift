@@ -56,8 +56,10 @@ public protocol UPennLoginBiometricsInterface {
     var touchIDConfirmed : String { get }
     var touchIDDeclined : String { get }
     var biometricOptOutMessage : String { get }
+    var toggleTitleText : String { get }
     var biometricsImage : UIImage { get }
     var biometricsEnabled : Bool { get }
+    var biometricsAvailable : Bool { get }
     func completeTouchIDRegistration()
     func turnOnBiometricAuthSettings()
     func toggleBiometrics(_ toggledOn: Bool)

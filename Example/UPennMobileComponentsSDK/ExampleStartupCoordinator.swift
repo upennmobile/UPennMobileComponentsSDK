@@ -71,8 +71,12 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         // Make TabBarPayloads & MainTabCoordinator
         let vc1 = UPennSettingsViewController.Instantiate(.SDK)
 //        let vc2 = UPennSettingsViewController.Instantiate(.SDK)
-        // MainTab Child Coord's
         let settingsVC = UPennSettingsViewController.Instantiate(.SDK)
+        // Make SettingsVM
+        let settingsViewModel = UPennSettingsViewModel(controller: settingsVC)
+        settingsVC.viewModel = settingsViewModel
+        vc1.viewModel = settingsViewModel
+        // MainTab Child Coord's
         let settingsCoord = UPennSettingsCoordinator(
             navController: self.navigationController,
             settingsViewController: settingsVC)

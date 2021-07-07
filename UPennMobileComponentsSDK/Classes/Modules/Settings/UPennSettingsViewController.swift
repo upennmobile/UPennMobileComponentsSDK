@@ -10,20 +10,20 @@ import UIKit
 
 public class UPennSettingsViewController : UPennStoryboardViewController {
     
-    private enum Sections : Int {
+    private enum Sections : Int,UPennCountable {
         case Settings
         
-        static var count : Int {
+        static var Count : Int {
             return Settings.rawValue+1
         }
         
-        enum Rows : Int {
+        enum Rows : Int, UPennCountable {
             case Timeout
             case Biometrics
             case Withdraw
             case Logout
             
-            static var count : Int {
+            static var Count : Int {
                 return Logout.rawValue+1
             }
         }
@@ -43,6 +43,8 @@ public class UPennSettingsViewController : UPennStoryboardViewController {
     public var settingsCoordinator : UPennLogoutBiometricsDelegate?
     
     var biometricsService = UPennBiometricsAuthService()
+    
+    open var viewModel: UPennSettingsViewModelled!
     
     @IBOutlet weak var settingsTableView : UITableView!
     
@@ -75,42 +77,16 @@ public class UPennSettingsViewController : UPennStoryboardViewController {
 extension UPennSettingsViewController : UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let _section = Sections(rawValue: section) else { return 0 }
-        
-        switch _section {
-        case .Settings:
-            return Sections.Rows.count
-        }
+        return self.viewModel.rowsInSection(section)
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return Sections.count
+        return self.viewModel.numberOfSections(tableView)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let section = Sections(rawValue: indexPath.section), let row = Sections.Rows(rawValue: indexPath.row) else { return UITableViewCell() }
-        
-        switch section {
-        case .Settings:
-            switch row {
-            case .Timeout:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Timeout.rawValue) as! UPennAutoLogoutCell
-                return cell
-            case .Biometrics:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Biometrics.rawValue) as! UPennBiometricsEnableCell
-                cell.configure(with: self, biometricsService: self.biometricsService)
-                return cell
-            case .Withdraw:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Withdraw.rawValue) as! UPennWithdrawCell
-                cell.configure()
-                return cell
-            case .Logout:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Logout.rawValue) as! UPennLogoutCell
-                cell.configure()
-                return cell
-            }
-        }
+        return self.viewModel.getCellAtIndexPath(indexPath, for: tableView)
     }
     
 }
@@ -118,57 +94,48 @@ extension UPennSettingsViewController : UITableViewDataSource {
 extension UPennSettingsViewController : UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let section = Sections(rawValue: indexPath.section), let row = Sections.Rows(rawValue: indexPath.row) else { return }
-        // Logout User if Logout Cell pressed
-        switch section {
-        case .Settings:
-            switch row {
-            case .Logout: self.settingsCoordinator?.logout()
-            case .Withdraw: self.present(self.withdrawAlert, animated: true, completion: nil)
-            default: return
-            }
-        }
+        return self.viewModel.tableView(tableView, selectedIndexPath: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return SectionTitles.Settings.rawValue
+        return self.viewModel.titleForHeaderInSection(section)
     }
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return self.viewModel.heightForHeaderInSection(section)
     }
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 40
+        return self.viewModel.heightForFooterInSection(section)
     }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        // Create View
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: UPennScreenGlobals.Width, height: 30))
-        view.backgroundColor = UIColor.upennRlyLightGray
-        // Create Label
-        let versionStr = UPennApplicationSettings.CurrentAppVersion
-        
-        let titleLabel = UPennLabel(frame: CGRect(x: UPennScreenGlobals.Padding, y: 20, width: UPennScreenGlobals.Width - (UPennScreenGlobals.Padding*2), height: 20))
-        titleLabel.textColor = UIColor.upennBlack
-        titleLabel.textAlignment = .right
-        titleLabel.setFontHeight(size: 10)
-        let appname = UPennApplicationSettings.AppDisplayName
-        let versionText = "\(appname) Version \(versionStr)"
-        titleLabel.text = versionText.localize
-        view.addSubview(titleLabel)
-        return view
+        return self.viewModel.viewForFooterInSection(section, for: tableView)
     }
 }
 
 extension UPennSettingsViewController : UPennBiometricsToggleDelegate {
     func toggledBiometrics(_ enabled: Bool) {
-        self.biometricsService.toggleBiometrics(enabled)
-        // If biometrics is enabled, toggle 'Remember Me' on in LoginVC
-        if enabled {
-            self.settingsCoordinator?.toggleShouldAutoFill(enabled)
-        }
+        self.settingsCoordinator?.toggleShouldAutoFill(enabled)
     }
+}
+
+extension UPennSettingsViewController : UPennSettingsInterface {
+    public func presentWithDraw() {
+        self.present(self.withdrawAlert, animated: true, completion: nil)
+    }
+    
+    public func logout() {
+        self.settingsCoordinator?.logout()
+    }
+    
+    public func toggleShouldAutoFill(_ enabled: Bool) {
+        self.settingsCoordinator?.toggleShouldAutoFill(enabled)
+    }
+    
+    
+    
+    
 }
 
 extension UPennSettingsViewController {

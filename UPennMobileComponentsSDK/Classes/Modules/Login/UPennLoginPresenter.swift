@@ -91,6 +91,14 @@ open class UPennLoginPresenter : UPennLoginPresentable {
 
     // MARK: Biometrics Service
     
+    open var toggleTitleText: String {
+        return self.biometricsService.toggleTitleText
+    }
+    
+    open var biometricsAvailable: Bool {
+        return self.biometricsService.biometricsAvailable
+    }
+    
     open var touchIDOptInTitle: String {
         return self.biometricsService.touchIDOptInTitle
     }
