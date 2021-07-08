@@ -69,7 +69,7 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .RememberMe:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennLeftImageButtonCell.Identifier) as! UPennLeftImageButtonCell
-            let edgeInsets = UIEdgeInsets(top: 7.5, left: -62, bottom: 17.5, right: 0)
+            let edgeInsets = UIEdgeInsets(top: 5, left: -62, bottom: 5, right: 0)
             let imageTitlePadding: CGFloat = -55.0
             let styles = UPennButtonStyler(
                 selectedImage: UPennImageAssets.CheckedCheckBox, deselectedImage: UPennImageAssets.UnCheckedCheckBox, isSelected: controller.shouldAutoFill,

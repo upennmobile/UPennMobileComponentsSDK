@@ -15,11 +15,11 @@ open class UPennButtonStyler : UPennControlStyle {
         if let titleFont = styles.titleFont {
             self.titleFont = titleFont
         }
-        if let deselectedImage = styles.deselectedImage {
-            self.deselectedImage = deselectedImage
-        }
         if let selectedImage = styles.selectedImage {
             self.selectedImage = selectedImage
+        }
+        if let deselectedImage = styles.deselectedImage {
+            self.deselectedImage = deselectedImage
         }
         self.isSelected = styles.isSelected ?? false
         self.isHidden = styles.isHidden ?? false
@@ -85,7 +85,11 @@ open class UPennButtonStyler : UPennControlStyle {
         imageTitlePadding: CGFloat? = nil
     ) {
         self.selectedImage = selectedImage
-        self.deselectedImage = deselectedImage
+        if let deselected = deselectedImage {
+            self.deselectedImage = deselected
+        } else {
+            self.deselectedImage = selectedImage
+        }
         self.isSelected = isSelected
         self.isHidden = isHidden
         self.titleFont = titleFont

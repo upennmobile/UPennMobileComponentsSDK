@@ -11,6 +11,7 @@ import UIKit
 public protocol UPennTableViewSectionsHeaderAndFooterDelegate {
     func numberOfSections(_ tableView: UITableView) -> Int
     func titleForHeaderInSection(_ section: Int) -> String
+    func heightForIndexPath(_ indexPath: IndexPath, for tableView: UITableView) -> CGFloat
     func heightForHeaderInSection(_ section: Int) -> CGFloat
     func heightForFooterInSection(_ section: Int) -> CGFloat
     func viewForFooterInSection(_ section: Int, for tableView: UITableView) -> UIView

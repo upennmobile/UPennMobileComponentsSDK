@@ -52,7 +52,7 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
         }
     }
     
-    public func rowsInSection(_ section: Int) -> Int {
+    open func rowsInSection(_ section: Int) -> Int {
         guard let _section = Sections(rawValue: section) else { return 0 }
         
         switch _section {
@@ -61,11 +61,11 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
         }
     }
     
-    public func numberOfSections(_ tableView:UITableView) -> Int {
+    open func numberOfSections(_ tableView:UITableView) -> Int {
         return Sections.Count
     }
     
-    public func getCellAtIndexPath(_ indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell {
+    open func getCellAtIndexPath(_ indexPath: IndexPath, for tableView: UITableView) -> UITableViewCell {
         guard let section = Sections(rawValue: indexPath.section), let row = Sections.Rows(rawValue: indexPath.row) else { return UITableViewCell() }
         
         switch section {
@@ -79,12 +79,36 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
                 cell.configure(with: self, biometricsService: self.biometricsService)
                 return cell
             case .Withdraw:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Withdraw.rawValue) as! UPennWithdrawCell
-                cell.configure()
+//                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Withdraw.rawValue) as! UPennWithdrawCell
+//                cell.configure()
+//                return cell
+                let cell = tableView.dequeueReusableCell(withIdentifier: UPennWithdrawCell.Identifier) as! UPennWithdrawCell
+//                let edgeInsets = UIEdgeInsets(top: 7.5, left: -62, bottom: 17.5, right: 0)
+//                let imageTitlePadding: CGFloat = -55.0
+                let edgeInsets = UIEdgeInsets(top: 0.0, left: 0, bottom: 0.0, right: 0)
+                let imageTitlePadding: CGFloat = 20.0
+                let styles = UPennButtonStyler(
+                    selectedImage: UIImage(systemName: "minus.rectangle")/*UPennImageAssets.CheckedCheckBox*/,
+                    isSelected: true,
+                    width: 100,
+                    height: 50,
+                    contentPadding: edgeInsets,
+                    imageTitlePadding: imageTitlePadding)
+                cell.configure(title: "Withdraw", styles: styles, delegate: self)
                 return cell
             case .Logout:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Logout.rawValue) as! UPennLogoutCell
-                cell.configure()
+                let cell = tableView.dequeueReusableCell(withIdentifier: UPennLogoutCell.Identifier) as! UPennLogoutCell
+                let edgeInsets = UIEdgeInsets(top: 0, left: -25, bottom: 0, right: 0)
+                let imageTitlePadding: CGFloat = 0.0
+                let styles = UPennButtonStyler(
+                    selectedImage: UPennImageAssets.LogoutIcon,
+                    /*isSelected: true,*/
+                    titleColor: .upennWarningRed,
+                    width: 100,
+                    height: 50,
+                    contentPadding: edgeInsets,
+                    imageTitlePadding: imageTitlePadding)
+                cell.configure(title: "Logout", styles: styles, delegate: self)
                 return cell
             }
         }
@@ -108,6 +132,19 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
     
     open func titleForHeaderInSection(_ section: Int) -> String {
         return SectionTitles.Settings.rawValue
+    }
+    
+    open func heightForIndexPath(_ indexPath: IndexPath, for tableView: UITableView) -> CGFloat {
+        
+        guard let section = Sections(rawValue: indexPath.section), let row = Sections.Rows(rawValue: indexPath.row) else { return 50 }
+        
+        switch section {
+        case .Settings:
+            switch row {
+            case .Timeout: return 85
+            default: return 50
+            }
+        }
     }
     
     open func heightForHeaderInSection(_ section: Int) -> CGFloat {
@@ -145,5 +182,15 @@ extension UPennSettingsViewModel : UPennBiometricsToggleDelegate {
         if enabled {
             self.controller.toggleShouldAutoFill(enabled)
         }
+    }
+}
+
+extension UPennSettingsViewModel : UPennLeftImageButtonDelegate {
+    public func pressedLeftImageButton(_ button: UIButton) {
+//        if !button.isSelected && controller.biometricsEnabled {
+//            self.controller.presentRememberMeAlert()
+//            return
+//        }
+//        self.toggleRememberMe(button)
     }
 }

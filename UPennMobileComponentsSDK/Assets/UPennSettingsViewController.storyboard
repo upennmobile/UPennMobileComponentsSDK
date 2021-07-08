@@ -103,21 +103,21 @@
                                             <outlet property="biometricsToggleLabel" destination="iV0-BI-GE3" id="Thc-7f-Jmk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WithdrawCell" id="6Pb-o1-l9P" customClass="UPennWithdrawCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="151" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WithdrawCell" rowHeight="71" id="6Pb-o1-l9P" customClass="UPennWithdrawCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="151" width="414" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Pb-o1-l9P" id="Gmx-CC-gZw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Withdraw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCz-FX-dmK" customClass="UPennLabel" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                                    <rect key="frame" x="65" y="11.5" width="73" height="21"/>
+                                                    <rect key="frame" x="65" y="25" width="73" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minus.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kc3-ci-NEJ">
-                                                    <rect key="frame" x="18" y="7.5" width="31" height="28.5"/>
+                                                    <rect key="frame" x="18" y="21" width="31" height="28.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="31" id="Zym-uX-GAx"/>
                                                         <constraint firstAttribute="width" secondItem="kc3-ci-NEJ" secondAttribute="height" multiplier="1:1" id="nLi-LA-1h9"/>
@@ -137,8 +137,31 @@
                                             <outlet property="withdrawLabel" destination="yCz-FX-dmK" id="yDf-Pi-mEy"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennWithdrawCell" rowHeight="71" id="HWj-Ns-Fkk" customClass="UPennWithdrawCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="222" width="414" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HWj-Ns-Fkk" id="vfh-sY-Jph">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IR7-Db-9f6" customClass="UPennLeftImageButtonView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IR7-Db-9f6" firstAttribute="leading" secondItem="vfh-sY-Jph" secondAttribute="leading" id="4lt-YZ-R2t"/>
+                                                <constraint firstItem="IR7-Db-9f6" firstAttribute="top" secondItem="vfh-sY-Jph" secondAttribute="top" id="NG3-9l-3vE"/>
+                                                <constraint firstAttribute="trailing" secondItem="IR7-Db-9f6" secondAttribute="trailing" id="gjJ-la-1yy"/>
+                                                <constraint firstAttribute="bottom" secondItem="IR7-Db-9f6" secondAttribute="bottom" id="usH-r0-D77"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttonView" destination="IR7-Db-9f6" id="qkl-z4-Uj8"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogoutCell" id="kOS-ES-IEC" customClass="UPennLogoutCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="194.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="293" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kOS-ES-IEC" id="qCE-6u-Puo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -167,6 +190,29 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="logoutLabel" destination="Gdk-jP-zDl" id="cUF-Tx-LUs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennLogoutCell" rowHeight="56" id="vHf-XV-sEi" customClass="UPennLogoutCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="336.5" width="414" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vHf-XV-sEi" id="8lT-FH-bP2">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ah9-wY-5Kh" customClass="UPennLeftImageButtonView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ah9-wY-5Kh" secondAttribute="bottom" id="A0w-Xp-hFI"/>
+                                            <constraint firstItem="ah9-wY-5Kh" firstAttribute="leading" secondItem="vHf-XV-sEi" secondAttribute="leading" id="BB3-Oj-60V"/>
+                                            <constraint firstItem="ah9-wY-5Kh" firstAttribute="top" secondItem="vHf-XV-sEi" secondAttribute="top" id="DDq-3A-nbS"/>
+                                            <constraint firstAttribute="trailing" secondItem="ah9-wY-5Kh" secondAttribute="trailing" id="V9a-vC-CbH"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="buttonView" destination="ah9-wY-5Kh" id="418-o0-hZZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

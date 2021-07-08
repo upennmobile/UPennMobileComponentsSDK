@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-Da-BgS" customClass="PrimaryCTAButtonTextDarkBlue" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                    <rect key="frame" x="20" y="52" width="90.5" height="105"/>
+                    <rect key="frame" x="20" y="52" width="90.5" height="89"/>
                     <state key="normal" title="Button" image="checked.png">
                         <color key="titleColor" red="0.34509803919999998" green="0.57647058819999997" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -34,7 +34,7 @@
             <constraints>
                 <constraint firstItem="1Ub-Da-BgS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="FpY-NP-TgX"/>
                 <constraint firstItem="1Ub-Da-BgS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="QOb-X9-vc4"/>
-                <constraint firstItem="1Ub-Da-BgS" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="8" id="vwP-da-0jC"/>
+                <constraint firstItem="1Ub-Da-BgS" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="-8" id="vwP-da-0jC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="81" y="-168"/>

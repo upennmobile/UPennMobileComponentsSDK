@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-class UPennLogoutCell : UPennBasicCell {
+class UPennLogoutCell : UPennBasicCell, UPennLeftImageButtonConfigureInterface {
     
-    @IBOutlet weak var logoutLabel: UPennLabel!
+    @IBOutlet weak var buttonView: UPennLeftImageButtonView!
     
-    func configure() {
-        self.logoutLabel.textColor = UIColor.upennWarningRed
+    func configure(title: String, styles: UPennButtonStyler, delegate: UPennLeftImageButtonDelegate) {
+        self.buttonView.configure(title: title, styles: styles, delegate: delegate)
     }
+    
 }
