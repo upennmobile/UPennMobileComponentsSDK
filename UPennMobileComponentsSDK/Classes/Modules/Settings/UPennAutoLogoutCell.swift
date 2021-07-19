@@ -16,14 +16,6 @@ class UPennAutoLogoutCell : UPennBasicCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.timeoutControl.tintColor = UIColor.upennMediumBlue
-        
-        // Set font attributes to avoid segment label truncation
-        let font = UIFont.helvetica(size: 15.0)
-        let attributes : [AnyHashable : Any] = [NSAttributedString.Key.font:font]
-        self.timeoutControl.setTitleTextAttributes(attributes as? [NSAttributedString.Key : Any], for: .normal)
-        self.timeoutControl.setTitleTextAttributes(attributes as? [NSAttributedString.Key : Any], for: .selected)
-        
         self.timeoutControl.selectedSegmentIndex = UPennTimerUIApplication.TimeoutIndex
     }
     

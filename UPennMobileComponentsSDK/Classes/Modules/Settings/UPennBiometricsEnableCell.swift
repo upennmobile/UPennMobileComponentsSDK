@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 
-class UPennBiometricsEnableCell : UPennBasicCell {
+class UPennBiometricsEnableCell : UPennBasicCell, UPennImageLabelSwitchConfigureInterface {
     
     @IBOutlet weak var biometricsImage: UIImageView!
     @IBOutlet weak var biometricsToggleLabel: UPennLabel!
     @IBOutlet weak var biometricsSwitch: UISwitch!
+    
+    
+    @IBOutlet weak var imageLabelSwitchView: UPennImageLabelSwitchView!
+    
     
     var biometricsDelegate: UPennBiometricsToggleDelegate?
     
@@ -21,18 +25,17 @@ class UPennBiometricsEnableCell : UPennBasicCell {
         self.biometricsDelegate?.toggledBiometrics(self.biometricsSwitch.isOn)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.biometricsSwitch.onTintColor = UIColor.upennMediumBlue
+    func configure(_ decorator: UPennImageLabelSwitchControlDecorated) {
+        self.imageLabelSwitchView.configure(decorator)
     }
     
-    func configure(with delegate:
-        UPennBiometricsToggleDelegate, biometricsService: UPennBiometricsAuthenticationInterface ) {
-        self.biometricsToggleLabel.text  = biometricsService.toggleTitleText
-        self.biometricsDelegate          = delegate
-        self.biometricsSwitch.isEnabled  = biometricsService.biometricsAvailable
-        self.biometricsSwitch.isSelected = biometricsService.biometricsEnabled
-        self.biometricsImage.image       = biometricsService.biometricsImage
-        self.biometricsSwitch.setOn(biometricsService.biometricsEnabled, animated: false)
-    }
+//    func configure(with delegate:
+//        UPennBiometricsToggleDelegate, biometricsService: UPennBiometricsAuthenticationInterface ) {
+//        self.biometricsToggleLabel.text  = biometricsService.toggleTitleText
+//        self.biometricsDelegate          = delegate
+//        self.biometricsSwitch.isEnabled  = biometricsService.biometricsAvailable
+//        self.biometricsSwitch.isSelected = biometricsService.biometricsEnabled
+//        self.biometricsImage.image       = biometricsService.biometricsImage
+//        self.biometricsSwitch.setOn(biometricsService.biometricsEnabled, animated: false)
+//    }
 }

@@ -10,14 +10,12 @@ import Foundation
 
 import UIKit
 
-class UPennWithdrawCell : UPennBasicCell, UPennLeftImageButtonConfigureInterface {
-    
-    
+class UPennWithdrawCell : UPennBasicCell, UPennLeftImageLabelConfigureInterface {
     
     @IBOutlet weak var withdrawLabel: UPennLabel!
     @IBOutlet weak var withdrawImage: UIImageView!
     
-    @IBOutlet weak var buttonView: UPennLeftImageButtonView!
+    @IBOutlet weak var imageLabelView: UPennLeftImageLabelView!
     
     
     func configure() {
@@ -25,7 +23,7 @@ class UPennWithdrawCell : UPennBasicCell, UPennLeftImageButtonConfigureInterface
         self.withdrawImage.tintColor = UIColor.upennWarningRed
     }
     
-    func configure(title: String, styles: UPennButtonStyler, delegate: UPennLeftImageButtonDelegate) {
-        self.buttonView.configure(title: title, styles: styles, delegate: delegate)
+    func configure(image: UIImage, title: String, styles: UPennControlStyle?=nil) {
+        self.imageLabelView.configure(image: image, title: title, styles: styles)
     }
 }

@@ -36,8 +36,6 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
     private enum Identifiers : String {
         case Timeout = "TimeoutCell"
         case Biometrics = "BiometricsCell"
-        case Withdraw = "WithdrawCell"
-        case Logout = "LogoutCell"
     }
     
     open var controller: UPennSettingsInterface
@@ -75,40 +73,22 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
                 let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Timeout.rawValue) as! UPennAutoLogoutCell
                 return cell
             case .Biometrics:
-                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Biometrics.rawValue) as! UPennBiometricsEnableCell
-                cell.configure(with: self, biometricsService: self.biometricsService)
+                let cell = tableView.dequeueReusableCell(withIdentifier: UPennBiometricsEnableCell.Identifier) as! UPennBiometricsEnableCell
+                let decorator = UPennImageLabelSwitchDecorator(title: self.biometricsService.toggleTitleText, image: biometricsService.biometricsImage, delegate: self, enabled: biometricsService.biometricsAvailable, selected: biometricsService.biometricsEnabled)
+                cell.configure(decorator)
                 return cell
             case .Withdraw:
-//                let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.Withdraw.rawValue) as! UPennWithdrawCell
-//                cell.configure()
-//                return cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: UPennWithdrawCell.Identifier) as! UPennWithdrawCell
-//                let edgeInsets = UIEdgeInsets(top: 7.5, left: -62, bottom: 17.5, right: 0)
-//                let imageTitlePadding: CGFloat = -55.0
-                let edgeInsets = UIEdgeInsets(top: 0.0, left: 0, bottom: 0.0, right: 0)
-                let imageTitlePadding: CGFloat = 20.0
-                let styles = UPennButtonStyler(
-                    selectedImage: UIImage(systemName: "minus.rectangle")/*UPennImageAssets.CheckedCheckBox*/,
-                    isSelected: true,
-                    width: 100,
-                    height: 50,
-                    contentPadding: edgeInsets,
-                    imageTitlePadding: imageTitlePadding)
-                cell.configure(title: "Withdraw", styles: styles, delegate: self)
+                
+                let styles = UPennLabelStyler(
+                    color: .upennWarningRed)
+                cell.configure(image: UIImage(systemName: "minus.rectangle")!, title: "Withdraw", styles: styles)
                 return cell
             case .Logout:
                 let cell = tableView.dequeueReusableCell(withIdentifier: UPennLogoutCell.Identifier) as! UPennLogoutCell
-                let edgeInsets = UIEdgeInsets(top: 0, left: -25, bottom: 0, right: 0)
-                let imageTitlePadding: CGFloat = 0.0
-                let styles = UPennButtonStyler(
-                    selectedImage: UPennImageAssets.LogoutIcon,
-                    /*isSelected: true,*/
-                    titleColor: .upennWarningRed,
-                    width: 100,
-                    height: 50,
-                    contentPadding: edgeInsets,
-                    imageTitlePadding: imageTitlePadding)
-                cell.configure(title: "Logout", styles: styles, delegate: self)
+                let styles = UPennLabelStyler(
+                    color: .upennWarningRed)
+                cell.configure(image: UPennImageAssets.LogoutIcon, title: "Logout", styles: styles)
                 return cell
             }
         }
@@ -172,6 +152,17 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
         titleLabel.text = versionText.localize
         view.addSubview(titleLabel)
         return view
+    }
+}
+extension UPennSettingsViewModel : UPennSwitchControlDelegate {
+    
+    open func toggledSwitch(_ switchControl: UISwitch) {
+        let enabled = switchControl.isOn
+        self.biometricsService.toggleBiometrics(enabled)
+        // If biometrics is enabled, toggle 'Remember Me' on in LoginVC
+        if enabled {
+            self.controller.toggleShouldAutoFill(enabled)
+        }
     }
 }
 

@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uv6-iE-muT" customClass="UPennIconButton" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="36" width="152" height="152"/>
+                    <rect key="frame" x="8" y="52" width="136" height="136"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Uv6-iE-muT" secondAttribute="height" multiplier="1:1" id="jZx-58-kKf"/>
                     </constraints>
@@ -35,7 +35,7 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Uv6-iE-muT" secondAttribute="bottom" constant="8" id="AJ5-so-u6k"/>
                 <constraint firstItem="Uv6-iE-muT" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="JFt-3p-EqI"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Uv6-iE-muT" secondAttribute="top" constant="8" id="emi-AU-IO1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Uv6-iE-muT" secondAttribute="top" constant="-8" id="emi-AU-IO1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-45" y="20"/>

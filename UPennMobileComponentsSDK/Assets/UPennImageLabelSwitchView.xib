@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UPennImageLabelSwitchView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+            <connections>
+                <outlet property="imageLabelView" destination="zNI-VU-moh" id="dLP-TJ-5gK"/>
+                <outlet property="switchControl" destination="qTW-3H-uBU" id="OtL-J6-4e3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="145"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNI-VU-moh" customClass="UPennLeftImageLabelView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="360" height="67"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTW-3H-uBU">
+                    <rect key="frame" x="370" y="62" width="51" height="31"/>
+                    <connections>
+                        <action selector="toggleSwitchControl:" destination="-1" eventType="valueChanged" id="bjw-3a-xI5"/>
+                    </connections>
+                </switch>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zNI-VU-moh" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Dnr-j4-a8K"/>
+                <constraint firstItem="qTW-3H-uBU" firstAttribute="leading" secondItem="zNI-VU-moh" secondAttribute="trailing" constant="10" id="IQb-Vk-cUw"/>
+                <constraint firstItem="zNI-VU-moh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Pnu-Nq-Jsy"/>
+                <constraint firstItem="zNI-VU-moh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="UhI-KV-iDh"/>
+                <constraint firstItem="zNI-VU-moh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cI3-MF-pPx"/>
+                <constraint firstItem="qTW-3H-uBU" firstAttribute="centerY" secondItem="zNI-VU-moh" secondAttribute="centerY" id="s7h-hM-tZV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qTW-3H-uBU" secondAttribute="trailing" constant="20" id="wPW-co-72M"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="42.753623188405797" y="-219.30803571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

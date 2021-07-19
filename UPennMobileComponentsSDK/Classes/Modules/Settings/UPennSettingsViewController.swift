@@ -89,9 +89,9 @@ extension UPennSettingsViewController : UITableViewDataSource {
         return self.viewModel.getCellAtIndexPath(indexPath, for: tableView)
     }
     
-//    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return self.viewModel.heightForIndexPath(indexPath, for: tableView)
-//    }
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.viewModel.heightForIndexPath(indexPath, for: tableView)
+    }
     
 //    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 50
@@ -154,12 +154,12 @@ extension UPennSettingsViewController {
             preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel".localize, style: .default, handler: nil)
         
-        let config = Bundle.main.object(forInfoDictionaryKey: "Config") as! String
-        if config == "Debug-TEST" { // Change to "Debug-PROD" to test with Xcode. Withdraw button will only show in "Debug-TEST"
+//        let config = Bundle.main.object(forInfoDictionaryKey: "Config") as! String
+//        if config == "Debug-TEST" { // Change to "Debug-PROD" to test with Xcode. Withdraw button will only show in "Debug-TEST"
             let withdrawAction = UIAlertAction(title: "Reset Onboarding", style: .destructive, handler: logoutAndResetDefaults)
             alert.addAction(withdrawAction)
             
-        }
+//        }
         
         alert.addAction(cancelAction)
         return alert
