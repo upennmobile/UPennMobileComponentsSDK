@@ -20,7 +20,6 @@ open class PrimaryCTAButton : UIButton, UPennControlStylable {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-//        self.setBaseStyles()
         imageView?.contentMode = .scaleAspectFit
         
         self.setStyles(UPennBasicButtonStyle())
@@ -33,22 +32,16 @@ open class PrimaryCTAButton : UIButton, UPennControlStylable {
     }
     
     open func setBaseStyles() {
-//        setEnabledStyle()
-//        titleEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//        titleLabel?.font = UIFont.helveticaBold(size: 15.0)
         imageView?.contentMode = .scaleAspectFit
         
         self.setStyles(UPennBasicButtonStyle())
     }
     
     open func setEnabledStyle() {
-//        setTitleColor(UIColor.white, for: .normal)
-//        backgroundColor = UIColor.upennMediumBlue
         backgroundColor = (self.getStyle as! UPennButtonStyler).backgroundColor
     }
     
     open func setDisabledStyle() {
-//        setTitleColor(UIColor.darkGray, for: .disabled)
         backgroundColor = (self.getStyle as! UPennButtonStyler).disabledBackgroundColor
     }
     
@@ -79,6 +72,15 @@ open class PrimaryCTAButton : UIButton, UPennControlStylable {
         if let disabledBackgroundColor = styles.disabledBackgroundColor {
             
         }
+        if let radius = styles.cornerRadius {
+            self.layer.cornerRadius = radius
+        }
+        if let borderWidth = styles.borderWidth {
+            self.layer.borderWidth = borderWidth
+        }
+        if let borderColor = styles.borderColor {
+            self.layer.borderColor = borderColor.cgColor
+        }
         if let contentPadding = styles.contentPadding {
             self.setInsets(forContentPadding: contentPadding, imageTitlePadding: styles.imageTitlePadding ?? 0)
         }
@@ -88,16 +90,16 @@ open class PrimaryCTAButton : UIButton, UPennControlStylable {
 open class PrimaryCTAButtonText : PrimaryCTAButton {
     
     public override var getStyle: UPennControlStyle {
-        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(
-            titleColor: .upennMediumBlue,
-            backgroundColor: .clear,
-            contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        return self.getStyles(type: PrimaryCTAButton.self, styles:
+            UPennButtonStyler()
+            .titleColor(.upennMediumBlue)
+            .backgroundColor(.clear)
+            .contentPadding(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         )
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-//        setBaseStyles()
         self.setStyles(Self.GetStyle)
     }
 }
@@ -113,7 +115,6 @@ open class PrimaryCTAButtonTextDarkBlue : PrimaryCTAButtonText {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-//        setBaseStyles()
         self.setStyles(Self.GetStyle)
     }
 }
@@ -138,7 +139,6 @@ open class PrimaryCTAButtonTextRed : PrimaryCTAButtonText {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-//        self.setBaseStyles()
         self.setStyles(Self.GetStyle)
     }
 }
@@ -151,7 +151,6 @@ open class PrimaryCTAButtonGreen : PrimaryCTAButton {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-//        self.setBaseStyles()
         self.setStyles(Self.GetStyle)
     }
 }
@@ -159,119 +158,137 @@ open class PrimaryCTAButtonGreen : PrimaryCTAButton {
 open class PrimaryCTAButtonRed : PrimaryCTAButton {
     
     open override var getStyle: UPennControlStyle {
-        return UPennButtonStyler(backgroundColor: .upennWarningRed)
+        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(backgroundColor: .upennWarningRed))
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-//        isRounded()
         self.setStyles(Self.GetStyle)
     }
 }
 
 open class RoundedPrimaryCTAButtonRed : PrimaryCTAButtonRed {
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButtonRed.self, styles: UPennButtonStyler().rounded())
+    }
     open override func awakeFromNib() {
         super.awakeFromNib()
-        isRounded()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class UPennIconButton : PrimaryCTAButton {
     
-    public override var getStyle: UPennControlStyle {
-        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(
-            backgroundColor: .clear,
-            contentPadding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0),
-                imageTitlePadding: 0.0))
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(backgroundColor: .clear)
+                                .contentPadding(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+                                .imageTitlePadding(0.0))
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
-//        setBaseStyles()
         self.setStyles(Self.GetStyle)
     }
 }
 
 open class OutlineCTAButton : PrimaryCTAButton {
     
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        self.setBaseStyles()
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: PrimaryCTAButton.self, styles: UPennButtonStyler(contentPadding: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+                                .titleColor(.upennMediumBlue)
+                                .backgroundColor(.white)
+                                .disabledBackgroundColor(.gray)
+                                .disabledTitleColor(.darkGray)
+                                .regularBorder()
+                                .blueBorder())
     }
     
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        layer.regularBorder()
-        layer.blueBorder()
-        contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    open override var isEnabled: Bool {
+        didSet {
+            isEnabled ? setEnabledStyle() : setDisabledStyle()
+        }
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
     
     open override func setEnabledStyle() {
         super.setEnabledStyle()
-        setTitleColor(UIColor.upennMediumBlue, for: .normal)
-        backgroundColor = UIColor.white
-        layer.blueBorder()
+        self.setStyles(Self.GetStyle)
     }
     
     open override func setDisabledStyle() {
-        super.setDisabledStyle()
-        layer.greyBorder()
+        self.setStyles((Self.GetStyle as! UPennButtonStyler)
+                        .borderColor(.darkGray)
+                        .titleColor(.darkGray))
     }
 }
 
 open class RoundedOutlineCTAButton : OutlineCTAButton {
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        isRounded()
+    
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: OutlineCTAButton.self, styles: UPennButtonStyler().rounded())
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class RedOutlineCTAButton : OutlineCTAButton {
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        setTitleColor(UIColor.upennWarningRed, for: .normal)
-        layer.redBorder()
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: OutlineCTAButton.self, styles: UPennButtonStyler(titleColor: .upennWarningRed).redBorder())
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class RedRoundedOutlineCTAButton : RedOutlineCTAButton {
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        layer.isRounded()
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: RedOutlineCTAButton.self, styles: UPennButtonStyler().rounded())
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class DarkRoundedOutlineCTAButton : RoundedOutlineCTAButton {
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        setTitleColor(UIColor.upennDarkBlue, for: .normal)
-        layer.darkBlueBorder()
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: RoundedOutlineCTAButton.self, styles: UPennButtonStyler(titleColor:.upennDarkBlue).darkBlueBorder())
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class CircleOutlineCTAButton : OutlineCTAButton {
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        self.setBaseStyles()
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: OutlineCTAButton.self, styles: UPennButtonStyler().isCircular(self))
     }
     
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        setTitleColor(UIColor.upennMediumBlue, for: .normal)
-        isCircular()
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
 }
 
 open class GreyCircleOutlineCTAButton : CircleOutlineCTAButton {
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        self.setBaseStyles()
+    open override var getStyle: UPennControlStyle {
+        return self.getStyles(type: CircleOutlineCTAButton.self, styles: UPennButtonStyler(titleColor:.lightGray).greyBorder())
     }
     
-    open override func setBaseStyles() {
-        super.setBaseStyles()
-        setTitleColor(UIColor.lightGray, for: .normal)
-        layer.greyBorder()
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
     }
 }

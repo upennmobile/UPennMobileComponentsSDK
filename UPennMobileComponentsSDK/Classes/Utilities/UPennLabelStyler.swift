@@ -1,5 +1,5 @@
 //
-//  UPennLabelStyles.swift
+//  UPennLabelStyler.swift
 //  UPennMobileComponentsSDK
 //
 //  Created by Rashad Abdul-Salam on 6/23/21.
@@ -49,6 +49,46 @@ public class UPennLabelStyler : UPennControlStyle {
         }
         return self
     }
+    /**
+     Builder method for setting label's height
+     - parameter height: CGFloat to set for label's height
+     */
+    public func height(_ height: CGFloat) -> UPennLabelStyler {
+        self.height = height
+        return self
+    }
+    /**
+     Builder method for setting label's color
+     - parameter color: CGFloat to set for label's color
+     */
+    public func color(_ color: UIColor) -> UPennLabelStyler {
+        self.color = color
+        return self
+    }
+    /**
+     Builder method for setting label's alignment
+     - parameter alignment: NSTextAligment to set for the label
+     */
+    public func alignment(_ alignment: NSTextAlignment) -> UPennLabelStyler {
+        self.alignment = alignment
+        return self
+    }
+    /**
+     Builder method for setting label's lineBreakMode
+     - parameter lineBreak: NSLineBreakMode to set for the label
+     */
+    public func lineBreakMode(_ lineBreak: NSLineBreakMode) -> UPennLabelStyler {
+        self.lineBreakMode = lineBreak
+        return self
+    }
+    /**
+     Builder method for setting label's line-number
+     - parameter numLines: Int to set for label's line number
+     */
+    public func numberOfLines(_ numLines: Int) -> UPennLabelStyler {
+        self.numberOfLines = numLines
+        return self
+    }
     
 }
 
@@ -65,6 +105,9 @@ public enum BaseLabelStyles : UPennStylable {
 public enum BannerLabelStyles : UPennStylable {
     
     public static var Style : UPennControlStyle {
-        return UPennLabelStyler(height: 25.0, color: .upennDarkBlue, alignment: .center)
+        return UPennLabelStyler()
+            .height(25.0)
+            .color(.upennDarkBlue)
+            .alignment(.center)
     }
 }

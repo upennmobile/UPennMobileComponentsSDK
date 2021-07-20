@@ -54,14 +54,14 @@
 		3A2BDC6A267E61B3004E5EB7 /* UPennCenteredTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BDC5F267E610F004E5EB7 /* UPennCenteredTextInputView.swift */; };
 		3A2BDC6B267E61B7004E5EB7 /* UPennCenteredButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2BDC5E267E610F004E5EB7 /* UPennCenteredButtonView.swift */; };
 		3A2BDC7126812716004E5EB7 /* UPennImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A2BDC7026812716004E5EB7 /* UPennImageView.xib */; };
-		3A3944762683CC9B00ECC622 /* UPennLabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3944752683CC9B00ECC622 /* UPennLabelStyles.swift */; };
+		3A3944762683CC9B00ECC622 /* UPennLabelStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3944752683CC9B00ECC622 /* UPennLabelStyler.swift */; };
 		3A394479268412EE00ECC622 /* UPennImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A394477268412EE00ECC622 /* UPennImageView.swift */; };
 		3A39447A268412EE00ECC622 /* UPennCenteredLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A394478268412EE00ECC622 /* UPennCenteredLabelView.swift */; };
 		3A3944812684143C00ECC622 /* UPennCenteredLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A39447F2684132600ECC622 /* UPennCenteredLabelView.xib */; };
 		3A3944832684174E00ECC622 /* UPennLeftImageButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3944822684174E00ECC622 /* UPennLeftImageButtonView.xib */; };
 		3A39448526841B8300ECC622 /* UPennLeftImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39448426841B8300ECC622 /* UPennLeftImageButtonView.swift */; };
 		3A3944892684BB9C00ECC622 /* UPennControlStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3944882684BB9C00ECC622 /* UPennControlStyle.swift */; };
-		3A39448B2684BD1A00ECC622 /* UPennButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39448A2684BD1A00ECC622 /* UPennButtonStyles.swift */; };
+		3A39448B2684BD1A00ECC622 /* UPennButtonStyler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39448A2684BD1A00ECC622 /* UPennButtonStyler.swift */; };
 		3A39448D2685186500ECC622 /* UPennButtonsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39448C2685186500ECC622 /* UPennButtonsModule.swift */; };
 		3A39448F26860F6100ECC622 /* UPennRightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A39448E26860F6000ECC622 /* UPennRightButtonView.swift */; };
 		3A3944912686101000ECC622 /* UPennRightButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3944902686101000ECC622 /* UPennRightButtonView.xib */; };
@@ -327,14 +327,14 @@
 		3A2BDC5F267E610F004E5EB7 /* UPennCenteredTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UPennCenteredTextInputView.swift; path = ../UPennMobileComponentsSDK/Classes/Views/UPennCenteredTextInputView.swift; sourceTree = "<group>"; };
 		3A2BDC60267E610F004E5EB7 /* UPennExpandableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UPennExpandableHeaderView.swift; path = ../UPennMobileComponentsSDK/Classes/Views/UPennExpandableHeaderView.swift; sourceTree = "<group>"; };
 		3A2BDC7026812716004E5EB7 /* UPennImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UPennImageView.xib; path = UPennMobileComponentsSDK/Assets/UPennImageView.xib; sourceTree = "<group>"; };
-		3A3944752683CC9B00ECC622 /* UPennLabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennLabelStyles.swift; sourceTree = "<group>"; };
+		3A3944752683CC9B00ECC622 /* UPennLabelStyler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennLabelStyler.swift; sourceTree = "<group>"; };
 		3A394477268412EE00ECC622 /* UPennImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UPennImageView.swift; path = ../UPennMobileComponentsSDK/Classes/Views/UPennImageView.swift; sourceTree = "<group>"; };
 		3A394478268412EE00ECC622 /* UPennCenteredLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UPennCenteredLabelView.swift; path = ../UPennMobileComponentsSDK/Classes/Views/UPennCenteredLabelView.swift; sourceTree = "<group>"; };
 		3A39447F2684132600ECC622 /* UPennCenteredLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UPennCenteredLabelView.xib; path = UPennMobileComponentsSDK/Assets/UPennCenteredLabelView.xib; sourceTree = "<group>"; };
 		3A3944822684174E00ECC622 /* UPennLeftImageButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UPennLeftImageButtonView.xib; path = UPennMobileComponentsSDK/Assets/UPennLeftImageButtonView.xib; sourceTree = "<group>"; };
 		3A39448426841B8300ECC622 /* UPennLeftImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UPennLeftImageButtonView.swift; path = ../UPennMobileComponentsSDK/Classes/Views/UPennLeftImageButtonView.swift; sourceTree = "<group>"; };
 		3A3944882684BB9C00ECC622 /* UPennControlStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennControlStyle.swift; sourceTree = "<group>"; };
-		3A39448A2684BD1A00ECC622 /* UPennButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennButtonStyles.swift; sourceTree = "<group>"; };
+		3A39448A2684BD1A00ECC622 /* UPennButtonStyler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennButtonStyler.swift; sourceTree = "<group>"; };
 		3A39448C2685186500ECC622 /* UPennButtonsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennButtonsModule.swift; sourceTree = "<group>"; };
 		3A39448E26860F6000ECC622 /* UPennRightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPennRightButtonView.swift; sourceTree = "<group>"; };
 		3A3944902686101000ECC622 /* UPennRightButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = UPennRightButtonView.xib; path = UPennMobileComponentsSDK/Assets/UPennRightButtonView.xib; sourceTree = "<group>"; };
@@ -971,8 +971,8 @@
 				E8212F45A423926BFCA9AE071517361B /* UPennTypeAliases.swift */,
 				3A2BDC29267BD4E4004E5EB7 /* UPennJSONSerializer.swift */,
 				3A2BDC2B267BE131004E5EB7 /* UPennRefreshControllable.swift */,
-				3A3944752683CC9B00ECC622 /* UPennLabelStyles.swift */,
-				3A39448A2684BD1A00ECC622 /* UPennButtonStyles.swift */,
+				3A3944752683CC9B00ECC622 /* UPennLabelStyler.swift */,
+				3A39448A2684BD1A00ECC622 /* UPennButtonStyler.swift */,
 				3A39448C2685186500ECC622 /* UPennButtonsModule.swift */,
 			);
 			name = Utilities;
@@ -1459,7 +1459,7 @@
 				CE534514D818A23E011BCF94B15063E1 /* UIColor+UPenn.swift in Sources */,
 				1EFD0A25CDF9FF0D59714901DD4D04E8 /* UIFont+UPenn.swift in Sources */,
 				3A39448526841B8300ECC622 /* UPennLeftImageButtonView.swift in Sources */,
-				3A3944762683CC9B00ECC622 /* UPennLabelStyles.swift in Sources */,
+				3A3944762683CC9B00ECC622 /* UPennLabelStyler.swift in Sources */,
 				543BE2ACA1F4C7FF8FADA69561D19D53 /* UILabel+UPenn.swift in Sources */,
 				3A394479268412EE00ECC622 /* UPennImageView.swift in Sources */,
 				3A2BDC2C267BE131004E5EB7 /* UPennRefreshControllable.swift in Sources */,
@@ -1534,7 +1534,7 @@
 				1EC7D69D147CC96414E553E799A5FE5D /* UPennTabBarController.swift in Sources */,
 				8AAD2FCBF30DAEEDFBE5F538DDF3FDCD /* UPennTabBarItem.swift in Sources */,
 				05858E8CE7B2060A26F66CBD5B5593FC /* UPennTabControllerPayload.swift in Sources */,
-				3A39448B2684BD1A00ECC622 /* UPennButtonStyles.swift in Sources */,
+				3A39448B2684BD1A00ECC622 /* UPennButtonStyler.swift in Sources */,
 				3A838D322697CF50008D095D /* UPennImageLabelSwitchView.swift in Sources */,
 				5C50810CE6086E4EB20C0E9F6A70B31E /* UPennTimerUIApplication.swift in Sources */,
 				772A9E72B06D27EB22B5259AC6BAE848 /* UPennTypeAliases.swift in Sources */,

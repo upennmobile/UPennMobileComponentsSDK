@@ -80,14 +80,16 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
             case .Withdraw:
                 let cell = tableView.dequeueReusableCell(withIdentifier: UPennWithdrawCell.Identifier) as! UPennWithdrawCell
                 
-                let styles = UPennLabelStyler(
-                    color: .upennWarningRed)
+//                let styles = UPennLabelStyler(
+//                    color: .upennWarningRed)
+                let styles = UPennLabelStyler().color(.upennWarningRed)
                 cell.configure(image: UIImage(systemName: "minus.rectangle")!, title: "Withdraw", styles: styles)
                 return cell
             case .Logout:
                 let cell = tableView.dequeueReusableCell(withIdentifier: UPennLogoutCell.Identifier) as! UPennLogoutCell
-                let styles = UPennLabelStyler(
-                    color: .upennWarningRed)
+//                let styles = UPennLabelStyler(
+//                    color: .upennWarningRed)
+                let styles = UPennLabelStyler().color(.upennWarningRed)
                 cell.configure(image: UPennImageAssets.LogoutIcon, title: "Logout", styles: styles)
                 return cell
             }

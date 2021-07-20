@@ -23,10 +23,13 @@ open class UPennCenteredButtonView : UPennNibView, UPennCenteredButtonConfigureI
         self.delegate?.pressedCenterButton(sender)
     }
     
-    public func configure(title: String, delegate: UPennCenteredButtonDelegate, enabled: Bool) {
+    public func configure(title: String, delegate: UPennCenteredButtonDelegate, styles: UPennControlStyle?, enabled: Bool) {
         self.delegate = delegate
         self.button.setTitle(title, for: .normal)
         self.button.isEnabled = enabled
+        if let styles = styles {
+            self.button.setStyles(styles)
+        }
     }
     
 }
