@@ -83,6 +83,33 @@ open class UPennMainTabCoordinator : NSObject, UPennMainCoordinatable {
     open func toggleShouldAutoFill(_ enabled: Bool) {
         self.logoutBiometricsDelegate?.toggleShouldAutoFill(enabled)
     }
+    
+    /**
+     Traverses UPennTabControllerPayload to pluck specific viewControllers based upon Class-type
+     - parameter type: the Class-type against which to find/retrieve a particular viewController
+     */
+    open func getChildViewController<T: UIViewController>(ofType: T.Type) -> T? {
+        for navController in tabControllerPayload.navControllers {
+            for child in navController.children {
+                if child is T {
+                    return child as? T
+                }
+            }
+        }
+        return nil
+    }
+    
+    open func getParentNavControllerForViewController<T: UIViewController>(for viewControllerClass: T.Type) -> UINavigationController? {
+        
+        for navController in tabControllerPayload.navControllers {
+            for child in navController.children {
+                if child is T {
+                    return navController
+                }
+            }
+        }
+        return nil
+    }
 }
 
 extension UPennMainTabCoordinator : UITabBarControllerDelegate { }

@@ -12,6 +12,10 @@ import UIKit
 
 open class UPennAuthenticationService {
     
+    /*
+     TODO:
+     Update with 'static var JWTDict : [String:Any]' which will be a dictionary to hold info like DisplayName, AthenaUserId etc, so that it can be easily updated to hold custom information within separate applications
+     */
     public static var AuthToken: String?
     public static var AthenaUserId: String?
     public static var DisplayName: String?
@@ -112,6 +116,7 @@ open class UPennAuthenticationService {
 
 private extension UPennAuthenticationService {
     
+    // TODO: Update to parse 'AuthToken' for custom string-key var and add key-value pair to JWTDict static var
     static func parseJWTForInfo(jsonWebToken: String) {
         /* Sample JWT Values
          {
@@ -121,6 +126,7 @@ private extension UPennAuthenticationService {
          "iat": 123456789
          }
          */
+        
         do {
             let jwt = try decode(jwt: jsonWebToken)
             let uniqueName = jwt.claim(name: "unique_name")

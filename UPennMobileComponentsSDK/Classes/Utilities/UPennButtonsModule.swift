@@ -14,6 +14,8 @@ open class PrimaryCTAButton : UIButton, UPennControlStylable {
         return Self().getStyle as! UPennButtonStyler
     }
     
+    public static var ButtonInstance: UIButton = UIButton()
+    
     open var getStyle: UPennControlStyle {
         return UPennBasicButtonStyle()
     }
@@ -95,6 +97,7 @@ open class PrimaryCTAButtonText : PrimaryCTAButton {
             .titleColor(.upennMediumBlue)
             .backgroundColor(.clear)
             .contentPadding(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+            .imageTitlePadding(0)
         )
     }
     
@@ -273,11 +276,16 @@ open class DarkRoundedOutlineCTAButton : RoundedOutlineCTAButton {
 
 open class CircleOutlineCTAButton : OutlineCTAButton {
     open override var getStyle: UPennControlStyle {
-        return self.getStyles(type: OutlineCTAButton.self, styles: UPennButtonStyler().isCircular(self))
+        return self.getStyles(type: OutlineCTAButton.self, styles: UPennButtonStyler()
+                                .isCircular(Self.ButtonInstance)
+                                .contentPadding(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+                                .imageTitlePadding(0))
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
+        // Must capture ButtonInstance to set 'isCircular'
+        Self.ButtonInstance = self
         self.setStyles(Self.GetStyle)
     }
 }

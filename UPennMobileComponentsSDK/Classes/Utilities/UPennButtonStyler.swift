@@ -246,48 +246,48 @@ open class UPennButtonStyler : UPennControlStyle {
         return self
     }
     
-    func rounded() -> UPennButtonStyler {
+    public func rounded() -> UPennButtonStyler {
         self.cornerRadius = 5
         return self
     }
     
-    func regularBorder() -> UPennButtonStyler {
+    public func regularBorder() -> UPennButtonStyler {
         self.borderWidth = 2
         return self
     }
     
-    func thickBorder() -> UPennButtonStyler {
+    public func thickBorder() -> UPennButtonStyler {
         self.borderWidth = 5
         return self
     }
     
-    func isCircular(_ view: UIView) -> UPennButtonStyler {
+    public func isCircular(_ view: UIView) -> UPennButtonStyler {
         cornerRadius = view.frame.width / 2
         view.clipsToBounds = true
         return self
     }
     
-    func redBorder() -> UPennButtonStyler {
+    public func redBorder() -> UPennButtonStyler {
         borderColor = UIColor.upennWarningRed
         return self
     }
     
-    func blueBorder() -> UPennButtonStyler {
+    public func blueBorder() -> UPennButtonStyler {
         borderColor = UIColor.upennMediumBlue
         return self
     }
     
-    func darkBlueBorder() -> UPennButtonStyler {
+    public func darkBlueBorder() -> UPennButtonStyler {
         borderColor = UIColor.upennDarkBlue
         return self
     }
     
-    func lightGreyBorder() -> UPennButtonStyler {
+    public func lightGreyBorder() -> UPennButtonStyler {
         borderColor = UIColor.upennRlyLightGray
         return self
     }
     
-    func greyBorder() -> UPennButtonStyler {
+    public func greyBorder() -> UPennButtonStyler {
         borderColor = UIColor.lightGray
         return self
     }

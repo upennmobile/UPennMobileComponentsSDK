@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class UPennBasicTableViewCell : UITableViewCell {
-    override func awakeFromNib() {
+open class UPennBasicTableViewCell : UITableViewCell {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
     }

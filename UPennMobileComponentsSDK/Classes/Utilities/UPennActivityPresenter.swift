@@ -24,6 +24,11 @@ open class UPennActivityPresenter {
         SVProgressHUD.dismiss()
     }
     
+    /// Show custom Activity Spinner
+    public static func Show() {
+        SVProgressHUD.show()
+    }
+    
     /// Show custom Activity Spinner with custom message
     public static func Show(message: String) {
         SVProgressHUD.show(withStatus: message)
