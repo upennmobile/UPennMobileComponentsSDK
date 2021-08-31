@@ -39,8 +39,8 @@ open class UPennInnerShadowLayer : CALayer {
 
 public extension CALayer {
     
-    func isRounded() {
-        self.cornerRadius = 5
+    func isRounded(radius: CGFloat=5.0) {
+        self.cornerRadius = radius
     }
     
     func regularBorder() {

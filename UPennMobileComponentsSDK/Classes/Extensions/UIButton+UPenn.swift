@@ -11,8 +11,8 @@ import UIKit
 
 extension UIButton {
 
-    public func isRounded() {
-        layer.isRounded()
+    public func isRounded(radius: CGFloat=5.0) {
+        layer.isRounded(radius: radius)
     }
     
     public func isCircular() {
