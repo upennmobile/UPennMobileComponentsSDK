@@ -129,9 +129,18 @@ private extension UPennAuthenticationService {
         
         do {
             let jwt = try decode(jwt: jsonWebToken)
+            let athenaUserIdClaim = jwt.claim(name: "AthenaUserId")
             let uniqueName = jwt.claim(name: "unique_name")
-            if let name = uniqueName.string {
+            let displayNameClaim = jwt.claim(name: "DisplayName")
+            
+            if
+                let name = uniqueName.string,
+                let displayName = displayNameClaim.string,
+                let athenaUserId = athenaUserIdClaim.string
+            {
                 PennUserName = name
+                AthenaUserId = athenaUserId
+                DisplayName = displayName
             }
         } catch {
             // Handle Error

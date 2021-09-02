@@ -122,7 +122,7 @@ open class UPennLabel : UILabel, UPennControlStylable {
 
 open class MultilineLabel : UPennLabel {
     
-    public override var getStyle: UPennControlStyle {
+    open override var getStyle: UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(lineBreakMode: .byWordWrapping, numberOfLines: 0)
         )
     }
@@ -135,7 +135,7 @@ open class MultilineLabel : UPennLabel {
 
 open class ContactNameLabel : UPennLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(height: 20.0, color: .upennDeepBlue))
     }
     
@@ -147,7 +147,7 @@ open class ContactNameLabel : UPennLabel {
 
 open class ContactDepartmentLabel : UPennLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(height: 18.0, color: .upennDarkBlue))
     }
     
@@ -159,7 +159,7 @@ open class ContactDepartmentLabel : UPennLabel {
 
 open class CameraInstructionLabel : ContactNameLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: ContactNameLabel.self, styles: UPennLabelStyler(color: .white))
     }
     
@@ -171,7 +171,7 @@ open class CameraInstructionLabel : ContactNameLabel {
 
 open class ActionLabel : UPennLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(color: .upennMediumBlue))
     }
     
@@ -183,7 +183,7 @@ open class ActionLabel : UPennLabel {
 
 open class ActionSubContentLabel : ActionLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: ActionLabel.self, styles: UPennLabelStyler(height: 15.0))
     }
     
@@ -195,7 +195,7 @@ open class ActionSubContentLabel : ActionLabel {
 
 open class NoDataInstructionsLabel : UPennLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(height: 20.0, color: .upennDarkBlue))
     }
     
@@ -207,7 +207,7 @@ open class NoDataInstructionsLabel : UPennLabel {
 
 open class BannerLabel : UPennLabel {
     
-    public override var getStyle: UPennControlStyle {
+    open override var getStyle: UPennControlStyle {
         
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(height: 25.0, color: .upennDarkBlue, alignment: .center))
     }
@@ -220,7 +220,7 @@ open class BannerLabel : UPennLabel {
 
 open class RedBannerLabel : BannerLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: BannerLabel.self, styles: UPennLabelStyler(color: .upennWarningRed))
     }
     
@@ -232,7 +232,7 @@ open class RedBannerLabel : BannerLabel {
 
 open class BannerLabelWhite : BannerLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: BannerLabel.self, styles: UPennLabelStyler(color: .white))
     }
     
@@ -244,7 +244,7 @@ open class BannerLabelWhite : BannerLabel {
 
 open class TitleLabel : UPennLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(font: UIFont.helveticaBold(size: 15.0)).color(.gray))
     }
     
@@ -268,7 +268,7 @@ open class ContentLabel : UPennLabel {
 
 open class SubContentLabel : UPennLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(height: 13.0).color(.darkGray))
     }
     
@@ -280,7 +280,7 @@ open class SubContentLabel : UPennLabel {
 
 open class MultilineContentLabel : MultilineLabel {
    
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: MultilineLabel.self, styles: UPennLabelStyler(height: 16.0))
     }
     
@@ -292,12 +292,25 @@ open class MultilineContentLabel : MultilineLabel {
 
 open class SectionHeaderTitleLabel : UPennLabel {
     
-    public override var getStyle : UPennControlStyle {
+    open override var getStyle : UPennControlStyle {
         return self.getStyles(type: UPennLabel.self, styles: UPennLabelStyler(font: UIFont.helveticaBold(size: 13.0)).color(.white))
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
+        self.setStyles(Self.GetStyle)
+    }
+}
+
+open class CircularLabel : ContentLabel {
+    
+    open override var getStyle : UPennControlStyle {
+        return self.getStyles(type: ContentLabel.self, styles: UPennLabelStyler().isCircular(Self.LabelInstance))
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+        Self.LabelInstance = self
         self.setStyles(Self.GetStyle)
     }
 }
