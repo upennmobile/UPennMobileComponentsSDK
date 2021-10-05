@@ -20,19 +20,19 @@ open class UPennLoginNetworkService : UPennLoginNetworkingRequestable {
         self.urlProvider = urlProvider
     }
     
-    public func makeLoginRequest(username: String, password: String, completion: @escaping (UPennRequestCompletion)) {
+    /**
+     Overridable method for constructing a custom login request
+     - parameters:
+        - username: UPenn network login
+        - password: UPenn network password
+     */
+    open func makeLoginRequest(username: String, password: String, completion: @escaping (UPennRequestCompletion)) {
         
         let parameters: [String:String] = [
             "username" : username,
             "password" : password
         ]
         
-        // Make Request for JWT FIXME:
         self.makePOSTRequest(urlStr: urlProvider.userLoginEndpoint, parameters: parameters, encoding: .JSON, completion: completion)
-        
-//        let jwtRequest = defaultManager.request(self.configuration.loginEndpoint, method: .post, parameters: parameters, encoding: URLEncoding.httpBody)
-//        jwtRequest.responseJSON { (response) in
-//            self.unwrapResponseForStatusCode(response, completion: completion)
-//        }
     }
 }
