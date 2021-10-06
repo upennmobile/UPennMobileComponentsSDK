@@ -12,7 +12,11 @@ struct UPennLoginCreds: Encodable {
     let email: String
     let password: String
 }
-
+/**
+ Struct for setting parameter encoding-type on network requests
+ - JSON: sets Content-Type to applicatoin/x-www-form-urlencoded
+ - URL: sets Content-Type to application/json
+ */
 public struct UPennRequestEncoding {
     
     public enum EncodingType : String {
