@@ -13,10 +13,21 @@ public extension UIViewController {
     
     @objc func navBarSetup() {
         // Set UPenn Deep Blue NavigationBar & white navbar text
-        self.navigationController?.navigationBar.barTintColor = UIColor.upennDeepBlue
-        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        // iOS 15 fix
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.upennDeepBlue
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        } else {
+            self.navigationController?.navigationBar.barTintColor = UIColor.upennDeepBlue
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        }
     }
     
     @objc func navBarLightSetup() {
