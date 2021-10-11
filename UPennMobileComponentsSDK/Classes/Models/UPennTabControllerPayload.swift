@@ -10,8 +10,10 @@ import Foundation
 /// Object that bundles array of UPennTabItems & Navigation controllers for easy transport & unbundling
 open class UPennTabControllerPayload {
     
-    open var tabBarItems: Array<UPennTabBarItem>
-    open var navControllers: Array<UINavigationController>
+    open var tabBarItems: Array<UPennTabBarItem> = []
+    open var navControllers: Array<UINavigationController> = []
+    
+    public init() {}
     
     public init(navControllers: [UINavigationController], tabBarItems: [UPennTabBarItem]) {
         self.tabBarItems = tabBarItems; self.navControllers = navControllers

@@ -12,6 +12,7 @@ struct UPennLoginCreds: Encodable {
     let email: String
     let password: String
 }
+
 /**
  Struct for setting parameter encoding-type on network requests
  - JSON: sets Content-Type to applicatoin/x-www-form-urlencoded
@@ -63,10 +64,10 @@ public extension UPennNetworkRequestable {
 
     func makeGETRequest(urlStr: String, parameters: UPennParametersDict?=nil, headers: UPennHeadersDict?=nil, encoding: UPennRequestEncoding.EncodingType, completion: @escaping (UPennRequestCompletion)) -> Void {
         guard let _headers = headers else {
-            self.makePOSTRequestToAF(urlStr: urlStr, parameters: parameters, encoding: encoding, completion: completion)
+            self.makeGETRequestToAF(urlStr: urlStr, parameters: parameters, encoding: encoding, completion: completion)
             return
         }
-        self.makePOSTRequestToAF(urlStr: urlStr, parameters: parameters, headers: HTTPHeaders(_headers), encoding: encoding, completion: completion)
+        self.makeGETRequestToAF(urlStr: urlStr, parameters: parameters, headers: HTTPHeaders(_headers), encoding: encoding, completion: completion)
     }
     
     /** Make a POST request to the UPenn servers
@@ -127,7 +128,7 @@ public extension UPennNetworkRequestable {
         // Unwrap StatusCode & JSON from response
         guard
             let statusCode = response.response?.statusCode,
-            let json = response.value as? UPennStringDict else
+            let json = response.value else
         {
             // StatusCode Error
             completion(nil,self.statusCodeError)
@@ -145,6 +146,11 @@ public extension UPennNetworkRequestable {
         }
         // Request Error from Server
         if statusCode == 400 {
+            
+            guard let json = response.value as? UPennStringDict else {
+                completion(nil,"ERROR: Could not complete your request, please try again.")
+                return
+            }
             /*
              Error structure:
              ▿ some : 2 elements
