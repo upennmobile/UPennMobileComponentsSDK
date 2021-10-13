@@ -198,7 +198,7 @@ private extension UPennNetworkRequestable {
                 parameters: parameters,
                 encoding: JSONEncoding.default,
                 headers: headers).responseJSON { response in
-                debugPrint(response)
+                
                 self.unwrapResponseForStatusCode(response, completion: completion)
             }
         case .URL:
@@ -207,7 +207,7 @@ private extension UPennNetworkRequestable {
                 parameters: parameters,
                 encoding: URLEncoding.default,
                 headers: headers).responseJSON { response in
-                debugPrint(response)
+                
                 self.unwrapResponseForStatusCode(response, completion: completion)
             }
         }
@@ -226,9 +226,9 @@ private extension UPennNetworkRequestable {
                 urlStr,
                 method: .post,
                 parameters: parameters,
-                encoding: /*URLEncoding.httpBody,*/  JSONEncoding.default,
+                encoding: JSONEncoding.default,
                 headers: headers).responseJSON { response in
-                debugPrint(response)
+                
                 self.unwrapResponseForStatusCode(response, completion: completion)
             }
         case .URL:
@@ -236,9 +236,9 @@ private extension UPennNetworkRequestable {
                 urlStr,
                 method: .post,
                 parameters: parameters,
-                encoding: /*URLEncoding.httpBody,*/  URLEncoding.default,
+                encoding: URLEncoding.default,
                 headers: headers).responseJSON { response in
-                debugPrint(response)
+                
                 self.unwrapResponseForStatusCode(response, completion: completion)
             }
         }
