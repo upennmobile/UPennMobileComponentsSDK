@@ -28,7 +28,7 @@ open class UPennMainTabCoordinator : NSObject, UPennMainCoordinatable {
     open var tabController = UITabBarController()
     open var logoutBiometricsDelegate : UPennLogoutBiometricsDelegate?
     
-    public init(navController: UINavigationController, tabControllerPayload: UPennTabControllerPayload) {
+    public init(navController: UINavigationController, tabControllerPayload: UPennTabControllerPayload = UPennTabControllerPayload()) {
         self.navigationController = navController
         self.childViewController = self.tabController
         self.tabControllerPayload = tabControllerPayload
