@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gnU-ve-HPf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gnU-ve-HPf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennCenteredUsernameTextFieldCell" rowHeight="86" id="cdG-wT-OWj" customClass="UPennCenteredUsernameTextFieldCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
@@ -92,39 +91,44 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennCenteredLabelCell" id="maY-br-MOU" customClass="UPennCenteredLabelCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="304.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="304.5" width="414" height="20.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="maY-br-MOU" id="Ffg-XT-dCe">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cZW-uR-86B" customClass="UPennCenteredLabelView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZW-uR-86B" customClass="UPennCenteredLabelView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="8" width="414" height="0.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cZW-uR-86B" firstAttribute="leading" secondItem="Ffg-XT-dCe" secondAttribute="leading" id="71E-Q7-hr2"/>
+                                                <constraint firstAttribute="bottom" secondItem="cZW-uR-86B" secondAttribute="bottom" constant="12" id="814-Fq-cit"/>
+                                                <constraint firstAttribute="trailing" secondItem="cZW-uR-86B" secondAttribute="trailing" id="bik-hC-hLo"/>
+                                                <constraint firstItem="cZW-uR-86B" firstAttribute="top" secondItem="Ffg-XT-dCe" secondAttribute="top" constant="8" id="s3f-eG-Llb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelView" destination="cZW-uR-86B" id="wcn-S0-Gly"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennImageViewCell" rowHeight="84" id="ci6-Hf-h4g" customClass="UPennImageViewCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="348" width="414" height="84"/>
+                                        <rect key="frame" x="0.0" y="325" width="414" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ci6-Hf-h4g" id="bI8-hF-Swu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ds-Uh-xXe" customClass="UPennImageView" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="84"/>
+                                                    <rect key="frame" x="0.0" y="16" width="414" height="84"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0Ds-Uh-xXe" firstAttribute="top" secondItem="bI8-hF-Swu" secondAttribute="top" id="9Hu-xa-hpr"/>
+                                                <constraint firstItem="0Ds-Uh-xXe" firstAttribute="top" secondItem="bI8-hF-Swu" secondAttribute="top" constant="16" id="9Hu-xa-hpr"/>
                                                 <constraint firstItem="0Ds-Uh-xXe" firstAttribute="leading" secondItem="bI8-hF-Swu" secondAttribute="leading" id="VDE-oq-pye"/>
-                                                <constraint firstAttribute="bottom" secondItem="0Ds-Uh-xXe" secondAttribute="bottom" id="WZL-eS-MFa"/>
+                                                <constraint firstAttribute="bottom" secondItem="0Ds-Uh-xXe" secondAttribute="bottom" constant="-16" id="WZL-eS-MFa"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Ds-Uh-xXe" secondAttribute="trailing" id="gA5-3P-lWY"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -133,7 +137,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennLeftImageButtonCell" rowHeight="59" id="UBk-lM-CiL" customClass="UPennLeftImageButtonCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="432" width="414" height="59"/>
+                                        <rect key="frame" x="0.0" y="409" width="414" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UBk-lM-CiL" id="aGs-X0-IDl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
@@ -159,7 +163,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennRightButtonCell" rowHeight="69" id="tGm-XY-fwQ" customClass="UPennRightButtonCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="491" width="414" height="69"/>
+                                        <rect key="frame" x="0.0" y="468" width="414" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tGm-XY-fwQ" id="pYc-7V-DTg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
@@ -182,7 +186,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UPennCenteredIconButtonCell" rowHeight="66" id="18k-FI-Rgf" customClass="UPennCenteredIconButtonCell" customModule="UPennMobileComponentsSDK" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="560" width="414" height="66"/>
+                                        <rect key="frame" x="0.0" y="537" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="18k-FI-Rgf" id="67H-yu-atL">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
@@ -212,6 +216,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gnU-ve-HPf" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="34" id="2gQ-dp-xRJ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gnU-ve-HPf" secondAttribute="trailing" id="Nfa-dM-ele"/>
+                            <constraint firstItem="gnU-ve-HPf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="cJx-Yg-SDv"/>
+                            <constraint firstItem="gnU-ve-HPf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="kC8-cb-1Zd"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loginTableView" destination="gnU-ve-HPf" id="Bcp-b5-BIS"/>
