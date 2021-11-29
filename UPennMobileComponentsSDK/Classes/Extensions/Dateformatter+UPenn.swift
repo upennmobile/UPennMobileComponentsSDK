@@ -11,6 +11,7 @@ import Foundation
 private var cachedFormatters = [String : DateFormatter]()
 public extension DateFormatter {
     enum DateFormat : String {
+        case Basic_Hours_Min_Secs = "yyyy-MM-dd'T'HH:mm:ss"
         case ISO8601 = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
         case RFC3339 = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         case UNIX_EPOCH = "1970-01-01T00:00:00Z"

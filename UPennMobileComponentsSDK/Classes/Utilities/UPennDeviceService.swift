@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UPennDeviceService {
+public struct UPennDeviceService {
     static func copyToClipboard(_ text: String, completion: ((_ copied: Bool)->Void)?=nil) {
         UIPasteboard.general.string = text
         let copied = UIPasteboard.general.string != nil
@@ -16,14 +16,14 @@ struct UPennDeviceService {
         }
     }
     
-    static func openSettings() {
+    public static func openSettings() {
         guard let url = URL(string: UIApplication.openSettingsURLString) else {
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-    static func openAsURL(_ urlString: String, completion: ((_ errorMessage: String?)->Void)) {
+    public static func openAsURL(_ urlString: String, completion: ((_ errorMessage: String?)->Void)) {
         if let url = URL(string: urlString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             completion(nil)
