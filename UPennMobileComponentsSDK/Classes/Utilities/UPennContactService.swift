@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct UPennContactService {
+public struct UPennContactService {
     
-    static func CallPhoneNumber(_ number: String, completion: ((_ errorMessage: String?)->Void)) {
+    public static func CallPhoneNumber(_ number: String, completion: ((_ errorMessage: String?)->Void)) {
         // TODO: Fix when done testing!!!
 //        print("Calling \(number)")
         UPennDeviceService.openAsURL("telprompt:\(number)") { (errMessage) in

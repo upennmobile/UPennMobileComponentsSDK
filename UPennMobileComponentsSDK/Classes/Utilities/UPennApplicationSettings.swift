@@ -16,23 +16,6 @@ import UIKit
 
 open class UPennApplicationSettings {
     
-//    enum RuntimeStates : Int {
-//        case DEBUG_PROD
-//        case DEBUG_TEST
-//        case TEST
-//        case APP_STORE
-//    }
-//    
-//    static var RunState : RuntimeStates {
-//        switch Config {
-//        case "Debug-TEST": return .DEBUG_TEST
-//        case "Debug-PROD": return .DEBUG_PROD
-//        case "TEST": return .TEST
-//        case "App Store": return .APP_STORE
-//        default: return .DEBUG_TEST
-//        }
-//    }
-    
     public static var Config = Bundle.main.object(forInfoDictionaryKey: "Config") as! String
     
     public static var CurrentAppVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
