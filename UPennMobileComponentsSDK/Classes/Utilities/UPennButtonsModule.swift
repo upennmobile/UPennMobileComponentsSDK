@@ -71,9 +71,9 @@ open class PrimaryCTAButton : UIButton, UPennControlStylable {
         if let disabledTitleColor = styles.disabledTitleColor {
             self.setTitleColor(disabledTitleColor, for: .disabled)
         }
-        if let disabledBackgroundColor = styles.disabledBackgroundColor {
-            
-        }
+//        if let disabledBackgroundColor = styles.disabledBackgroundColor {
+//            
+//        }
         if let radius = styles.cornerRadius {
             self.layer.cornerRadius = radius
         }
