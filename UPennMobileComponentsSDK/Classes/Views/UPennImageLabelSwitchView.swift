@@ -42,6 +42,7 @@ open class UPennImageLabelSwitchView : UPennNibView, UPennImageLabelSwitchConfig
     
     
     open func configure(_ decorator: UPennImageLabelSwitchControlDecorated) {
+        self.switchControl.isOn = decorator.isSelected
         self.delegate = decorator.delegate
         self.imageLabelView.configure(image: decorator.image, title: decorator.title, styles: decorator.styles)
     }

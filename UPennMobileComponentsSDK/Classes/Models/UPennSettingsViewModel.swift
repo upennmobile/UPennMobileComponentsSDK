@@ -10,20 +10,20 @@ import UIKit
 
 open class UPennSettingsViewModel : UPennSettingsViewModelled {
     
-    private enum Sections : Int,UPennCountable {
+    public enum Sections : Int,UPennCountable {
         case Settings
         
-        static var Count : Int {
+        public static var Count : Int {
             return Settings.rawValue+1
         }
         
-        enum Rows : Int, UPennCountable {
+        public enum Rows : Int, UPennCountable {
             case Timeout
             case Biometrics
             case Withdraw
             case Logout
             
-            static var Count : Int {
+            public static var Count : Int {
                 return Logout.rawValue+1
             }
         }
