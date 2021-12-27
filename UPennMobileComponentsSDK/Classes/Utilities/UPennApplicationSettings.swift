@@ -18,7 +18,7 @@ open class UPennApplicationSettings {
     
     public static var Config = Bundle.main.object(forInfoDictionaryKey: "Config") as! String
     
-    public static var CurrentAppVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as! String
+    public static var CurrentAppVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString" as String) as! String
     
     public static var BundleID = Bundle.main.object(forInfoDictionaryKey: kCFBundleIdentifierKey as String) as! String
     
