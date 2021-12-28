@@ -11,4 +11,6 @@ public struct UPennConstants {
      
     static var RootURL = "UPENN_ROOT_URL"
     static var LoginURL = "UPENN_LOGIN_URL"
+    static var BundleVersionStringShort = "CFBundleShortVersionString"
+    static var Config = "Config"
 }
