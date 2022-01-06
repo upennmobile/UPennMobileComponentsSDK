@@ -121,8 +121,16 @@ public extension UPennNetworkRequestable {
     // TODO: Extension func for handling AF responses?
     func unwrapResponseForStatusCode(_ response: AFDataResponse<Any>, delete: Bool=false, completion: (UPennRequestCompletion)) {
         
-        if let httpError = response.error {
-            completion(nil,httpError.localizedDescription)
+        if
+            let httpError = response.error,
+            let statusCode = response.response?.statusCode
+        {
+            if statusCode == 401 {
+               // Fire Notification to logout
+                UPennNotificationManager.SendExpiredAuthenticationNotification()
+            } else {
+                completion(nil,httpError.localizedDescription)
+            }
             return
         }
         // Unwrap StatusCode & JSON from response
@@ -145,6 +153,11 @@ public extension UPennNetworkRequestable {
             return
         }
         // Request Error from Server
+        if statusCode == 401 {
+            UPennNotificationManager.SendExpiredAuthenticationNotification()
+            return
+        }
+        
         if statusCode == 400 {
             
             guard let json = response.value as? UPennStringDict else {

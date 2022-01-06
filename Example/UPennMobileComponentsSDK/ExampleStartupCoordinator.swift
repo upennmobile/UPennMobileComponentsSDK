@@ -9,6 +9,13 @@
 import UIKit
 import UPennMobileComponentsSDK
 
+extension UPennNotificationManager {
+    
+    static func foo() {
+        
+    }
+}
+
 class TestUPennLoginViewModel : UPennLoginViewModel {
     
     enum LoginSection : Int {

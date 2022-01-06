@@ -108,11 +108,13 @@ open class UPennMasterCoordinator : UPennMasterCoordinatable {
     open func didSuccessfullyLoginUser() {
         self.mainCoordinator?.logoutBiometricsDelegate = self
         self.showMainViewController()
+        self.setExpiredAuthenticationObserver()
         UPennTimerUIApplication.ResetIdleTimer()
     }
 
 // MARK: UPennLogoutBiometricsDelegate
     open func logout() {
+        UPennActivityPresenter.Dismiss()
         // Tell LoginCoordinator to logout
         self.loginCoordinator?.logout()
         self.showLogin()
@@ -122,5 +124,14 @@ open class UPennMasterCoordinator : UPennMasterCoordinatable {
     open func toggleShouldAutoFill(_ enabled: Bool) {
         // Tell LoginCoordinator to toggle AutoFill
         self.loginCoordinator?.presenter.toggleShouldAutoFill(enabled)
+    }
+    
+    open func setExpiredAuthenticationObserver() {
+        UPennNotificationManager.SetExpiredAuthenticationObserver(self, selector: #selector(self.handleExpiredAuthenticationNotification))
+    }
+    
+    @objc open func handleExpiredAuthenticationNotification() {
+        let logoutAlert = UPennAlertsPresenter.ExpiredAuthenticationLogoutAlert(callback: self.logout)
+        self.navigationController.present(logoutAlert, animated: true, completion: nil)
     }
 }

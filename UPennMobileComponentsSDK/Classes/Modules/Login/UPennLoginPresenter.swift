@@ -32,7 +32,7 @@ open class UPennLoginPresenter : UPennLoginPresentable {
             self.loginService = _login
             self.loginService.loginDelegate = self
         } else {
-            let requestService = UPennLoginNetworkService(urlProvider: UPennURLProvider(rootURL: UPennApplicationSettings.RootURL, loginEndpoint: UPennApplicationSettings.LoginURL))
+            let requestService = UPennLoginNetworkService()
             self.loginService = UPennLoginService(requestService: requestService, loginDelegate: self)
         }
         if let _biometrics = biometricsService {

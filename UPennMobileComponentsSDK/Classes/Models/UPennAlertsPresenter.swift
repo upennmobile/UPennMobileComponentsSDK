@@ -69,10 +69,21 @@ open class UPennAlertsPresenter {
     
     public static func AutoLogoutAlert(logoutCallback: @escaping ()->Void) -> UIAlertController {
         let alertController = UIAlertController(title: "You've Been Logged-out".localize, message: "For security purposes you've been automatically logged-out due to inactivity. Please log back in.".localize, preferredStyle: .alert)
-        let logoutAction = UIAlertAction(title: "Login", style: .cancel, handler: {
+        let logoutAction = UIAlertAction(title: "Login".localize, style: .cancel, handler: {
             alert -> Void in
 //          Fire logoutCallback
             logoutCallback()
+        })
+        alertController.addAction(logoutAction)
+        return alertController
+    }
+    
+    public static func ExpiredAuthenticationLogoutAlert(callback: @escaping ()->Void) -> UIAlertController {
+        let alertController = UIAlertController(title: "You've Been Logged-out".localize, message: "For your security you've been logged-out due to expired authentication. Please log back in.".localize, preferredStyle: .alert)
+        let logoutAction = UIAlertAction(title: "Login".localize, style: .cancel, handler: {
+            alert -> Void in
+//          Fire logoutCallback
+            callback()
         })
         alertController.addAction(logoutAction)
         return alertController

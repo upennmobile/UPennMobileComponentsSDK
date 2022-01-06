@@ -12,12 +12,10 @@ public protocol UPennLoginNetworkingRequestable : UPennNetworkRequestable {
     func makeLoginRequest(username: String, password: String, completion: @escaping (UPennRequestCompletion))
 }
 
-open class UPennLoginNetworkService : UPennLoginNetworkingRequestable {
+open class UPennLoginNetworkService : UPennBaseNetworkingService, UPennLoginNetworkingRequestable {
     
-    public var urlProvider: UPennURLProvidable
-    
-    public init(urlProvider: UPennURLProvidable) {
-        self.urlProvider = urlProvider
+    convenience init() {
+        self.init(appendedURL: UPennApplicationSettings.LoginURL)
     }
     
     /**
@@ -33,6 +31,6 @@ open class UPennLoginNetworkService : UPennLoginNetworkingRequestable {
             "password" : password
         ]
         
-        self.makePOSTRequest(urlStr: urlProvider.userLoginEndpoint, parameters: parameters, encoding: .JSON, completion: completion)
+        self.makeBasePOSTRequest(parameters: parameters, encoding: .JSON, completion: completion)
     }
 }

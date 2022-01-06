@@ -39,7 +39,6 @@ public protocol UPennLoginViewControllable : UPennLoginPresenterDelegate {
 open class UPennLoginCoordinator : UPennLoginCoordinated {
     
     public var childViewController: UIViewController?
-    static var IsLoggedInNotification = "UPHSIsLoggedInNotification"
     open var childCoordinators = [UPennCoordinator]()
     open var navigationController: UINavigationController
     open var coordinatorDelegate : UPennLoginCoordinatorDelegate?
@@ -61,15 +60,15 @@ open class UPennLoginCoordinator : UPennLoginCoordinated {
     }
     
     open func setLoginObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleLoginNotification), name: NSNotification.Name.init(Self.IsLoggedInNotification), object: nil)
+        UPennNotificationManager.SetLoginObserver(self, selector: #selector(self.handleLoginNotification))
     }
     
     open func removeLoginObserver() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.init(rawValue: Self.IsLoggedInNotification), object: nil)
+        UPennNotificationManager.RemoveLoginObserver()
     }
     
     open func sendLoginNotification() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.IsLoggedInNotification), object: nil)
+        UPennNotificationManager.SendLoginNotification()
     }
     
     /// Handler fired when a User successfully logs in
@@ -94,9 +93,4 @@ extension UPennLoginCoordinator : UPennLoginCoordinatorDelegate {
         self.sendLoginNotification()
         self.coordinatorDelegate?.didSuccessfullyLoginUser()
     }
-}
-
-private extension UPennLoginCoordinator {
-    
-    
 }
