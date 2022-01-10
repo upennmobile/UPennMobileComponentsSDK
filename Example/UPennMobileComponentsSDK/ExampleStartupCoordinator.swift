@@ -60,7 +60,8 @@ class TestUPennLoginViewModel : UPennLoginViewModel {
             return cell
         case .Login:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
-            cell.configure(title: "Login".localize, delegate: self, enabled: self.controller.textFieldManager.allFieldsAreValid)
+            let decorator = UPennCenteredButtonDecorator(title: "Login".localize, delegate: self, enabled: self.controller.textFieldManager.allFieldsAreValid)
+            cell.configure(with: decorator)
             return cell
         }
     }

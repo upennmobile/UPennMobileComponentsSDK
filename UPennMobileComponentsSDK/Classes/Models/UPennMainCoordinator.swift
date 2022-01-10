@@ -11,6 +11,7 @@ import UIKit
 public protocol UPennMainCoordinatable : UPennCoordinator, UPennLogoutBiometricsDelegate {
     var logoutBiometricsDelegate: UPennLogoutBiometricsDelegate?  { get set }
     func configureView()
+    func setStartIndex(_ index: Int)
 }
 
 open class UPennMainTabCoordinator : NSObject, UPennMainCoordinatable {
@@ -63,6 +64,10 @@ open class UPennMainTabCoordinator : NSObject, UPennMainCoordinatable {
         self.tabController.selectedIndex = UPennMainTabCoordinator.StartIndex
         // Configure TabBarItems
         self.configureTabBarItems()
+    }
+    
+    open func setStartIndex(_ index: Int) {
+        Self.StartIndex = index
     }
     
     /// Loops through tabControllerPayload tabBarItes, and sets all tabController tabItem attributes

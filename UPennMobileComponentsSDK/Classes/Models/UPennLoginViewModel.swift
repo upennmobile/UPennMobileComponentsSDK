@@ -82,7 +82,11 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
             return cell
         case .Login:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennCenteredButtonCell.Identifier) as! UPennCenteredButtonCell
-            cell.configure(title: "Login".localize, delegate: self, enabled: self.controller.textFieldManager.allFieldsAreValid)
+            let decorator = UPennCenteredButtonDecorator(
+                title: "Login".localize,
+                delegate: self,
+                enabled: self.controller.textFieldManager.allFieldsAreValid, tag: section.rawValue)
+            cell.configure(with: decorator)
             return cell
         case .ForgotPassword:
             let cell = tableView.dequeueReusableCell(withIdentifier: UPennRightButtonCell.Identifier) as! UPennRightButtonCell

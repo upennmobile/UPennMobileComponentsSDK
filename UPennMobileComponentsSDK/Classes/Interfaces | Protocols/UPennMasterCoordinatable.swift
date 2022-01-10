@@ -15,6 +15,7 @@ public protocol UPennMasterCoordinatable : UPennCoordinator, UPennLoginCoordinat
     var mainCoordinator : UPennMainCoordinatable? {get set}
     func dismissAndPresentLogout()
     func showMainViewController()
+    func showMainViewController(at startIndex: Int)
     func showLoginVsMainViewController()
     func swapLoginFromMainViewController()
     func showLogin()

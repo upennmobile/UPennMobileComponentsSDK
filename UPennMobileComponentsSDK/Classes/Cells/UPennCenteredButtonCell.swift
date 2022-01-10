@@ -9,19 +9,15 @@ import Foundation
 import UIKit
 
 protocol UPennCenteredButtonConfigureInterface {
-    func configure(
-        title: String,
-        delegate: UPennCenteredButtonDelegate,
-        styles: UPennControlStyle?,
-        enabled: Bool)
+    func configure(with decorator: UPennCenteredButtonDecorator)
 }
 
 open class UPennCenteredButtonCell : UITableViewCell, UPennCellIdentifiable, UPennCenteredButtonConfigureInterface {
     
     @IBOutlet public weak var buttonView : UPennCenteredButtonView!
     
-    public func configure(title: String, delegate: UPennCenteredButtonDelegate, styles: UPennControlStyle?=nil, enabled: Bool) {
-        self.buttonView.configure(title: title, delegate: delegate, styles: styles, enabled: enabled)
+    public func configure(with decorator: UPennCenteredButtonDecorator) {
+        self.buttonView.configure(with: decorator)
     }
     
     

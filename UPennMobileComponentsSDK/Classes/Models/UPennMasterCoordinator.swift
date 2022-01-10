@@ -59,6 +59,11 @@ open class UPennMasterCoordinator : UPennMasterCoordinatable {
     }
     
     open func showMainViewController() {
+        self.showMainViewController(at: 0)
+    }
+    
+    open func showMainViewController(at startIndex: Int) {
+        self.mainCoordinator?.setStartIndex(startIndex)
         self.mainCoordinator?.start()
         self.childViewController?.swapParentViewController(
             fromVC: self.loginViewController,

@@ -22,6 +22,10 @@ open class UPennStartupCoordinator : UPennCoordinator {
     
     public init(navController: UINavigationController, delegate: UPennStartupCoordinatorDelegate) {
         self.navigationController = navController
+        // IOS 15 TableView Header-padding Bug
+        if #available(iOS 15.0, *) {
+            UITableView.appearance().sectionHeaderTopPadding = CGFloat(0)
+        }
         self.delegate = delegate
     }
     

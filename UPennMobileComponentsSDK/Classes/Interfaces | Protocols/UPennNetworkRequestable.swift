@@ -125,8 +125,8 @@ public extension UPennNetworkRequestable {
             let httpError = response.error,
             let statusCode = response.response?.statusCode
         {
-            if statusCode == 401 {
-               // Fire Notification to logout
+            // Check for 401 & if logged-in to conditionally return error or fire expiredAuthentication
+            if statusCode == 401 && UPennAuthenticationService.IsAuthenticated {
                 UPennNotificationManager.SendExpiredAuthenticationNotification()
             } else {
                 completion(nil,httpError.localizedDescription)
