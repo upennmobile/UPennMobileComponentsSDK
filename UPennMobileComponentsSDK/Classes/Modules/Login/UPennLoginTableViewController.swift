@@ -79,6 +79,7 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         super.viewWillAppear(animated)
         self.presenter.authenticationAutoFillCheck()
         self.attemptBiometricsAuthentication()
+        self.loginTableView.reloadData()
     }
     
     open func forgotPassword() {
