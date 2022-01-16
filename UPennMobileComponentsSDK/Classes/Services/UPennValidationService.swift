@@ -38,7 +38,7 @@ public class UPennValidationService {
         }
     }
     
-    public func addTextFieldAndTag(_ textField: inout UITextField, _ tag: Int) {
+    public func addTextFieldAndTag(_ textField: inout UPennTextField, _ tag: Int) {
         textField.tag = tag
         self.textFields.append(textField)
     }

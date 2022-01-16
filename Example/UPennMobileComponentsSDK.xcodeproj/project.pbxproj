@@ -493,8 +493,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				UPENN_LOGIN_URL = "$(UPENN_ROOT_URL)/Token/login";
-				UPENN_ROOT_URL = "https://proxymvtest.uphs.upenn.edu/pennpal/api";
+				UPENN_LOGIN_URL = /oauth/token;
+				UPENN_ROOT_URL = "https://uphsnettest2016.uphs.upenn.edu/Rolodoc";
 			};
 			name = Debug;
 		};
@@ -511,8 +511,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				UPENN_LOGIN_URL = "$(UPENN_ROOT_URL)/Token/login";
-				UPENN_ROOT_URL = "https://proxymvtest.uphs.upenn.edu/pennpal/api";
+				UPENN_LOGIN_URL = /oauth/token;
+				UPENN_ROOT_URL = "https://uphsnettest2016.uphs.upenn.edu/Rolodoc";
 			};
 			name = Release;
 		};

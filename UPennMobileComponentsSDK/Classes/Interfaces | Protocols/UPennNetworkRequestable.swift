@@ -153,12 +153,12 @@ public extension UPennNetworkRequestable {
             return
         }
         // Request Error from Server
-        if statusCode == 401 {
-            UPennNotificationManager.SendExpiredAuthenticationNotification()
-            return
-        }
+//        if statusCode == 401 {
+//            UPennNotificationManager.SendExpiredAuthenticationNotification()
+//            return
+//        }
         
-        if statusCode == 400 {
+        if case 400...499 = statusCode {
             
             guard let json = response.value as? UPennStringDict else {
                 completion(nil,"ERROR: Could not complete your request, please try again.")

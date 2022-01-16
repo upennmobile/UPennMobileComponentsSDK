@@ -28,9 +28,10 @@ open class UPennLoginNetworkService : UPennBaseNetworkingService, UPennLoginNetw
         
         let parameters: [String:String] = [
             "username" : username,
-            "password" : password
+            "password" : password,
+            "grant_type" : "password"
         ]
         
-        self.makeBasePOSTRequest(parameters: parameters, encoding: .JSON, completion: completion)
+        self.makeBasePOSTRequest(parameters: parameters, encoding: .URL, completion: completion)
     }
 }

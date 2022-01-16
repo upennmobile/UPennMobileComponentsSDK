@@ -11,7 +11,7 @@ import UIKit
 /// UIView for displaying a center-justified UITextField
 open class UPennCenteredTextInputView : UPennNibView, UPennTextInputConfigureInterface {
     
-    @IBOutlet public weak var textInput: UITextField!
+    @IBOutlet public weak var textInput: UPennTextField!
     
     public override func awakeFromNib() {
         super.awakeFromNib()
