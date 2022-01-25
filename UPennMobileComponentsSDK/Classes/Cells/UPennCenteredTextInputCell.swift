@@ -30,7 +30,7 @@ open class UPennCenteredUsernameTextFieldCell : UPennCenteredTextInputCell {
     
     override open func awakeFromNib() {
         super.awakeFromNib()
-        self.textInputView.textInput.placeholder = "email"
+        self.textInputView.textInput.placeholder = "username"
         self.textInputView.textInput.returnKeyType = .next
     }
 }
