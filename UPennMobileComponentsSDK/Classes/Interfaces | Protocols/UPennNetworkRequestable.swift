@@ -142,13 +142,14 @@ public extension UPennNetworkRequestable {
             completion(nil,self.statusCodeError)
             return
         }
-        // Deleting Notification
-        if statusCode == 204 {
-            completion(nil,nil)
-            return
-        }
+        
         // Successful JSON fetch
-        if statusCode == 200 {
+        if case 200...299 = statusCode {
+            // Deleting Notification
+            if statusCode == 204 {
+                completion(nil,nil)
+                return
+            }
             completion(json,nil)
             return
         }
