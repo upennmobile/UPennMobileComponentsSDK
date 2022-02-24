@@ -32,13 +32,18 @@ public class UPennTimerUIApplication : UIApplication {
     
     public static var TimeoutCallback : ((_ notification: NSNotification)->Void)? = nil
     
+    public static var Disabled = false
+    
     /**
      Configure the Auto-logout Timer by setting up a notification listener w/ callback
      - parameter callback: Block to be invoked by the caller when auto-logout notification fires
      */
-    public static func ConfigureAutoLogoutTimer(callback: @escaping (_ notification: NSNotification)->Void) {
-        self.TimeoutCallback = callback
-        NotificationCenter.default.addObserver(self, selector: #selector(self.SetNotificationHandler(notification:)), name: NSNotification.Name.init(UPennTimerUIApplication.ApplicationDidTimeoutNotification), object: nil)
+    public static func ConfigureAutoLogoutTimer(disabled: Bool=false,callback: ((_ notification: NSNotification)->Void)?=nil) {
+        Self.Disabled = disabled
+        if !Self.Disabled {
+            self.TimeoutCallback = callback
+            NotificationCenter.default.addObserver(self, selector: #selector(self.SetNotificationHandler(notification:)), name: NSNotification.Name.init(UPennTimerUIApplication.ApplicationDidTimeoutNotification), object: nil)
+        }
     }
     
     // Listen for any touch. If the screen receives a touch, the timer is reset.

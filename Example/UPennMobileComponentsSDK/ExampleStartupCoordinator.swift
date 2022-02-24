@@ -74,7 +74,7 @@ class ExampleStartupCoordinator : UPennStartupCoordinator {
         // Configure Activity Presenter
         UPennActivityPresenter.Configure()
         // Configure Auto-Logout Timer
-        UPennTimerUIApplication.ConfigureAutoLogoutTimer(callback: self.applicationDidTimeout(notification:))
+        UPennTimerUIApplication.ConfigureAutoLogoutTimer(disabled: true)
         
         // Make TabBarPayloads & MainTabCoordinator
         let vc1 = UPennSettingsViewController.Instantiate(.SDK)
