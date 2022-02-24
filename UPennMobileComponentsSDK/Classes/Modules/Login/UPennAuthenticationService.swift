@@ -24,6 +24,7 @@ open class UPennAuthenticationService {
     public static let UsernameKey   = UPennNameSpacer.MakeKey("username")
     public static let LoginCountKey = UPennNameSpacer.MakeKey("loginCountKey")
     public static var IsAuthenticated = false
+    public static var ParseJWTTokenForUserCreds = true
     public static var ShouldAutoLogin : Bool {
         return UserDefaults.standard.value(forKey: AutoLoginKey) as? Bool ?? false
     }
@@ -44,7 +45,9 @@ open class UPennAuthenticationService {
         IsAuthenticated = true
         
         // Parse JWT
-        self.parseJWTForInfo(jsonWebToken: token)
+        if Self.ParseJWTTokenForUserCreds {
+            self.parseJWTForInfo(jsonWebToken: token)
+        }
         
         // Check if shouldAutoFill, keychain-cache the in-coming credentials
         if ShouldAutoFill {

@@ -123,7 +123,7 @@ open class UPennSettingsViewModel : UPennSettingsViewModelled {
         switch section {
         case .Settings:
             switch row {
-            case .Timeout: return 85
+            case .Timeout: return UPennTimerUIApplication.Disabled ? 0 : 85
             default: return 50
             }
         }
