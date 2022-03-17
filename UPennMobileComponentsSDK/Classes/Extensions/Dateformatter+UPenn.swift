@@ -83,11 +83,9 @@ public extension DateFormatter {
     }
     
     static func ConvertDateFormat(_ dateString: String, inputFormat: UPennDateFormat, outputFormat: UPennDateFormat) -> String {
-        if let cachedFormatter = cachedFormatters[inputFormat.formatString] {
-            return ApplyFormatter(cachedFormatter, dateString, inputFormat, outputFormat)
-        }
-        let formatter = MakeNewCachedDateFormatter(format: inputFormat)
-        return ApplyFormatter(formatter, dateString, inputFormat, outputFormat)
+        let inputFormatter = cachedFormatters[inputFormat.formatString] ?? MakeNewCachedDateFormatter(format: inputFormat)
+        let outputFormatter = cachedFormatters[outputFormat.formatString] ?? MakeNewCachedDateFormatter(format: outputFormat)
+        return ApplyFormatter(dateString, inputFormatter, outputFormatter)
     }
 }
 
@@ -105,15 +103,12 @@ private extension DateFormatter {
     }
     
     static func ApplyFormatter(
-        _ formatter: DateFormatter,
         _ dateString: String,
-        _ inputFormat: UPennDateFormat,
-        _ outputFormat: UPennDateFormat) -> String
+        _ inputFormatter: DateFormatter,
+        _ outputFormatter: DateFormatter) -> String
     {
-        formatter.dateFormat = inputFormat.formatString
-        guard let date = formatter.date(from: dateString) else { return dateString }
-        formatter.dateFormat = outputFormat.formatString
-        let dateString = formatter.string(from: date)
+        guard let date = inputFormatter.date(from: dateString) else { return dateString }
+        let dateString = outputFormatter.string(from: date)
         return dateString
     }
 }
