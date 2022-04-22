@@ -153,11 +153,11 @@ public extension UPennNetworkRequestable {
             completion(json,nil)
             return
         }
-        // Request Error from Server
-//        if statusCode == 401 {
-//            UPennNotificationManager.SendExpiredAuthenticationNotification()
-//            return
-//        }
+        // Authentication Error from Server
+        if statusCode == 401 {
+            UPennNotificationManager.SendExpiredAuthenticationNotification()
+            return
+        }
         
         if case 400...499 = statusCode {
             

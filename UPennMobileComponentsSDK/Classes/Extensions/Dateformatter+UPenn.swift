@@ -68,10 +68,12 @@ public extension DateFormatter {
         return MakeNewCachedDateFormatter(format: format)
     }
     
-    static func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter.cached(withFormat: UPennRFC3339DateFormat())
-        formatter.timeStyle = DateFormatter.Style.medium //Set time style
-        formatter.dateStyle = DateFormatter.Style.medium //Set date style
+    static func formatDate(_ date: Date, format: UPennDateFormat=UPennRFC3339DateFormat()) -> String {
+        let formatter = DateFormatter.cached(withFormat: format)
+        if format is UPennRFC3339DateFormat {
+            formatter.timeStyle = DateFormatter.Style.medium //Set time style
+            formatter.dateStyle = DateFormatter.Style.medium //Set date style
+        }
         formatter.timeZone = .current
         let dateString = formatter.string(from: date)
         return dateString
