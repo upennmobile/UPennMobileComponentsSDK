@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class UPennAutoLogoutCell : UPennBasicCell {
+open class UPennAutoLogoutCell : UPennBasicCell {
     
     
-    @IBOutlet weak var timeoutControl: UPennBasicSegmentControl!
+    @IBOutlet open weak var timeoutControl: UPennBasicSegmentControl!
     
-    override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         self.timeoutControl.selectedSegmentIndex = UPennTimerUIApplication.TimeoutIndex
     }
     
-    @IBAction func pressedTimeoutControl(_ sender: UISegmentedControl) {
+    @IBAction open func pressedTimeoutControl(_ sender: UISegmentedControl) {
         UPennTimerUIApplication.updateTimeoutInterval(index: self.timeoutControl.selectedSegmentIndex)
     }
 }

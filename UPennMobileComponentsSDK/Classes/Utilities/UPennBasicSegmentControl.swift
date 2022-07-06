@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class UPennBasicSegmentControl : UISegmentedControl {
+open class UPennBasicSegmentControl : UISegmentedControl {
     
-    override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         self.tintColor = UIColor.upennMediumBlue
         

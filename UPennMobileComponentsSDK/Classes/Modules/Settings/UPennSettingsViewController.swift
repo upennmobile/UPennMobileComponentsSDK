@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class UPennSettingsViewController : UPennStoryboardViewController {
+open class UPennSettingsViewController : UPennStoryboardViewController {
     
     private enum Sections : Int,UPennCountable {
         case Settings
@@ -40,7 +40,7 @@ public class UPennSettingsViewController : UPennStoryboardViewController {
         case Logout = "LogoutCell"
     }
     
-    public var settingsCoordinator : UPennLogoutBiometricsDelegate?
+    open var settingsCoordinator : UPennLogoutBiometricsDelegate?
     
     var biometricsService = UPennBiometricsAuthService()
     
@@ -48,11 +48,11 @@ public class UPennSettingsViewController : UPennStoryboardViewController {
     
     @IBOutlet weak var settingsTableView : UITableView!
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         self.setup()
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.settingsTableView.reloadData()
     }
@@ -76,24 +76,24 @@ public class UPennSettingsViewController : UPennStoryboardViewController {
 
 extension UPennSettingsViewController : UITableViewDataSource {
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.rowsInSection(section)
     }
     
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return self.viewModel.numberOfSections(tableView)
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return self.viewModel.getCellAtIndexPath(indexPath, for: tableView)
     }
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.viewModel.heightForIndexPath(indexPath, for: tableView)
     }
     
-//    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+//    open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 50
 //    }
     
@@ -101,23 +101,23 @@ extension UPennSettingsViewController : UITableViewDataSource {
  
 extension UPennSettingsViewController : UITableViewDelegate {
     
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         return self.viewModel.tableView(tableView, selectedIndexPath: indexPath)
     }
     
-    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.viewModel.titleForHeaderInSection(section)
     }
     
-    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.viewModel.heightForHeaderInSection(section)
     }
     
-    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return self.viewModel.heightForFooterInSection(section)
     }
     
-    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return self.viewModel.viewForFooterInSection(section, for: tableView)
     }
 }
@@ -129,15 +129,15 @@ extension UPennSettingsViewController : UPennBiometricsToggleDelegate {
 }
 
 extension UPennSettingsViewController : UPennSettingsInterface {
-    public func presentWithDraw() {
+    open func presentWithDraw() {
         self.present(self.withdrawAlert, animated: true, completion: nil)
     }
     
-    public func logout() {
+    open func logout() {
         self.settingsCoordinator?.logout()
     }
     
-    public func toggleShouldAutoFill(_ enabled: Bool) {
+    open func toggleShouldAutoFill(_ enabled: Bool) {
         self.settingsCoordinator?.toggleShouldAutoFill(enabled)
     }
     
