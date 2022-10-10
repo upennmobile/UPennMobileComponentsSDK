@@ -20,7 +20,7 @@ open class UPennStartupCoordinator : UPennCoordinator {
     open var childViewController: UIViewController?
     open var delegate: UPennStartupCoordinatorDelegate?
     
-    public init(navController: UINavigationController, delegate: UPennStartupCoordinatorDelegate) {
+    public init(navController: UINavigationController, delegate: UPennStartupCoordinatorDelegate? = nil) {
         self.navigationController = navController
         // IOS 15 TableView Header-padding Bug
         if #available(iOS 15.0, *) {
