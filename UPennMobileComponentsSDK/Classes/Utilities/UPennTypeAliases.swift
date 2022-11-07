@@ -15,6 +15,7 @@ import Foundation
      - delete: Bool indicating the request is a deletion type
  */
 public typealias UPennRequestCompletion = (_ responseJSON: Any?, _ errorString: String?)->Void
+public typealias UPennSuccessCompletion = (_ success: Bool, _ errStr: String?)->Void
 public typealias UPennResponseObjArray = Array<Dictionary<String,Any>>
 public typealias UPennStringDict = Dictionary<String,Any>
 public typealias UPennHeadersDict = Dictionary<String,String>

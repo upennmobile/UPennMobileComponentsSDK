@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UPennMobileComponentsSDK'
-  s.version          = '1.4.6'
+  s.version          = '1.4.7'
   s.summary          = 'SDK that contains common UI elements, utilities, functionality etc, for re-use across all University of Pennsylvania mobile applications.'
 
 # This description is used to generate tags and improve search results.
