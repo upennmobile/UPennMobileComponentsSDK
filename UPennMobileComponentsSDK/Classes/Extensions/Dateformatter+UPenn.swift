@@ -89,6 +89,11 @@ public extension DateFormatter {
         let outputFormatter = cachedFormatters[outputFormat.formatString] ?? MakeNewCachedDateFormatter(format: outputFormat)
         return ApplyFormatter(dateString, inputFormatter, outputFormatter)
     }
+    
+    static func GetDateFromString(_ dateString: String, with dateFormat: UPennDateFormat = UPennMonthDayYearTimeDateFormat()) -> Date {
+        let formatter = cachedFormatters[dateFormat.formatString] ?? MakeNewCachedDateFormatter(format: dateFormat)
+        return formatter.date(from: dateString) ?? Date()
+    }
 }
 
 private extension DateFormatter {
