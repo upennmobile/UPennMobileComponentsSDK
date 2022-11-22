@@ -64,7 +64,7 @@ open class UPennLoginCoordinator : UPennLoginCoordinated {
     }
     
     open func removeLoginObserver() {
-        UPennNotificationManager.RemoveLoginObserver()
+        UPennNotificationManager.RemoveLoginObserver(self)
     }
     
     open func sendLoginNotification() {

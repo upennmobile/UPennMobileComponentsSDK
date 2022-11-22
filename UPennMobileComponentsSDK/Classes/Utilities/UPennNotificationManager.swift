@@ -17,8 +17,8 @@ public struct UPennNotificationManager {
         NotificationCenter.default.addObserver(observer, selector: selector, name: NSNotification.Name.init(Self.IsLoggedInNotification), object: nil)
     }
     
-    public static func RemoveLoginObserver() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.init(rawValue: Self.IsLoggedInNotification), object: nil)
+    public static func RemoveLoginObserver(_ observer: Any) {
+        NotificationCenter.default.removeObserver(observer, name: NSNotification.Name.init(rawValue: Self.IsLoggedInNotification), object: nil)
     }
     
     public static func SendLoginNotification() {
