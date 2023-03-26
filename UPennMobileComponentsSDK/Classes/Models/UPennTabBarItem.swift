@@ -12,18 +12,22 @@ public protocol UPennTabBarItemed {
     static var TabBarItem : UPennTabBarItem { get }
 }
 
-open class UPennTabBarItem {
+open class UPennTabBarItem : UITabBarItem {
     
-    open var title: String
-    open var selectedImage, unSelectedImage: UIImage?
+    public var unSelectedImage: UIImage?
     
     public init(
         title: String,
         selectedImage: UIImage?,
         unselectedImage: UIImage?) {
+            super.init()
         self.title = title
         self.selectedImage = selectedImage
         self.unSelectedImage = unselectedImage
+    }
+    
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 }
