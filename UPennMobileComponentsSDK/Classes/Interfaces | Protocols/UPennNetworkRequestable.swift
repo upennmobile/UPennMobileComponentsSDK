@@ -103,7 +103,7 @@ public extension UPennNetworkRequestable {
     }
     
     var statusCodeError : String {
-        return "Cannot get a Status Code for your Request. Please try again."
+        return "Can’t connect to Server, please ensure VPN is connected and running."
     }
     
     var genericRequestError : String {
