@@ -249,14 +249,6 @@ extension UPennLoginViewController : UITextFieldDelegate {
     }
 }
 
-extension UPennLoginTableViewController : UPennLoginViewModelDelegate {
-    
-    public func login() {
-        UPennActivityPresenter.Show(message: "Logging in.....")
-        self.presenter.makeLoginRequest(username: self.username, password: self.password)
-    }
-}
-
 // MARK: - LoginService Delegate
 
 extension UPennLoginViewController : UPennLoginPresenterDelegate {
