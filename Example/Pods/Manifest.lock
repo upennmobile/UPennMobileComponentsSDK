@@ -2,7 +2,7 @@ PODS:
   - Alamofire (5.4.1)
   - JWTDecode (2.6.0)
   - SVProgressHUD (2.2.5)
-  - UPennMobileComponentsSDK (0.2.2):
+  - UPennMobileComponentsSDK (1.5.1):
     - Alamofire (~> 5.2)
     - JWTDecode
     - SVProgressHUD
@@ -24,8 +24,8 @@ SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   JWTDecode: 480ca441ddbd5fbfb2abf17870af62f86436be58
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  UPennMobileComponentsSDK: 458d140ad2f9dd7c18c4d21acb370a6d25c46986
+  UPennMobileComponentsSDK: 9ae0b2fc7de670054def66cfacf60a1f594a9751
 
-PODFILE CHECKSUM: 49088c2c2a09d48cb3f75c35441b159ab07fcf50
+PODFILE CHECKSUM: b45c1a8e6f3db6f85ebef65f692e0318c2951cd8
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3
