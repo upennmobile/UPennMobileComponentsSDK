@@ -11,12 +11,14 @@ import UIKit
 open class UPennLoginTableViewController : UPennStoryboardViewController, UPennLoginViewControllable {
     
     @IBOutlet public weak var loginTableView: UITableView!
+    
     open var viewModel: UPennLoginViewModelled!
     open var presenter : UPennLoginPlusBiometricsInterface!
     open var coordinator : UPennLoginCoordinatorDelegate!
     open var username: String = ""
     open var password: String = ""
     open var textFieldManager = UPennValidationService()
+    fileprivate var keyboardService: UPennKeyboardService!
     
     open var shouldAutoFill: Bool {
         return self.presenter.shouldAutoFill
@@ -73,6 +75,10 @@ open class UPennLoginTableViewController : UPennStoryboardViewController, UPennL
         self.loginTableView.delegate = self
         self.loginTableView.dataSource = self
         self.loginTableView.separatorStyle = .none
+        
+        let loginButtonCell = self.viewModel.getCellAtIndexPath(self.viewModel.loginButtonIndexPath, for: self.loginTableView)
+        self.keyboardService = UPennKeyboardService(self.view, loginButtonCell)
+        self.keyboardService.beginObservingKeyboard()
     }
     
     open override func viewWillAppear(_ animated: Bool) {

@@ -138,6 +138,10 @@ open class UPennLoginViewModel : NSObject, UPennLoginViewModelled {
     open func rememberMeUpdateSections() -> Array<IndexPath> {
         return [IndexPath(row: LoginSection.RememberMe.rawValue, section: 0)]
     }
+    
+    open var loginButtonIndexPath : IndexPath {
+        return IndexPath(row: LoginSection.Login.rawValue, section: 0)
+    }
 }
 
 extension UPennLoginViewModel : UPennCenteredButtonDelegate {
