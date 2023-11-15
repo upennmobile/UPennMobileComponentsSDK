@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-public extension UIResponder {
+extension UIResponder {
     
-    @objc func cancel() {
+    @objc open func cancel() {
         resignFirstResponder()
     }
 }
